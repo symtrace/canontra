@@ -248,8 +248,9 @@ function Main {
         $exeName = "canontra-$Version-windows-$arch.exe"
         $downloadUrl = "https://github.com/symtrace/canontra/releases/download/$Version/$zipName"
         $fallbackUrl = "https://github.com/symtrace/canontra/releases/download/$Version/$exeName"
-        $tempZip = Join-Path $env:TEMP $zipName
-        $tempExe = Join-Path $env:TEMP $exeName
+        $tempDir = [System.IO.Path]::GetTempPath()
+        $tempZip = Join-Path $tempDir $zipName
+        $tempExe = Join-Path $tempDir $exeName
 
         if ($DryRun) {
             Write-Host "  $DryRunGlyph Downloading Canontra $Version release archive (dry-run: $downloadUrl)" -ForegroundColor Yellow
