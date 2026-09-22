@@ -1,0 +1,41 @@
+[Canontra Parse Warning] examples\celery\src\task_app\__init__.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] examples\celery\src\task_app\tasks.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] examples\celery\src\task_app\views.py:5:8: Expected identifier in module name
+[Canontra Parse Warning] examples\javascript\js_example\views.py:5:8: Expected identifier in module name
+[Canontra Parse Warning] examples\javascript\tests\test_js_example.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] examples\tutorial\flaskr\__init__.py:31:12: Expected identifier in module name
+[Canontra Parse Warning] examples\tutorial\flaskr\db.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] examples\tutorial\tests\conftest.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] examples\tutorial\tests\test_blog.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] src\flask\__init__.py:1:8: Expected identifier in module name
+[Canontra Parse Warning] src\flask\app.py:32:8: Expected identifier in module name
+[Canontra Parse Warning] src\flask\blueprints.py:28:34: Unexpected token in parameter list
+[Canontra Parse Warning] src\flask\cli.py:45:12: Expected identifier in module name
+[Canontra Parse Warning] src\flask\config.py:20:32: Unexpected token in base class list
+[Canontra Parse Warning] src\flask\ctx.py:11:8: Expected identifier in module name
+[Canontra Parse Warning] src\flask\debughelpers.py:39:39: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] src\flask\globals.py:17:32: Unexpected token in base class list
+[Canontra Parse Warning] src\flask\helpers.py:59:45: Unexpected token in parameter list
+[Canontra Parse Warning] src\flask\json\provider.py:76:34: Unexpected token in parameter list
+[Canontra Parse Warning] src\flask\json\tag.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] src\flask\logging.py:39:39: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] src\flask\sansio\app.py:20:9: Expected identifier in module name
+[Canontra Parse Warning] src\flask\sansio\blueprints.py:8:9: Expected identifier in module name
+[Canontra Parse Warning] src\flask\sansio\scaffold.py:17:9: Expected identifier in module name
+[Canontra Parse Warning] src\flask\sessions.py:24:34: Unexpected token in base class list
+[Canontra Parse Warning] src\flask\templating.py:123:70: Unexpected token in parameter list
+[Canontra Parse Warning] src\flask\testing.py:194:34: Unexpected token in parameter list
+[Canontra Parse Warning] src\flask\typing.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] src\flask\views.py:5:8: Expected identifier in module name
+[Canontra Parse Warning] src\flask\wrappers.py:10:8: Expected identifier in module name
+[Canontra Parse Warning] tests\conftest.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] tests\test_appctx.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_basic.py:28:29: Unexpected token in primary expression: TokSymbol "!="
+[Canontra Parse Warning] tests\test_blueprints.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] tests\test_config.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] tests\test_converters.py:15:44: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] tests\test_helpers.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_instance_config.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_json.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] tests\test_reqctx.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_testing.py:1:1: Unexpected end of input in expression

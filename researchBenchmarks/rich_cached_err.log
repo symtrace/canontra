@@ -1,0 +1,75 @@
+[Canontra Parse Warning] benchmarks\snippets.py:178:5: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] examples\cp_progress.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] examples\downloader.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] examples\exception.py:18:48: Unexpected token in parameter list
+[Canontra Parse Warning] examples\export.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] examples\file_progress.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] examples\fullscreen.py:140:24: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] examples\layout.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] examples\listdir.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] examples\live_progress.py:25:24: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] examples\log.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] examples\spinners.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] examples\table_movie.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] examples\top_lite_simulator.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] rich\__init__.py:81:33: Unexpected token in parameter list
+[Canontra Parse Warning] rich\_emoji_replace.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] rich\_inspect.py:128:44: Unexpected token in parameter list
+[Canontra Parse Warning] rich\_log_render.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] rich\_null_file.py:5:18: Unexpected token in base class list
+[Canontra Parse Warning] rich\_ratio.py:44:43: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] rich\_stack.py:6:17: Unexpected token in base class list
+[Canontra Parse Warning] rich\ansi.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] rich\bar.py:36:32: Unexpected token in parameter list
+[Canontra Parse Warning] rich\box.py:118:32: Unexpected token in parameter list
+[Canontra Parse Warning] rich\cells.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] rich\color.py:478:41: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] rich\columns.py:34:42: Unexpected token in parameter list
+[Canontra Parse Warning] rich\console.py:36:8: Expected identifier in module name
+[Canontra Parse Warning] rich\containers.py:55:38: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] rich\control.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] rich\emoji.py:28:32: Unexpected token in parameter list
+[Canontra Parse Warning] rich\file_proxy.py:45:59: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] rich\highlighter.py:20:45: Unexpected token in parameter list
+[Canontra Parse Warning] rich\json.py:28:37: Unexpected token in parameter list
+[Canontra Parse Warning] rich\jupyter.py:6:8: Expected identifier in module name
+[Canontra Parse Warning] rich\layout.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] rich\live.py:8:8: Expected identifier in module name
+[Canontra Parse Warning] rich\logging.py:18:8: Expected identifier in module name
+[Canontra Parse Warning] rich\markdown.py:12:8: Expected identifier in module name
+[Canontra Parse Warning] rich\markup.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] rich\measure.py:4:8: Expected identifier in module name
+[Canontra Parse Warning] rich\padding.py:36:40: Unexpected token in parameter list
+[Canontra Parse Warning] rich\palette.py:14:60: Unexpected token in parameter list
+[Canontra Parse Warning] rich\panel.py:55:42: Unexpected token in parameter list
+[Canontra Parse Warning] rich\pretty.py:39:8: Expected identifier in module name
+[Canontra Parse Warning] rich\progress.py:43:8: Expected identifier in module name
+[Canontra Parse Warning] rich\prompt.py:3:8: Expected identifier in module name
+[Canontra Parse Warning] rich\repr.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] rich\rule.py:25:31: Unexpected token in parameter list
+[Canontra Parse Warning] rich\scope.py:45:40: Unexpected token in parameter list
+[Canontra Parse Warning] rich\segment.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] rich\spinner.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] rich\style.py:9:8: Expected identifier in module name
+[Canontra Parse Warning] rich\syntax.py:144:46: Unexpected token in parameter list
+[Canontra Parse Warning] rich\table.py:14:8: Expected identifier in module name
+[Canontra Parse Warning] rich\text.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] rich\theme.py:18:54: Unexpected token in parameter list
+[Canontra Parse Warning] rich\traceback.py:29:8: Expected identifier in module name
+[Canontra Parse Warning] rich\tree.py:142:45: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] tests\test_card.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_console.py:158:45: Unexpected token in parameter list
+[Canontra Parse Warning] tests\test_inspect.py:443:1: Unexpected character: ╭
+[Canontra Parse Warning] tests\test_live.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_logging.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] tests\test_pretty.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] tests\test_progress.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_repr.py:83:59: Expected ':'
+[Canontra Parse Warning] tests\test_segment.py:323:29: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] tests\test_table.py:140:32: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] tests\test_text.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] tests\test_theme.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_unicode_data.py:23:68: Unexpected token in parameter list
+[Canontra Parse Warning] tests\test_win32_console.py:28:50: Unexpected token in primary expression: TokSymbol "!="
+[Canontra Parse Warning] tests\test_windows_renderer.py:15:46: Unexpected token in primary expression: TokSymbol "!="
+[Canontra Parse Warning] tools\make_emoji.py:1:1: Unexpected end of input in expression

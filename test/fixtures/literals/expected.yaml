@@ -1,0 +1,6 @@
+transformation: literal_change
+source_fingerprint: different
+structural_fingerprint: different
+declaration_fingerprint: identical
+dependency_fingerprint: identical
+composite_fingerprint: different

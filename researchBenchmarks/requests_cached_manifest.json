@@ -1,0 +1,303 @@
+{
+    "engine": "canontra",
+    "files": [
+        {
+            "fingerprints": {
+                "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
+                "composite": "c75d003774afe15173ffafb428a9800540a097fe73fdf05054ae137574a63ba2",
+                "control_flow": "b9702a37eb3ecf2fb815feb2d635c151faad786c46ff88aedb0c2680406b11f8",
+                "data_flow": "3d3d6231acb521d66ebd55a609f557210a4a73671dabb15966310f6d831a0259",
+                "declaration": "355f63b8137e10159daae7f993389e94cf3c73fed1a2806a7f782669e9a34ae1",
+                "dependency": "4b9d8a481006ae8960e186cf094e3c927f64a6fe86e213e448581fbe530f035c",
+                "source": "afc582667afd86a1395d4d59ca976594446b9aca69bc5b21236c879a9a7ae9bc",
+                "structural": "b80a849ffa6d3ac2f70dd1268777540f5a9348283d328d5c53876ce42f01451c",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "docs\\_themes\\flask_theme_support.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "9534523f20c3d257adb8e87c32bf7ef2f0c2c690639f50f0d9ad084c86ef8cef",
+                "composite": "27ef10f5836ffbb1f139767963b64201a1dbece6d026c758f76506f6d7f28fe1",
+                "control_flow": "dfe550079b9ac802a37056985d0c3ec20bd0c5ba52814f8e5914cba9cbb6ecba",
+                "data_flow": "6d26f26cfe1b5cdbf310c5293e51e138ebad150e93fbe49b950f56056c898aac",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "ccddf4a8e3c9c80ebbb199894ba6a995e0a6af788f31f50145daef39e6929fdb",
+                "source": "ba7271074083cde611100ae4c0f74d448a90a8b6a6043926336989157d5a5783",
+                "structural": "3e41900e2969446209129def76113289469bb4bb2530a70b508bb9c8b4448254",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "docs\\conf.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "493b937069691db35fc66ffd5ec6f3e8dfd141bf29f012e2dbcb77afe0117e2f",
+                "composite": "be951036e25dbc8293bf8ab7ec97cde2bd4cb7f3154385293a4ec0207078a112",
+                "control_flow": "7e656988b65ccfa4726044048b9a1c3cf988636c949e04da6ccae4a7f543afa7",
+                "data_flow": "820ad8f61be67be554b7d0c464b4e58b9c40a64db3a4d25d2e1d3da0e02e8186",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "f5f304ed2572601a716c1f4f4bc6b67fb0804479768b118e6da4a32ff5a4611b",
+                "source": "8289a11ea484cfc10077c7b11d2024bed82a2b9730ae5c30cf731a898f948c54",
+                "structural": "ba8520f80a0422f5533923266db50fcae257b3536aff3815f119a3ddad632e85",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "setup.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
+                "composite": "3247e909ce2b5cb82bcdb4d0b9d2d4c350264f66b801bcf7da35d1adccc1398e",
+                "control_flow": "7cd5c469b209bbc144f7f485ae731ba324c3419bdfb37e449204a6432832c884",
+                "data_flow": "e48c354cb82e173e7509947cabe188bb3e1a1b757115842d44b635d4e49a37a2",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
+                "source": "138a8ee2cb71898d5195c6937daa4e9045daff7e69949e1f68ed839fb777c39b",
+                "structural": "ca60b2bb87c2d0da3a01a666096bf57702f7c378e84c167d5d4370645223a0b0",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "src\\requests\\__version__.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "0d5de4eb9b34af9ec68aff53e5b10e9e246adcd7f23550fd596e96310968f899",
+                "composite": "eb4bfbb9218de426675212e28200d9340ef985adae019bc02c13814864ca232d",
+                "control_flow": "0e0a05a744d4e753f67cd43f0e36893553b52a860dfaf3be4201def9336937a6",
+                "data_flow": "4cec6033d680d06e5e88f27337fe352c2b89ccc886f1baa1e3e6616c96fe4ce0",
+                "declaration": "c3d3b2992562993366381572004cdd18d063d2ddb9ca3db133789a839dbea8af",
+                "dependency": "55e10cc4cdfc67642b28ee00e80ba0bf211cec0a6b81afa87e2979a7011ab31f",
+                "source": "3c72d298d4a062c5eb87d62241b55f0d6cc884cab8fbb4b70b1f0587317b149f",
+                "structural": "f840586668a845c40bc4ed5b07794448dd72975cd7b3431dc861b7c490797ef3",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "src\\requests\\_internal_utils.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "aa0b7159cbb272a9d253c37463b58c21eb153f2265db579b4cd475a3e8b6d104",
+                "composite": "7a74593ec473e9dd81e8ce5715750f1e872e4caa14c5c3dc6030e651c1260246",
+                "control_flow": "e8890036a24166b61a50e16fd9d201d54c1bb99aed6906253a2142d233d88b16",
+                "data_flow": "0ea965733ac2f0fb4709ddbd820a1d2f61159b0dbe28978347cc3b9dd88ed697",
+                "declaration": "8f0873ed0db7c39dc9ff7028577e6a6f7d9f35f7d77186291f5447b4cdf42220",
+                "dependency": "b80561e21635dbc0994c155246e6d265de056d8c7ebbf48479ed515244d8a9bb",
+                "source": "c35ba30ee054ed8744989fee2cddd06a581255a6929e58f0947d1824530095f1",
+                "structural": "5c9e86ac15a9415809c162aaa4d378913144a08451585b271c800981293b1afe",
+                "type_contract": "575034aaa2b279c90b7a3625f79e2aebf790fc19aa347bb49fdb1147c57f95dd"
+            },
+            "path": "src\\requests\\auth.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "354436da583744ab5ea90ab3d24c25d16600f0744f4b20ea1761f0624ea0fd6e",
+                "composite": "33a76560fa496f91fde6edba77551b3686df9104f97b66392d5193fb6b5d9c53",
+                "control_flow": "6500e46ec528ddc5dc23a7d1bec6f576bc0f7bd5d36d2b69bc9dd12cb3dc9f6e",
+                "data_flow": "805b1bb84886419d032316001910bab55fd938b01062be1a38b2793fa8b372d0",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "fb2416b389f9f66b5dd3808513224da26976b564db9f706f9b3ecac7f618a409",
+                "source": "5200c997cec403786b1045457c262f1b259270e0fe936b2bac9ba0f5efa84d2e",
+                "structural": "d8523a5224373270e02f489d610a5219d5d4aa16d854d12bb9d9ee0644ac6fb4",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "src\\requests\\certs.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "238b74b8c6528ffbe2c50eaeb7ad7129df6588316170208f37f3c22c1944929b",
+                "composite": "609bce0074462e99337debbf219971ed05502786f216d95d7aba7d21828bcb05",
+                "control_flow": "e4da243e7c1910098697e760ef430905bcd0ffeaba0faebf01fb5f39c9cfe111",
+                "data_flow": "db720b078ea9e12f4c850c47bd6776a7676d1b94c15c1dda44b85c2e5d794908",
+                "declaration": "bf211105c7044d3c9afcb97fa355f7c39ffd383e9eb6c5bfc81b4ee6cb46e1df",
+                "dependency": "802264c4b47843264d52b4a31ff6d5d665fbc32883cfc315f0ee993560246a8d",
+                "source": "da30c58688e387d3a0fece16554b52178838caafa6b098794d2b9a2b9cf82394",
+                "structural": "7478f08ef1928132317bd8c42287c653158e3bef120b0ad49ca237d529ddb926",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "src\\requests\\compat.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "9228f4f0365f69bd1c073e0a5635d61d118250cb6fe9412d53e947088545eb37",
+                "composite": "48c3a7cc3cbdee9c60ef07ba664f1004e595b645486274ffd193c57d6cb92e89",
+                "control_flow": "0335989b0f1191121f78b0171bff7e9a9d91c01e3aeb177790de1f3907b2f738",
+                "data_flow": "c89cf9092f85d3412a91ed07c52d02408a38b35d3228f97751ae894eac16cd5e",
+                "declaration": "32bf09c7244ff722f016a596b0bc67766a0952ab7d33860a11bd5a54237a3a71",
+                "dependency": "51bc7d4c80cff4c63e9f3c0f4dc43dabe3a613107f3b9b2f48cd1a8e2e1eabde",
+                "source": "dffbf296afc64fbdecb7a9b3331a4af886989f875cbbaee625cad3fb3b668083",
+                "structural": "098c102d9c97ecfb76157c80776d83f944bd5fa65ccaf084378f777ec0f19e96",
+                "type_contract": "18005534a7a79da65e940cb69dee93774a7c7fa47d0b2dbd85e8fff19d8424b4"
+            },
+            "path": "src\\requests\\exceptions.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "335f9f6cc5e7880d8dd167c8634bef230e55dd27e5f171dd2b9fbf9c40413c6c",
+                "composite": "48a140f2d59a632568af305cb6d91931df8fc1745365493321e5ce8342710a76",
+                "control_flow": "6505558b78ceb49e1c88e2224253aaea8bd96543f6fe976ad17dfffe98253274",
+                "data_flow": "f6ae0813d332553cfd2f2cc2660890598ce7ee3a20f2be9d34dcf9fcf5e5fd3a",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "da7fdc26241697395e0de531fa5a91fef4fea25d5c4b9e0ebc79d195e6733217",
+                "source": "b745f5941ad2e2dcd9d44b5f09841c87a7353ab669ba82443f70b480f178082d",
+                "structural": "a446e9642c8f37ac6bc736fa13203d9981ddadd0f34556a35e63eebbd0f46548",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "src\\requests\\packages.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "9a8a1c2cab6713e1c1c15bc5ac082fd77a7b4c89695710935367efe22cde511d",
+                "composite": "e474079c6999229fc5013f821822d6e7eeb58e0fd7cb37566d9feca54f7f2de7",
+                "control_flow": "2c812eab1e9e630a36eeff66e5761630685efa1cd37f966d7569671ac181d665",
+                "data_flow": "5659ce0916257dda6726b61ac10a9e71599e5d9026b1eb4c4500ad2a2cae4d89",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "eb8a0dfa1c89b2315fec20376771d0c8e107c1220094790bb15a56e52ccc53a7",
+                "source": "b63927bded9e15eb17b06835b3fcfee04696fd114620e436ccac1fa652b2c2df",
+                "structural": "cadaa22f043427cf598020c83220aeb9c28439f8a25f674bceca692ce9a9be1e",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\__init__.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "07c16a01ed29b88db9767d5f60c05f5b8b86cf255aff9b93bd2d0834514c0988",
+                "composite": "1da25b7b4871fe1750f58881cf101d2b2e1d92aef8d4eda02473397022f4a184",
+                "control_flow": "f53a432c0bfa91ed69c81c569d11c156e9f74fed203967c8c4e4fda979b6e80b",
+                "data_flow": "ad42ea37764c6ec75dcf4daec63979292a4b41f3dca9a77ba892904235810e4d",
+                "declaration": "d6e81647ac518638f730e094612e669abbd580522278af898a8d7c56725faf6f",
+                "dependency": "eb8a0dfa1c89b2315fec20376771d0c8e107c1220094790bb15a56e52ccc53a7",
+                "source": "5aeb44ac81acb49f9f6d4bc43d40abb017cd9b4f96478c0544e03e623d5f583f",
+                "structural": "20d8cb44d79e6d8ac15343f3a61a68c14286dedfbd0b38fad92f15cd89259879",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\compat.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "3cc63ac5114e655b9769b4e8bec7bb8d65d25dc0f18fa573a749faab9ce62c9e",
+                "composite": "7de830c3cf14de51fb35b0cf2c675b6a8cb2a8f602fc7820e8645a6eb5c17a19",
+                "control_flow": "93128bb79d235db06fb93ee933d794118406f94d52175e2ed8c130074030f46f",
+                "data_flow": "ae0a5847a3e47c6428f4de4717186a67633a89d792b5a46ea556e93606063d43",
+                "declaration": "d7d47b3f3153dc20510c1feb972c3aacc4c5b8d3cfdb36d29dbc0e6737f6b8b6",
+                "dependency": "4b4b29c1906860062e0ba40c0aa7b272cc20bac937c967d8439e0afb0ef2d9fb",
+                "source": "5b7b382158769cf882e509514cd6fb92fa7a73e3a93c2729fa8653d33408f8ba",
+                "structural": "fc26f138f332a5656772faf62e377bde5aff1a82e49858b3ca108dce0de17791",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\conftest.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "41fd87fbeeabd440a59a79dd6649600b29fb9ec46334badca120477e5a87e740",
+                "composite": "db916db3308882b42f2d80610692206d4b68417fb3908ad729c9fa9560bf34d9",
+                "control_flow": "764a77fcfc0755d31239ebba03e999cd4e4d442ca5eefd9f6558c2a3b68f92c8",
+                "data_flow": "e16b9e72dae918b0d46a759e78ac6ef69bfada1fdb7f18bb5be6072766614f67",
+                "declaration": "5e9b9d48e32ccc89439283d018beed2baf347f6b536f7565fde37fd4b82d592e",
+                "dependency": "e9fecaa8daee920b2132ef72bb08fe0dc6687724a42d6efee805d314446282fe",
+                "source": "34ee3ed58e2875dd2c9f394f672c24f0538b81e6baa1c352ba2e87ab5172d10b",
+                "structural": "027229589b04094c417fb304666f72f80b2b3c9b7c9e58602d8f614907879444",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\test_adapters.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "996386d441004fa804667be55160aaac14710fbe3f4a3087f416e3d3f1979dd1",
+                "composite": "fb30a419a431abe57e3ab966f4d0114b832f3f79912f78b0b46e3765bcb84390",
+                "control_flow": "e07d4da992b4d83ea178aa4026a448bd9e47d29455fd3a25c51d378e9f64c147",
+                "data_flow": "847021816eb69bb42235d1de2d484e5630f8794d34aea26bcf45c7f4e74bcb43",
+                "declaration": "aa642366b92301532cd51f6f0952d40c07ddde6037485e704511e964fd7cb968",
+                "dependency": "e88b7fdfb26de5cbeeca119dbf2ef280a15c8d6f743c13142c4c0756b8662617",
+                "source": "6a28a7c74664037057758f5c642b46318c40ab66c55c5a3af377788ec2509329",
+                "structural": "89a849bbf041bbf9aa57f7a2538a06b13e9b4affc5bc5018f663d218a9f7a4e8",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\test_hooks.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "9d93c58406141614b71d2e24b9f4fcc7a367b797189ee1b115bea2e0d60ba21c",
+                "composite": "d7681b834c30b31dd1b2cc610fe2112f53d967e804c62b5c07122d254c30f66c",
+                "control_flow": "233c6df7f51d7ebabfb97882860a8f24461764ad6f564d27fa8c28bade57c1a7",
+                "data_flow": "2237bd310d234ab0f76dc127305d915ce81e543fc358ac8ff8027d90191f4820",
+                "declaration": "7b7437079ee8f3702f12cfb7617796c53cfc34ec19f0d922276e1436331867bc",
+                "dependency": "3fbff80e939a80874a0d5e34c02b84096e9efdab55bcec0906883e2d0596cf76",
+                "source": "5c9b58935862cf3b2aea3475ac0377620c6badb7c4ea61dbbccf673f1eaa59fd",
+                "structural": "c54d493b1cbe3676a38bedf43cef510b87966bcb4744327384f3123ec9541deb",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\test_lowlevel.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "bffff6d9a4209bd96982582df22963f06132acb2c89964b0828de4313845454b",
+                "composite": "bbaa10960cd3c80102c75c9501f2789b1f4dc8efcb7127f94a5843f444c116bc",
+                "control_flow": "ec1cfec30bbb0069b20636d1d25ccbd2ebb141b51e2dcad96c73a814e6b5bde8",
+                "data_flow": "b6e412b44de11f52ccd0daf0f25078e1ff997fd2037dd0cb5c947d64aabb3766",
+                "declaration": "dc61dfaafc0dc96e721e502a2b6a333a600a726986eba44691a4c31347bc0171",
+                "dependency": "acc722df5c565712831260cd868996814610c3e423f30a22d4e7ab523b7252b0",
+                "source": "28ef0b9f75e4d22b09fa5695619c12de050c9dd293797e887ce14aca2f287687",
+                "structural": "757adc9c23ae2430e8e79a930d4c5c7b214d7b76bb09e658a0a7bb4440bae0ca",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\test_packages.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "4cbb610366d9902ff2289470a4972afad3c587173a6735517d89769e490eec55",
+                "composite": "2ae3268c65c451547b71c2671885a194a67345316a5f9f71927b7a637a12c0df",
+                "control_flow": "33a504778123b4f8a57ef36d5ee326ea45b7b3d43f9626f2283bfcc72fe67cc3",
+                "data_flow": "5e422f4daacee2b260329898d7fe90fabd8c9b83db6637052ec7193fe9126b97",
+                "declaration": "19434853c7ead8d25323f633a71c1712076f2e4c3189e76aa5eb1dd695a2d0ed",
+                "dependency": "4a54516dad13335be6b963ab170795dddd8fc070d1fa0379e05b5dc32762bd70",
+                "source": "3b4cd60837206ae295470a70162270f9156844356620c7068bd5da0549da26f0",
+                "structural": "9ed90d0397025e243d0a2626c473456a4d6dd62f1600ee4c2e0a7be15bc7bdfe",
+                "type_contract": "a1655ac37f350e04da0ff57818811804f546c54f715456e93556b416fb15725d"
+            },
+            "path": "tests\\test_structures.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
+                "composite": "c244891d8c9d9dfb197991827968c549671f9c48c0d46102bb8385c0a54f2057",
+                "control_flow": "b9702a37eb3ecf2fb815feb2d635c151faad786c46ff88aedb0c2680406b11f8",
+                "data_flow": "3d3d6231acb521d66ebd55a609f557210a4a73671dabb15966310f6d831a0259",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
+                "source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "structural": "d91ceaa64fd0699ac05bf3bc94f03df6d5403039991ea6b61d120b581a9f7817",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\testserver\\__init__.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "7bde8b2fdc1663b0a5a345d910f2502ba62038146051278c8b1e904a127b05a2",
+                "composite": "606b7e584787b4035a2a03e72564b5e26c63ef54e31bc9318546983981f5a3c0",
+                "control_flow": "037366f43bc89166809eb614e2cfbefd4ca248ed95aa55d5fef024320aceac8b",
+                "data_flow": "0f69f770a550e24e6a8401705b18dd4e70f893cfaf8325af7c80bc96eb7f0b3a",
+                "declaration": "a9e0982f657301be05636131b121db77e3704ad0e9d9eac34d5804da33c28bd5",
+                "dependency": "26fb36f59590f342596bc2214ac30e1897fc5d27fa584e4d0bf29e5e95c041d1",
+                "source": "6796fd983618217cb812db36714505f3bcb8ca245c314c379f1f14f026e686de",
+                "structural": "a1bec35d969e686f34f80c4fea6d17170de38411d9c591ede833b4b9f2ab951b",
+                "type_contract": "1a602924c6e0f3802581c6ffd5863ce99b42926bdf9e2efbc0a36f8f3a412527"
+            },
+            "path": "tests\\testserver\\server.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "50039060bc15154ec71763167648793e3bbdee0cf3ee8d1d0eb00a2287d321db",
+                "composite": "1a98711960fb056f4666e4004fe6c87f3c1b20f6791637d0eca77e0ae3549e7a",
+                "control_flow": "3d5f0645879e07361bd362d8d07ea1f8af412b8a12fe6a0167757f6c2f414885",
+                "data_flow": "94d839ee99b49041cc0a93484c7081362e7df80bfa9ca647a12324b41feed1cb",
+                "declaration": "52da2698d235622b50768692ab0b31e343d32fdb95e5c2d05d4b1027af86017b",
+                "dependency": "921e4a8be0b7137d80f00d7fe24feffe7f57eca3d0483872d86cc51701e6bfc5",
+                "source": "8a37e0749fe20102dfcfa9a85ca57e8ab0f32fbce07e08926cb1800f9b2b5305",
+                "structural": "bfc04a7155be64a14e25c8cd7e5d05c8c0d656e2f3d9994a0b3ccfe953190325",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\utils.py"
+        }
+    ],
+    "repository_fingerprint": "7e604c0a49accfd32f2810cadd6a0c003e632b22e9d572fc8316448dfa247810",
+    "version": "0.1.0",
+    "whole_repo_call_graph": "10cc5961235e22ff5abb26dd41ea2ea273cf3d7cb86eef33f88685625c854a5b",
+    "whole_repo_data_flow": "7a3f99351a2b36e76f0f51275b67710c347c70b8b8b9cc085082709fa003ae21"
+}

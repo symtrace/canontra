@@ -1,0 +1,83 @@
+# ==============================================================================
+# Canontra Production .gitignore (Haskell / Stack / Polyglot Static Analysis)
+# https://github.com/symtrace/canontra
+# ==============================================================================
+
+# ==============================================================================
+# Haskell, Stack & Cabal Build Outputs
+# ==============================================================================
+.stack-work/
+dist-bin/
+dist/
+dist-newstyle/
+*.tar.gz
+*.zip
+
+# GHC Intermediate Object, Interface & Compilation Artifacts
+*.o
+*.hi
+*.dyn_o
+*.dyn_hi
+*.p_hi
+*.p_o
+*.chi
+*.chs.h
+
+# GHC Environment Files
+.ghc.environment.*
+
+# Standalone Executables & Binary Artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# ==============================================================================
+# Canontra Local Cache & Runtime State
+# ==============================================================================
+.canontra/
+.cache/
+
+# ==============================================================================
+# Test, Profiling & Transient Outputs
+# ==============================================================================
+*.log
+*.tix
+*.prof
+bench_results.csv
+bench_results.svg
+
+# ==============================================================================
+# Benchmark Corpus Staging & Scratch Workspaces
+# ==============================================================================
+# Raw cloned third-party benchmark repositories and scratch dirs
+benchmarks/
+scratch/
+
+# Research benchmark deliverables are strictly preserved and tracked:
+!researchBenchmarks/
+!researchBenchmarks/**
+!researchBenchmarks/*.log
+!researchBenchmarks/*.json
+!researchBenchmarks/*.csv
+!researchBenchmarks/*.ps1
+!researchBenchmarks/README.md
+
+# ==============================================================================
+# Planning & Early Scratch Notes
+# ==============================================================================
+plan-docs/
+new_proj_haskell.txt
+
+# ==============================================================================
+# Operating System & IDE / Editor Artifacts
+# ==============================================================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.iml
+.hls/

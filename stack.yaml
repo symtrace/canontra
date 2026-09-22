@@ -1,0 +1,8 @@
+resolver: lts-22.28
+
+packages:
+- .
+
+extra-deps: []
+
+local-programs-path: D:\stack-programs

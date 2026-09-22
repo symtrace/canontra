@@ -1,0 +1,6 @@
+transformation: comment_addition
+source_fingerprint: different
+structural_fingerprint: identical
+declaration_fingerprint: identical
+dependency_fingerprint: identical
+composite_fingerprint: identical

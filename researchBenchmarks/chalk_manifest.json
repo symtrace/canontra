@@ -1,0 +1,205 @@
+{
+    "engine": "canontra",
+    "files": [
+        {
+            "fingerprints": {
+                "call_graph": "0015df5a5a4df476fa015c175d49b7a407f84e172aa4f9a36d92ebd97489e705",
+                "composite": "30cfad3bbca041555869015961a048e607569d5ebfca7fb9b5b1ece74c75eceb",
+                "control_flow": "4864a40c2ffb25342899787c7c35eeca114524bbe9c27755a543ec2143cf3697",
+                "data_flow": "1a9b2a1addfc5428e51c14ea97a3a66c9d6c2856c630f1c5fc244c2e58bee890",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "8727056215bdd9dcda3c3f8ef595d22747fa9188190e9bbf889da78ebd5feae3",
+                "source": "2a612447744af66238c6b79fe6e2ac21172254bb013a222b3c6750f426a86df6",
+                "structural": "229e900ba381b861bbe85ca3d387190ca99ab9a954e016226c913d4fbedf29f8",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "benchmark.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "457968f142e7553ff7a3c8b8fe466b488f7bd413d0168866969d200e6618e0d7",
+                "composite": "a5d11d5e141946f8a49479d0778c609b823a557f9a3ec60967d240963e2243b0",
+                "control_flow": "41915e725ae0c640ce23f8b9f8dad24600097ca4cae9333b52c6e65dfa193606",
+                "data_flow": "702042d5d1672bdc34f8e0cdfa83e17b11ba8f053d69bffc93d82cce013e803f",
+                "declaration": "acc52e5e9d83d06fd40bb34ee951d6019489d5be27a993266971924e675037ec",
+                "dependency": "52d54526e0abbc4884f47adfabd5404090c83397bae301ddbf65c2f2724da7a7",
+                "source": "36c4c3ed4e26f0c0c2b399f97a85ba854ab681d3c70708e3cab8baacfd56597a",
+                "structural": "bb47027acd4cf12c377d59f01702d197286df7c4cc83c6c95b5abfa104dc9e9c",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "examples\\rainbow.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "4225d3ebd047f440223df52af5ef5a2603e5cc2d25ae3b90bb5f1ebc1872cd3e",
+                "composite": "455fe953c52fe6de2356e2cbd2738a523b7f3d3b7825f801d48308f9ff20628a",
+                "control_flow": "5d51350a4fbdf623ca24fb03503ece40647936762746c3545b5b7a5be909446c",
+                "data_flow": "c43bd5f21afc0df1ce4090a3be2d1a68e6e1b7d178dd00c587b53c2b8578ca23",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "58d54431e7dad000e38d32576c48499683470fbf16c8508bb68807f0be5a4418",
+                "source": "f0f453e855ad3858e1dd58f067998f2ab3fe27ca5d8d9e939b146de3a0d7696b",
+                "structural": "89757f168b653d45d57372435f097adfa60e02c58afe445a3834b0e18896ecca",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "examples\\screenshot.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
+                "composite": "c356935ba83914eaf9ec16f0adca6e3ee89c43106079eddd2b0af36059413ccb",
+                "control_flow": "b9702a37eb3ecf2fb815feb2d635c151faad786c46ff88aedb0c2680406b11f8",
+                "data_flow": "3d3d6231acb521d66ebd55a609f557210a4a73671dabb15966310f6d831a0259",
+                "declaration": "0b3d9c4ab3fe5c5e4d590cec0edc62f346fb3d9c2e5f01a752b6eea4fb7a538a",
+                "dependency": "836df194c1ae557a066a8dafceef935be07c07b4594be254f5f04edf4f9233c6",
+                "source": "d6ef4d0e2407eef316586745bfac66d5280fc7b2ad7cdde75fcb24c44ff2252c",
+                "structural": "93a341a5a2c6a1539aff256d8b42312d0394293e2d3682795d27c7c9d1814817",
+                "type_contract": "7ede307b47dfccfccd9d8c3c2291971e2eb176b9cfb685b083e7cd9ecca84743"
+            },
+            "path": "source\\index.d.ts"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "1e9379fe4cea1b654230ab424ecccd5842dcf7b98a8d00e7983710d3bd0a0fb9",
+                "composite": "e4ffac7761bd3e9b2908e28b9bd05d00e82465ad3f535e2ba5749a6d9d5f9ae3",
+                "control_flow": "c6949a17940998d08e9889a2d5bc6ff59e23f6e0d08361595dfd00ee110af58b",
+                "data_flow": "d74a373cef1ef21031a24b5190d3cffb3041f535a3b418ccdbbb04ec16e7de98",
+                "declaration": "85b12029c0c01ff605e3c0997d1c7e0bc25b2ac94ef4ed0ac1a486319e107e28",
+                "dependency": "71604152907abe4ff480a00bf061bfbbc3082cad5dc1aba6def1adf22e392dee",
+                "source": "08e92f2330a34d232f8aa987da4d953893094be5b2aa8cc39ddb4313743f206e",
+                "structural": "7b30be86063d6d510fd9bfca38bc2bfb6f5883c1ec51d0f3fb83fc670bd5995c",
+                "type_contract": "8412f2a69db31d396cba5b0bed32a969f90231bebe5dcb7e992e459b021dcd74"
+            },
+            "path": "source\\index.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "7d9b3c2136d051a781a9e6f9af94e9dded5e29d100e8cc5494dd3e429e48a7cf",
+                "composite": "14a64a7b5a83bf43b2439d419d63c3e665c896bdaed06f2ca58a607ca3a63a89",
+                "control_flow": "aa26a68b446b1adf36470a4de07c22b99ac21d34c55d2184e3f999b7ad029f57",
+                "data_flow": "101ef050c7af8d9a0da53f266db4e3b1e3aa9078a6535988a53574742050704f",
+                "declaration": "cd6b5e4cb939838e1ab897042f81222ecf153701a474d91fe8720491aca84d52",
+                "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
+                "source": "a58d81494366211509ea2c373328cf68a6365a94be8645f33c1ed49f1288650a",
+                "structural": "5f39da9e33f47d348e9d98b4b1bb35b2d9fef319808c9158a4b9f9216cc97eff",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "source\\utilities.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "dabd8c8597b7f9fb4d364ca667fa9762c9c31ab7bcde6a6c93c3778ff3a41cad",
+                "composite": "b721701c5fd87709d659c3eff683273b1a3573fe88e121995170c1fd76fa91bf",
+                "control_flow": "1aabad124a619766511ddf5af35c37613286f2d4797a55f8b17ea18e427f8824",
+                "data_flow": "d7a4299ef470cd69ca25371a710d03b5d9b2a21cd05a423feafa4bb5c57029a8",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "fb6bbd92f5ca77fbd7ce84f2da93cacad7cff2390fc20ac2070c7b2bfa5bd8bc",
+                "source": "9164bf73ed9f7f5d41768b6bce7c6a790982106ae51f5252ccd5d32a09185aa8",
+                "structural": "9efd4bdb1a274c99985db46509a91f3df52223c40ca4e595c7be198bccef0571",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "test\\_fixture.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "dabd8c8597b7f9fb4d364ca667fa9762c9c31ab7bcde6a6c93c3778ff3a41cad",
+                "composite": "b721701c5fd87709d659c3eff683273b1a3573fe88e121995170c1fd76fa91bf",
+                "control_flow": "1aabad124a619766511ddf5af35c37613286f2d4797a55f8b17ea18e427f8824",
+                "data_flow": "d7a4299ef470cd69ca25371a710d03b5d9b2a21cd05a423feafa4bb5c57029a8",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "fb6bbd92f5ca77fbd7ce84f2da93cacad7cff2390fc20ac2070c7b2bfa5bd8bc",
+                "source": "0f38cd7eebc5e68bb0a6af01cb89823ceb11d658ecefc82e36df6e7a8572c0a3",
+                "structural": "9efd4bdb1a274c99985db46509a91f3df52223c40ca4e595c7be198bccef0571",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "test\\_force-color-fixture.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "3016bb4bc97f21e93c95900e15f45652b8c6740d42241a38aa63a2aca03e4359",
+                "composite": "c0bf91497f6350962b4f0abd0296a46e50c7d90797c122a7752c5014e00221d9",
+                "control_flow": "aa090878c5183c972f26990f597892e0053d7198eae46613472d8b03fc73b501",
+                "data_flow": "56752a00e72418dccdefc7ffda46bb2b8d85df6f7953e1b2e404ccbbb18409d2",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "bd7df2bb82d6633aeb04ad823fb28ea9e5c267b0c3c9ec27026b3b368e53aca9",
+                "source": "1688abce772134a38503d85dbe51e7f6745cf57ee8f7d46a2405ba6197703b4c",
+                "structural": "92cda5cd6b8f63d76bea2f2dc518922e9a6d9e910e15303975317466ba62b880",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "test\\chalk.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "5c072abdee8799b0600b7fd4c3c3e9318aecbf35723cf5ece4a56299e6457474",
+                "composite": "4c5a3b1fd23684b423ad19bc4b36ad62d8f22d3dcde671d97fc103e51ee1c1f8",
+                "control_flow": "dcc9a13fc8f2b5bd3044bf3e8262115dab83e90c8b846cb270ab7ec28254eaea",
+                "data_flow": "647b08c8fc896796e4fa5a3e63a44445eb9d0e3166ce2d9a9daf3c19586e406f",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "b18f57f18065aca7e6baa74e16780c6398f8b03ec1e40fcc7fc2993b6552e55c",
+                "source": "c42461070015a458774310c3e34439099cf5c31822951bb2e2f1c1241e6523f6",
+                "structural": "64cdcd18d2037fe8403a0f6570221d4b0870e945ba77db18b0a4bfe7d4c9bacf",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "test\\force-color.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "602a1fd8fee25fef342dfb71fddbbe84d78689569384535ed2b2dfcf76a1061f",
+                "composite": "0b4d3390b64f804acd27a28e7243096a2508a00c3636cb0ac4408a9f3777c02c",
+                "control_flow": "398d70427a2b98f714682a0fabaf4fbb47f2a98a814f850ef89830d5a5c9e703",
+                "data_flow": "1d14e93d80cd3f5279176cc149287a8d5d93ba2986aef5dd0ff154d50035c62e",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "343e8c6b4b18e9a1274ce2fa4b7e5541ab4fcc6727871cf9fbf96aa88b3b4715",
+                "source": "1d7f2112217e762681a327f4dfb2be227673e6ede6209394aa205c1ed0737f64",
+                "structural": "37d69072e0ed0c4ea6894f833f270640e8a679b80b50e9c33fbdc4c7f3f4fab0",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "test\\instance.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "28be7232d9c2d1f65a34a8fcaac1e35b3497aa23d3dff8a7bc5cf295b4bb42ad",
+                "composite": "73ec96cc07df5ca27f6cf2ad2368bc1260446b3918e3f652d2bb044d0397a86f",
+                "control_flow": "60b2a962cacec519d59755247335f9c7dc1e6de5f9d7bd17f35c909376b6fe7a",
+                "data_flow": "c70646fd24c46df798810e2ea94b9362d407830607b8dbaf6419107e32c4eb83",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "ff7325c01ec6514875c9c9b54471ed6d43b5eeb33efe499ee8635f8424def7f4",
+                "source": "661d69baec222b1cde59271e90ca83296f7f607e6521bd314c04e439caa6c849",
+                "structural": "382fa9df68358379f5d64ce6c51a369615da1fa951024f0952902b7d7cb020b7",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "test\\level.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "a3f3bbf64f99976761282aaf6eba9662ef706e64080931980bf1253cb719581d",
+                "composite": "81d6447462e23a7c76ea05d60f9d2e3fe4bc6b52734293af87a20e03149ac8a4",
+                "control_flow": "b24f7f32a11b8d9b15a093ec46388f6e2dad921f2c033917e1ed86678ba570b7",
+                "data_flow": "52f7fb12a6f61d739a2b03dec13daf7856bbca06509c0fa8bfa7d22b20088b5f",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "343e8c6b4b18e9a1274ce2fa4b7e5541ab4fcc6727871cf9fbf96aa88b3b4715",
+                "source": "b8ae0e4409f7b1e305a785e4ee5ae1514b9e3b3929b96237d840ef3d7146854a",
+                "structural": "9bd008759365679b55426a5df1dcf231ca97f6d6c5f126520ade29883ebf49d8",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "test\\no-color-support.js"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "bc74dd61b3b78b985fb1d7b51c7e2b12b963a573de986deea040ee62d140f8bd",
+                "composite": "6c1392546229bdc690e8b7bf827bab10ff1c172b281ab1a8c11f933b32d52d85",
+                "control_flow": "4ef65ae142021c6b63b7d6ed3a93f89b7f2be872718cc667c5a639874932b5f4",
+                "data_flow": "804e1a8dd87202a831c1563c9d8cfba6fdb8bd43dc6ac3cbd43f73bb610795ce",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "343e8c6b4b18e9a1274ce2fa4b7e5541ab4fcc6727871cf9fbf96aa88b3b4715",
+                "source": "71b01d1f4b073fab873b6f58416f26855c73014becb4921db761125d179c88af",
+                "structural": "5cbfc6ba75b8ef905e1afedda31e848557e3b488dc7b4571c2674892dffd525c",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "test\\visible.js"
+        }
+    ],
+    "repository_fingerprint": "29ac0e1f57adfe5dee4fc226a39520bc5159f7b5e130547514c77eaddd4c971b",
+    "version": "0.1.0",
+    "whole_repo_call_graph": "dfcb69fb44dbd4378681686e6b41caea88e727db3924860cc11da59087594ff1",
+    "whole_repo_data_flow": "3b650f241c6eeb7f8eea575a786fb9102779fc48b372f29b9d92c2f8aca110a4"
+}

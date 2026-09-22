@@ -1,0 +1,219 @@
+{
+    "engine": "canontra",
+    "files": [
+        {
+            "fingerprints": {
+                "call_graph": "74305dd184b1de8e8eca4941a77a8a9e7a4030588cde3c4a4a9481196bab4aa7",
+                "composite": "1cb270dd385fa0e502f65a54a34632733d31a1aa96512e71af2475700e51c441",
+                "control_flow": "a6a4523d0235ba375bb81848d5b7079b9d08c822aefb76c9d94a3f81949fd217",
+                "data_flow": "f8e4f8e06e5180cb00e4addcef3b96050326f2cbce876e5cbd3cbd112e1f9726",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "bd5d21ebdfebf583f77ba9725bc22776e4e94066387d82251a6e10cd791ac1c9",
+                "source": "2e32e320b70ed24c730d6f679295326cd93260e42cd4dabb7a23d1242917dbb0",
+                "structural": "19b80279b8936c1c9d9e4bb6170ed817fe3aa5b91981781f7a989a42cb868fd8",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "docs\\conf.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "783b7ade58d8ccd2ae1dd84e2f467990cfd03e950ea43adf64399c340d7cba96",
+                "composite": "53ee9727cebb03ac54a8e4ce06de36dc5f5eed93b618de099771ebcb669fb6b2",
+                "control_flow": "56e9bae417063c7a777293e14eed6a1dffc3c93fb5dacf8a516643473a9dc8b4",
+                "data_flow": "b690f2eaba234b7b433db4fabb8ebe54f671485f2052157b018406a5909ddfbf",
+                "declaration": "ee1f1a327ec1e9ba6cb0e351847ec82787495b337559fbeb814cd1d84f392455",
+                "dependency": "ff7402de12c2fc68fec12efd17b6adeda942c816c8df029d8f757b5fa9b300b0",
+                "source": "13c5356bbbaea96e9fa48a21eb67d6d7099e8f53040a8f24fd1e251863138fac",
+                "structural": "8c46dbe2d7021c47789e7d26438c4a4a65051e15881adb790e6a196e034ae961",
+                "type_contract": "64d2c6a4116016dd58fce1473c48e59aacc7a5aafe864dc3e2eab92e15002376"
+            },
+            "path": "examples\\flask_example.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "506a4f82aebebff975f254d03139a3b81382c190d503b99479c4cd1e7d559877",
+                "composite": "1bb5bb981aeb704a0a8f9393e6c86c79c522449a0e56d05398d16598ffab2544",
+                "control_flow": "6bf0aacd52fe10bff1b92062a112cc2ec41d3c4c30a3a531bb8934f8c45b2807",
+                "data_flow": "81b30c6a4d5944628f0aeb0ea33b377040f8d35e46c1cec58549ac78063cd188",
+                "declaration": "7d6bc43eb30917b72facc476e48d6556e10f5738826d4ae24a630c9e9b67423d",
+                "dependency": "a6c8f9413e0f6f83f2c744411e2ba36aa657c96535b95e039036c3a80da3cce9",
+                "source": "97415c7a6608865c72d39697813c685aae39df020bccf82da59eb2d8f849660a",
+                "structural": "ba782d56504d7c947bc30fec0ef981966acd8c00dc2fc3be638cfe0b412fc833",
+                "type_contract": "76ce3b4444ef2b71b77f9c288fa29ccf337ffbfc13605835b1e8c941c972768d"
+            },
+            "path": "performance\\benchmark.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "880de264b7968e3ef9688af2a68cca2063725ff32c8e3219193f183f9771acaa",
+                "composite": "4762d6d2d1f3a19c2f4ec32fff884e096ab7fdcde1a1721283a3e489c2822463",
+                "control_flow": "801c829c4c3c36a69bc7d8df59361f92673a988918e27a75e4818434c8d6aff3",
+                "data_flow": "2aac1968a85d2815263c97b0038e64faa93aff089c72fbe7126ff53a9ee61cba",
+                "declaration": "349b09772397ba9b8f1152671b24a0aef9e43a4a3c1512de50322d742eb05830",
+                "dependency": "790f252a7a3fa79dbc49634bfb774e2ee12156a12928a0ffdf7331528ba2bbb3",
+                "source": "5bb588aa78627085b3fbe8b20a6625bbd7c9f1a0a19fa57f94f7587c04ec6690",
+                "structural": "af626b8d1b5d48d1255571f2628676da69f73e17408c3b4239a63c27dbf93c0a",
+                "type_contract": "b9cdc72673695f02a21199ead9b78f4c457bde7367848ccce98b09e6da15ba54"
+            },
+            "path": "src\\marshmallow\\constants.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "23cc9328fc4b8a303b22dcb2c20b4bb3065461884e6df4dbdbf456c3ecaae7db",
+                "composite": "c1c96845edf7fed5a36863fa7921cff491f0f53cba527fda9a4f88de7c1877bd",
+                "control_flow": "3fe0777bcf80d1a37ef8cfb343f6aa65cfce6cbe4388a2a287db0444e2611098",
+                "data_flow": "da5967e24a9f0924baf906237858db096212e1e576141a976cba8419c6465d1f",
+                "declaration": "adc47c2703b5e73231f0bc1cbec3e4713a49f3d7b672c257ae2c26708c804e28",
+                "dependency": "64f32bc5dd1ec15d3d9992551af2a7c007cfb5b3b9d8ba34cf44218f89356597",
+                "source": "27803f02eebe7e6d525816015b4a1cfb387519c90e6cdae7c9ad11b04956512f",
+                "structural": "5f79cd3d914c9423d67994e0ff81331347cc325a18abc770739ff8e665468d8e",
+                "type_contract": "cc4d3f3ca0424e793e3c8df36e290d729dc372531483eb8af0e6688d4a67c43f"
+            },
+            "path": "src\\marshmallow\\error_store.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
+                "composite": "c244891d8c9d9dfb197991827968c549671f9c48c0d46102bb8385c0a54f2057",
+                "control_flow": "b9702a37eb3ecf2fb815feb2d635c151faad786c46ff88aedb0c2680406b11f8",
+                "data_flow": "3d3d6231acb521d66ebd55a609f557210a4a73671dabb15966310f6d831a0259",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
+                "source": "d97277a64af2b70a08498eadcce017e6434c96966bf362280ebc253828096e4c",
+                "structural": "d91ceaa64fd0699ac05bf3bc94f03df6d5403039991ea6b61d120b581a9f7817",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "src\\marshmallow\\experimental\\__init__.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "ad63a627d92e8a742db85e4d717684431ddfec7e1ac3c7bb3980c3b747e2b9fa",
+                "composite": "f1bf2c52b479e3dae42fefaed72862e1f10be180ea2c76aee0ecb7575832ff31",
+                "control_flow": "8c2dfc148c27baaba16a3304920711cf3d4ea679c394cc7c1a90822dfcd7d975",
+                "data_flow": "3cc95dd4c2c0d824f4c1e5578ffa4b3c1ba190e3e30e93c233cf8df691015e5e",
+                "declaration": "56ce6052037e0328ba5a23b6753eef03c170cf9744ff0ab335e17bb4f328134c",
+                "dependency": "0fb0672edb9803dc331681c300f14e05482e19c73d0e077d06b19f5e433e727a",
+                "source": "dbe4dcc50bccea77a213cab10814d694bd9c193b6923b8e6594eb3fc076ba166",
+                "structural": "eb7765dbdba7a84bf066c7f2884a98e01033283d0d971f8530631008c68c4d20",
+                "type_contract": "69395f36c3e1f5782996ee0c4901933bd59b32d61e8f229abe4b94716256e5d9"
+            },
+            "path": "src\\marshmallow\\orderedset.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
+                "composite": "c244891d8c9d9dfb197991827968c549671f9c48c0d46102bb8385c0a54f2057",
+                "control_flow": "b9702a37eb3ecf2fb815feb2d635c151faad786c46ff88aedb0c2680406b11f8",
+                "data_flow": "3d3d6231acb521d66ebd55a609f557210a4a73671dabb15966310f6d831a0259",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
+                "source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "structural": "d91ceaa64fd0699ac05bf3bc94f03df6d5403039991ea6b61d120b581a9f7817",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\__init__.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "13e137d5a782c5e1d63d01cf00aaec36d8b9b88525e631365c8340fe769b264e",
+                "composite": "7631667e1e996f115ed0120ded8b1234097c48a705010d38fe3f29fe6d9fdb24",
+                "control_flow": "c8388da696f38b6ceecc428efec1cf32857d9d6124f6295db393fa43eb8c5529",
+                "data_flow": "6de6726bd062652ed0f97147ec7c2f831e70dfd62191b68325078ae7b7cbc5db",
+                "declaration": "f328fc36d4bf414ee40df33c51697107f8c3d14eabf58365db26c75a21f58dd8",
+                "dependency": "682732a412c8b2909e195018bed01b07eff1dcc832b59331a436e8960c62d103",
+                "source": "7d99cbd57c5731a6a6041f0513677168996c3168231838b480aa3559078ccbb2",
+                "structural": "ffd658260af3b33cc3f1e2644e7edee03050393575644df1cc255598d949a0d7",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\conftest.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
+                "composite": "6882fd27bd6b87756bf133734b60ccb4d5385acfa0ab322d50712e17ee51cbd9",
+                "control_flow": "b9702a37eb3ecf2fb815feb2d635c151faad786c46ff88aedb0c2680406b11f8",
+                "data_flow": "3d3d6231acb521d66ebd55a609f557210a4a73671dabb15966310f6d831a0259",
+                "declaration": "ebaa135f9f37f19b159bd0bdcd812f30df0d9661dd144360cbbb4e2b70b618e6",
+                "dependency": "4e62cd9a73d6cfb261c1765c37d7daa4e58e2c0247b8aa4327dc02922ed94291",
+                "source": "0c853487d02b9756b2a6246364cde0169dbe163caaead87a88f3c944393ba823",
+                "structural": "5345057892dea7ae3befeffcc2852f0612ca1bd85bc9bdcc63a70b5ebca085b0",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\foo_serializer.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "b80d8c25ce5b117c31b8ddede1adf3874cf15bc9d6edf1c7dc3bbc13be1ba6d4",
+                "composite": "a7bbd719da9feb4113898b2a63dc270ee71c78dbe67352c4c008ee973db6937a",
+                "control_flow": "5b12f133a044204381f9e3de36843ee81a867b60b88c5301f3b87371e1f69d28",
+                "data_flow": "be1c6dac3f2300151d6ddbeccb5176dfd21de7f0211d02df9d37432c1c88f161",
+                "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
+                "dependency": "7697548bd268701135b5fb9f2823c97ae2a85db44a5431046bace57b02d7d26a",
+                "source": "9d29cdafe9c6ed60371eb53d53460c9ac7370f0aa62efbb9029e6128c5efe854",
+                "structural": "723cb490026454bc3240ee8966c71401cf2ddb4724ee2da9ac6ca52fc49f9624",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\mypy_test_cases\\test_class_registry.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
+                "composite": "d0ef801c05ecbc17f91a0499b1476b60ac869347e8dd2e3e03adb889a53da6a4",
+                "control_flow": "b9702a37eb3ecf2fb815feb2d635c151faad786c46ff88aedb0c2680406b11f8",
+                "data_flow": "3d3d6231acb521d66ebd55a609f557210a4a73671dabb15966310f6d831a0259",
+                "declaration": "f49e86aaded470f29fcc169d12fa1709b483db0a45445003811c4f2dce2d43e1",
+                "dependency": "2e3abce38eeee09934ef84c3e1f2bf64c136b8c019b8df3f3055707aefe90be2",
+                "source": "d6a352a6a9ebe4e4b41bcb2812fc17b7dcb124feb5cf4438395a54ef45e3852f",
+                "structural": "fef698399986ce13b3a59af005861a725f23c15f23ac0b4da415e9e6658df969",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\mypy_test_cases\\test_schema.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "3ee57487cef245d0483bc32727711cec7abba5b1e8202f70fdbb00c2d5e5a399",
+                "composite": "5ec3cc49cbb50274141cfa966ecf690082fd1f64d4e9b3ad01f9d5ec67cbb571",
+                "control_flow": "f611a7fd309d1fa0cd42805ecc334115ba40aeb18bbc4dcf83171027cae7882c",
+                "data_flow": "cccc84d9639130c23f1172944a9f1acb7e315a7e7c27aacc16facbef88da8ca4",
+                "declaration": "47eb0dbd13599c7b0bd88011223014263f0c68c85b7f1c9cc44b76854398ac09",
+                "dependency": "f6b2f6a589fa86d86c318790659e3fa032548e2b66b81c9bbe4071696c5e902b",
+                "source": "603267c1f33fc3507a590908a7071bd9ca5d2df3297cc808d439fb049bc12e92",
+                "structural": "1bea14f13d22337560cf3b0fc3e72928f3a26798e5fb561372a70cc62a916382",
+                "type_contract": "18315f690474ad5aab9ae6739f67e1e6534947e49ff7b6040727f4a3fbe17c5c"
+            },
+            "path": "tests\\test_error_store.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "ed8076ba9bb0c3245c202a7c32f24dc36116dbbac2011f724060194dd8cfc76c",
+                "composite": "1d88b60d46fd6ff0a4f74c8603243ae07dd841d8d454c3fa0930fa2989846c57",
+                "control_flow": "2432e4931243340304a94eb36369d9f50c327bab0bf858848bab4fcecbc5fa4e",
+                "data_flow": "560062da30c7071c5a168d2307c98559f4c84ad8d34a3a0ce306e3b6656d7320",
+                "declaration": "8f97f88ac76c61222469c48f7eacda2cc2eaf177243c2a2de25b76bc3e758400",
+                "dependency": "cda2930bedcf16354ae3cf55e3c474cb8b50df0a8e43a1d9b9ec5c723c4e0dce",
+                "source": "f20addc4884ec39b10a4dcad1c45b236c302a78a43cf6ba944e991379461ee28",
+                "structural": "318e94c532ff5d312c2a52d6481ec74765040a2f2becd54417ceeb512cfb9933",
+                "type_contract": "3320c350f6aebc30ef43b96a0cb85b3d0bc182f6a337e1a7fc80de79fe7c0730"
+            },
+            "path": "tests\\test_exceptions.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "b100c280e0a3bff98d88b3bc6a2222eb61bb04ed4eb5650ff441174c9725d0dc",
+                "composite": "6dd443f4b448d464dcd6569b2e06361fb0e0f277a08e693c6640da3563e9e150",
+                "control_flow": "ccf81add621c5463ba9fed6dc7b8dc713620bdafe7c1e1c0017d54f4732f5ca9",
+                "data_flow": "795273802425ac34ab81fb8a80b8d1e7d221cd042087aa91399a5bce0d70fffa",
+                "declaration": "16ca0b8fcd817a2e0449a41d25e53b5147a742fa2c440629788cbe0d55d136b9",
+                "dependency": "73148ebaae5de80c624eb07e21e4559e34efa850fcf5f6a23c78be64590d7b06",
+                "source": "34a979dcd7e97f68f8f964ded80c69f79255e3490dbc60a6836fe08143075a60",
+                "structural": "d9c00bb3b648f570c98a2b93e6ff2a1106fccc9ca2e1c65e89dd50d92023e4c4",
+                "type_contract": "60632a21357e9d771a7c9240ec32c688d31042c5fb47cc170f671dff304316ef"
+            },
+            "path": "tests\\test_options.py"
+        }
+    ],
+    "repository_fingerprint": "c9a4ece1dfe71f8847af33ac7f194738969ed1b87ebb203ffadc2ecc06d57df1",
+    "version": "0.1.0",
+    "whole_repo_call_graph": "60bf7bd4ba4ce7188e4c8c59b3de6e8036c12b3adc17412ec6428058f14024c2",
+    "whole_repo_data_flow": "37e553e994a54bf5a8aaf1a5beded4d9adc84e2dad9f7692d17c97394bc0d94d"
+}

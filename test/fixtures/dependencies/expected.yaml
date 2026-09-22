@@ -1,0 +1,6 @@
+transformation: import_addition
+source_fingerprint: different
+structural_fingerprint: different
+declaration_fingerprint: identical
+dependency_fingerprint: different
+composite_fingerprint: different

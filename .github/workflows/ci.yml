@@ -1,0 +1,74 @@
+name: CI (Free Tier Optimized)
+
+on:
+  push:
+    branches: [ main, master ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'LICENSE'
+      - '.gitignore'
+      - 'bench/**'
+      - 'scratch/**'
+  pull_request:
+    branches: [ main, master ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'LICENSE'
+      - '.gitignore'
+      - 'bench/**'
+      - 'scratch/**'
+  workflow_dispatch:
+
+# Cancel duplicate prior runs immediately when new commits are pushed
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Pure Haskell Verification (Ubuntu)
+    # Ubuntu runner uses 1x minute cost (Windows=2x, macOS=10x) to strictly preserve Free Tier quota
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Haskell GHC & Stack
+        uses: haskell-actions/setup@v2
+        with:
+          ghc-version: '9.6.6'
+          enable-stack: true
+          stack-version: 'latest'
+
+      - name: Cache Stack Dependencies & Build Artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.stack
+            .stack-work
+          key: stack-${{ runner.os }}-${{ hashFiles('stack.yaml.lock', 'canontra.cabal') }}
+          restore-keys: |
+            stack-${{ runner.os }}-
+
+      - name: Validate Installer Script Syntax
+        run: |
+          bash -n install.sh
+          pwsh -NoProfile -Command "Get-Command ./install.ps1 -Syntax"
+
+      - name: Test Installer Dry-Run
+        run: |
+          bash install.sh --dry-run
+          pwsh -NoProfile -File ./install.ps1 -DryRun
+
+      - name: Build Library & Executables
+        run: stack build --fast --pedantic --no-terminal
+
+      - name: Run Test Suite (Strict -Wall --pedantic)
+        run: stack test --fast --pedantic --no-terminal

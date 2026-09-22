@@ -1,0 +1,191 @@
+name: Release (Tag Triggered & Manual Dispatch)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Release Tag Name (e.g. v0.1.0)'
+        required: false
+        default: 'v0.1.0'
+
+# Enforce minimal global permissions for security hardening
+permissions:
+  contents: read
+
+# Avoid parallel conflicting release publishing runs
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-release-binaries:
+    name: Build & Sign Release Binary (${{ matrix.target }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            target: linux-x86_64
+            bin_name: canontra
+            archive_ext: tar.gz
+          - os: windows-latest
+            target: windows-AMD64
+            bin_name: canontra.exe
+            archive_ext: zip
+          - os: macos-14
+            target: darwin-aarch64
+            bin_name: canontra
+            archive_ext: tar.gz
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Determine Release Tag
+        shell: bash
+        run: |
+          TAG="${{ github.event.inputs.tag_name || github.ref_name }}"
+          if [[ ! "$TAG" =~ ^v[0-9] ]]; then
+            TAG="v0.1.0"
+          fi
+          echo "RELEASE_TAG=${TAG}" >> "$GITHUB_ENV"
+          echo "Building artifacts for release: ${TAG}"
+
+      - name: Setup Haskell GHC & Stack
+        uses: haskell-actions/setup@v2
+        with:
+          ghc-version: '9.6.6'
+          enable-stack: true
+          stack-version: 'latest'
+
+      - name: Cache Stack Dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.stack
+            .stack-work
+          key: release-stack-${{ matrix.target }}-${{ hashFiles('stack.yaml.lock', 'canontra.cabal') }}
+          restore-keys: |
+            release-stack-${{ matrix.target }}-
+
+      - name: Build Optimized Binary (-O2)
+        run: |
+          mkdir -p dist-bin
+          stack build --copy-bins --local-bin-path ./dist-bin --ghc-options="-O2"
+
+      - name: Self-Sign Windows Executable (Authenticode)
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          $exePath = "dist-bin\canontra.exe"
+          Write-Host "Creating self-signed Code Signing Certificate..." -ForegroundColor Cyan
+          $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=Canontra v0.1.0, O=SymtraceLabs, OU=Release Engineering" -CertStoreLocation "Cert:\CurrentUser\My" -HashAlgorithm SHA256
+          Write-Host "Signing $exePath with Authenticode..." -ForegroundColor Cyan
+          $sig = Set-AuthenticodeSignature -FilePath $exePath -Certificate $cert
+          Write-Host "Authenticode Signature Result: $($sig.Status) ($($sig.StatusMessage))" -ForegroundColor Green
+          Get-AuthenticodeSignature -FilePath $exePath | Format-List
+
+      - name: Code-Sign macOS Binary (Ad-Hoc)
+        if: matrix.os == 'macos-14'
+        run: |
+          codesign -s - --force ./dist-bin/canontra
+          codesign -v ./dist-bin/canontra || true
+
+      - name: Strip Linux Binary
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          strip ./dist-bin/canontra || true
+          chmod +x ./dist-bin/canontra
+
+      - name: Package Binary & Artifacts (POSIX - Linux / macOS)
+        if: matrix.os != 'windows-latest'
+        run: |
+          ARCHIVE_NAME="canontra-${{ env.RELEASE_TAG }}-${{ matrix.target }}.${{ matrix.archive_ext }}"
+          tar -czvf "${ARCHIVE_NAME}" -C ./dist-bin "${{ matrix.bin_name }}"
+          shasum -a 256 "${ARCHIVE_NAME}" > "${ARCHIVE_NAME}.sha256"
+
+          # Standalone named binary asset
+          STANDALONE_NAME="canontra-${{ env.RELEASE_TAG }}-${{ matrix.target }}"
+          cp "./dist-bin/${{ matrix.bin_name }}" "${STANDALONE_NAME}"
+          shasum -a 256 "${STANDALONE_NAME}" > "${STANDALONE_NAME}.sha256"
+
+      - name: Package Binary & Artifacts (Windows)
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          # 1. Archive package
+          $archiveName = "canontra-${{ env.RELEASE_TAG }}-${{ matrix.target }}.${{ matrix.archive_ext }}"
+          Compress-Archive -Path "dist-bin\canontra.exe" -DestinationPath $archiveName -Force
+          $zipHash = (Get-FileHash -Path $archiveName -Algorithm SHA256).Hash.ToLower()
+          "$zipHash  $archiveName" | Out-File -FilePath "$archiveName.sha256" -Encoding ascii
+
+          # 2. Tagged standalone executable
+          $standaloneExe = "canontra-${{ env.RELEASE_TAG }}-${{ matrix.target }}.exe"
+          Copy-Item -Path "dist-bin\canontra.exe" -Destination $standaloneExe -Force
+          $exeHash = (Get-FileHash -Path $standaloneExe -Algorithm SHA256).Hash.ToLower()
+          "$exeHash  $standaloneExe" | Out-File -FilePath "$standaloneExe.sha256" -Encoding ascii
+
+          # 3. Direct canontra.exe (self-signed)
+          Copy-Item -Path "dist-bin\canontra.exe" -Destination "canontra.exe" -Force
+          $directHash = (Get-FileHash -Path "canontra.exe" -Algorithm SHA256).Hash.ToLower()
+          "$directHash  canontra.exe" | Out-File -FilePath "canontra.exe.sha256" -Encoding ascii
+
+      - name: Upload Packaged Assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: assets-${{ matrix.target }}
+          path: |
+            canontra-${{ env.RELEASE_TAG }}-${{ matrix.target }}.*
+            canontra.exe
+            canontra.exe.sha256
+          if-no-files-found: error
+
+  publish-release:
+    name: Publish GitHub Release
+    needs: build-release-binaries
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Determine Release Tag
+        shell: bash
+        run: |
+          TAG="${{ github.event.inputs.tag_name || github.ref_name }}"
+          if [[ ! "$TAG" =~ ^v[0-9] ]]; then
+            TAG="v0.1.0"
+          fi
+          echo "RELEASE_TAG=${TAG}" >> "$GITHUB_ENV"
+
+      - name: Download All Built Assets
+        uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+
+      - name: Aggregate SHA-256 Checksums
+        run: |
+          cd release-assets
+          cat *.sha256 | sort -u > SHA256SUMS.txt
+          echo "=== Calculated SHA256 Checksums ==="
+          cat SHA256SUMS.txt
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          name: Canontra ${{ env.RELEASE_TAG }}
+          files: |
+            release-assets/*
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

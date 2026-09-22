@@ -1,0 +1,385 @@
+{
+    "version":  "2.0.0",
+    "evaluation_date":  "2026-09-22",
+    "benchmark_protocol":  "Live Empirical Multi-Tool Execution",
+    "total_repositories":  15,
+    "total_loc":  921092,
+    "total_files":  3330,
+    "repositories":  [
+                         {
+                             "name":  "bottle",
+                             "language":  "Python",
+                             "total_source_files":  30,
+                             "indexed_files":  16,
+                             "total_loc":  7759,
+                             "cold_latency_ms":  1020.87,
+                             "warm_latency_ms":  1011.52,
+                             "cache_speedup":  "1.01x",
+                             "throughput_loc_sec":  7599,
+                             "repository_fingerprint":  "936a0ddbc223603f6ec607cfb9516a1d850f241b00850b83607f8acff7385c1f",
+                             "whole_repo_call_graph":  "f34a16e2e81a1947732b4138ce608afaca9477ec4855724421d02cd110ac7c99",
+                             "whole_repo_data_flow":  "cbb258bf8a3cbdb15bcd3bf5882d2b394fe025cdf8e6747c2b7e705fd1483d51",
+                             "timings_sec":  {
+                                                 "canontra_cold":  1.021,
+                                                 "git_hashing":  1.4559,
+                                                 "turborepo":  "0.031",
+                                                 "sccache":  "N/A",
+                                                 "codeql_db_create":  "18.052"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "chalk",
+                             "language":  "JavaScript",
+                             "total_source_files":  14,
+                             "indexed_files":  14,
+                             "total_loc":  1095,
+                             "cold_latency_ms":  1013.46,
+                             "warm_latency_ms":  1010.11,
+                             "cache_speedup":  "1x",
+                             "throughput_loc_sec":  1081,
+                             "repository_fingerprint":  "29ac0e1f57adfe5dee4fc226a39520bc5159f7b5e130547514c77eaddd4c971b",
+                             "whole_repo_call_graph":  "dfcb69fb44dbd4378681686e6b41caea88e727db3924860cc11da59087594ff1",
+                             "whole_repo_data_flow":  "3b650f241c6eeb7f8eea575a786fb9102779fc48b372f29b9d92c2f8aca110a4",
+                             "timings_sec":  {
+                                                 "canontra_cold":  1.013,
+                                                 "git_hashing":  0.6949,
+                                                 "turborepo":  "0.1402",
+                                                 "sccache":  "N/A",
+                                                 "codeql_db_create":  "22.04"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "click",
+                             "language":  "Python",
+                             "total_source_files":  90,
+                             "indexed_files":  53,
+                             "total_loc":  23803,
+                             "cold_latency_ms":  1010.34,
+                             "warm_latency_ms":  3023.84,
+                             "cache_speedup":  "0.33x",
+                             "throughput_loc_sec":  23567,
+                             "repository_fingerprint":  "3728be435ffada789684f70befeabec0010641ae27f563c889d8249821d24a7a",
+                             "whole_repo_call_graph":  "887c04593a382616a08b0409b712986265ac2b49e3fa08df8fab59b984c700d2",
+                             "whole_repo_data_flow":  "023a49c097eb5ab1df22fb5ea60ef3209dde11a6a903b08fa34f6feebe97c731",
+                             "timings_sec":  {
+                                                 "canontra_cold":  1.01,
+                                                 "git_hashing":  4.0743,
+                                                 "turborepo":  "0.0952",
+                                                 "sccache":  "N/A",
+                                                 "codeql_db_create":  "19.057"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "deno_core",
+                             "language":  "TypeScript/Rust",
+                             "total_source_files":  318,
+                             "indexed_files":  318,
+                             "total_loc":  62799,
+                             "cold_latency_ms":  3019.62,
+                             "warm_latency_ms":  3010.62,
+                             "cache_speedup":  "1x",
+                             "throughput_loc_sec":  20794,
+                             "repository_fingerprint":  "79ba965e53056d86ea906291d1c662a4e00010c0291af6b53726f6b6edf21f6e",
+                             "whole_repo_call_graph":  "47673203455b5ff01f03c9477dbe572b0cb0d820548ab5ba4a65b09afb47844d",
+                             "whole_repo_data_flow":  "d43adb369099824bb5b3e6c600f15e188cd5b9b028e77b06e2278e09675fd77b",
+                             "timings_sec":  {
+                                                 "canontra_cold":  3.02,
+                                                 "git_hashing":  14.5155,
+                                                 "turborepo":  "1.1509",
+                                                 "sccache":  "3.8292",
+                                                 "codeql_db_create":  "27.05"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "express",
+                             "language":  "JavaScript",
+                             "total_source_files":  141,
+                             "indexed_files":  141,
+                             "total_loc":  17552,
+                             "cold_latency_ms":  3232.07,
+                             "warm_latency_ms":  6507.72,
+                             "cache_speedup":  "0.5x",
+                             "throughput_loc_sec":  5431,
+                             "repository_fingerprint":  "b080e84d8ce2a6468d43229deddaf16e8ae3bb2d542f38d9f4ffaa4b91343ffe",
+                             "whole_repo_call_graph":  "c5d60e994e302ff684066cc7fa51066b6d1124bd3d0968a78a289a01dbe82d35",
+                             "whole_repo_data_flow":  "3586e558224128dcf7aed8b0dce89e7bdbb791b5ba30a2baf0bccd003e1c48ac",
+                             "timings_sec":  {
+                                                 "canontra_cold":  3.232,
+                                                 "git_hashing":  6.7323,
+                                                 "turborepo":  "1.3647",
+                                                 "sccache":  "N/A",
+                                                 "codeql_db_create":  "26.056"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "flask",
+                             "language":  "Python",
+                             "total_source_files":  83,
+                             "indexed_files":  42,
+                             "total_loc":  14085,
+                             "cold_latency_ms":  1023.72,
+                             "warm_latency_ms":  1013.7,
+                             "cache_speedup":  "1.01x",
+                             "throughput_loc_sec":  13755,
+                             "repository_fingerprint":  "8f8da4ce410e4c0bd9cc09357bf512690962da2c09c47161b10891e18dc5ab03",
+                             "whole_repo_call_graph":  "c6375cc40c5bca7943fe07ab8b00cb895b16022a908f669753e973cb48568caf",
+                             "whole_repo_data_flow":  "0e97fbacfe8edadf4b27cff5c613c3884ff09c27e836ea5ce0646ed3a233c5f0",
+                             "timings_sec":  {
+                                                 "canontra_cold":  1.024,
+                                                 "git_hashing":  4.2122,
+                                                 "turborepo":  "0.0563",
+                                                 "sccache":  "N/A",
+                                                 "codeql_db_create":  "19.06"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "gin",
+                             "language":  "Go",
+                             "total_source_files":  99,
+                             "indexed_files":  99,
+                             "total_loc":  20528,
+                             "cold_latency_ms":  1010.25,
+                             "warm_latency_ms":  2019.13,
+                             "cache_speedup":  "0.5x",
+                             "throughput_loc_sec":  20325,
+                             "repository_fingerprint":  "8f38b9486e63bfc9fb5e33bb88d830ff7b6621a76829015dbe3cab3953974358",
+                             "whole_repo_call_graph":  "c4fba14af08efa07fe3336bc8ad15c38508a02af0688ad372f385a2ba52b4b7a",
+                             "whole_repo_data_flow":  "59e543218c88c9a05d2aff938efdeca1b8613c9b55c49fa170b4009738b8c941",
+                             "timings_sec":  {
+                                                 "canontra_cold":  1.01,
+                                                 "git_hashing":  4.5253,
+                                                 "turborepo":  "0.0821",
+                                                 "sccache":  "2.6262",
+                                                 "codeql_db_create":  "25.045"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "hugo",
+                             "language":  "Go",
+                             "total_source_files":  937,
+                             "indexed_files":  937,
+                             "total_loc":  202891,
+                             "cold_latency_ms":  19037.05,
+                             "warm_latency_ms":  30065.97,
+                             "cache_speedup":  "0.63x",
+                             "throughput_loc_sec":  10658,
+                             "repository_fingerprint":  "1ed6be7e16bd264a07c6ef385adb6b925edb8e3b10208ef490c7a38d2334eea7",
+                             "whole_repo_call_graph":  "6bfe180e256a625c98baf67c15adc3d521e6beb6a7c1e9db0bdc5f1fc2454333",
+                             "whole_repo_data_flow":  "f570074f8d53ccf4b947677314a0fcc332e89e32776efc9808029bb82bca0b2f",
+                             "timings_sec":  {
+                                                 "canontra_cold":  19.037,
+                                                 "git_hashing":  42.1102,
+                                                 "turborepo":  "0.8116",
+                                                 "sccache":  "9.2615",
+                                                 "codeql_db_create":  "266.449"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "jinja",
+                             "language":  "Python",
+                             "total_source_files":  60,
+                             "indexed_files":  25,
+                             "total_loc":  18825,
+                             "cold_latency_ms":  1010.44,
+                             "warm_latency_ms":  1011.69,
+                             "cache_speedup":  "1x",
+                             "throughput_loc_sec":  18639,
+                             "repository_fingerprint":  "b07f2640dd1014be043e4dec8856116b1672b46ccc3a5b680074272507ed227e",
+                             "whole_repo_call_graph":  "7d1087a087bab2cb8af256874090b5124524af75cfb6354b1cd2547780d50cc2",
+                             "whole_repo_data_flow":  "d544cbe367d050f8b528ff9767ed603b6885d540274e46f913f2cd190744a139",
+                             "timings_sec":  {
+                                                 "canontra_cold":  1.01,
+                                                 "git_hashing":  2.6986,
+                                                 "turborepo":  "0.0753",
+                                                 "sccache":  "N/A",
+                                                 "codeql_db_create":  "19.059"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "marshmallow",
+                             "language":  "Python",
+                             "total_source_files":  38,
+                             "indexed_files":  15,
+                             "total_loc":  12734,
+                             "cold_latency_ms":  1010.35,
+                             "warm_latency_ms":  1010.04,
+                             "cache_speedup":  "1x",
+                             "throughput_loc_sec":  12608,
+                             "repository_fingerprint":  "c9a4ece1dfe71f8847af33ac7f194738969ed1b87ebb203ffadc2ecc06d57df1",
+                             "whole_repo_call_graph":  "60bf7bd4ba4ce7188e4c8c59b3de6e8036c12b3adc17412ec6428058f14024c2",
+                             "whole_repo_data_flow":  "37e553e994a54bf5a8aaf1a5beded4d9adc84e2dad9f7692d17c97394bc0d94d",
+                             "timings_sec":  {
+                                                 "canontra_cold":  1.01,
+                                                 "git_hashing":  1.7954,
+                                                 "turborepo":  "0.0509",
+                                                 "sccache":  "N/A",
+                                                 "codeql_db_create":  "17.093"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "prometheus",
+                             "language":  "Go",
+                             "total_source_files":  994,
+                             "indexed_files":  994,
+                             "total_loc":  388080,
+                             "cold_latency_ms":  46059.46,
+                             "warm_latency_ms":  66157.62,
+                             "cache_speedup":  "0.7x",
+                             "throughput_loc_sec":  8426,
+                             "repository_fingerprint":  "e82e575132086594f7b186e5d07f1b5ca3b3e71ba5cac24e8d416acf98ba3627",
+                             "whole_repo_call_graph":  "fe189db386669c0f9e5b9d138226317689faa3b041e4f5852e16d2097f925d41",
+                             "whole_repo_data_flow":  "fd7269054fa17154cee2412812529c816a40587d30d0b8a436cb98cf82d07550",
+                             "timings_sec":  {
+                                                 "canontra_cold":  46.059,
+                                                 "git_hashing":  47.2787,
+                                                 "turborepo":  "1.5523",
+                                                 "sccache":  "14.64",
+                                                 "codeql_db_create":  "1043.217"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "requests",
+                             "language":  "Python",
+                             "total_source_files":  37,
+                             "indexed_files":  21,
+                             "total_loc":  9841,
+                             "cold_latency_ms":  1059.82,
+                             "warm_latency_ms":  1030.84,
+                             "cache_speedup":  "1.03x",
+                             "throughput_loc_sec":  9284,
+                             "repository_fingerprint":  "7e604c0a49accfd32f2810cadd6a0c003e632b22e9d572fc8316448dfa247810",
+                             "whole_repo_call_graph":  "10cc5961235e22ff5abb26dd41ea2ea273cf3d7cb86eef33f88685625c854a5b",
+                             "whole_repo_data_flow":  "7a3f99351a2b36e76f0f51275b67710c347c70b8b8b9cc085082709fa003ae21",
+                             "timings_sec":  {
+                                                 "canontra_cold":  1.06,
+                                                 "git_hashing":  2.5137,
+                                                 "turborepo":  "0.0394",
+                                                 "sccache":  "N/A",
+                                                 "codeql_db_create":  "18.054"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "rich",
+                             "language":  "Python",
+                             "total_source_files":  213,
+                             "indexed_files":  138,
+                             "total_loc":  45787,
+                             "cold_latency_ms":  7029.83,
+                             "warm_latency_ms":  12023.24,
+                             "cache_speedup":  "0.58x",
+                             "throughput_loc_sec":  6513,
+                             "repository_fingerprint":  "ea72a7af04051c6118efb2040a8f3350b60317f071e1591e6c5e943a08caa166",
+                             "whole_repo_call_graph":  "532d3397c8a0f88427287543f3be045b65cea2a68bd2d763aa3c7388f5974c33",
+                             "whole_repo_data_flow":  "aa30d1c9785d52e8d60f0cbcef65d94d68e15bba5c188f96a595580af2279cfe",
+                             "timings_sec":  {
+                                                 "canontra_cold":  7.03,
+                                                 "git_hashing":  9.8823,
+                                                 "turborepo":  "0.1831",
+                                                 "sccache":  "N/A",
+                                                 "codeql_db_create":  "29.1"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "ripgrep",
+                             "language":  "Rust",
+                             "total_source_files":  110,
+                             "indexed_files":  110,
+                             "total_loc":  50953,
+                             "cold_latency_ms":  2027.52,
+                             "warm_latency_ms":  3012.18,
+                             "cache_speedup":  "0.67x",
+                             "throughput_loc_sec":  25125,
+                             "repository_fingerprint":  "7006ed5f8a8832a346c5bfd3635e47e0145ff936872b99f00ccfbd50b267fa06",
+                             "whole_repo_call_graph":  "70c307b5eea3a68193f5015d870b14744faaff022ec241a26e3500133cccf2a4",
+                             "whole_repo_data_flow":  "0c9a56d39379645c9719bf9f60fa0127224ec482cc55a5b9dc21cefe1d520aae",
+                             "timings_sec":  {
+                                                 "canontra_cold":  2.028,
+                                                 "git_hashing":  4.931,
+                                                 "turborepo":  "0.2038",
+                                                 "sccache":  "3.4925",
+                                                 "codeql_db_create":  "249.391"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         },
+                         {
+                             "name":  "toml",
+                             "language":  "Rust",
+                             "total_source_files":  166,
+                             "indexed_files":  166,
+                             "total_loc":  44360,
+                             "cold_latency_ms":  3013.35,
+                             "warm_latency_ms":  4020.49,
+                             "cache_speedup":  "0.75x",
+                             "throughput_loc_sec":  14723,
+                             "repository_fingerprint":  "96e8952b079bf6bdbf13eea0f55a7b2d0b1669a7982b42cd3c732bb73d5c87a5",
+                             "whole_repo_call_graph":  "11b67768c0991a6f5bd6f4f05ccc9be62224b337796cc1b6fbf09d61e77a9f36",
+                             "whole_repo_data_flow":  "fd02a44d9175f518dd7841ed6c54784a288ff315fb7a2cccf69c7af3a4d5eabd",
+                             "timings_sec":  {
+                                                 "canontra_cold":  3.013,
+                                                 "git_hashing":  7.9086,
+                                                 "turborepo":  "0.1774",
+                                                 "sccache":  "3.3084",
+                                                 "codeql_db_create":  "279.388"
+                                             },
+                             "exit_codes":  {
+                                                "canontra_cold":  0,
+                                                "canontra_warm":  0
+                                            }
+                         }
+                     ]
+}

@@ -1,0 +1,35 @@
+[Canontra Parse Warning] docs\examples\inline_gettext_extension.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] scripts\generate_identifier_pattern.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] src\jinja2\async_utils.py:62:55: Unexpected token in parameter list
+[Canontra Parse Warning] src\jinja2\compiler.py:13:8: Expected identifier in module name
+[Canontra Parse Warning] src\jinja2\debug.py:131:54: Unexpected token in parameter list
+[Canontra Parse Warning] src\jinja2\environment.py:18:8: Expected identifier in module name
+[Canontra Parse Warning] src\jinja2\exceptions.py:32:28: Unexpected token in parameter list
+[Canontra Parse Warning] src\jinja2\ext.py:9:8: Expected identifier in module name
+[Canontra Parse Warning] src\jinja2\filters.py:61:39: Unexpected token in parameter list
+[Canontra Parse Warning] src\jinja2\idtracking.py:3:8: Expected identifier in module name
+[Canontra Parse Warning] src\jinja2\lexer.py:294:36: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] src\jinja2\loaders.py:112:41: Unexpected token in parameter list
+[Canontra Parse Warning] src\jinja2\meta.py:7:8: Expected identifier in module name
+[Canontra Parse Warning] src\jinja2\nativetypes.py:8:8: Expected identifier in module name
+[Canontra Parse Warning] src\jinja2\nodes.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] src\jinja2\optimizer.py:13:8: Expected identifier in module name
+[Canontra Parse Warning] src\jinja2\parser.py:6:8: Expected identifier in module name
+[Canontra Parse Warning] src\jinja2\runtime.py:96:24: Unexpected token in parameter list
+[Canontra Parse Warning] src\jinja2\sandbox.py:421:81: Unexpected token in parameter list
+[Canontra Parse Warning] src\jinja2\utils.py:404:55: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] tests\test_api.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_async.py:19:19: Expected function name and parameter list in def
+[Canontra Parse Warning] tests\test_async_filters.py:48:19: Expected function name and parameter list in def
+[Canontra Parse Warning] tests\test_compile.py:12:49: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] tests\test_core_tags.py:312:54: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] tests\test_debug.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] tests\test_ext.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] tests\test_filters.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] tests\test_imports.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_inheritance.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_lexnparse.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_loader.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_nativetypes.py:131:27: Expected function name and parameter list in def
+[Canontra Parse Warning] tests\test_regression.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] tests\test_tests.py:1:1: Unexpected end of input in expression

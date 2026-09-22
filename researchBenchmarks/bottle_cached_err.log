@@ -1,0 +1,14 @@
+[Canontra Parse Warning] bottle.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] test\test_config.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] test\test_environ.py:11:8: Expected identifier in module name
+[Canontra Parse Warning] test\test_html_helper.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] test\test_mdict.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] test\test_mount.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] test\test_multipart.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] test\test_outputfilter.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] test\test_plugins.py:3:8: Expected identifier in module name
+[Canontra Parse Warning] test\test_resources.py:1:1: Expected ']' but reached EOF
+[Canontra Parse Warning] test\test_router.py:1:1: Expected ':' but reached EOF
+[Canontra Parse Warning] test\test_securecookies.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] test\test_stpl.py:1:1: Expected '}' but reached EOF
+[Canontra Parse Warning] test\test_wsgi.py:1:1: Expected '}' but reached EOF

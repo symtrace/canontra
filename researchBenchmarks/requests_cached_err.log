@@ -1,0 +1,16 @@
+[Canontra Parse Warning] src\requests\__init__.py:158:8: Expected identifier in module name
+[Canontra Parse Warning] src\requests\_types.py:28:28: Unexpected token in base class list
+[Canontra Parse Warning] src\requests\adapters.py:74:12: Expected identifier in module name
+[Canontra Parse Warning] src\requests\api.py:15:8: Expected identifier in module name
+[Canontra Parse Warning] src\requests\cookies.py:191:50: Unexpected token in base class list
+[Canontra Parse Warning] src\requests\help.py:12:8: Expected identifier in module name
+[Canontra Parse Warning] src\requests\hooks.py:19:12: Expected identifier in module name
+[Canontra Parse Warning] src\requests\models.py:38:8: Expected identifier in module name
+[Canontra Parse Warning] src\requests\sessions.py:66:12: Expected identifier in module name
+[Canontra Parse Warning] src\requests\status_codes.py:117:40: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] src\requests\structures.py:20:41: Unexpected token in base class list
+[Canontra Parse Warning] src\requests\utils.py:35:8: Expected identifier in module name
+[Canontra Parse Warning] tests\test_help.py:1:1: Unexpected end of input in expression
+[Canontra Parse Warning] tests\test_requests.py:57:8: Expected identifier in module name
+[Canontra Parse Warning] tests\test_testserver.py:70:9: Unexpected token in primary expression: TokSymbol ")"
+[Canontra Parse Warning] tests\test_utils.py:1:1: Unexpected end of input in expression

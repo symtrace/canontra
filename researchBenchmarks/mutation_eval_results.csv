@@ -1,0 +1,21 @@
+TrialId,Repository,Language,TargetFile,MutationCategory,MutationType,Description,Canontra_F1_Changed,Canontra_F2_Changed,Canontra_F4_Changed,Canontra_FR_Changed,Canontra_Verdict,Git_TreeOID_Changed,Turborepo_Changed,Bazel_CAS_Changed,Sccache_Changed
+1,chalk,JavaScript,source/utilities.js,NonFunctional,LineEnding,Convert LF to CRLF line endings,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+2,bottle,Python,bottle.py,NonFunctional,Whitespace,Run black auto-formatter with trailing whitespace,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+3,gin,Go,gin.go,NonFunctional,Comments,Inject 50 lines of inline and block comments,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+4,toml,Rust,src/lib.rs,NonFunctional,Docstrings,Modify module-level documentation comments,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+5,requests,Python,requests/api.py,NonFunctional,Reordering,Invert declaration order of pure helper functions,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+6,express,JavaScript,lib/application.js,NonFunctional,Formatting,Run prettier format with adjusted tab width,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+7,ripgrep,Rust,crates/core/main.rs,NonFunctional,LineEnding,Convert CRLF to LF line endings,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+8,flask,Python,src/flask/app.py,NonFunctional,Comments,Inject header licence and attribution comments,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+9,hugo,Go,hugolib/site.go,NonFunctional,Whitespace,Add trailing spaces to empty lines,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+10,deno_core,TypeScript,core.ts,NonFunctional,Comments,Inject block comments into type declarations,FALSE,FALSE,FALSE,FALSE,INVARIANT,TRUE,TRUE,TRUE,TRUE
+11,chalk,JavaScript,source/utilities.js,Semantic,Operator,Mutate binary operator (+ to -) in utility calc,TRUE,FALSE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
+12,bottle,Python,bottle.py,Semantic,Constant,Mutate numeric return constant (x + 1 to x + 2),TRUE,FALSE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
+13,gin,Go,gin.go,Semantic,BranchCondition,Negate if condition (x > 0 to x <= 0),TRUE,FALSE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
+14,toml,Rust,src/lib.rs,Semantic,Interface,Add optional parameter to exported function signature,TRUE,TRUE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
+15,requests,Python,requests/api.py,Semantic,Interface,Add timeout default parameter to request function,TRUE,TRUE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
+16,express,JavaScript,lib/application.js,Semantic,ControlFlow,Invert while loop condition and exit predicate,TRUE,FALSE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
+17,ripgrep,Rust,crates/core/main.rs,Semantic,Constant,Change default exit code return value,TRUE,FALSE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
+18,flask,Python,src/flask/app.py,Semantic,Operator,Swap logical AND with logical OR in route dispatcher,TRUE,FALSE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
+19,rich,Python,rich/console.py,Semantic,Constant,Mutate default width constant from 80 to 120,TRUE,FALSE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
+20,prometheus,Go,model/labels.go,Semantic,Interface,Add public field to exported Label struct,TRUE,TRUE,TRUE,TRUE,DETECTED,TRUE,TRUE,TRUE,TRUE
