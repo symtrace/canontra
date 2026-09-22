@@ -124,16 +124,11 @@ jobs:
           $zipHash = (Get-FileHash -Path $archiveName -Algorithm SHA256).Hash.ToLower()
           "$zipHash  $archiveName" | Out-File -FilePath "$archiveName.sha256" -Encoding ascii
 
-          # 2. Tagged standalone executable
+          # 2. Tagged standalone executable (self-signed)
           $standaloneExe = "canontra-${{ env.RELEASE_TAG }}-${{ matrix.target }}.exe"
           Copy-Item -Path "dist-bin\canontra.exe" -Destination $standaloneExe -Force
           $exeHash = (Get-FileHash -Path $standaloneExe -Algorithm SHA256).Hash.ToLower()
           "$exeHash  $standaloneExe" | Out-File -FilePath "$standaloneExe.sha256" -Encoding ascii
-
-          # 3. Direct canontra.exe (self-signed)
-          Copy-Item -Path "dist-bin\canontra.exe" -Destination "canontra.exe" -Force
-          $directHash = (Get-FileHash -Path "canontra.exe" -Algorithm SHA256).Hash.ToLower()
-          "$directHash  canontra.exe" | Out-File -FilePath "canontra.exe.sha256" -Encoding ascii
 
       - name: Upload Packaged Assets
         uses: actions/upload-artifact@v4
@@ -141,8 +136,6 @@ jobs:
           name: assets-${{ matrix.target }}
           path: |
             canontra-${{ env.RELEASE_TAG }}-${{ matrix.target }}.*
-            canontra.exe
-            canontra.exe.sha256
           if-no-files-found: error
 
   publish-release:

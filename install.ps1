@@ -8,7 +8,17 @@
 [CmdletBinding()]
 param (
     [Alias("d")]
-    [string]$InstallDir = "$env:LOCALAPPDATA\Programs\canontra",
+    [string]$InstallDir = $(
+        if ($env:CANONTRA_INSTALL_DIR) {
+            $env:CANONTRA_INSTALL_DIR
+        } elseif ($env:LOCALAPPDATA) {
+            "$env:LOCALAPPDATA\Programs\canontra"
+        } elseif ($env:USERPROFILE) {
+            "$env:USERPROFILE\AppData\Local\Programs\canontra"
+        } else {
+            "$HOME/.canontra"
+        }
+    ),
 
     [Alias("v")]
     [string]$Version = "v0.1.0",
@@ -168,10 +178,38 @@ function Invoke-ProcessWithAnimation {
 function Main {
     Show-Banner
 
-    # 1. Architecture Detection
+    # 1. Architecture & Platform Detection
+    $isWin = if ($null -ne $IsWindows) { $IsWindows } else { [System.Environment]::OSVersion.Platform -eq [System.PlatformID]::Win32NT }
+
     $arch = $env:PROCESSOR_ARCHITECTURE
+    if (-not $arch) {
+        try {
+            $osArch = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString()
+            if ($osArch -match "Arm64") {
+                $arch = "ARM64"
+            } elseif ($osArch -match "X64") {
+                $arch = "AMD64"
+            } else {
+                $arch = "AMD64"
+            }
+        } catch {
+            $arch = "AMD64"
+        }
+    }
+    # Normalize architecture name
+    if ($arch -eq "x86_64" -or $arch -eq "x64") {
+        $arch = "AMD64"
+    } elseif ($arch -eq "aarch64") {
+        $arch = "ARM64"
+    }
+
     if ($arch -ne "AMD64" -and $arch -ne "ARM64") {
         Write-Error "Unsupported processor architecture: $arch. Canontra supports AMD64 and ARM64."
+        exit 1
+    }
+
+    if (-not $isWin -and -not $DryRun) {
+        Write-Error "install.ps1 is designed for Windows environments. On Linux or macOS, please run install.sh instead."
         exit 1
     }
     Show-InstantStep "Host Platform Identified" "windows-$arch"
@@ -184,7 +222,7 @@ function Main {
 
     $targetExe = Join-Path $InstallDir "canontra.exe"
 
-    # 3. Binary Acquisition (Local Toolchain vs GitHub Releases)
+    # 3. Binary Acquisition (Local Toolchain vs Tagged GitHub Releases)
     $hasCabal = Test-Path "canontra.cabal"
     $hasDistBin = Test-Path "dist-bin\canontra.exe"
     $shouldBuildLocal = $ForceBuild
@@ -205,19 +243,20 @@ function Main {
         }
         Show-InstantStep "Installed Local Binary" "dist-bin\canontra.exe -> $targetExe"
     } else {
-        # Remote download from GitHub Release
+        # Remote download from Tagged GitHub Release
         $zipName = "canontra-$Version-windows-$arch.zip"
+        $exeName = "canontra-$Version-windows-$arch.exe"
         $downloadUrl = "https://github.com/symtrace/canontra/releases/download/$Version/$zipName"
-        $fallbackUrl = "https://github.com/symtrace/canontra/releases/download/$Version/canontra.exe"
+        $fallbackUrl = "https://github.com/symtrace/canontra/releases/download/$Version/$exeName"
         $tempZip = Join-Path $env:TEMP $zipName
-        $tempExe = Join-Path $env:TEMP "canontra_temp.exe"
+        $tempExe = Join-Path $env:TEMP $exeName
 
         if ($DryRun) {
             Write-Host "  $DryRunGlyph Downloading Canontra $Version release archive (dry-run: $downloadUrl)" -ForegroundColor Yellow
         } else {
             $downloaded = $false
 
-            # Try primary zip archive download
+            # Try primary tagged zip archive download
             try {
                 Invoke-WebRequest -Uri $downloadUrl -OutFile $tempZip -UseBasicParsing -ErrorAction Stop
                 Expand-Archive -Path $tempZip -DestinationPath $InstallDir -Force
@@ -225,12 +264,12 @@ function Main {
                 $downloaded = $true
                 Show-InstantStep "Release Archive Downloaded" "$zipName"
             } catch {
-                # Fallback to direct canontra.exe artifact
+                # Fallback to tagged standalone executable artifact
                 try {
                     Invoke-WebRequest -Uri $fallbackUrl -OutFile $tempExe -UseBasicParsing -ErrorAction Stop
                     Move-Item -Path $tempExe -Destination $targetExe -Force
                     $downloaded = $true
-                    Show-InstantStep "Direct Binary Downloaded" "canontra.exe"
+                    Show-InstantStep "Tagged Binary Downloaded" "$exeName"
                 } catch {
                     # If inside git repo, fallback to local build or dist-bin copy
                     if (Test-Path "dist-bin\canontra.exe") {
@@ -257,8 +296,8 @@ function Main {
         }
     }
 
-    # 4. User PATH Configuration
-    if (-not $SkipPath -and -not $DryRun) {
+    # 4. User PATH Configuration (Windows)
+    if ($isWin -and -not $SkipPath -and -not $DryRun) {
         $cleanDir = $InstallDir.TrimEnd('\')
         $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
         if ($null -eq $userPath) { $userPath = "" }
@@ -275,8 +314,8 @@ function Main {
         }
     }
 
-    # 5. PowerShell Autocompletions Setup
-    if (-not $SkipCompletions -and -not $DryRun) {
+    # 5. PowerShell Autocompletions Setup (Windows)
+    if ($isWin -and -not $SkipCompletions -and -not $DryRun) {
         try {
             $profileDir = Split-Path $PROFILE -Parent
             if (-not (Test-Path $profileDir)) {
