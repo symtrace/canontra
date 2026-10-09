@@ -152,25 +152,29 @@ processStmtsWithStack initialStack stmts startId =
       StmtAssign targets val ->
         let (useNodes, useEdges, nextId1) = extractExprUsesStack curStack val curId
             assignedVars = concatMap extractTargetVars targets
+            walrusVars = collectWalrusDefs val
+            allDefs = assignedVars ++ walrusVars
             (defNodes, nextId2) = foldl (\(ns, cId) v ->
-              (ns ++ [DFGNode cId (DefAssignment v) (Just val)], cId + 1)) ([], nextId1) assignedVars
+              (ns ++ [DFGNode cId (DefAssignment v) (Just val)], cId + 1)) ([], nextId1) allDefs
             defEdges = [ DFGEdge (dfgNodeId srcNode) (dfgNodeId targetNode) v
-                       | (targetNode, v) <- zip defNodes assignedVars
+                       | (targetNode, v) <- zip defNodes allDefs
                        , srcNode <- useNodes
                        ]
-            newStack = foldl (\s (dNode, v) -> updateStack v (dfgNodeId dNode) s) curStack (zip defNodes assignedVars)
+            newStack = foldl (\s (dNode, v) -> updateStack v (dfgNodeId dNode) s) curStack (zip defNodes allDefs)
         in (nodesAcc ++ useNodes ++ defNodes, edgesAcc ++ useEdges ++ defEdges, newStack, nextId2)
 
       StmtAnnAssign target _ mVal ->
         let assignedVars = extractTargetVars target
             (useNodes, useEdges, nextId1) = maybe ([], [], curId) (\val -> extractExprUsesStack curStack val curId) mVal
+            walrusVars = maybe [] collectWalrusDefs mVal
+            allDefs = assignedVars ++ walrusVars
             (defNodes, nextId2) = foldl (\(ns, cId) v ->
-              (ns ++ [DFGNode cId (DefAssignment v) mVal], cId + 1)) ([], nextId1) assignedVars
+              (ns ++ [DFGNode cId (DefAssignment v) mVal], cId + 1)) ([], nextId1) allDefs
             defEdges = [ DFGEdge (dfgNodeId srcNode) (dfgNodeId targetNode) v
-                       | (targetNode, v) <- zip defNodes assignedVars
+                       | (targetNode, v) <- zip defNodes allDefs
                        , srcNode <- useNodes
                        ]
-            newStack = foldl (\s (dNode, v) -> updateStack v (dfgNodeId dNode) s) curStack (zip defNodes assignedVars)
+            newStack = foldl (\s (dNode, v) -> updateStack v (dfgNodeId dNode) s) curStack (zip defNodes allDefs)
         in (nodesAcc ++ useNodes ++ defNodes, edgesAcc ++ useEdges ++ defEdges, newStack, nextId2)
 
       StmtReturn mVal ->
@@ -354,14 +358,20 @@ extractExprUsesStack stack expr startId =
 
 collectWalrusDefs :: Expr -> [Text]
 collectWalrusDefs = \case
-  ExprWalrus v e     -> v : collectWalrusDefs e
-  ExprBinary _ e1 e2 -> collectWalrusDefs e1 ++ collectWalrusDefs e2
-  ExprUnary _ e      -> collectWalrusDefs e
-  ExprCall f args kw -> collectWalrusDefs f ++ concatMap collectWalrusDefs args ++ concatMap (collectWalrusDefs . snd) kw
-  ExprList es        -> concatMap collectWalrusDefs es
-  ExprTuple es       -> concatMap collectWalrusDefs es
-  ExprTernary c t f  -> collectWalrusDefs c ++ collectWalrusDefs t ++ collectWalrusDefs f
-  _                  -> []
+  ExprWalrus v e          -> v : collectWalrusDefs e
+  ExprBinary _ e1 e2      -> collectWalrusDefs e1 ++ collectWalrusDefs e2
+  ExprUnary _ e           -> collectWalrusDefs e
+  ExprCall f args kw      -> collectWalrusDefs f ++ concatMap collectWalrusDefs args ++ concatMap (collectWalrusDefs . snd) kw
+  ExprList es             -> concatMap collectWalrusDefs es
+  ExprTuple es            -> concatMap collectWalrusDefs es
+  ExprTernary c t f       -> collectWalrusDefs c ++ collectWalrusDefs t ++ collectWalrusDefs f
+  ExprListComp item comps -> collectWalrusDefs item ++ concatMap compWalrus comps
+  ExprDictComp k v comps  -> collectWalrusDefs k ++ collectWalrusDefs v ++ concatMap compWalrus comps
+  ExprSetComp item comps  -> collectWalrusDefs item ++ concatMap compWalrus comps
+  ExprGenerator item comps-> collectWalrusDefs item ++ concatMap compWalrus comps
+  _                       -> []
+  where
+    compWalrus (CompFor _ iter ifs) = collectWalrusDefs iter ++ concatMap collectWalrusDefs ifs
 
 collectVarReads :: Expr -> Set Text
 collectVarReads = \case

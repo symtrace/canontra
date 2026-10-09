@@ -204,10 +204,12 @@ extractGoDeclsAndStmts tokens = case tokens of
   -- type Name interface { ... }
   TokKw "type" : TokIdent ifName : TokKw "interface" : rest ->
     let afterBrace = dropWhile (\tok -> tok /= TokSymbol "{") rest
-        (_, afterBody) = extractBalancedBraces afterBrace
-        iface = Interface ifName [] []
+        (bodyToks, afterBody) = extractBalancedBraces afterBrace
+        (methods, constraints) = parseGoInterfaceElements bodyToks
+        iface = Interface ifName methods constraints
         (d, i, s) = extractGoDeclsAndStmts afterBody
     in (DeclInterface iface : d, i, s)
+
 
   -- type Name = Original
   TokKw "type" : TokIdent aliasName : TokSymbol "=" : TokIdent orig : rest ->
@@ -338,6 +340,34 @@ parseStructFields (TokIdent fName : xs) =
       remToks = dropWhile (\t -> t == TokSymbol ";" || t == TokSymbol ",") afterField
   in (fName, tyStr) : parseStructFields remToks
 parseStructFields (_:rest) = parseStructFields rest
+
+parseGoInterfaceElements :: [GoToken] -> ([Function], [Text])
+parseGoInterfaceElements [] = ([], [])
+parseGoInterfaceElements (TokIdent mName : TokSymbol "(" : rest) =
+  let (params, afterParams) = parseGoParamList (TokSymbol "(" : rest)
+      (retType, afterRet) = parseGoReturnType afterParams
+      fn = Function mName params retType [] [] False
+      (ms, cs) = parseGoInterfaceElements afterRet
+  in (fn : ms, cs)
+parseGoInterfaceElements (TokSymbol "~" : TokIdent t : rest) =
+  let (unionPart, remToks) = span isTypeUnionTok (TokSymbol "~" : TokIdent t : rest)
+      cText = T.concat [tokenText tok | tok <- unionPart]
+      (ms, cs) = parseGoInterfaceElements remToks
+  in (ms, cText : cs)
+parseGoInterfaceElements (TokIdent t1 : TokSymbol "|" : rest) =
+  let (unionPart, remToks) = span isTypeUnionTok (TokIdent t1 : TokSymbol "|" : rest)
+      cText = T.concat [tokenText tok | tok <- unionPart]
+      (ms, cs) = parseGoInterfaceElements remToks
+  in (ms, cText : cs)
+parseGoInterfaceElements (_ : rest) = parseGoInterfaceElements rest
+
+isTypeUnionTok :: GoToken -> Bool
+isTypeUnionTok = \case
+  TokSymbol "|" -> True
+  TokSymbol "~" -> True
+  TokIdent _    -> True
+  _             -> False
+
 
 consumeGoType :: [GoToken] -> ([GoToken], [GoToken])
 consumeGoType (TokSymbol "*" : rest) =

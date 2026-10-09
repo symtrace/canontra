@@ -58,6 +58,7 @@ data StructuralType
   | TypeIntersection ![StructuralType]
   | TypeOptional !StructuralType
   | TypeGeneric !Text ![StructuralType]
+  | TypeRecVar !Int
   deriving stock (Eq, Ord, Show, Generic)
   deriving anyclass (ToJSON, FromJSON, NFData)
 
@@ -104,6 +105,12 @@ parseTypeString raw =
   let clean = T.strip raw
   in case () of
     _ | T.null clean -> TypePrimitive "any"
+      | T.isPrefixOf "~" clean -> parseTypeString (T.drop 1 clean)
+      | T.isPrefixOf "*" clean -> parseTypeString (T.drop 1 clean)
+      | T.isPrefixOf "&" clean -> parseTypeString (T.drop 1 clean)
+      | T.isPrefixOf "(" clean && T.isSuffixOf ")" clean && "," `T.isInfixOf` clean ->
+          let inner = T.drop 1 (T.dropEnd 1 clean)
+          in makeUnion (map parseTypeString (T.splitOn "," inner))
       | "|" `T.isInfixOf` clean && not ("<" `T.isInfixOf` clean) ->
           makeUnion (map parseTypeString (T.splitOn "|" clean))
       | "&" `T.isInfixOf` clean && not ("<" `T.isInfixOf` clean) ->
@@ -156,10 +163,14 @@ normalizeInterfaceContract :: Interface -> InterfaceContract
 normalizeInterfaceContract iface =
   let rawMethods = map normalizeMethodContract (ifMethods iface)
       sortedMethods = sortBy (comparing mcName) rawMethods
+      normBases = sortBy (comparing fst)
+        [ ("constraint_" <> T.pack (show idx), parseTypeString b)
+        | (idx, b) <- zip [1 :: Int ..] (ifBases iface)
+        ]
   in InterfaceContract
       { icName    = ifName iface
       , icMethods = sortedMethods
-      , icFields  = []
+      , icFields  = normBases
       }
 
 -- | Extract all structural interface and trait contracts from a Program.
@@ -175,18 +186,22 @@ extractTypeContracts (Program modules _) =
         [normalizeInterfaceContract iface]
 
       DeclTrait tr ->
-        let rawMethods = map normalizeMethodContract (trMethods tr)
+        let rawMethods = map (normalizeMethodContract . normalizeGATMethod) (trMethods tr)
             sortedMethods = sortBy (comparing mcName) rawMethods
         in [InterfaceContract (trName tr) sortedMethods []]
 
       DeclStruct st ->
         let normFields = sortBy (comparing fst)
-              [ (fName, parseTypeString (maybe "any" id fTy))
+              [ (fName, parseStructField (stName st) fTy)
               | (fName, fTy) <- stFields st
               ]
             normMethods = sortBy (comparing mcName)
               (map normalizeMethodContract (stMethods st))
         in [InterfaceContract (stName st) normMethods normFields]
+
+      DeclTypeAlias name (Just def) ->
+        let ty = parseTypeString def
+        in [InterfaceContract name [] [("type", ty)]]
 
       DeclClass cls ->
         if not (null (clsMethods cls))
@@ -197,6 +212,28 @@ extractTypeContracts (Program modules _) =
           else []
 
       _ -> []
+
+parseStructField :: Text -> Maybe Text -> StructuralType
+parseStructField currentStruct mTy = case mTy of
+  Nothing -> TypePrimitive "any"
+  Just raw ->
+    let clean = T.strip raw
+        baseName = T.dropWhile (== '*') (T.dropWhile (== '&') clean)
+    in if baseName == currentStruct
+       then TypeRecVar 0
+       else parseTypeString clean
+
+normalizeGATMethod :: Function -> Function
+normalizeGATMethod fn =
+  let normName = normalizeLifetimes (fnName fn)
+      normRet = fmap normalizeLifetimes (fnReturnType fn)
+      normParams = map (\p -> p { paramType = fmap normalizeLifetimes (paramType p) }) (fnParams fn)
+  in fn { fnName = normName, fnReturnType = normRet, fnParams = normParams }
+
+normalizeLifetimes :: Text -> Text
+normalizeLifetimes =
+  T.replace "'a" "'0" . T.replace "'b" "'1" . T.replace "'c" "'2"
+
 
 -- | Evaluate whether two interface contracts are structurally identical regardless of nominal name.
 areStructurallyEqual :: InterfaceContract -> InterfaceContract -> Bool

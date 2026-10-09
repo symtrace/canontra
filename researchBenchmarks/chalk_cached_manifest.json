@@ -199,7 +199,7 @@
         }
     ],
     "repository_fingerprint": "29ac0e1f57adfe5dee4fc226a39520bc5159f7b5e130547514c77eaddd4c971b",
-    "version": "0.1.0",
-    "whole_repo_call_graph": "dfcb69fb44dbd4378681686e6b41caea88e727db3924860cc11da59087594ff1",
+    "version": "0.2.0",
+    "whole_repo_call_graph": "840c242f5a7a6dc80a0ba6fb6022067ee85ca14e8c7e4ecf1160d1e79ee231d7",
     "whole_repo_data_flow": "3b650f241c6eeb7f8eea575a786fb9102779fc48b372f29b9d92c2f8aca110a4"
 }

@@ -18,6 +18,8 @@ and JSX elements with lookahead disambiguation (BUG-07).
 -}
 module Canontra.Parser.JS
   ( parseJSSource
+  , JSToken (..)
+  , tokenizeJS
   ) where
 
 import Control.DeepSeq (NFData)
@@ -75,15 +77,18 @@ tokenizeJS text = go Nothing text
         '/' | T.isPrefixOf "*" cs ->
             skipBlockComment prevTok (T.drop 1 cs)
         '/' ->
-            if isDivideOp prevTok
+            if isDivideOp prevTok cs
             then
               if T.isPrefixOf "=" cs
               then TokSymbol "/=" : go (Just (TokSymbol "/=")) (T.drop 1 cs)
               else TokSymbol "/" : go (Just (TokSymbol "/")) cs
             else
-              let (pattern, flags, rest) = scanRegex cs
-                  regexTok = TokStr ("/" <> pattern <> "/" <> flags)
-              in regexTok : go (Just regexTok) rest
+              case scanRegex cs of
+                Just (pattern, flags, rest) ->
+                  let regexTok = TokStr ("/" <> pattern <> "/" <> flags)
+                  in regexTok : go (Just regexTok) rest
+                Nothing ->
+                  TokSymbol "/" : go (Just (TokSymbol "/")) cs
         '"' ->
             let (s, rest) = parseQuotedString '"' cs
                 tok = TokStr s
@@ -128,21 +133,38 @@ tokenizeJS text = go Nothing text
       | kw `elem` ["return", "throw", "break", "continue", "yield"] && '\n' `elem` T.unpack spaces = True
     shouldInsertASI _ _ = False
 
-    isDivideOp (Just (TokIdent _))    = True
-    isDivideOp (Just (TokNum _))      = True
-    isDivideOp (Just (TokFloat _))    = True
-    isDivideOp (Just (TokStr _))      = True
-    isDivideOp (Just (TokSymbol ")")) = True
-    isDivideOp (Just (TokSymbol "]")) = True
-    isDivideOp (Just (TokSymbol "}")) = True
-    isDivideOp _                      = False
+    isDivideOp (Just (TokIdent _)) _    = True
+    isDivideOp (Just (TokNum _)) _      = True
+    isDivideOp (Just (TokFloat _)) _    = True
+    isDivideOp (Just (TokStr _)) _      = True
+    isDivideOp (Just (TokSymbol ")")) _ = True
+    isDivideOp (Just (TokSymbol "]")) _ = True
+    isDivideOp (Just (TokSymbol "}")) nextRest = not (looksLikeRegex nextRest)
+    isDivideOp _ _                      = False
+
+    looksLikeRegex t
+      | T.null t = False
+      | otherwise =
+          case scanRegex t of
+            Nothing -> False
+            Just (pat, flags, rest) ->
+              not (T.null pat)
+              && case T.uncons pat of
+                   Just (firstCh, _) -> firstCh /= ' ' && firstCh /= '\t' && firstCh /= '*' && firstCh /= '='
+                   Nothing           -> False
+              && (T.null flags || all (`elem` ("gimsuyvd" :: String)) (T.unpack flags))
+              && case T.uncons (T.dropWhile isSpace rest) of
+                   Just (nextCh, _) -> nextCh `elem` (".;,)]}\n" :: String)
+                   Nothing          -> True
 
     scanRegex t =
-      let (pat, afterSlash) = scanPattern False False t ""
-          (flags, rest) = T.span isAlpha afterSlash
-      in (pat, flags, rest)
+      case scanPattern False False t "" of
+        Just (pat, afterSlash) ->
+          let (flags, rest) = T.span isAlpha afterSlash
+          in Just (pat, flags, rest)
+        Nothing -> Nothing
       where
-        scanPattern _ _ txt acc | T.null txt = (acc, "")
+        scanPattern _ _ txt _ | T.null txt = Nothing
         scanPattern inCharClass escaped txt acc =
           let ch = T.head txt
               rst = T.tail txt
@@ -152,8 +174,8 @@ tokenizeJS text = go Nothing text
                '\\' -> scanPattern inCharClass True rst acc
                '['  -> scanPattern True False rst (acc `T.snoc` ch)
                ']'  -> scanPattern False False rst (acc `T.snoc` ch)
-               '/'  | not inCharClass -> (acc, rst)
-               '\n' -> (acc, txt)
+               '/'  | not inCharClass -> Just (acc, rst)
+               '\n' -> Nothing
                _    -> scanPattern inCharClass False rst (acc `T.snoc` ch)
 
     parseQuotedString q t =
@@ -184,7 +206,7 @@ isJSKeyword kw = kw `elem`
   [ "function", "async", "class", "interface", "type", "enum", "const", "let", "var"
   , "import", "from", "export", "default", "return", "if", "else", "while", "for"
   , "of", "in", "switch", "case", "try", "catch", "finally", "throw", "break", "continue"
-  , "new", "this", "super", "extends", "implements", "static", "await", "yield"
+  , "new", "this", "super", "extends", "implements", "static", "await", "yield", "using"
   ]
 
 parseTopLevel :: FilePath -> [JSToken] -> Either ParseError ([Declaration], [ImportDecl], [Stmt])
@@ -239,6 +261,19 @@ extractDeclsAndStmts tokens = case tokens of
   TokKw kw : TokIdent name : TokSymbol "=" : rest | kw `elem` ["const", "let", "var"] ->
     let (expr, afterExpr) = parseSimpleExpr rest
         stmt = StmtAssign [ExprId name] expr
+        (d, i, s) = extractDeclsAndStmts afterExpr
+    in (d, i, stmt : s)
+
+  -- TypeScript 5.2: using / await using
+  TokKw "using" : TokIdent name : TokSymbol "=" : rest ->
+    let (expr, afterExpr) = parseSimpleExpr rest
+        stmt = StmtWith [(expr, Just (ExprId name))] []
+        (d, i, s) = extractDeclsAndStmts afterExpr
+    in (d, i, stmt : s)
+
+  TokKw "await" : TokKw "using" : TokIdent name : TokSymbol "=" : rest ->
+    let (expr, afterExpr) = parseSimpleExpr rest
+        stmt = StmtAsyncWith [(expr, Just (ExprId name))] []
         (d, i, s) = extractDeclsAndStmts afterExpr
     in (d, i, stmt : s)
 
@@ -383,6 +418,16 @@ extractBalancedBraces tokens = ([], tokens)
 
 parseBodyStmts :: [JSToken] -> [Stmt]
 parseBodyStmts [] = []
+parseBodyStmts (TokKw "using" : TokIdent name : TokSymbol "=" : rest) =
+  let (expr, afterExpr) = parseSimpleExpr rest
+      afterSemi = dropWhile (\t -> t == TokSymbol ";") afterExpr
+      remStmts = parseBodyStmts afterSemi
+  in [StmtWith [(expr, Just (ExprId name))] remStmts]
+parseBodyStmts (TokKw "await" : TokKw "using" : TokIdent name : TokSymbol "=" : rest) =
+  let (expr, afterExpr) = parseSimpleExpr rest
+      afterSemi = dropWhile (\t -> t == TokSymbol ";") afterExpr
+      remStmts = parseBodyStmts afterSemi
+  in [StmtAsyncWith [(expr, Just (ExprId name))] remStmts]
 parseBodyStmts (TokKw "return" : TokSymbol ";" : rest) =
   StmtReturn Nothing : parseBodyStmts rest
 parseBodyStmts (TokKw "return" : rest) =
@@ -398,6 +443,12 @@ parseBodyStmts (TokKw "throw" : rest) =
 parseBodyStmts (_:rest) = parseBodyStmts rest
 
 parseSingleStmt :: [JSToken] -> (Maybe Stmt, [JSToken])
+parseSingleStmt (TokKw "using" : TokIdent name : TokSymbol "=" : rest) =
+  let (expr, afterExpr) = parseSimpleExpr rest
+  in (Just (StmtWith [(expr, Just (ExprId name))] []), dropWhile (\t -> t == TokSymbol ";") afterExpr)
+parseSingleStmt (TokKw "await" : TokKw "using" : TokIdent name : TokSymbol "=" : rest) =
+  let (expr, afterExpr) = parseSimpleExpr rest
+  in (Just (StmtAsyncWith [(expr, Just (ExprId name))] []), dropWhile (\t -> t == TokSymbol ";") afterExpr)
 parseSingleStmt (TokKw "return" : TokSymbol ";" : rest) =
   (Just (StmtReturn Nothing), rest)
 parseSingleStmt (TokKw "return" : rest) =

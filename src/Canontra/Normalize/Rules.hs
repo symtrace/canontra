@@ -17,10 +17,10 @@ import Data.Text (Text)
 import Canontra.IR.Expression
 
 engineVersion :: Text
-engineVersion = "0.1.0"
+engineVersion = "0.2.0"
 
 normalizationVersion :: Text
-normalizationVersion = "0.1.0"
+normalizationVersion = "0.2.0"
 
 engineName :: Text
 engineName = "canontra"

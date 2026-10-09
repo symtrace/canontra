@@ -18,8 +18,8 @@
         {
             "fingerprints": {
                 "call_graph": "783b7ade58d8ccd2ae1dd84e2f467990cfd03e950ea43adf64399c340d7cba96",
-                "composite": "53ee9727cebb03ac54a8e4ce06de36dc5f5eed93b618de099771ebcb669fb6b2",
-                "control_flow": "56e9bae417063c7a777293e14eed6a1dffc3c93fb5dacf8a516643473a9dc8b4",
+                "composite": "124ece68c03c3078a0c3ab622fe094f8305ac3e4338db0596d2b0f63c4fba2a5",
+                "control_flow": "439014c9efedea41bbc4e2b782985c95bcadac676249f8e60236e97548cc6d22",
                 "data_flow": "b690f2eaba234b7b433db4fabb8ebe54f671485f2052157b018406a5909ddfbf",
                 "declaration": "ee1f1a327ec1e9ba6cb0e351847ec82787495b337559fbeb814cd1d84f392455",
                 "dependency": "ff7402de12c2fc68fec12efd17b6adeda942c816c8df029d8f757b5fa9b300b0",
@@ -28,6 +28,20 @@
                 "type_contract": "64d2c6a4116016dd58fce1473c48e59aacc7a5aafe864dc3e2eab92e15002376"
             },
             "path": "examples\\flask_example.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "dc2e243d55c3c262b81901440c7cf90290475179cf07d3b563775363f6915fc5",
+                "composite": "1372a5a0ab17509d167368d58a5d26271d3da097f0195a69a64617d3e9711582",
+                "control_flow": "8c2d5b38652fe7d99bb6fdf40082346ccb601f0cb39e1c3c69995db5e02af289",
+                "data_flow": "6f1928622aaa7a52343875b84442d2474edd0330f28591a72be03d796f41b40b",
+                "declaration": "89c25282192804a4c14cd8d09432dba1dfa17861b7a9b2079946f3a0a41d04dd",
+                "dependency": "4e62cd9a73d6cfb261c1765c37d7daa4e58e2c0247b8aa4327dc02922ed94291",
+                "source": "737fa717f8c4c582a025d599ee3e066c291d7ab9743a9eefee2cf2d829c189c2",
+                "structural": "907eb68038efeda034fe395dafaec56091ecce4eb63f489ea1a224237f9d6f4c",
+                "type_contract": "44db2956caef3f2168a7494ef7e15be51c7d54cfc9d140beac8e6149798414f4"
+            },
+            "path": "examples\\inflection_example.py"
         },
         {
             "fingerprints": {
@@ -42,6 +56,20 @@
                 "type_contract": "76ce3b4444ef2b71b77f9c288fa29ccf337ffbfc13605835b1e8c941c972768d"
             },
             "path": "performance\\benchmark.py"
+        },
+        {
+            "fingerprints": {
+                "call_graph": "d9a510667fc539f8255238fd6ea6a1d697bd4ad12203191a945e8d44644309da",
+                "composite": "af792857704e35511e4da6ecc289c5d9bdc395659ece2972c6f5025ab1089bb5",
+                "control_flow": "d8aed20ce9a22077679732804027acd376d5bf61f58987ab04a1565040414e35",
+                "data_flow": "646afff46332ca4c69d72b803ed84201d9241d0b9486eb8d9ed2ea9652c9a771",
+                "declaration": "d8b0bfe84d757f9ec75380efd99cb1afa7817520dc503f54fd2f0afb2d1d0dfb",
+                "dependency": "82344a60639e1f5cc299cd8b9266963fbb4f28fdbb8305bc166fbfb2a4607c44",
+                "source": "7c93b6c51d6f4a9f0b41db1662418e25d55f09b91be4e31a768ef501e0e7332a",
+                "structural": "3250bb069204c14265ab119109951ab14d7f44440ce6170fd3ca7e4c051bb55c",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "src\\marshmallow\\class_registry.py"
         },
         {
             "fingerprints": {
@@ -186,8 +214,8 @@
         {
             "fingerprints": {
                 "call_graph": "ed8076ba9bb0c3245c202a7c32f24dc36116dbbac2011f724060194dd8cfc76c",
-                "composite": "1d88b60d46fd6ff0a4f74c8603243ae07dd841d8d454c3fa0930fa2989846c57",
-                "control_flow": "2432e4931243340304a94eb36369d9f50c327bab0bf858848bab4fcecbc5fa4e",
+                "composite": "eea9683bcc55731aefde173e19d3f73382148469e191244dd6cbf38fee435175",
+                "control_flow": "d01bfec80ad446efecdd01dce734663d77812aeb0a7fc00e45b5156f9d977b30",
                 "data_flow": "560062da30c7071c5a168d2307c98559f4c84ad8d34a3a0ce306e3b6656d7320",
                 "declaration": "8f97f88ac76c61222469c48f7eacda2cc2eaf177243c2a2de25b76bc3e758400",
                 "dependency": "cda2930bedcf16354ae3cf55e3c474cb8b50df0a8e43a1d9b9ec5c723c4e0dce",
@@ -212,8 +240,8 @@
             "path": "tests\\test_options.py"
         }
     ],
-    "repository_fingerprint": "c9a4ece1dfe71f8847af33ac7f194738969ed1b87ebb203ffadc2ecc06d57df1",
-    "version": "0.1.0",
-    "whole_repo_call_graph": "60bf7bd4ba4ce7188e4c8c59b3de6e8036c12b3adc17412ec6428058f14024c2",
-    "whole_repo_data_flow": "37e553e994a54bf5a8aaf1a5beded4d9adc84e2dad9f7692d17c97394bc0d94d"
+    "repository_fingerprint": "62925249416ff6b7e06dc55b47f5f135b66fb7170b853fd1ba04dcc48565aa69",
+    "version": "0.2.0",
+    "whole_repo_call_graph": "fc571f2cfde29e5dfbecca6392b567db53072eee919b06d7bf574d229689db8f",
+    "whole_repo_data_flow": "781892b2eb609196f6a5e99a3c63a1f79926e15ebe26de689d5b14f39928f369"
 }

@@ -266,6 +266,12 @@ partitionBlocks curId (s:ss) nextId = case s of
             hExitEdge = [CFGEdge hBlockId targetId CondUnconditional]
         in (bAcc ++ hBlocks, eAcc ++ hEdges ++ hExitEdge, hAcc ++ [(mExcExpr, hBlockId)], nId1)
 
+  StmtWith items body ->
+    partitionDisposalBlock curId items body ss nextId False
+
+  StmtAsyncWith items body ->
+    partitionDisposalBlock curId items body ss nextId True
+
   _ ->
     -- Collect non-branching statements into current block
     let (linear, rest) = span isLinearStmt (s:ss)
@@ -278,6 +284,26 @@ partitionBlocks curId (s:ss) nextId = case s of
             thisBlock = BasicBlock curId linear (TermJump nextBlockId)
             edge = CFGEdge curId nextBlockId CondUnconditional
         in (thisBlock : nextBlocks, edge : nextEdges, nextId1)
+
+partitionDisposalBlock :: BlockId -> [(Expr, Maybe Expr)] -> [Stmt] -> [Stmt] -> BlockId -> Bool -> ([BasicBlock], [CFGEdge], BlockId)
+partitionDisposalBlock curId items body ss nextId _isAsync =
+  let resourceStmts = [StmtAssign (maybe [] pure mTarget) resExpr | (resExpr, mTarget) <- items]
+      bodyBlockId = nextId
+      (bodyBlocks, bodyEdges, nextId1) = partitionBlocks bodyBlockId body (bodyBlockId + 1)
+      cleanupBlockId = nextId1
+      joinBlockId = cleanupBlockId + 1
+      cleanupBlock = BasicBlock cleanupBlockId [] (TermJump joinBlockId)
+      (joinBlocks, joinEdges, nextId2) = partitionBlocks joinBlockId ss (joinBlockId + 1)
+
+      entryBlock = BasicBlock curId resourceStmts (TermJump bodyBlockId)
+      entryEdge = CFGEdge curId bodyBlockId CondUnconditional
+      exitCleanEdge = CFGEdge bodyBlockId cleanupBlockId CondUnconditional
+      exceptCleanEdge = CFGEdge bodyBlockId cleanupBlockId (CondException "*")
+      cleanupToJoinEdge = [CFGEdge cleanupBlockId joinBlockId CondUnconditional | not (null ss)]
+
+      allBlocks = entryBlock : (bodyBlocks ++ [cleanupBlock] ++ joinBlocks)
+      allEdges = entryEdge : exitCleanEdge : exceptCleanEdge : (cleanupToJoinEdge ++ bodyEdges ++ joinEdges)
+  in (allBlocks, allEdges, nextId2)
 
 decomposeCondition :: BlockId -> Expr -> BlockId -> BlockId -> BlockId -> ([BasicBlock], [CFGEdge], BlockId)
 decomposeCondition curBId (ExprBinary OpAnd left right) trueTarget falseTarget nextAvailId =
@@ -306,17 +332,19 @@ formatExcExpr (Just _) = "*"
 
 isLinearStmt :: Stmt -> Bool
 isLinearStmt = \case
-  StmtIf {}       -> False
-  StmtWhile {}    -> False
-  StmtFor {}      -> False
-  StmtAsyncFor {} -> False
-  StmtLoop {}     -> False
-  StmtReturn {}   -> False
-  StmtRaise {}    -> False
-  StmtMatch {}    -> False
-  StmtSwitch {}   -> False
-  StmtTry {}      -> False
-  _               -> True
+  StmtIf {}        -> False
+  StmtWhile {}     -> False
+  StmtFor {}       -> False
+  StmtAsyncFor {}  -> False
+  StmtLoop {}      -> False
+  StmtReturn {}    -> False
+  StmtRaise {}     -> False
+  StmtMatch {}     -> False
+  StmtSwitch {}    -> False
+  StmtTry {}       -> False
+  StmtWith {}      -> False
+  StmtAsyncWith {} -> False
+  _                -> True
 
 formatCFG :: ControlFlowGraph -> Text
 formatCFG cfg =

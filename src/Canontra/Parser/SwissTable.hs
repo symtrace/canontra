@@ -82,10 +82,18 @@ swissTableCapacity = stCapacity
 hash64 :: BS.ByteString -> Word64
 hash64 = BS.foldl' (\ !h !w -> (h `xor` fromIntegral w) * 0x100000001b3) 0xcbf29ce484222325
 
+-- | De-raw Rust raw identifier prefixes (e.g. "r#type" -> "type").
+{-# INLINE normalizeRawIdent #-}
+normalizeRawIdent :: BS.ByteString -> BS.ByteString
+normalizeRawIdent bs
+  | BS.isPrefixOf "r#" bs = BS.drop 2 bs
+  | otherwise            = bs
+
 -- | Intern a ByteString symbol into the SwissTable.
 swissInternBS :: SwissTable -> BS.ByteString -> (SymbolId, SwissTable)
-swissInternBS !tbl !bs =
-  case swissLookupBS tbl bs of
+swissInternBS !tbl !rawBs =
+  let !bs = normalizeRawIdent rawBs
+  in case swissLookupBS tbl bs of
     Just existingId -> (existingId, tbl)
     Nothing ->
       let !tbl' = if stSize tbl * 10 >= stCapacity tbl * 7 -- Load factor > 70%
@@ -118,10 +126,11 @@ swissInternText tbl txt = swissInternBS tbl (TE.encodeUtf8 txt)
 
 -- | Lookup a ByteString symbol in the SwissTable.
 swissLookupBS :: SwissTable -> BS.ByteString -> Maybe SymbolId
-swissLookupBS (SwissTable ctrl slots ids _ _ cap) !bs
+swissLookupBS (SwissTable ctrl slots ids _ _ cap) !rawBs
   | cap == 0 = Nothing
   | otherwise =
-      let !h = hash64 bs
+      let !bs = normalizeRawIdent rawBs
+          !h = hash64 bs
           !h2 = fromIntegral (h .&. 0x7F) :: Word8
           !mask = cap - 1
           !startSlot = fromIntegral ((h `shiftR` 7) .&. fromIntegral mask) :: Int

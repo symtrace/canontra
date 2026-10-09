@@ -57,13 +57,14 @@ import Data.Word (Word16, Word32, Word64, Word8)
 import Foreign.ForeignPtr (ForeignPtr, withForeignPtr)
 import Foreign.Ptr (Ptr, plusPtr)
 import GHC.Generics (Generic)
-import System.Directory (createDirectoryIfMissing, doesFileExist, renameFile)
+import System.Directory (createDirectoryIfMissing, doesFileExist)
 import System.FilePath (takeDirectory)
 import System.IO (hPutStrLn, stderr)
 import System.Process (getCurrentPid)
 
 import Canontra.Cache.Common
-  ( MerkleCache (..)
+  ( atomicSwapWithRetry_
+  , MerkleCache (..)
   , MerkleCacheEntry (..)
   , computeCRC32
   , decodeDigest
@@ -677,7 +678,7 @@ writePagedCacheFile cachePath cache = do
   pid <- getCurrentPid
   let tmpPath = cachePath ++ ".tmp." ++ show pid
   BS.writeFile tmpPath (encodeBinaryCacheV5 cache)
-  renameFile tmpPath cachePath
+  atomicSwapWithRetry_ tmpPath cachePath
 
 -- | Read cache from disk in CNTR\x05 format with page-level CRC32 recovery.
 readPagedCacheFileResilient :: FilePath -> IO MerkleCache

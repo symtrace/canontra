@@ -88,8 +88,8 @@
         {
             "fingerprints": {
                 "call_graph": "ef1c7d647507624b8f208e85ceaf966d7861e4d097a0603be88ad12491eae54e",
-                "composite": "4f8007437c8b4cc6c49c94b5cd6d401317af59491540d6bf44f0847f03186c60",
-                "control_flow": "3b23cefa156f9150aab1958cc5dcf7c6de4cae95b084bf3944cf329090adf1a4",
+                "composite": "633dcbfb2d2d54c941621f97986bf247683be0218acc6c16484c6219ed768fb0",
+                "control_flow": "f96a633aab7785e2ce48cd660f4e343026699afd67a7e626cfc21f37e7817006",
                 "data_flow": "1bd40bafd46bbaa3d6a235ad8fbe78af5254c8dff656a0a82d065c307f0a4e21",
                 "declaration": "841e1485b6341e12bf3885388f358c53a16fbe7803951099f248680553da3410",
                 "dependency": "ce931b63113ba7f5a92f44a2def8e1a6d4960fe98047913c07d1e6c36d6405be",
@@ -144,8 +144,8 @@
         {
             "fingerprints": {
                 "call_graph": "b36b6e0b5d0af6c9aba958c187304a901f5c759cd573969fa06539e1f4045513",
-                "composite": "cb8ffc59fed3973ae68dfca99a302276745abe577a9b17f3a3e668058770acf5",
-                "control_flow": "13ec1de3bd141dfb33c34eb30ecee9502730f27400f1f1356d3eb6490818d69c",
+                "composite": "8fe382883d89580056e62e3fd69250ab55016b148acb432e68f430a7f7353bf2",
+                "control_flow": "11d4a06603a369ee1e5c339549b65f917420bf3c68e9bc445cce0ff9086cf2b2",
                 "data_flow": "6bf103095ed2a8b51a6473d1a01eb16102b5a7e3b5da874a58f5946e7f275bea",
                 "declaration": "f2fc60b868d2948e0e6bac2a56460874169755a4ac10a78e3531e593cc349867",
                 "dependency": "da214aee0133300a8bc7042ed0cced499e140c01c082b826a534f0c5e4bf68ef",
@@ -158,8 +158,8 @@
         {
             "fingerprints": {
                 "call_graph": "3cd651b22bfba9c5ad58bc4129ce60ac21904c7733b8795fab50d5bf630dc2fe",
-                "composite": "970946717a3a66b82e585f889a2049be418ca29c75d060fbadd835036c740851",
-                "control_flow": "00150f1c061b613549216cd6c371fbf2d385a630911b4e182bff25de89a8b30e",
+                "composite": "eb1620299851c677204419d08aaba15cf471b448121fde3eadcd672ec38f3a37",
+                "control_flow": "ea1270e4dca4d534e69508c9124b0d618378da80e49ca1f1ec165e01bc616426",
                 "data_flow": "3574ae2243fa0508947d7b02642b0c494f6afb126ffa45827a5be5c9ad2b4ecf",
                 "declaration": "d749435cce187b4776ae27671eee36e12899a69f8686931351c0595d0d21dfa5",
                 "dependency": "c4d84c5934994daaf8d3ca11b8c204aab8686635a6f604a1bed72568468927f3",
@@ -227,7 +227,7 @@
         }
     ],
     "repository_fingerprint": "936a0ddbc223603f6ec607cfb9516a1d850f241b00850b83607f8acff7385c1f",
-    "version": "0.1.0",
-    "whole_repo_call_graph": "f34a16e2e81a1947732b4138ce608afaca9477ec4855724421d02cd110ac7c99",
+    "version": "0.2.0",
+    "whole_repo_call_graph": "82e50951301442edb44d3b964fa8c8d396dae605d2c8a71bf803204541772a8e",
     "whole_repo_data_flow": "cbb258bf8a3cbdb15bcd3bf5882d2b394fe025cdf8e6747c2b7e705fd1483d51"
 }

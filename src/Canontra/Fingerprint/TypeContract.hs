@@ -83,3 +83,5 @@ serializeTypeContracts rawContracts =
       TypeGeneric name args ->
         let b = TE.encodeUtf8 name
         in BB.word8 0x08 <> BB.word32BE (fromIntegral (BS.length b)) <> BB.byteString b <> BB.word32BE (fromIntegral (length args)) <> foldMap serializeType args
+      TypeRecVar d ->
+        BB.word8 0x09 <> BB.word32BE (fromIntegral d)

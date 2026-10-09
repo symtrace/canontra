@@ -1,4 +1,7 @@
 {-# LANGUAGE BangPatterns #-}
+{-# LANGUAGE DeriveAnyClass #-}
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE DerivingStrategies #-}
 {-# LANGUAGE OverloadedStrings #-}
 
 {- |
@@ -11,19 +14,24 @@ Provides pure Haskell, platform-invariant path containment and security boundari
 - Resource ceiling enforcement: file size ceiling (50 MB) and directory recursion depth limit (<= 64 levels).
 -}
 module Canontra.Security.Path
-  ( DeviceID
+  ( FileNodeIdentity (..)
+  , DeviceID
   , FileID
+  , getFileNodeIdentity
   , maxFileSizeBytes
   , maxRecursionDepth
   , canonicalizeSafePath
   , isSymlinkLoop
+  , isSymlinkLoopLegacy
   , checkResourceBounds
   , checkResourceBoundsWith
   , isPathContained
   , normalizePathUniversal
   ) where
 
+import Control.DeepSeq (NFData)
 import Control.Exception (IOException, try)
+import GHC.Generics (Generic)
 import Data.Char (toLower)
 import Data.List (isPrefixOf)
 import Data.Set (Set)
@@ -31,16 +39,40 @@ import qualified Data.Set as Set
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
 import Data.Word (Word64)
-import System.Directory (canonicalizePath, doesFileExist, getFileSize)
+import System.Directory (canonicalizePath, doesFileExist, doesPathExist, getFileSize)
 import System.FilePath (isRelative, splitDirectories, takeDrive, (</>))
 
 import Canontra.Cache.Common (fastPathHash64)
+
+-- | Composite volume and file identity preventing cross-volume collision.
+data FileNodeIdentity = FileNodeIdentity
+  { fniVolumeID :: {-# UNPACK #-} !Word64 -- Windows Volume Serial / POSIX dev_t
+  , fniFileID   :: {-# UNPACK #-} !Word64 -- Windows FileIndex / POSIX ino_t
+  } deriving stock (Eq, Ord, Show, Generic)
+    deriving anyclass (NFData)
 
 -- | 64-bit Device/Volume identifier.
 type DeviceID = Word64
 
 -- | 64-bit File/Inode identifier.
 type FileID = Word64
+
+-- | Pure / IO resolution of composite 'FileNodeIdentity' for a file path.
+getFileNodeIdentity :: FilePath -> IO (Either IOException FileNodeIdentity)
+getFileNodeIdentity path = do
+  eCanon <- try (canonicalizePath path) :: IO (Either IOException FilePath)
+  case eCanon of
+    Left err -> pure (Left err)
+    Right canonDir -> do
+      exists <- doesPathExist canonDir
+      if not exists
+        then pure (Left (userError ("Path does not exist: " ++ path)))
+        else do
+          let !norm = stripTrailingSlash (normalizePathUniversal canonDir)
+              !drive = takeDrive norm
+              !volId = fastPathHash64 (TE.encodeUtf8 (T.pack drive))
+              !fileId = fastPathHash64 (TE.encodeUtf8 (T.pack norm))
+          pure (Right (FileNodeIdentity volId fileId))
 
 -- | Maximum file size ceiling: 50 MB (52,428,800 bytes).
 maxFileSizeBytes :: Integer
@@ -97,20 +129,27 @@ canonicalizeSafePath rootDir candidatePath
                                  ++ ", root directory is " ++ canonRoot ++ ")"))
 
 -- | Detects whether a directory has already been visited in the traversal chain, breaking symlink cycles.
-isSymlinkLoop :: Set (DeviceID, FileID) -> FilePath -> IO (Bool, Set (DeviceID, FileID))
+isSymlinkLoop :: Set FileNodeIdentity -> FilePath -> IO (Bool, Set FileNodeIdentity)
 isSymlinkLoop visited dir = do
-  eCanon <- try (canonicalizePath dir) :: IO (Either IOException FilePath)
-  case eCanon of
+  eIdent <- getFileNodeIdentity dir
+  case eIdent of
     Left _ -> pure (True, visited) -- Treat unresolvable/recursive loop as loop
-    Right canonDir -> do
-      let !norm = stripTrailingSlash (normalizePathUniversal canonDir)
-          !drive = takeDrive norm
-          !devId = fastPathHash64 (TE.encodeUtf8 (T.pack drive))
-          !fileId = fastPathHash64 (TE.encodeUtf8 (T.pack norm))
-          !pair = (devId, fileId)
-      if Set.member pair visited
+    Right ident ->
+      if Set.member ident visited
         then pure (True, visited)
-        else pure (False, Set.insert pair visited)
+        else pure (False, Set.insert ident visited)
+
+-- | Legacy pair-based symlink detector for backwards compatibility.
+isSymlinkLoopLegacy :: Set (DeviceID, FileID) -> FilePath -> IO (Bool, Set (DeviceID, FileID))
+isSymlinkLoopLegacy visited dir = do
+  eIdent <- getFileNodeIdentity dir
+  case eIdent of
+    Left _ -> pure (True, visited)
+    Right (FileNodeIdentity v f) ->
+      let pair = (v, f)
+      in if Set.member pair visited
+           then pure (True, visited)
+           else pure (False, Set.insert pair visited)
 
 -- | Verifies resource bounds: file size <= 50MB and directory nesting depth <= 64.
 checkResourceBounds :: FilePath -> IO (Either String ())

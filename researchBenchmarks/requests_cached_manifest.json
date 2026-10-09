@@ -214,8 +214,8 @@
         {
             "fingerprints": {
                 "call_graph": "9d93c58406141614b71d2e24b9f4fcc7a367b797189ee1b115bea2e0d60ba21c",
-                "composite": "d7681b834c30b31dd1b2cc610fe2112f53d967e804c62b5c07122d254c30f66c",
-                "control_flow": "233c6df7f51d7ebabfb97882860a8f24461764ad6f564d27fa8c28bade57c1a7",
+                "composite": "d08e89d4729edd041e782c1c93da1ff7899587f39a09d91942c32d5344690552",
+                "control_flow": "061cd3e5d76bd1d0ccdebffcd4d375c1a900bde9b7e054d5e80955d7931e6d85",
                 "data_flow": "2237bd310d234ab0f76dc127305d915ce81e543fc358ac8ff8027d90191f4820",
                 "declaration": "7b7437079ee8f3702f12cfb7617796c53cfc34ec19f0d922276e1436331867bc",
                 "dependency": "3fbff80e939a80874a0d5e34c02b84096e9efdab55bcec0906883e2d0596cf76",
@@ -242,8 +242,8 @@
         {
             "fingerprints": {
                 "call_graph": "4cbb610366d9902ff2289470a4972afad3c587173a6735517d89769e490eec55",
-                "composite": "2ae3268c65c451547b71c2671885a194a67345316a5f9f71927b7a637a12c0df",
-                "control_flow": "33a504778123b4f8a57ef36d5ee326ea45b7b3d43f9626f2283bfcc72fe67cc3",
+                "composite": "1c89b7a5b830e7c8006cd05fcaa8d313532fc87f225cfc2cf15a83dd6ebd640c",
+                "control_flow": "3b647fe30f3ca6c9156212d3a2203d6dd3eb508640f757def58e1b7ecdd7b328",
                 "data_flow": "5e422f4daacee2b260329898d7fe90fabd8c9b83db6637052ec7193fe9126b97",
                 "declaration": "19434853c7ead8d25323f633a71c1712076f2e4c3189e76aa5eb1dd695a2d0ed",
                 "dependency": "4a54516dad13335be6b963ab170795dddd8fc070d1fa0379e05b5dc32762bd70",
@@ -297,7 +297,7 @@
         }
     ],
     "repository_fingerprint": "7e604c0a49accfd32f2810cadd6a0c003e632b22e9d572fc8316448dfa247810",
-    "version": "0.1.0",
-    "whole_repo_call_graph": "10cc5961235e22ff5abb26dd41ea2ea273cf3d7cb86eef33f88685625c854a5b",
+    "version": "0.2.0",
+    "whole_repo_call_graph": "f87e69b26b22871e32fe7dd46705858424c8300a02803b82bbc1d75b9b06c2e5",
     "whole_repo_data_flow": "7a3f99351a2b36e76f0f51275b67710c347c70b8b8b9cc085082709fa003ae21"
 }

@@ -7,9 +7,9 @@
 [Canontra Parse Warning] src\click\_utils.py:24:45: Unexpected token in parameter list
 [Canontra Parse Warning] src\click\core.py:23:8: Expected identifier in module name
 [Canontra Parse Warning] src\click\decorators.py:28:57: Unexpected token in parameter list
-[Canontra Parse Warning] src\click\exceptions.py:21:35: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] src\click\exceptions.py:1:1: Expected ']' but reached EOF
 [Canontra Parse Warning] src\click\formatting.py:14:53: Unexpected token in parameter list
-[Canontra Parse Warning] src\click\parser.py:198:36: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] src\click\parser.py:1:1: Expected ']' but reached EOF
 [Canontra Parse Warning] src\click\shell_completion.py:21:41: Unexpected token in parameter list
 [Canontra Parse Warning] src\click\termui.py:15:8: Expected identifier in module name
 [Canontra Parse Warning] src\click\testing.py:14:8: Expected identifier in module name
@@ -20,7 +20,6 @@
 [Canontra Parse Warning] tests\test_compat.py:1:1: Expected ':' but reached EOF
 [Canontra Parse Warning] tests\test_context.py:539:45: Unexpected token in base class list
 [Canontra Parse Warning] tests\test_deprecations.py:1:1: Unexpected end of input in expression
-[Canontra Parse Warning] tests\test_formatting.py:314:48: Unexpected token in primary expression: TokKw "for"
 [Canontra Parse Warning] tests\test_options.py:1:1: Unexpected end of input in expression
 [Canontra Parse Warning] tests\test_shell_completion.py:1:1: Expected ':' but reached EOF
 [Canontra Parse Warning] tests\test_stream_lifecycle.py:1:1: Expected ':' but reached EOF

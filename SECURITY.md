@@ -1,6 +1,6 @@
 # Security Policy and Architecture
 
-Version: v0.1.0
+Version: v0.2.0.0 (Release v0.2.0)
 Target: Canontra Production Release
 Organization: SymtraceLabs Security Team
 
@@ -14,12 +14,13 @@ Canontra is engineered to execute safely on untrusted source repositories, autom
 * Zero Telemetry or Analytics: No code snippets, file paths, developer identifiers, or usage telemetry are ever recorded, collected, or transmitted outside the local machine.
 * Self-Contained Execution: Canontra runs with 100% functionality in completely isolated, offline environments where internet access is prohibited.
 
-### 2. Path Sandboxing and Directory Containment
+### 2. Path Sandboxing, Directory Containment & Loop Detection
 
 When scanning repositories or comparing files, Canontra actively defends against directory traversal attacks and malicious filesystem structures:
 
 * Root Containment: All target paths are canonicalized and verified to reside strictly within the project root directory prefix. Relative traversal sequences such as `../../etc/passwd` or windows drive jumps are safely detected and rejected with exit code 4.
-* Symlink Cycle Breaking: Canontra tracks 64-bit `(DeviceID, FileID)` tuples during filesystem traversal. Recursive symlink loops and circular directory junctions are identified and broken before recursive stack overflows can occur.
+* Symlink & Junction Cycle Breaking: Canontra tracks composite `FileNodeIdentity` (`fniVolumeID`, `fniFileID`) tuples during filesystem traversal (`Canontra.Security.Path`). Recursive symlink loops, cross-volume mounted junctions, and circular directory graphs are severed before recursive stack exhaustion can occur.
+* Case-Folding Determinism: Paths are collated deterministically across case-sensitive and case-insensitive filesystems, guaranteeing identical Merkle root hashes on Linux ext4 and Windows NTFS.
 * Null Byte Invariant: Paths containing embedded null bytes (`\0`) are immediately rejected before passing to OS filesystem APIs.
 
 ### 3. Hard Resource Ceilings
@@ -30,14 +31,14 @@ To prevent denial-of-service, zip-bombs, and memory exhaustion attacks:
 * Maximum Recursion Depth: Directory trees nested deeper than 64 levels are rejected to protect process call stacks.
 * Bounded Graph Traversal: Dominator tree computations and data-flow reachability passes enforce finite iteration bounds, guaranteeing termination on arbitrary control flow graphs.
 
-### 4. Memory Safety and Binary Cache Security (CNTR v5)
+### 4. Memory Safety and Binary Slab Cache Security (CNTR v6)
 
-* Pure Haskell Runtime: Built on GHC 9.6.6 with pure functional semantics. The core library strictly avoids `unsafePerformIO`, `unsafeCoerce`, and raw memory pointer manipulation.
-* Flat Linear Arena Protection: Unboxed vector representations (`astTags`, `astFirstChild`, `astNextSibling`, `astPayloads`) prevent heap-allocated pointer corruption and enforce strict array boundary checking.
-* 4KB Paged Radix Cache Security:
-  * Every 4,096-byte slab page in `.canontra/cache.bin` is protected by an IEEE 802.3 CRC32 checksum.
-  * Corrupted cache pages are discarded and recomputed in isolation without crashing the engine.
-  * Cache writes are staged to a private temporary file and finalized using an atomic kernel rename operation, preventing corrupted files during sudden power loss.
+* Pure Haskell Runtime: Built on GHC 9.6.6 with pure functional semantics. The core library strictly avoids unmanaged pointer manipulation.
+* Flat Linear Arena & Unboxed CSR Protection: Unboxed vector representations prevent heap-allocated pointer corruption and enforce strict array boundary checking.
+* 4KB Paged Radix Slab Cache Security (`CNTR\x06`):
+  * Every 4,096-byte slab page in `.canontra/cache.bin` is protected by an IEEE 802.3 CRC-32C checksum.
+  * Corrupted cache pages are discarded and recomputed in isolation (`salvageSlabCacheFile`) without crashing the engine.
+  * Cache writes are staged to a private temporary file and finalized using `atomicSwapWithRetry` with exponential backoff and jitter, preventing Windows Defender / SearchIndexer lock failures and torn writes during sudden termination.
 
 ### 5. Safe Git Integration
 

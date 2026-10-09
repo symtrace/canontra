@@ -3,7 +3,7 @@
 
 {- |
 Module      : Canontra.CLI.Commands
-Description : Command-line argument parsing and command dispatch for v0.1.0.
+Description : Command-line argument parsing and command dispatch for v0.2.0.
 
 This module provides the entrypoint parser for all canontra CLI operations,
 dispatching commands for polyglot multi-tier fingerprinting (including stdin streaming),
@@ -665,7 +665,7 @@ cliParserInfo :: ParserInfo Command
 cliParserInfo = info (parseCLIArgs <**> helper)
   ( fullDesc
   <> progDesc "canontra - High-Throughput Polyglot Deterministic Program Fingerprinting & Deep Semantic Graph Engine"
-  <> header "canontra v0.1.0"
+  <> header "canontra v0.2.0"
   )
 
 parseCLIArgs :: Parser Command

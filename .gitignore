@@ -10,6 +10,8 @@
 dist-bin/
 dist/
 dist-newstyle/
+cabal.project.local
+cabal.project.local~*
 *.tar.gz
 *.zip
 
@@ -22,6 +24,11 @@ dist-newstyle/
 *.p_o
 *.chi
 *.chs.h
+*.dump-simpl
+*.dump-hi
+*.dump-parsed
+*.dump-stg
+*.dump-cmm
 
 # GHC Environment Files
 .ghc.environment.*
@@ -39,13 +46,17 @@ dist-newstyle/
 .cache/
 
 # ==============================================================================
-# Test, Profiling & Transient Outputs
+# Test, Profiling, Coverage & Transient Outputs
 # ==============================================================================
 *.log
 *.tix
 *.prof
+*.hp
+*.eventlog
+.hpc/
 bench_results.csv
 bench_results.svg
+*.csv.tmp
 
 # ==============================================================================
 # Benchmark Corpus Staging & Scratch Workspaces

@@ -47,12 +47,13 @@ import qualified Data.Map.Strict as Map
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
 import Data.Word (Word32, Word64)
-import System.Directory (createDirectoryIfMissing, doesFileExist, renameFile)
+import System.Directory (createDirectoryIfMissing, doesFileExist)
 import System.FilePath (takeDirectory, (</>))
 import System.Process (getCurrentPid)
 
 import Canontra.Cache.Common
-  ( MerkleCache (..)
+  ( atomicSwapWithRetry_
+  , MerkleCache (..)
   , MerkleCacheEntry (..)
   , computeCRC32
   , decodeDigest
@@ -66,6 +67,7 @@ import Canontra.Cache.Common
   )
 import Canontra.Cache.Inode (FileMetadata (..))
 import Canontra.Cache.PagedCache (decodeBinaryCacheV5, lookupBinaryCacheV5)
+import Canontra.Cache.SlabV6 (decodeSlabV6Binary, lookupSlabBinaryBS)
 import Canontra.Types (Fingerprint (..), FingerprintBundle (..))
 
 -- | Lookup an entry in an in-memory MerkleCache with case-folding fallback.
@@ -237,6 +239,9 @@ decodeBinaryCache bs
   | otherwise =
       let !ver = readWord16LE bs 4
       in case ver of
+        6 -> case decodeSlabV6Binary bs of
+               Just (entries, _) -> Just $ MerkleCache $ Map.map (\(m, b) -> MerkleCacheEntry (fmSize m) (fmMtime m) b) entries
+               Nothing -> Nothing
         5 -> decodeBinaryCacheV5 bs
         4 -> decodeBinaryCacheV4 bs
         3 -> decodeV3
@@ -378,6 +383,7 @@ lookupBinaryCache path meta bs
   | otherwise =
       let !version = readWord16LE bs 4
       in case version of
+        6 -> lookupSlabBinaryBS path meta bs
         5 -> lookupBinaryCacheV5 path meta bs
         4 -> lookupV4
         3 -> lookupV3
@@ -520,7 +526,7 @@ writeMerkleCacheAtomic cachePath cache = do
   pid <- getCurrentPid
   let tmpPath = cachePath ++ ".tmp." ++ show pid
   BS.writeFile tmpPath (encodeBinaryCacheV4 cache)
-  renameFile tmpPath cachePath
+  atomicSwapWithRetry_ tmpPath cachePath
 
 -- | Write cache to disk in resilient CNTR\x04 binary format with atomic replacement.
 writeMerkleCache :: FilePath -> MerkleCache -> IO ()

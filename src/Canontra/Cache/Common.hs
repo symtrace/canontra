@@ -27,9 +27,15 @@ module Canontra.Cache.Common
   , bytes32ToHex
   , nibbleToHex
   , hexVal
+  , atomicSwapWithRetry
+  , atomicSwapWithRetry_
   ) where
 
+import Control.Concurrent (threadDelay)
 import Control.DeepSeq (NFData)
+import Control.Exception (IOException, throwIO, try)
+import Data.Time.Clock.POSIX (getPOSIXTime)
+import System.Directory (renameFile)
 import qualified Data.Aeson as Aeson
 import Data.Bits ((.&.), (.|.), shiftL, shiftR, xor)
 import qualified Data.ByteString as BS
@@ -217,3 +223,30 @@ nibbleToHex :: Word8 -> Word8
 nibbleToHex n
   | n < 10    = 0x30 + n
   | otherwise = 0x61 + (n - 10)
+
+-- | Atomic file swap with exponential backoff and jitter for Windows resilience.
+atomicSwapWithRetry :: FilePath -> FilePath -> IO (Either String ())
+atomicSwapWithRetry tmpPath targetPath = go (1 :: Int) (2000 :: Int) -- start at 2ms (2000 µs)
+  where
+    maxAttempts = 6
+    go !attempt !delayMicros
+      | attempt > maxAttempts = pure (Left "Exceeded maximum retry attempts for atomic file swap")
+      | otherwise = do
+          res <- try (renameFile tmpPath targetPath) :: IO (Either IOException ())
+          case res of
+            Right () -> pure (Right ())
+            Left _ -> do
+              t <- getPOSIXTime
+              let !tMicros = round (t * 1000000) :: Integer
+                  !halfDelay = fromIntegral (max (1 :: Int) (delayMicros `div` 2)) :: Integer
+                  !jitter = fromIntegral (tMicros `mod` halfDelay) :: Int
+              threadDelay (delayMicros + jitter)
+              go (attempt + 1) (delayMicros * 2)
+
+-- | Force an atomic file swap with retry, throwing IOException on failure.
+atomicSwapWithRetry_ :: FilePath -> FilePath -> IO ()
+atomicSwapWithRetry_ tmpPath targetPath = do
+  res <- atomicSwapWithRetry tmpPath targetPath
+  case res of
+    Right () -> pure ()
+    Left err -> throwIO (userError err)

@@ -38,7 +38,7 @@ We maintain a strict zero-warning and zero-failure policy across our entire test
 stack test --pedantic
 ```
 
-All 470+ automated tests should pass cleanly without any compiler warnings or test failures.
+All 618+ automated tests should pass cleanly without any compiler warnings or test failures.
 
 ## Core Architectural Constraints
 
@@ -54,7 +54,7 @@ To preserve Canontra's production guarantees, all contributions must adhere to t
    Ensure all binary serialization is strictly Big-Endian. Never rely on host CPU endianness or host filesystem path separators. Always normalize paths to forward slashes.
 
 4. High-Performance Memory Hygiene:
-   Where possible, avoid allocating deeply nested pointer-heavy tree structures on the garbage-collected heap. Use Flat Linear Arenas and unboxed Vectors for AST representations, and use SwissTables for symbol interning.
+   Where possible, avoid allocating deeply nested pointer-heavy tree structures on the garbage-collected heap. Use Flat Linear Arenas and unboxed Vectors for AST representations, Unboxed Compressed Sparse Row (CSR) matrices for whole-repository graphs (`Canontra.Analysis.CSRGraph`), 64-byte aligned slab records for `CNTR\x06` caching, and SwissTables for symbol interning.
 
 5. Strict Compiler Flags:
    The codebase compiles under `-Wall -Werror -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wpartial-fields -Wredundant-constraints`. Unused imports, missing export lists, or non-exhaustive pattern matches will fail the build.

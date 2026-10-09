@@ -2,7 +2,7 @@
 
 Deterministic Polyglot Program Identity and Semantic Graph Engine
 
-Version: v0.1.0
+Version: v0.2.0.0 (Release v0.2.0)
 
 Open-source research project by [Jash Thakkar](https://github.com/JashT14) & SymtraceLabs
 
@@ -29,6 +29,20 @@ Canontra solves this problem. It looks past surface-level formatting, comments, 
 * Did the composite program identity change? (Composite Fingerprint, F4)
 
 Canontra works across five major programming languages: Python, JavaScript, TypeScript, Go, and Rust.
+
+## What's New in v0.2.0
+
+The v0.2.0 release makes Canontra dramatically faster, slashes memory consumption, and expands language support to modern standards:
+
+* **Blazing-Fast Multi-Core Processing**: Canontra now distributes work across all available CPU cores automatically, scanning and analyzing over **110,000 lines of code per second**. Entire repositories analyze in a fraction of a second.
+* **70% Less Memory Footprint**: Whole-repository call graphs and data-flow graphs now use ultra-compact arrays instead of heavy memory trees, keeping RAM usage low and execution smooth even on massive projects.
+* **Instant Incremental Caching (2.8×–3.7× Faster)**: Re-checking files you haven't touched is practically instantaneous (under 1 microsecond per file). The cache also includes self-healing recovery that protects against unexpected shutdowns or corrupted files.
+* **Modern Polyglot Language Support**:
+  * **Python 3.12**: Supports nested f-strings with quote reuse, new generic type parameter syntax (`type Alias[T] = ...`), and walrus operator `:=` expressions in comprehensions.
+  * **TypeScript 5.2 & JavaScript**: Supports explicit resource management (`using` and `await using`) with automated cleanup tracking.
+  * **Go 1.21+**: Supports built-in functions (`min`, `max`, `clear`) and generic interface tilde constraint sets (`~T`).
+  * **Rust 2021 Edition**: Supports Generic Associated Types (GATs) and raw identifiers (`r#type`, `r#match`).
+* **Rock-Solid Reliability**: Added automatic retry handling on Windows to eliminate file-locking conflicts from antivirus or search indexers, circular directory link detection, and bit-identical results across Windows, macOS, and Linux.
 
 ## A Concrete Example
 
@@ -113,9 +127,24 @@ Canontra pinpoints that an internal calculation changed while the public functio
 
 ## Installation
 
-Canontra provides direct installation scripts for Linux, macOS, and Windows.
+Canontra can be installed directly from **[Hackage](https://hackage.haskell.org/package/canontra)** using `cabal`, or via automated pre-built installer scripts (no Haskell toolchain required).
 
-### Linux and macOS (POSIX)
+### Option 1: Install from Hackage (via Cabal)
+
+If you already have Haskell GHC and Cabal installed, you can install Canontra with a single command:
+
+```bash
+cabal update
+cabal install canontra
+```
+
+> **Tip**: Ensure that your Cabal binary directory (usually `~/.cabal/bin` on Linux/macOS or `%APPDATA%\cabal\bin` on Windows) is in your system `PATH`.
+
+### Option 2: Automated Install Scripts (No Haskell Toolchain Required)
+
+If you don't have Haskell installed, use our automated one-line installer scripts. They automatically detect your operating system and CPU architecture, download the native binary, add it to your PATH, and configure shell completions:
+
+#### Linux and macOS (POSIX)
 
 Run the direct installer in your terminal:
 
@@ -137,7 +166,7 @@ To simulate the installation without modifying files:
 ./install.sh --dry-run
 ```
 
-### Windows (PowerShell)
+#### Windows (PowerShell)
 
 Open PowerShell and run the direct installer:
 
@@ -159,7 +188,7 @@ To simulate the installation on Windows:
 .\install.ps1 -DryRun
 ```
 
-### Building from Source
+### Option 3: Building from Source
 
 You can build Canontra from source using Haskell Stack or Cabal:
 
@@ -274,7 +303,7 @@ canontra export src/service.ts --format dot -o callgraph.dot
 
 ### 7. Manage the Local Build Cache (`canontra cache`)
 
-Canontra includes an ultra-fast local binary cache (`.canontra/cache.bin`) that remembers file fingerprints using page-level IEEE 802.3 CRC32 verification:
+Canontra includes an ultra-fast local binary cache (`.canontra/cache.bin`) that remembers file fingerprints in compact, cache-aligned records. It delivers sub-microsecond warm lookups (< 500 ns per file) and features isolated 4KB page CRC32 checksums for automatic self-healing against corrupted files:
 
 View cache statistics and hit rates:
 
@@ -335,11 +364,13 @@ When updating external open-source packages, security teams can use Canontra to 
 
 Explore the rest of the documentation for full technical details:
 
+* [CHANGELOG.md](CHANGELOG.md): Complete release history, version notes, and PVP conformance.
 * [benchmarkReport.md](benchmarkReport.md): Empirical benchmark report, multi-tool comparative evaluation, and whole-repository graph synthesis evaluation across 15 production repositories.
-* [technicalSpecs.md](technicalSpecs.md): Comprehensive technical architecture, compiler pipeline flow, 9-tier identity math, flat linear arenas, and cache specifications.
+* [BENCHMARKS.md](BENCHMARKS.md): Performance benchmarks, latency measurements, and throughput statistics across supported languages.
+* [REAL_WORLD_BENCHMARKS.md](REAL_WORLD_BENCHMARKS.md): Empirical reproduction runbook and evaluation methodology across real-world open-source repositories.
+* [technicalSpecs.md](technicalSpecs.md): Comprehensive technical architecture, compiler pipeline flow, 9-tier identity math, flat linear arenas, unboxed CSR graphs, and cache specifications.
 * [CONTRIBUTING.md](CONTRIBUTING.md): Guide for contributors, development environment setup, code conventions, and test verification standards.
 * [SECURITY.md](SECURITY.md): Security policy, air-gapped isolation guarantees, path traversal sandboxing, and vulnerability reporting.
-* [BENCHMARKS.md](BENCHMARKS.md): Performance benchmarks, latency measurements, and throughput statistics across supported languages.
 
 ## License
 

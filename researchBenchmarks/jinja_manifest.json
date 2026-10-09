@@ -31,14 +31,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "9c1217cfa7098d1593ea297e3b1effaa8899cdc03d3fb0ea1a5100ef6505dbe3",
-                "composite": "de5b2055505b81174a927e2ca70beab0ac07c1cd7af58d0bdac898e5f94ea703",
-                "control_flow": "7dc5b64debfb731170e2491385cb862fe8e468a3dafb2b951ca71e384a0102e5",
-                "data_flow": "e67fa02304b20864f8bca852b2e8534a359ff2a076e36c6e3f72307dbee3d2b6",
+                "call_graph": "6d9323635b66b5dd43c7855c25a83a7626ed026e6e7c445edfe27c22be05c386",
+                "composite": "b90ea7ecd336e2d91400504548f3a8942206e1b22646325d21be2b4aaca13008",
+                "control_flow": "cda5b84e243693b4cdf6422a1db7df0155788f820f98528fdded68394d5c667d",
+                "data_flow": "31718869f1c46dd44b136c03e7e4e9d7ad78327ab55c78795554b96e506201a1",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "3de9114c94f86b7ca7187b4f1a2fefc9f1e7f10856a5a84e6b6ae848c63f9dc5",
                 "source": "ffad0408ba84555d4dfab41d13871c9a6c0ea37314ec1f2291ba6ae13bc7436b",
-                "structural": "0f06771e833742a8f0fbe21fe03ea0d698df267baee05cf5082dd11febdff364",
+                "structural": "d8736a90d95ff85ba2ff98d5643564c6eda17b30b49d6a80e8da233a1c69376a",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\basic\\cycle.py"
@@ -74,13 +74,13 @@
         {
             "fingerprints": {
                 "call_graph": "d8ac9ab3c1b6b45814216afda18916e05c960a6062059aa79bb32ebba6c7523a",
-                "composite": "a7421a48d0448f8c0537c3ed6074d7a3ac9ab04974d8276b14c527db9d933ea6",
-                "control_flow": "a0a891d91560f4fc9d1a0fb5d7eb6f459342b21e2c4d3efe38b5f089a2c9c5c4",
-                "data_flow": "7d1b0b6c696e1cacbd23e55d4bd83a1a050a74619d614044405f19827b83a41e",
+                "composite": "afbdf1c4498745f3195eda15b2c9f1eea70865c2e129e9b373f64aecd6e1c8ba",
+                "control_flow": "22fe7cc373130a67e3654a2711fdc1ce017c1fe41cd54096dd65a28bd2df9152",
+                "data_flow": "6d01ebc64c93c8b6651d687802ffddb26883f31e38ee19c9ab103d7e6f0b1c5e",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "8a88f42174278e9266083f61231be56ca69a11aa1762baf7cc0d1066c56e6ddc",
                 "source": "014ca66eb0b094141d3efdda66804cc324fec614c153d26a839009cba04469f8",
-                "structural": "6679ef457f099d6813c20475d0baa4242aad8fd3c00097704910e4ed53c81827",
+                "structural": "16e4b3f2df8ce06fae163c4d8f4dacee3c85f21f4725ceb159917e3b28a01b0c",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\basic\\test.py"
@@ -88,13 +88,13 @@
         {
             "fingerprints": {
                 "call_graph": "2c24886fab606ebff02d69a7cd47e8f8445d1c581303205eea882f4b10e9ab5c",
-                "composite": "b6ae0fe4d8299f59ccf8099dc734a86366ad74838a918ec5e1fda35f0a8506c9",
-                "control_flow": "bac7a47f1524f64a4fc6167c474e8c7d7fed51e3d1f67990da035bfca42f05f1",
-                "data_flow": "a1c0bb46161eb36f4d2142a7dd5c34706c8b0e4a3f8faad1617e4035af7a968b",
+                "composite": "fe919074385ed9e12565befdc82e833344a3aaf9467c1b50b352d1e6c752546b",
+                "control_flow": "e3e3ee9ff1a1d3068a5f70d3fd3dc976b6b22d8f35a08f7a61749a9ae10a3680",
+                "data_flow": "a6cfc722ea2174791a1588cd58de44dc4b1eaa0aac7dadf19b740155fe4bc378",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "3de9114c94f86b7ca7187b4f1a2fefc9f1e7f10856a5a84e6b6ae848c63f9dc5",
                 "source": "4929b7ae0553925d6e4d3e48e6213c4cba30c6bb375f878d34b9079b194b76a6",
-                "structural": "b194cb7507e0cdfa36513ec088b17e281a7229bc17747163a2130fe0694920bd",
+                "structural": "c53b1f3f28bb490001699510c9aeb0b5bed06e4394fe9facaeace9bafc15a6c6",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\basic\\test_filter_and_linestatements.py"
@@ -102,27 +102,27 @@
         {
             "fingerprints": {
                 "call_graph": "ce65896223c59e89374a6dc630811518f3b6f1fd5b90417fa77a7745331bad3e",
-                "composite": "bb2d0ff5dcf9cab948683f1a44ff8a402bfc4588bead9c9cbb0f9fb8773f7c18",
-                "control_flow": "b875a6aa5180eae7138a7a9a5b1b943989d4533e604b09582da2ffd35463b089",
-                "data_flow": "746de9b505591c290455a11426f653de192ea87d40fceb260e9ea37e910cb220",
+                "composite": "29dcc2e5d067a430c6fba2ba4be7eb0d4604bb38d91de42e42f1816dc6be97fc",
+                "control_flow": "becea72febe5c28a4746abb93347a7819a34f5af5c4d8664b0a667cd4cf195e1",
+                "data_flow": "b3efadc05bf5d3fe4bfa8b320f5b7dc4b80f6265aa92bfd3aec5f70987976183",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "3de9114c94f86b7ca7187b4f1a2fefc9f1e7f10856a5a84e6b6ae848c63f9dc5",
                 "source": "12105746d2c3fe5d8242239ecfdf64aa60f2ab4105851e86e904390157665c71",
-                "structural": "135ad7a39e2e2170118457d322d92993d2b119bda92dc740f047ddaa31ff1270",
+                "structural": "42492b6c1287e20903148ac7788470b65c8f4314fdd42d1a4f63fa8db0be909d",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\basic\\test_loop_filter.py"
         },
         {
             "fingerprints": {
-                "call_graph": "bdf4168800f842c89676b4dfb2756dc2a0c8e307727701f85a84c7b8b1217ba2",
-                "composite": "9d076190c1bc2af3620fd4863ec75bc96a1d06842e3e3347fe71d85a3fa3f515",
-                "control_flow": "dfac2f4b3d4a2f9c08bb3402b9aae8e7e7c311064e649a804fd91d0d545252a8",
-                "data_flow": "c836db65a6d840f678c47a1a1879c0aee395dad5caeabadf5762b6ad7c0c26df",
+                "call_graph": "cad4db6a6bd6c018b74ff430442d2413e3bba214985f46de0bda6dbeec21c8fd",
+                "composite": "4395525bb27dbb3b8ca18ff9b84d63f4b8eb180bfac0dfc0661ab9c34fb87f62",
+                "control_flow": "fdbdf6b0ae90da0ee31222c64cab84b628bab8b72f22a3a2156d65d46215df91",
+                "data_flow": "0c733c813a9fbfe6c287c3350bd6f6c92726f9b783b71eaf9d3216191e77f180",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "3de9114c94f86b7ca7187b4f1a2fefc9f1e7f10856a5a84e6b6ae848c63f9dc5",
                 "source": "7249e6ab10839edef7ce1dfba49e02b1077084ecebe456437b1677bed949f6eb",
-                "structural": "902f9017096abc48cd9c7c6a3d7c160496439d2c09d1e43057e8179805c9452b",
+                "structural": "e023ec2bc0a69445d0d48ae626237eb411f7d47fc0e91b8487b7ea97e5496240",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\basic\\translate.py"
@@ -158,8 +158,8 @@
         {
             "fingerprints": {
                 "call_graph": "605fcc24ebf9ea07046acd488357ea0ec917e8c6c43cd392d80c63b92bb7e9f7",
-                "composite": "60719926b63386f8bd67ec05544d44cfb214aa8170b2ab857feff7820db55122",
-                "control_flow": "e592682905509b5ba55f43262d4cbe50438a5a9447a8e0ac5066a62cc824617a",
+                "composite": "2fdf68aeb94169ab8123902e6609491eb690f5191952afa31be640abeaf2411b",
+                "control_flow": "048ca8a5ea0e200c518233769fbe338baf28add8f2241a642ac3e71a7ef5f164",
                 "data_flow": "810fde1ab48f8dc0888ae5aad8b945f464308b601d4cdc7d3c5542a2592d5a0f",
                 "declaration": "08308a445f34d3cb64b6c5f105de9a1c792014f3744d09f47d98f7d9d1f1cd9b",
                 "dependency": "96c54955af8dfd7753300f1f56924b2576f9af9a1f7bfa882465ef48796b6e1d",
@@ -172,13 +172,13 @@
         {
             "fingerprints": {
                 "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
-                "composite": "c59f7db786cade0969b9941c628c1fcf3654533d3ddbd274e929a0d3383eef01",
-                "control_flow": "70d6130336bc939874d1fc5099840bb888b20cd56a22dd93d180dd943b541757",
-                "data_flow": "823817b54d7307d1f35dd616a740710b0f8a31f4814cf30f0ceeaac3e8b56508",
+                "composite": "06033c587a2b51ed98c7845815d52a5aa2066f602ab7016cf59616215ef4e947",
+                "control_flow": "db1d3e153aa36e9027dc0df66617b9b741b53835162ce5aa279d31a8ef27a398",
+                "data_flow": "c926f72df2cf3cdc281836d375c549d20d5d6d171cf631840c13457b6d9a4965",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "d49d443db7b1c91445db88f2f25846947e872fb4ef46081121542b7e2ef67f62",
-                "structural": "fb771b3249fe232705fe00eb33f05f5f9e5a0984e6f1523ab0ae4f2b396aa168",
+                "structural": "0ac184a83e5cc4d29fbb4a80b1c229b2f4d4c23c69f51cc407668bb49868c7ed",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "src\\jinja2\\constants.py"
@@ -256,8 +256,8 @@
         {
             "fingerprints": {
                 "call_graph": "102b63d9cc122f18a6e2eeffbccec5352c78de5d71116fc447b9c35b1b4c1340",
-                "composite": "3958a83172f0139fddd918448742fc4a2366c8f4a8f9070bf1ff0c837f7240c1",
-                "control_flow": "dc61dec1b337805ed0bfecffe778f6d3236d77f51cc4b52f67af0590ee9df40d",
+                "composite": "641745dbf3758a50d380b063d1b8f66b48fd28cd0469a28d13800f3b022eeb0a",
+                "control_flow": "1588501872d14e5e3d81c952db377989987ffe5ae36623ab1603f119f1ad79a6",
                 "data_flow": "338a77cf2a6334715cd3c1f00eaf73c02924e0613aa8f28b324e820c6ccca38d",
                 "declaration": "542e77c6fc549c19666ff318e6c814aa078ed6796dc8ee39a6e0c9e576667616",
                 "dependency": "afaba76542dbc8329dcc0a1c588e0e5d5525b98940118739736a76b412e05fe6",
@@ -326,13 +326,13 @@
         {
             "fingerprints": {
                 "call_graph": "c16888ad82c3a6f675d8c4a95741b1f7eea66072b8adc0090d26db3add925b0d",
-                "composite": "6e1a969888a6a6d1c49646acecb166b0733b5468cbcf8c0e342ffea7270b1db3",
-                "control_flow": "0e143f0bed3e6a925edde110fcdd55c92fb0d756676ef8a1bde832b294bbdeb2",
-                "data_flow": "7c3bca359609488519507bcadc994a322d1614dcf3e396e9203745d3602334bb",
+                "composite": "707281c563bb01be64dc4389a56569a7ec1ff4d3ae45e8a6e857126bca953972",
+                "control_flow": "90a10ab2ccc0433c2555a7b2e13941c0bd9aa630cd4077c92456593e4e4f0e73",
+                "data_flow": "c9d3ea84637427e8252f6504b0790ea2dea4b9795140b11848231bcb12a13165",
                 "declaration": "420590ebee1fd1848129de76545121ed5de903ea7576d48e4af809bdee48de86",
                 "dependency": "09127bf5dc88a7c126ed0af68997b7807139e5c06afa1639848e5f17a0817a4a",
                 "source": "969f8fce3229cd8abd2545b781373d8c7648bd8c6f394cd224ba16c530100a82",
-                "structural": "0d17aaa89a4a534c24ad0f1223fcd4d727fffdca945957c1a367ab6a71e8aa26",
+                "structural": "559cc060b7a29ed1efa0a52cdb2539cf7de410129e1e279b1dc3ea608255d160",
                 "type_contract": "6ea3dc1e5b802ade574bf2bba925b86e6799d8456044f273aab652c49abb1bc1"
             },
             "path": "tests\\test_security.py"
@@ -340,8 +340,8 @@
         {
             "fingerprints": {
                 "call_graph": "532b96bfbfd3951f96a6bbd4f22f6a945ce600cd12af75fd2d6f4abe9ebf3869",
-                "composite": "fc9f87beb8f15230c08bbc3833151f7cd387ab7d5f2abda07f8324f02d1826a9",
-                "control_flow": "663a38e350944efa849a982866a89cca717390194246b694d2d25cd63ea3e817",
+                "composite": "9df0c2b1d2e22dc12ab48fdd7c04e0f6fd3e4d2b7dbae381ae3ef006d943f40e",
+                "control_flow": "9e4c8ee601ca20f281eb2573fe22c7370c010bb5ebe9f0d0d0611265df23753f",
                 "data_flow": "ac6c11ec552cb42a85930d0240f4cb4632803f0d588d96d1e9da6616bed65823",
                 "declaration": "ff7ca247a42ec371e9fbe7b36c46185ebc29f2141c7fbfa286d9f0034092cb83",
                 "dependency": "efb34dd2be3c6e4a7b4d466c15b817d615cc1e7eece131a307f9aede30b6c536",
@@ -352,8 +352,8 @@
             "path": "tests\\test_utils.py"
         }
     ],
-    "repository_fingerprint": "b07f2640dd1014be043e4dec8856116b1672b46ccc3a5b680074272507ed227e",
-    "version": "0.1.0",
-    "whole_repo_call_graph": "7d1087a087bab2cb8af256874090b5124524af75cfb6354b1cd2547780d50cc2",
+    "repository_fingerprint": "63c4f4d60e9b13d1a49af093b940dd5cf19b75a5b1276feeff5e98455c4cdc32",
+    "version": "0.2.0",
+    "whole_repo_call_graph": "5db1aaea50f70fdc512e3a8b9284f55ec8e3ca610916ea48b8f56ec9c39061f4",
     "whole_repo_data_flow": "d544cbe367d050f8b528ff9767ed603b6885d540274e46f913f2cd190744a139"
 }

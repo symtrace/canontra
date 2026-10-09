@@ -38,6 +38,11 @@ import qualified Canontra.SecuritySpec as SecuritySpec
 import qualified Canontra.ExportSpec as ExportSpec
 import qualified Canontra.CLISpec as CLISpec
 import qualified Canontra.MetamorphicSpec as MetamorphicSpec
+import qualified Canontra.CSRGraphSpec as CSRGraphSpec
+import qualified Canontra.SlabV6Spec as SlabV6Spec
+import qualified Canontra.SIMDScanSpec as SIMDScanSpec
+import qualified Canontra.ParallelWorkStealingSpec as ParallelWorkStealingSpec
+import qualified Canontra.PolyglotGrammarPhase4Spec as PolyglotGrammarPhase4Spec
 
 main :: IO ()
 main = hspec $ do
@@ -67,4 +72,9 @@ main = hspec $ do
   describe "Canontra.Export" ExportSpec.spec
   describe "Canontra.CLI" CLISpec.spec
   describe "Canontra.Metamorphic" MetamorphicSpec.spec
+  describe "Canontra.CSRGraph" CSRGraphSpec.spec
+  describe "Canontra.SlabV6" SlabV6Spec.spec
+  describe "Canontra.SIMDScan" SIMDScanSpec.spec
+  describe "Canontra.ParallelWorkStealing" ParallelWorkStealingSpec.spec
+  describe "Canontra.PolyglotGrammarPhase4" PolyglotGrammarPhase4Spec.spec
   describe "Canontra.Fixtures" FixtureSpec.spec

@@ -63,16 +63,19 @@ import Canontra.Parser.Rust (parseRustSource)
 import Canontra.Parser.SwissTable (emptySwissTable, swissInternBS, swissLookupBS, swissResolveId)
 import Canontra.Parser.SymbolTable (SymbolId (..), emptySymbolTable, internManyBS, internSymbolBS, preloadPolyglotKeywords, resolveSymbolBS)
 import Canontra.Repository.MerkleDAG (buildMerkleDAG, diffMerkleDAG, merkleDAGRootHash)
-import Canontra.Repository.Parallel (parMapChunks)
-import Canontra.Repository.Repository (computeRepositoryFingerprint)
+import Canontra.Analysis.CSRGraph (buildCSRGraph, condenseSCC, csrHasEdge, forwardReachabilityCone, spliceCSREdges, tarjanSCC, transposeCSR)
 import Canontra.Analysis.Impact (classifySeverity, computeImpactSlice)
 import Canontra.Analysis.TypeContract (extractTypeContracts)
-import Canontra.Analysis.WholeRepoGraph (buildWholeRepoCallGraph, buildWholeRepoDataFlow)
+import Canontra.Analysis.WholeRepoGraph (buildCSRCallGraph, buildCSRDataFlow, buildWholeRepoCallGraph, buildWholeRepoDataFlow, incrementalUpdateWholeRepoGraphs)
 import Canontra.Cache.PagedCache (decodeBinaryCacheV5, encodeBinaryCacheV5, lookupBinaryCacheV5)
+import Canontra.Cache.SlabV6 (decodeCSRGraph, decodeSlabV6Binary, encodeCSRGraph, encodeSlabV6Binary, lookupSlabBinaryBS)
+import Canontra.Canonical.SIMDScan (fastCanonicalizeSIMD, isPureAsciiUnixSIMD, scanSourceSIMD)
 import Canontra.Fingerprint.TypeContract (computeFT)
 import Canontra.Fingerprint.WholeRepoCallGraph (computeFWCG)
 import Canontra.Fingerprint.WholeRepoDataFlow (computeFWDF)
 import Canontra.IR.Expression (Op (..))
+import Canontra.Repository.Parallel (newChaseLevDeque, parMapChunks, parProcessWorkStealing, popBottom, pushBottom, stealBatchTop)
+import Canontra.Repository.Repository (computeRepositoryFingerprint)
 import Canontra.Types (FileEntry (..), Fingerprint (..), FingerprintBundle (..))
 import Canontra.Verification.Metamorphic (MetamorphicMutation (..), MetamorphicTransform (..), runMetamorphicSuite, verifyMetamorphicProgramTransform, verifyProgramMutation)
 
@@ -228,6 +231,7 @@ main = do
                   (Fingerprint $ T.pack $ "cg" ++ show i)
                   (Fingerprint $ T.pack $ "cf" ++ show i)
                   (Fingerprint $ T.pack $ "df" ++ show i)
+                  (Fingerprint $ T.pack $ "t" ++ show i)
                   (Fingerprint $ T.pack $ "c" ++ show i))
             | i <- [1 .. n]
             ]
@@ -247,7 +251,8 @@ main = do
 
           repoEntries1000 = [(p, b) | FileEntry p b <- repo1000]
           dag1000 = buildMerkleDAG repoEntries1000
-          dag1000Mod = buildMerkleDAG (("src/module_500.py", FingerprintBundle (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m")) : tail repoEntries1000)
+          dummyBundleM = FingerprintBundle (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m") (Fingerprint "m")
+          dag1000Mod = buildMerkleDAG (("src/module_500.py", dummyBundleM) : tail repoEntries1000)
           benchSwissTable = snd $ foldl' (\(_, tbl) bs -> swissInternBS tbl bs) (SymbolId 0, emptySwissTable 1024) sampleIdentifiers
           xlArena = programToLinearAST xlProg
 
@@ -255,6 +260,17 @@ main = do
           modules10 = [("src/module_" ++ show i ++ ".py", if i == 1 then microProg else smallProg) | i <- [1..10 :: Int]]
           wcg10 = buildWholeRepoCallGraph modules10
           polyglotFixtures = [("small.py", smallSrc), ("small.ts", tsSmall), ("small.go", goSmall)]
+
+          -- v0.2.0 Benchmark Fixtures
+          csrEdges500 = [ (fromIntegral (i `mod` 100), fromIntegral ((i * 3 + 7) `mod` 100), 1) | i <- [1..500 :: Int] ]
+          csrGraph100 = buildCSRGraph 100 csrEdges500
+
+          slabEntries1000 = [ (fePath e, FileMetadata (fePath e) 1024 1700000000, feFingerprints e) | e <- repo1000 ]
+          slabV6Bin = encodeSlabV6Binary slabEntries1000 Nothing
+
+          (wcg10Graph, _) = buildCSRCallGraph modules10
+          (wdf10Graph, _) = buildCSRDataFlow modules10
+          csrEncodedBS = LBS.toStrict (BB.toLazyByteString (encodeCSRGraph csrGraph100))
 
       defaultMain
         [ bgroup "RQ1: Pipeline Latency across Scales"
@@ -446,6 +462,47 @@ main = do
                 [ bench "verifyMetamorphicProgramTransform (XL)"$ whnf (`verifyMetamorphicProgramTransform` (ReformatWhitespaceTrivia 4)) xlProg
                 , bench "verifyProgramMutation (XL)"            $ whnf (`verifyProgramMutation` (MutFlipArithmeticOp OpAdd OpSub)) xlProg
                 , bench "runMetamorphicSuite (Polyglot Corpus)" $ whnf runMetamorphicSuite polyglotFixtures
+                ]
+            ]
+        , bgroup "RQ13: v0.2.0 Unboxed CSR Graph Engine"
+            [ bgroup "Engine 1: CSR Construction & Query"
+                [ bench "buildCSRGraph (100 nodes, 500 edges)" $ whnf (buildCSRGraph 100) csrEdges500
+                , bench "csrHasEdge Binary Search (Hit)"         $ whnf (\g -> csrHasEdge g 10 37) csrGraph100
+                , bench "transposeCSR Linear Transpose"          $ whnf transposeCSR csrGraph100
+                , bench "tarjanSCC Cycle Detection"             $ whnf tarjanSCC csrGraph100
+                , bench "condenseSCC Canonical DAG"             $ whnf condenseSCC csrGraph100
+                , bench "forwardReachabilityCone (100 nodes)"    $ whnf (\g -> forwardReachabilityCone g [10]) csrGraph100
+                ]
+            , bgroup "Engine 2: Whole-Repo CSR Synthesis"
+                [ bench "buildCSRCallGraph (10 modules)"        $ whnf buildCSRCallGraph modules10
+                , bench "buildCSRDataFlow (10 modules)"         $ whnf buildCSRDataFlow modules10
+                ]
+            ]
+        , bgroup "RQ14: v0.2.0 CNTR\\x06 Zero-Copy Memory-Mapped Slab Cache"
+            [ bench "encodeSlabV6Binary (1,000 files)"          $ whnf (`encodeSlabV6Binary` Nothing) slabEntries1000
+            , bench "decodeSlabV6Binary (1,000 files)"          $ whnf decodeSlabV6Binary slabV6Bin
+            , bench "lookupSlabBinaryBS Zero-Copy Warm Hit"     $ whnf (\bs -> lookupSlabBinaryBS "src/module_500.py" (FileMetadata "src/module_500.py" 1024 1700000000) bs) slabV6Bin
+            , bench "encodeCSRGraph Binary Serialization"       $ whnf (LBS.toStrict . BB.toLazyByteString . encodeCSRGraph) csrGraph100
+            , bench "decodeCSRGraph Binary Deserialization"     $ whnf decodeCSRGraph csrEncodedBS
+            ]
+        , bgroup "RQ15: v0.2.0 SIMD FastScan & Chase-Lev Work-Stealing"
+            [ bgroup "Engine 1: 256-Bit Hardware SIMD Scan"
+                [ bench "scanSourceSIMD 256-Bit (XL)"           $ whnf scanSourceSIMD xlBytes
+                , bench "isPureAsciiUnixSIMD FastPath (XL)"     $ whnf isPureAsciiUnixSIMD xlBytes
+                , bench "fastCanonicalizeSIMD (XL)"             $ whnf fastCanonicalizeSIMD xlBytes
+                ]
+            , bgroup "Engine 2: Chase-Lev Lock-Free Work-Stealing"
+                [ bench "Chase-Lev Deque Push/Pop/Steal"        $ nfIO $ do
+                    dq <- newChaseLevDeque (100 :: Int)
+                    mapM_ (pushBottom dq) [1..100 :: Int]
+                    _ <- stealBatchTop dq 10
+                    _ <- popBottom dq
+                    pure ()
+                , bench "parProcessWorkStealing (1,000 tasks)"  $ nfIO $ parProcessWorkStealing (\x -> pure (x * (2 :: Int))) [1..1000 :: Int]
+                ]
+            , bgroup "Engine 3: Localized Incremental Graph Delta"
+                [ bench "spliceCSREdges Localized Invalidation" $ whnf (\g -> spliceCSREdges g [10] [(10, 20, 1)]) csrGraph100
+                , bench "incrementalUpdateWholeRepoGraphs (10 modules)" $ whnf (\mods -> incrementalUpdateWholeRepoGraphs wcg10Graph wdf10Graph mods ["src/module_1.py"]) modules10
                 ]
             ]
         ]

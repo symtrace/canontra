@@ -82,6 +82,9 @@ tokenizeRust text = go text
                   _ -> TokSymbol "'" : go cs
               _ ->
                 TokSymbol "'" : go cs
+        _ | T.isPrefixOf "r#" t ->
+            let (ident, rest) = T.span (\x -> isAlphaNum x || x == '_') (T.drop 2 t)
+            in TokIdent ident : go rest
         _ | isAlpha c || c == '_' ->
             let (ident, rest) = T.span (\x -> isAlphaNum x || x == '_') t
             in (if isRustKeyword ident then TokKw ident else TokIdent ident) : go rest
@@ -292,6 +295,12 @@ parseRustMethods (TokKw "fn" : TokIdent name : rest) =
 parseRustMethods (TokKw "async" : TokKw "fn" : TokIdent name : rest) =
   let (fn, afterFn) = parseRustFunctionBody name True rest
   in fn : parseRustMethods afterFn
+parseRustMethods (TokKw "type" : TokIdent name : rest) =
+  let (headerToks, afterHeader) = span (\t -> t /= TokSymbol ";") rest
+      remToks = if null afterHeader then [] else tail afterHeader
+      gatSig = "<" <> T.concat [tokenText t | t <- headerToks] <> ">"
+      fn = Function ("type:" <> name) [] (Just gatSig) [] [] False
+  in fn : parseRustMethods remToks
 parseRustMethods (_:rest) = parseRustMethods rest
 
 extractBalancedBraces :: [RustToken] -> ([RustToken], [RustToken])

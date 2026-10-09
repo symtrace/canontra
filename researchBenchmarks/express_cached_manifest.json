@@ -1977,7 +1977,7 @@
         }
     ],
     "repository_fingerprint": "b080e84d8ce2a6468d43229deddaf16e8ae3bb2d542f38d9f4ffaa4b91343ffe",
-    "version": "0.1.0",
-    "whole_repo_call_graph": "c5d60e994e302ff684066cc7fa51066b6d1124bd3d0968a78a289a01dbe82d35",
+    "version": "0.2.0",
+    "whole_repo_call_graph": "59ed1a022beeebd5ba75e16d39f14e8aa983027dd38e41a2eff4b3e59589afa1",
     "whole_repo_data_flow": "3586e558224128dcf7aed8b0dce89e7bdbb791b5ba30a2baf0bccd003e1c48ac"
 }

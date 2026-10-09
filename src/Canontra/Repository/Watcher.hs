@@ -281,7 +281,7 @@ runTerminalWatcher :: WatcherConfig -> FilePath -> IO ()
 runTerminalWatcher config rootDir = do
   hSetBuffering stdout LineBuffering
   putStrLn "================================================================================"
-  putStrLn " CANONTRA LIVE WATCHER v0.1.0 [Terminal Session]"
+  putStrLn " CANONTRA LIVE WATCHER v0.2.0 [Terminal Session]"
   putStrLn "================================================================================"
   putStrLn $ " Target Root:   " ++ rootDir
   putStrLn $ " Polling Rate:  " ++ show (wcPollMs config) ++ " ms (coalesced 50 ms debounce)"

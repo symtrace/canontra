@@ -1,12 +1,18 @@
 cabal-version:      3.0
 name:               canontra
-version:            0.1.0.0
-synopsis:           Production deterministic polyglot program identity and semantic graph compilation engine
-description:        canontra establishes a deterministic program representation, scope-aware AST normalization, rich dependency analysis, control-flow & data-flow graph analysis, Flat Linear Arena ASTs, SWAR Direct-to-IR parsers, open-addressing SwissTables, CNTR v5 radix-directed Merkle caching, and multi-tier cryptographic fingerprinting (F0-F4, F_CG, F_CF, F_DF, F_T, F_R) across Python, JavaScript, TypeScript, Go, and Rust.
+version:            0.2.0.0
+synopsis:           Deterministic polyglot program identity & semantic graph engine
+description:
+    @canontra@ is a deterministic polyglot program identity and semantic graph engine
+    written in pure Haskell. It computes multi-tier cryptographic fingerprints and
+    semantic graphs (AST, Call Graph, CFG, DFG, and Merkle DAGs) across Python,
+    JavaScript, TypeScript, Go, and Rust. Designed for build caching, change impact
+    analysis, and semantic code comparison, Canontra eliminates cache busts caused
+    by formatting, comments, and non-semantic code refactorings.
 category:           Development, Static Analysis, Code Quality
-author:             Jash Thakkar, SymtraceLabs
-maintainer:         Jash Thakkar, SymtraceLabs
-copyright:          (c) 2026 Jash Thakkar & SymtraceLabs
+author:             Jash Thakkar
+maintainer:         Jash Thakkar
+copyright:          (c) 2026 Jash Thakkar
 license:            Apache-2.0
 license-file:       LICENSE
 homepage:           https://github.com/symtrace/canontra
@@ -14,6 +20,7 @@ bug-reports:        https://github.com/symtrace/canontra/issues
 build-type:         Simple
 extra-doc-files:
     README.md
+    CHANGELOG.md
     CONTRIBUTING.md
     technicalSpecs.md
     BENCHMARKS.md
@@ -21,6 +28,9 @@ extra-doc-files:
     REAL_WORLD_BENCHMARKS.md
     benchmarkReport.md
     LICENSE
+extra-source-files:
+    test/fixtures/**/*.py
+    test/fixtures/**/*.yaml
 
 source-repository head
     type:     git
@@ -48,7 +58,6 @@ common common-options
         -Wmissing-export-lists
         -Wpartial-fields
         -Wredundant-constraints
-        -O2
 
 library
     import:             common-options
@@ -63,6 +72,7 @@ library
         Canontra.Canonical.Float
         Canontra.Canonical.Unicode
         Canontra.Canonical.FastScan
+        Canontra.Canonical.SIMDScan
         Canontra.Canonical.StreamingHash
         Canontra.Canonical.FusedStream
         Canontra.Parser.SymbolTable
@@ -81,6 +91,7 @@ library
         Canontra.Analysis.CFG
         Canontra.Analysis.DFG
         Canontra.Analysis.CompactGraph
+        Canontra.Analysis.CSRGraph
         Canontra.Analysis.WholeRepoGraph
         Canontra.Analysis.Impact
         Canontra.Analysis.TypeContract
@@ -92,6 +103,7 @@ library
         Canontra.Cache.Common
         Canontra.Cache.MerkleCache
         Canontra.Cache.PagedCache
+        Canontra.Cache.SlabV6
         Canontra.Fingerprint.Source
         Canontra.Fingerprint.Structural
         Canontra.Fingerprint.Declaration
@@ -181,6 +193,11 @@ test-suite canontra-test
         Canontra.ExportSpec
         Canontra.CLISpec
         Canontra.MetamorphicSpec
+        Canontra.CSRGraphSpec
+        Canontra.SlabV6Spec
+        Canontra.SIMDScanSpec
+        Canontra.ParallelWorkStealingSpec
+        Canontra.PolyglotGrammarPhase4Spec
     build-depends:
         base,
         canontra,
@@ -196,8 +213,9 @@ test-suite canontra-test
         filepath,
         process,
         yaml,
-        QuickCheck >= 2.14,
-        hspec >= 2.9
+        time,
+        QuickCheck >= 2.14 && < 2.16,
+        hspec >= 2.9 && < 2.12
 
 benchmark canontra-bench
     import:             common-options
@@ -218,4 +236,4 @@ benchmark canontra-bench
         directory,
         filepath,
         time,
-        tasty-bench >= 0.3
+        tasty-bench >= 0.3 && < 0.5

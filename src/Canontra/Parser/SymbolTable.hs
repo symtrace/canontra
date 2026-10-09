@@ -181,6 +181,7 @@ goKeywords =
   , "else", "fallthrough", "for", "func", "go", "goto", "if", "import"
   , "interface", "map", "package", "range", "return", "select", "struct"
   , "switch", "type", "var"
+  , "min", "max", "clear"
   ]
 
 -- | Rust language keywords.

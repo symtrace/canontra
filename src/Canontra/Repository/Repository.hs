@@ -38,13 +38,14 @@ import System.IO (hPutStrLn, stderr)
 import Canontra.Security.Path (canonicalizeSafePath, checkResourceBounds, isSymlinkLoop, maxRecursionDepth)
 import Canontra.Cache.Inode (getFileMetadata)
 import Canontra.Cache.MerkleCache (defaultCachePath, insertCache, lookupCache, readMerkleCache, writeMerkleCache)
+import Canontra.Cache.SlabV6 (loadRepoGraphsSlab, saveRepoGraphsSlab)
 import Canontra.Fingerprint.Bundle (computeBundle)
 import Canontra.Fingerprint.Source (hashBytes)
 import Canontra.Fingerprint.WholeRepoCallGraph (computeFWCG)
 import Canontra.Fingerprint.WholeRepoDataFlow (computeFWDF)
 import Canontra.IR.Program (Program)
 import Canontra.Normalize.Rules (engineName, engineVersion)
-import Canontra.Repository.Parallel (parFingerprintFiles, parFingerprintWithPrograms, parMapChunks)
+import Canontra.Repository.Parallel (parFingerprintWithPrograms, parMapChunks)
 import Canontra.Types
 
 repoGraphsCachePath :: FilePath -> FilePath
@@ -52,21 +53,26 @@ repoGraphsCachePath rootDir = rootDir </> ".canontra" </> "repo_graphs.txt"
 
 saveRepoGraphs :: FilePath -> Fingerprint -> Fingerprint -> IO ()
 saveRepoGraphs rootDir fwcg fwdf = do
+  saveRepoGraphsSlab rootDir fwcg fwdf Nothing Nothing
   let p = repoGraphsCachePath rootDir
   createDirectoryIfMissing True (takeDirectory p)
   writeFile p (T.unpack (unFingerprint fwcg) ++ "\n" ++ T.unpack (unFingerprint fwdf))
 
 loadRepoGraphs :: FilePath -> IO (Maybe (Fingerprint, Fingerprint))
 loadRepoGraphs rootDir = do
-  let p = repoGraphsCachePath rootDir
-  exists <- doesFileExist p
-  if not exists
-    then pure Nothing
-    else do
-      content <- readFile p
-      case lines content of
-        (c:d:_) -> pure (Just (Fingerprint (T.pack c), Fingerprint (T.pack d)))
-        _       -> pure Nothing
+  mSlab <- loadRepoGraphsSlab rootDir
+  case mSlab of
+    Just (c, d, _, _) -> pure (Just (c, d))
+    Nothing -> do
+      let p = repoGraphsCachePath rootDir
+      exists <- doesFileExist p
+      if not exists
+        then pure Nothing
+        else do
+          content <- readFile p
+          case lines content of
+            (c:d:_) -> pure (Just (Fingerprint (T.pack c), Fingerprint (T.pack d)))
+            _       -> pure Nothing
 
 -- | Universal cross-platform canonical path normalization (POSIX forward slashes + case folding).
 normalizePathCanonical :: FilePath -> FilePath

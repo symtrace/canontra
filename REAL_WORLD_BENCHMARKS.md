@@ -1,6 +1,6 @@
 # Canontra Real-World Benchmark Protocol and Execution Instructions
 
-Version: v0.1.0
+Version: v0.2.0.0 (Release v0.2.0) Hardened Architecture
 Author: Jash Thakkar & SymtraceLabs Engineering Team
 Status: Benchmark Execution Protocol
 
@@ -122,7 +122,7 @@ Ensure the Canontra standalone binary is compiled with optimization flag -O2:
 # Build optimized production binary
 stack build --copy-bins --local-bin-path ./dist-bin --ghc-options="-O2"
 
-# Verify executable is functional and reports version 0.1.0
+# Verify executable is functional and reports version 0.2.0
 ./dist-bin/canontra version
 ```
 

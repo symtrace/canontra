@@ -109,7 +109,7 @@ tokenizePython input =
           | otherwise ->
               -- Triple quote ends on this line
               let afterTQ = T.drop 3 restTQ
-                  (indent, nonSpace) = T.span (\c -> c == ' ' || c == '\t') afterTQ
+                  (_, nonSpace) = T.span (\c -> c == ' ' || c == '\t') afterTQ
                   isCommentOrBlank = T.null nonSpace || T.isPrefixOf "#" nonSpace
               in if isCommentOrBlank
                  then processLines (lineNum + 1) indentStack rest parenDepth Nothing
@@ -149,14 +149,18 @@ tokenizePython input =
                in case lexLine lNum (indentWidth + 1) nonSpace parenDepth of
                     Left err -> Left err
                     Right (lineTokens, newParenDepth, newOpenTQ) ->
-                      case processLines (lNum + 1) newStack rest newParenDepth newOpenTQ of
-                        Left err -> Left err
-                        Right nextTokens ->
-                          let finalLineTokens =
-                                if newParenDepth == 0 && not (null lineTokens)
-                                then lineTokens ++ [LocatedToken TokNewline lNum (T.length lineText + 1)]
-                                else lineTokens
-                          in Right (indentTokens ++ finalLineTokens ++ nextTokens)
+                      case (newOpenTQ, rest) of
+                        (Just _, ((_, nextText):restLines)) ->
+                          processLines lineNum indentStack ((lNum, lineText <> "\n" <> nextText) : restLines) parenDepth Nothing
+                        _ ->
+                          case processLines (lNum + 1) newStack rest newParenDepth newOpenTQ of
+                            Left err -> Left err
+                            Right nextTokens ->
+                              let finalLineTokens =
+                                    if newParenDepth == 0 && not (null lineTokens)
+                                    then lineTokens ++ [LocatedToken TokNewline lNum (T.length lineText + 1)]
+                                    else lineTokens
+                              in Right (indentTokens ++ finalLineTokens ++ nextTokens)
 
     handleIndent lNum currentIndent stack@(top:_)
       | currentIndent > top =
@@ -206,8 +210,11 @@ lexLine lineNum startCol text initDepth = go startCol text initDepth []
         _ | (c == 'f' || c == 'F') && (T.isPrefixOf "\"" cs || T.isPrefixOf "'" cs) ->
             case lexFStringLit (T.head cs) cs of
               Left err -> Left (lineNum, col, err)
-              Right (fstrTok, rest, len) ->
-                go (col + len + 1) rest depth (LocatedToken fstrTok lineNum col : acc)
+              Right (fstrTok, rest, len, isOpen) ->
+                let acc' = LocatedToken fstrTok lineNum col : acc
+                in if isOpen
+                   then Right (reverse acc', depth, Just (T.head cs))
+                   else go (col + len + 1) rest depth acc'
         _ | (c == 'r' || c == 'R' || c == 'b' || c == 'B') && (T.isPrefixOf "\"" cs || T.isPrefixOf "'" cs) ->
             case lexStringLit (T.head cs) cs of
               Left err -> Left (lineNum, col, err)
@@ -288,15 +295,15 @@ parseQuotedBody q t acc =
                in parseQuotedBody q (T.tail cs) (acc `T.snoc` escChar)
           else parseQuotedBody q cs (acc `T.snoc` c)
 
-lexFStringLit :: Char -> Text -> Either String (PyToken, Text, Int)
+lexFStringLit :: Char -> Text -> Either String (PyToken, Text, Int, Bool)
 lexFStringLit quoteChar t =
   let isTriple = T.isPrefixOf (T.replicate 3 (T.singleton quoteChar)) t
       prefixLen = if isTriple then 3 else 1
       body = T.drop prefixLen t
-      (parts, rest, consumedLen) = scanFStringBody quoteChar isTriple body (prefixLen + prefixLen)
-  in Right (TokFStr parts, rest, consumedLen)
+      (parts, rest, consumedLen, isClosed) = scanFStringBody quoteChar isTriple body (prefixLen + prefixLen)
+  in Right (TokFStr parts, rest, consumedLen, not isClosed)
 
-scanFStringBody :: Char -> Bool -> Text -> Int -> ([FStringPart], Text, Int)
+scanFStringBody :: Char -> Bool -> Text -> Int -> ([FStringPart], Text, Int, Bool)
 scanFStringBody quoteChar isTriple input initialLen = go input "" [] initialLen
   where
     tripleQuote = T.replicate 3 (T.singleton quoteChar)
@@ -304,54 +311,101 @@ scanFStringBody quoteChar isTriple input initialLen = go input "" [] initialLen
     go t textAcc partsAcc len
       | T.null t =
           let finalParts = if T.null textAcc then reverse partsAcc else reverse (FStringText textAcc : partsAcc)
-          in (finalParts, "", len)
+          in (finalParts, "", len, False)
       | isTriple && T.isPrefixOf tripleQuote t =
           let finalParts = if T.null textAcc then reverse partsAcc else reverse (FStringText textAcc : partsAcc)
-          in (finalParts, T.drop 3 t, len + T.length textAcc)
+          in (finalParts, T.drop 3 t, len + T.length textAcc, True)
       | not isTriple && T.head t == quoteChar =
           let finalParts = if T.null textAcc then reverse partsAcc else reverse (FStringText textAcc : partsAcc)
-          in (finalParts, T.tail t, len + T.length textAcc)
+          in (finalParts, T.tail t, len + T.length textAcc, True)
       | T.isPrefixOf "{{" t =
           go (T.drop 2 t) (textAcc `T.snoc` '{') partsAcc (len + 2)
       | T.isPrefixOf "}}" t =
           go (T.drop 2 t) (textAcc `T.snoc` '}') partsAcc (len + 2)
       | T.head t == '{' =
           let textParts = if T.null textAcc then partsAcc else FStringText textAcc : partsAcc
-              (exprStr, afterExpr, exprLen) = scanFStringExpr (T.tail t)
+              (exprStr, afterExpr, exprLen, exprClosed) = scanFStringExpr (T.tail t)
               exprPart = FStringExpr (ExprId exprStr) Nothing Nothing
-          in go afterExpr "" (exprPart : textParts) (len + 1 + exprLen)
+          in if not exprClosed
+             then (reverse (exprPart : textParts), "", len + 1 + exprLen, False)
+             else go afterExpr "" (exprPart : textParts) (len + 1 + exprLen)
       | T.head t == '\\' && T.length t > 1 =
           let esc = T.take 2 t
           in go (T.drop 2 t) (textAcc <> esc) partsAcc (len + 2)
       | otherwise =
           go (T.tail t) (textAcc `T.snoc` T.head t) partsAcc (len + 1)
 
-    scanFStringExpr t = scanExprDepth (1 :: Int) t "" 0
+    scanFStringExpr t = scanWithStack [CtxExpr 1] t "" 0
       where
-        scanExprDepth 0 remToks acc l = (acc, remToks, l)
-        scanExprDepth _ remToks acc l | T.null remToks = (acc, "", l)
-        scanExprDepth d remToks acc l =
-          let c = T.head remToks
-              cs = T.tail remToks
-          in case c of
-            '{' -> scanExprDepth (d + 1) cs (acc `T.snoc` c) (l + 1)
-            '}' ->
-                if d == 1
-                then (acc, cs, l + 1)
-                else scanExprDepth (d - 1) cs (acc `T.snoc` c) (l + 1)
-            '"' ->
-                let (strBody, rest) = scanInnerString '"' cs
-                in scanExprDepth d rest (acc `T.snoc` '"' <> strBody `T.snoc` '"') (l + 2 + T.length strBody)
-            '\'' ->
-                let (strBody, rest) = scanInnerString '\'' cs
-                in scanExprDepth d rest (acc `T.snoc` '\'' <> strBody `T.snoc` '\'') (l + 2 + T.length strBody)
-            '\\' | not (T.null cs) ->
-                scanExprDepth d (T.tail cs) (acc `T.snoc` '\\' `T.snoc` T.head cs) (l + 2)
-            _   -> scanExprDepth d cs (acc `T.snoc` c) (l + 1)
+        scanWithStack [] remToks acc l = (acc, remToks, l, True)
+        scanWithStack _ remToks acc l | T.null remToks = (acc, "", l, False)
+        scanWithStack stack remToks acc l = case head stack of
+          CtxQuote q isF ->
+            if T.head remToks == '\\' && T.length remToks > 1
+            then
+              let esc = T.take 2 remToks
+              in scanWithStack stack (T.drop 2 remToks) (acc <> esc) (l + 2)
+            else if T.isPrefixOf q remToks
+            then
+              let qLen = T.length q
+              in scanWithStack (tail stack) (T.drop qLen remToks) (acc <> q) (l + qLen)
+            else if isF && T.isPrefixOf "{{" remToks
+            then
+              scanWithStack stack (T.drop 2 remToks) (acc <> "{{") (l + 2)
+            else if isF && T.head remToks == '{'
+            then
+              scanWithStack (CtxExpr 1 : stack) (T.tail remToks) (acc `T.snoc` '{') (l + 1)
+            else
+              let c = T.head remToks
+              in scanWithStack stack (T.tail remToks) (acc `T.snoc` c) (l + 1)
 
-        scanInnerString q txt =
-          let (s, r) = parseQuotedBody q txt ""
-          in (s, if T.null r then "" else T.tail r)
+          CtxExpr d ->
+            let c = T.head remToks
+                cs = T.tail remToks
+            in case c of
+              '{' ->
+                scanWithStack (CtxExpr (d + 1) : tail stack) cs (acc `T.snoc` c) (l + 1)
+              '}' ->
+                if d == 1
+                then
+                  let remStack = tail stack
+                  in if null remStack
+                     then (acc, cs, l + 1, True)
+                     else scanWithStack remStack cs (acc `T.snoc` '}') (l + 1)
+                else
+                  scanWithStack (CtxExpr (d - 1) : tail stack) cs (acc `T.snoc` c) (l + 1)
+              '#' ->
+                let (commentText, afterComment) = T.break (== '\n') remToks
+                    cLen = T.length commentText
+                in scanWithStack stack afterComment (acc <> commentText) (l + cLen)
+              '\\' | not (T.null cs) ->
+                scanWithStack stack (T.tail cs) (acc `T.snoc` '\\' `T.snoc` T.head cs) (l + 2)
+              _ | (c == 'f' || c == 'F') && (T.isPrefixOf "\"\"\"" cs || T.isPrefixOf "'''" cs) ->
+                let q = T.take 3 cs
+                in scanWithStack (CtxQuote q True : stack) (T.drop 3 cs) (acc `T.snoc` c <> q) (l + 1 + 3)
+              _ | (c == 'f' || c == 'F') && (T.isPrefixOf "\"" cs || T.isPrefixOf "'" cs) ->
+                let q = T.take 1 cs
+                in scanWithStack (CtxQuote q True : stack) (T.drop 1 cs) (acc `T.snoc` c <> q) (l + 1 + 1)
+              _ | (c == 'r' || c == 'R' || c == 'b' || c == 'B') && (T.isPrefixOf "\"\"\"" cs || T.isPrefixOf "'''" cs) ->
+                let q = T.take 3 cs
+                in scanWithStack (CtxQuote q False : stack) (T.drop 3 cs) (acc `T.snoc` c <> q) (l + 1 + 3)
+              _ | (c == 'r' || c == 'R' || c == 'b' || c == 'B') && (T.isPrefixOf "\"" cs || T.isPrefixOf "'" cs) ->
+                let q = T.take 1 cs
+                in scanWithStack (CtxQuote q False : stack) (T.drop 1 cs) (acc `T.snoc` c <> q) (l + 1 + 1)
+              _ | T.isPrefixOf "\"\"\"" remToks ->
+                scanWithStack (CtxQuote "\"\"\"" False : stack) (T.drop 3 remToks) (acc <> "\"\"\"") (l + 3)
+              _ | T.isPrefixOf "'''" remToks ->
+                scanWithStack (CtxQuote "'''" False : stack) (T.drop 3 remToks) (acc <> "'''") (l + 3)
+              '"' ->
+                scanWithStack (CtxQuote "\"" False : stack) cs (acc `T.snoc` '"') (l + 1)
+              '\'' ->
+                scanWithStack (CtxQuote "'" False : stack) cs (acc `T.snoc` '\'') (l + 1)
+              _ ->
+                scanWithStack stack cs (acc `T.snoc` c) (l + 1)
+
+data LexContext = CtxExpr !Int | CtxQuote !Text !Bool
+  deriving (Eq, Show)
+
 
 lexNumber :: Text -> (PyToken, Text, Int)
 lexNumber t
@@ -439,6 +493,10 @@ parseTopStatement fp toks =
       (LocatedToken (TokKw "class") _ _ : _) ->
         parseClassDecl fp cleanToks []
 
+      -- PEP 695: type Name[...] = Expr or type Name = Expr
+      (LocatedToken (TokIdent "type") _ _ : LocatedToken (TokIdent name) _ _ : rest) ->
+        parseTypeAliasStmt fp name rest
+
       -- imports
       (LocatedToken (TokKw "import") _ _ : _) -> do
         (imps, rest) <- parseImportStmt fp cleanToks
@@ -451,6 +509,30 @@ parseTopStatement fp toks =
       _ -> do
         (stmts, rest) <- parseStatement fp cleanToks
         pure (TopStmt stmts, rest)
+
+parseTypeAliasStmt :: FilePath -> Text -> [LocatedToken] -> Either ParseError (TopItem, [LocatedToken])
+parseTypeAliasStmt fp name toks =
+  case toks of
+    (LocatedToken (TokSymbol "[") _ _ : rest) -> do
+      let (tParams, afterTParams) = span (\(LocatedToken t _ _) -> t /= TokSymbol "]") rest
+          afterBracket = if null afterTParams then [] else tail afterTParams
+      case afterBracket of
+        (LocatedToken (TokSymbol "=") _ _ : afterEq) -> do
+          let (defToks, remToks) = spanUntilStmtEnd afterEq
+              typeDefStr = T.unwords [tokenToText t | LocatedToken t _ _ <- defToks]
+              paramStr = "[" <> T.unwords [tokenToText t | LocatedToken t _ _ <- tParams] <> "]"
+              fullDef = paramStr <> " = " <> typeDefStr
+          pure (TopDecl [DeclTypeAlias name (Just fullDef)], skipToNewline remToks)
+        _ -> do
+          (stmts, r) <- parseStatement fp (LocatedToken (TokIdent "type") 1 1 : LocatedToken (TokIdent name) 1 1 : toks)
+          pure (TopStmt stmts, r)
+    (LocatedToken (TokSymbol "=") _ _ : rest) -> do
+      let (defToks, remToks) = spanUntilStmtEnd rest
+          typeDefStr = T.unwords [tokenToText t | LocatedToken t _ _ <- defToks]
+      pure (TopDecl [DeclTypeAlias name (Just typeDefStr)], skipToNewline remToks)
+    _ -> do
+      (stmts, r) <- parseStatement fp (LocatedToken (TokIdent "type") 1 1 : LocatedToken (TokIdent name) 1 1 : toks)
+      pure (TopStmt stmts, r)
 
 parseDecorated :: FilePath -> [LocatedToken] -> Either ParseError (TopItem, [LocatedToken])
 parseDecorated fp toks = do
@@ -478,6 +560,20 @@ parseFunctionDecl fp toks decs isAsync = do
   -- skip [async] def
   let afterDef = if isAsync then drop 2 toks else drop 1 toks
   case afterDef of
+    (LocatedToken (TokIdent name) _ _ : LocatedToken (TokSymbol "[") _ _ : rest) -> do
+      let (tParams, afterTParams) = span (\(LocatedToken t _ _) -> t /= TokSymbol "]") rest
+          tParamText = "[" <> T.unwords [tokenToText t | LocatedToken t _ _ <- tParams] <> "]"
+          afterBracket = if null afterTParams then [] else tail afterTParams
+      case afterBracket of
+        (LocatedToken (TokSymbol "(") _ _ : afterParen) -> do
+          (params, afterParams) <- parseParamList fp afterParen
+          (retType, afterRet) <- parseReturnType fp afterParams
+          afterColon <- expectSymbol fp ":" afterRet
+          (body, afterBody) <- parseSuite fp afterColon
+          let fn = Function name params retType (tParamText : decs) body isAsync
+          pure (TopDecl [DeclFunction fn], afterBody)
+        (tok:_) -> parseErrorAt fp tok "Expected '(' after type parameter list in def"
+        [] -> Left (ParseError fp 1 1 "Unexpected end of input after type parameters in def")
     (LocatedToken (TokIdent name) _ _ : LocatedToken (TokSymbol "(") _ _ : rest) -> do
       (params, afterParams) <- parseParamList fp rest
       (retType, afterRet) <- parseReturnType fp afterParams
@@ -539,6 +635,16 @@ parseClassDecl :: FilePath -> [LocatedToken] -> [Text] -> Either ParseError (Top
 parseClassDecl fp toks decs = do
   let afterClass = drop 1 toks
   case afterClass of
+    (LocatedToken (TokIdent name) _ _ : LocatedToken (TokSymbol "[") _ _ : rest) -> do
+      let (tParams, afterTParams) = span (\(LocatedToken t _ _) -> t /= TokSymbol "]") rest
+          tParamText = "[" <> T.unwords [tokenToText t | LocatedToken t _ _ <- tParams] <> "]"
+          afterBracket = if null afterTParams then [] else tail afterTParams
+      (bases, afterBases) <- parseBases fp afterBracket
+      afterColon <- expectSymbol fp ":" afterBases
+      (bodyDecls, _, afterBody) <- parseClassSuite fp afterColon
+      let methods = [fn | DeclFunction fn <- bodyDecls]
+          cls = Class name bases methods (tParamText : decs)
+      pure (TopDecl [DeclClass cls], afterBody)
     (LocatedToken (TokIdent name) _ _ : rest) -> do
       (bases, afterBases) <- parseBases fp rest
       afterColon <- expectSymbol fp ":" afterBases
@@ -550,6 +656,7 @@ parseClassDecl fp toks decs = do
       parseErrorAt fp tok "Expected class name after 'class'"
     [] ->
       Left (ParseError fp 1 1 "Unexpected end of input in class declaration")
+
 
 parseBases :: FilePath -> [LocatedToken] -> Either ParseError ([Text], [LocatedToken])
 parseBases fp (LocatedToken (TokSymbol "(") _ _ : rest) = go rest []
@@ -1277,7 +1384,16 @@ parseExprPostfix fp toks = do
     go target r = Right (target, r)
 
 parseCallArgs :: FilePath -> [LocatedToken] -> Either ParseError ([Expr], [(Text, Expr)], [LocatedToken])
-parseCallArgs fp toks = go toks [] []
+parseCallArgs fp toks =
+  let (inside, afterParen) = takeBalancedDelim "(" ")" toks
+  in if any (\(LocatedToken t _ _) -> t == TokKw "for") inside
+        && not (any (\(LocatedToken t _ _) -> t == TokSymbol ",") inside)
+        && not (any (\(LocatedToken t _ _) -> t == TokSymbol "=") inside)
+     then do
+       (body, compFors) <- parseComprehension fp inside
+       afterClose <- expectSymbol fp ")" afterParen
+       pure ([ExprGenerator body compFors], [], afterClose)
+     else go toks [] []
   where
     go (LocatedToken (TokSymbol ")") _ _ : r) pos kw = Right (reverse pos, reverse kw, r)
     go (LocatedToken (TokSymbol ",") _ _ : r) pos kw = go r pos kw

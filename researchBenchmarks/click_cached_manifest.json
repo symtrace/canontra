@@ -228,8 +228,8 @@
         {
             "fingerprints": {
                 "call_graph": "5632b033c0ce539847a92cbf2c9ddbdd644233c9470e19b353d8f7785a372e0b",
-                "composite": "771f7acd636ff82f631244eb32e38938680436e38c04839feaa48f1390eeeffb",
-                "control_flow": "88a2f4b5ea02eed8385b99cde4b42530aba6bfd651d153ec7a7b2b3b738aa263",
+                "composite": "9ba615454067448140def747231aa7789a79c24367c90252dcecd11c50832edf",
+                "control_flow": "f88f595157e83abf38bc41de091bf01174296e7307735b2f368cc512e2194bde",
                 "data_flow": "4851e03d890f1fa06eca76f16a62404b137567ce1945249389b295d2c7bccd39",
                 "declaration": "5b5be4d324ecac98db8055e7c21b6184a9974f10a8b9483536d94ea4e048a654",
                 "dependency": "e2e7c15a5d1023e45dbe0240c3154721cd72681920684c3077bf66cce9805518",
@@ -242,8 +242,8 @@
         {
             "fingerprints": {
                 "call_graph": "7eb3b6facf64d91ac013ebc5ddf7df58426290dd42555c4d9a41fcc7231ad559",
-                "composite": "495f586628f933cf380495dd316a64e353ca806349b85c97d4fc1e104fe94718",
-                "control_flow": "4748a4213d273f2f43add2b2a460dbc2b09ba50fb036a2bebbcf1702f59edaac",
+                "composite": "08c5a1d273808a51172dc23f919beb0d75dab30a7c76783eaf1b18f7ffb77020",
+                "control_flow": "d6e197390bb269788d7199a7689083d0508c3de3c773a139e45425e4c1f95f4b",
                 "data_flow": "f62ea515a533df218c8e1fbe5d2e3c7077e4217bcb4bcfd402e5304b0d8c7df8",
                 "declaration": "75b4328892b6b94a14f475dc1ba7cdbc7390220b9db5afd394ec7e3259f56905",
                 "dependency": "ed32d4667bdfd0b62f4cf4d7f30aa4f38779bc657da4788443e7f138348900b0",
@@ -339,14 +339,28 @@
         },
         {
             "fingerprints": {
+                "call_graph": "d1aa3e05d2ff1c15848bd5bc40db62740a54014057819c492d810d94fbd4805e",
+                "composite": "88cc5ab78d59fe4bf14d6116b62ad07ee3c9f3402bbbe0b000eabd23dcfa27b8",
+                "control_flow": "09302cefe42ac3d0ddb4949e086f110400bbcb36aa3bebfa812ff80d05e0421c",
+                "data_flow": "12cf6e529491e71a15bffcfaf51927f141d60b16c6da163e9f934e4dfa1aa09c",
+                "declaration": "cc5375df712039172d9092dace791132a9ef0dfa3c8f5ba49422205f12e5ad39",
+                "dependency": "252c205f01cafd65243cbeb428e083dbeedf0ad08538f17a6b7a9fc41b3726d0",
+                "source": "ec268f2d889e36493850915fb1f65ce659f49cbbf3f6b1eee10371918cbc8601",
+                "structural": "76365c8084c18feb60abaa6fed7b67ab1b986a21239673a1e79b07f9da4bba07",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\test_formatting.py"
+        },
+        {
+            "fingerprints": {
                 "call_graph": "739267b22c30df0ab8af4d0adc23ba1a4f0f88787133333759243e21c9ee8cf7",
-                "composite": "e0aa8ce26db4f0b245cff46343ddce39d88e399647e9e4aeedf471efd9a787a8",
-                "control_flow": "7a6672ae589af3ca80423c1b44e4999c067f71cfb14f02cd631104c5d0a4f986",
-                "data_flow": "0f63494deede2d571bb6544f972266c56cc17ef7296be2e30d41554e1f65ef3a",
+                "composite": "3471e497f6aa3a2e30a45df6e3cbb34bdaa118b63d825db1aa840e9bdc631cf7",
+                "control_flow": "e1f0907c2dbb83e5eea3e5d418f2aafc8d59662d99d61bb3236447923e324d81",
+                "data_flow": "d32d28af28de1e6ef4c05c255fed9684682ab6042ac219f87798a7011b6e79b6",
                 "declaration": "8833a1f95fbad9af0f38af7a15f7a5841c18a3a4e2990be1c686d90032d8ebc8",
                 "dependency": "2f8e67d4e8735e0900bd0371683a770a5b98277c92a0d7f13736b9a4eef3024f",
                 "source": "de93829e8ceb879ea5b413db97899a80912938483c97eddf8e8e5bfc10774122",
-                "structural": "f919492896451ccd29f6d56bf486a746c42024e45490bd80cac514731240013b",
+                "structural": "0eacbe6dc76daebdb8b7b5d3e69d7b9fdf59d5d7281539bdb9fa0d511b4843b1",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_imports.py"
@@ -424,8 +438,8 @@
         {
             "fingerprints": {
                 "call_graph": "caeadf532af99bd4b4254c3c7fab1a725758d9b9139a40d96e7c95253c63454f",
-                "composite": "f999dec24d151d32ee615714dcec919dbc28d1340e5a6a6da1e567b2bdcb63ae",
-                "control_flow": "ac3d48f4cf753c6d85d5add3829dcac0f755d4cf65151882ae7cdace7fa1b421",
+                "composite": "cd8a7b1721e3cb62fc4f664f7ba808a09d7a7604afbcb4f1159e94d7e89800eb",
+                "control_flow": "ed7ddf459f28a2a347407c7f22e85b0c61bdb7d5d47a92760cf00ad5df71162f",
                 "data_flow": "387258cbc0b23feab703b18efb07380a0b99f5bc9eb5627265f634d94ea41f73",
                 "declaration": "1a0a7a3e8deb7e8d20ccd9d8b0c7de57e009428a82d61d255d75eac8cceabf7d",
                 "dependency": "aeddd443157d6e859c131601633e05636089bf7933b8a51e56b4f302f7d465b0",
@@ -438,8 +452,8 @@
         {
             "fingerprints": {
                 "call_graph": "8da90311f633aa56960df69f5ccfd9422479bef698de5af55ae9e699b21cb0d7",
-                "composite": "9294bff0ed650066c8ed3d7dbcbaaa17bf345f71b02692b43622aa91408c1855",
-                "control_flow": "82f28f57f16c4d1d2f33b77983a6e279d63a1cacfca49b40cf71402e011db4c7",
+                "composite": "996af363c4f0bfa893be6831b67eb94c8bf02375ce2663e20b4a9331c1b579a4",
+                "control_flow": "492adcd6967b4973ce7ce047765689c2c006e84f5b9f502fe26c62fc66f2c080",
                 "data_flow": "bff5059a0f99b60961d5ea9a0206955158e969fb5c28a1ccfaa850b6007cad63",
                 "declaration": "e1f323e683ffc3a17a90a45960186e43977cf57a9860b036c4df155b793f7f75",
                 "dependency": "1fb92f5df4160427a8a023d2554bd3131048cafe14eebe0cae7404b19565de98",
@@ -452,8 +466,8 @@
         {
             "fingerprints": {
                 "call_graph": "4d98d9d867e48394d83cacc57b4f8a1c0634228b9a6fefa72bf75f8b6fb8e896",
-                "composite": "fdb2057dca4d1e0ff6ee9da02ba3c41031cf5866b3066fd456b110e8517d3eb5",
-                "control_flow": "317a02261b809a14af241c4a22dd566225aafbf740149ff44a6fdd2a281ed9c9",
+                "composite": "fae9f079f17f5b51253943b67e9e68e8af02bc19d2573f140e9ae798481e6d30",
+                "control_flow": "1d417862d3cb930e1561bfdd4424bad0330c3e85974dd9a3ca4228376401b0af",
                 "data_flow": "e12f59d2294dadad16c8d3cea5592dc7e7352f07b027b269be74ad1f7a90ce5c",
                 "declaration": "b8446eae42ab7c6689a741816a4baac2626ae0fdf6ab9f1d30a8e466e93d69fd",
                 "dependency": "1fb92f5df4160427a8a023d2554bd3131048cafe14eebe0cae7404b19565de98",
@@ -466,8 +480,8 @@
         {
             "fingerprints": {
                 "call_graph": "da6cd9701a5329dbf1cb0c03b9e712383520c0d5ae59f0209ce44518f77990ec",
-                "composite": "41326e8254d80588569b46da482d4bbcb1eeab57ba71810a75cb1945471a95bb",
-                "control_flow": "65a4c58804546d4801e086eb0c04bd1a3afae18f377e8b1c9c6c1f361cd8d3b8",
+                "composite": "045322f28a7f39973476a6b4d8f5c458b7b599159d89d539b642625a690a7f91",
+                "control_flow": "7b42bbe4a6d43e4d58fe7368bd6bc9fa5710017cf5d60a33ced242507e9ea10a",
                 "data_flow": "484f7ffee8266987914ddc8e5a17a85c68d611fafa744954d90bff3a6f28cd2a",
                 "declaration": "5d619476ff0db08ce75131457f5709ad86c47c4522b926ab02677a152fc4857e",
                 "dependency": "477b9f028b60e6a38797141310350363e9ad076d02ba5734cc8d801bf590f4e4",
@@ -494,8 +508,8 @@
         {
             "fingerprints": {
                 "call_graph": "c95c674949faf75caf100af8c5066e629590da8e44c40fab594c4ee7f798ffe2",
-                "composite": "95e9cbc84df0b980ab9d5208ac75ef8db4a9f5e69047dfab41473122f8e9595a",
-                "control_flow": "32bcdfd4d5b289a57130a83094e441fa1b59373de060658cee7b7a08005ce598",
+                "composite": "1a9b6eabf1f66aef975f5b472d84de48583653dd80da16dd4b92d288d2e3dd89",
+                "control_flow": "6a09ba4c70e36065e9196d738392df9859ceda02cb341fea7f31f6194d655372",
                 "data_flow": "239a2158ec3821cc78da0459f39865656face073d7d813266f0d47c21a1854fe",
                 "declaration": "a15ab2149decc6828e77dbce5e80d141a5c2f11992c822280e2953922c34b78e",
                 "dependency": "c1304bff4b7f4451a893ac6189e5afdd25b56ef46f70bb5c0f9e92ca770046fe",
@@ -508,8 +522,8 @@
         {
             "fingerprints": {
                 "call_graph": "9e9600775afe15e9120e1d5ac13784dc50ceadcd472150f710a3971c1297d46a",
-                "composite": "aa71142778a10bbbfdd45e6c2c1e9ef5a28afd60f6b49165c8dfda9c5cc0476b",
-                "control_flow": "fb230ee3ac364b078393e1795b90e6b11a1f1844d0ceeafcc4dafcd8d4c222ba",
+                "composite": "a429b79abb44d29d6d1bd16dbf064046ba8c6f5f7f15ca5c2172fc73c621617c",
+                "control_flow": "da24207f1f38e774199b721e58e0479ae8ec232d9b156d54b1e91f598b884a6c",
                 "data_flow": "40fc77fc9c44d5175a2a8716bc213a6fc507606b58ff533c5ebededa6be5f5a0",
                 "declaration": "2722b2341225a7c1d84e3a4433043e15fbc4ba909da6cea765b964d11e6ae06c",
                 "dependency": "c1304bff4b7f4451a893ac6189e5afdd25b56ef46f70bb5c0f9e92ca770046fe",
@@ -704,8 +718,8 @@
         {
             "fingerprints": {
                 "call_graph": "1facd98138c829f8c20f43c844e0c51dfdbe012215f07a0ec5fd79c7bc134e19",
-                "composite": "689b8365fc525630557de814a9167867de8b6e7836c5afa16008273cb0777785",
-                "control_flow": "cbcf599b2270d25d68ebceb6719e91f847280801fbb582c05285b4e5f57297a6",
+                "composite": "ad7a922de6ce3218df0e41f60114b81e4b2ca83bc4e042aed27d8e3b19c2a89d",
+                "control_flow": "0f92e19bdc4d1e19413639d24dfefd71edc57c3d80dd2a71668c5a14de2dc8b8",
                 "data_flow": "f85a45a74dffa306802889b3724ef24610b0596415ab4a5253f832b230544ce3",
                 "declaration": "bc062c70aea6589fb91d8425430315e4498e256d4c02db533616c04751066f69",
                 "dependency": "70d0a06f94b31f6fbef44406eaa8ae24a717faef2a5c7af7c19dd09e09fecd2c",
@@ -744,8 +758,8 @@
             "path": "tests\\typing\\typing_version_option.py"
         }
     ],
-    "repository_fingerprint": "3728be435ffada789684f70befeabec0010641ae27f563c889d8249821d24a7a",
-    "version": "0.1.0",
-    "whole_repo_call_graph": "887c04593a382616a08b0409b712986265ac2b49e3fa08df8fab59b984c700d2",
-    "whole_repo_data_flow": "023a49c097eb5ab1df22fb5ea60ef3209dde11a6a903b08fa34f6feebe97c731"
+    "repository_fingerprint": "ee48b159d29f7ca03940abf9583654933101bddd264bb8b0741c1dc08aed9370",
+    "version": "0.2.0",
+    "whole_repo_call_graph": "6523f4b5c26ed7653b14863dfa33d91c142c44c0475e1702b7bb3773b11fbce3",
+    "whole_repo_data_flow": "665df9b138ec4dd5264badcb58c755d01592a605c8a9b0cef42207a143f28563"
 }
