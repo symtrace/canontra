@@ -37,7 +37,7 @@ jobs:
             target: windows-AMD64
             bin_name: canontra.exe
             archive_ext: zip
-          - os: macos-14
+          - os: macos-15
             target: darwin-aarch64
             bin_name: canontra
             archive_ext: tar.gz
@@ -84,14 +84,14 @@ jobs:
         run: |
           $exePath = "dist-bin\canontra.exe"
           Write-Host "Creating self-signed Code Signing Certificate..." -ForegroundColor Cyan
-          $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=Canontra v0.1.0, O=SymtraceLabs, OU=Release Engineering" -CertStoreLocation "Cert:\CurrentUser\My" -HashAlgorithm SHA256
+          $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=Canontra ${{ env.RELEASE_TAG }}, O=SymtraceLabs, OU=Release Engineering" -CertStoreLocation "Cert:\CurrentUser\My" -HashAlgorithm SHA256
           Write-Host "Signing $exePath with Authenticode..." -ForegroundColor Cyan
           $sig = Set-AuthenticodeSignature -FilePath $exePath -Certificate $cert
           Write-Host "Authenticode Signature Result: $($sig.Status) ($($sig.StatusMessage))" -ForegroundColor Green
           Get-AuthenticodeSignature -FilePath $exePath | Format-List
 
       - name: Code-Sign macOS Binary (Ad-Hoc)
-        if: matrix.os == 'macos-14'
+        if: matrix.os == 'macos-15'
         run: |
           codesign -s - --force ./dist-bin/canontra
           codesign -v ./dist-bin/canontra || true
