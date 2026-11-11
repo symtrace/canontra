@@ -64,9 +64,13 @@ import Canontra.Parser.SwissTable (emptySwissTable, swissInternBS, swissLookupBS
 import Canontra.Parser.SymbolTable (SymbolId (..), emptySymbolTable, internManyBS, internSymbolBS, preloadPolyglotKeywords, resolveSymbolBS)
 import Canontra.Repository.MerkleDAG (buildMerkleDAG, diffMerkleDAG, merkleDAGRootHash)
 import Canontra.Analysis.CSRGraph (buildCSRGraph, condenseSCC, csrHasEdge, forwardReachabilityCone, spliceCSREdges, tarjanSCC, transposeCSR)
-import Canontra.Analysis.Impact (classifySeverity, computeImpactSlice)
+import Canontra.Analysis.BatchImpact (computeBatchImpactSliceCSR)
+import Canontra.Analysis.CFGCanonical (canonicalizeCFGRPO)
+import Canontra.Analysis.Impact (classifySeverity, computeImpactSlice, computeImpactSliceCSR)
 import Canontra.Analysis.TypeContract (extractTypeContracts)
-import Canontra.Analysis.WholeRepoGraph (buildCSRCallGraph, buildCSRDataFlow, buildWholeRepoCallGraph, buildWholeRepoDataFlow, incrementalUpdateWholeRepoGraphs)
+import Canontra.Normalize.Algebraic (normalizeAlgebraicProgram)
+import Canontra.Normalize.Alpha (canonicalizeAlphaProgram)
+import Canontra.Analysis.WholeRepoGraph (buildCSRCallGraph, buildCSRDataFlow, buildWholeRepoCallGraph, buildWholeRepoDataFlow, incrementalUpdateWholeRepoGraphs, toCSRCallGraph)
 import Canontra.Cache.PagedCache (decodeBinaryCacheV5, encodeBinaryCacheV5, lookupBinaryCacheV5)
 import Canontra.Cache.SlabV6 (decodeCSRGraph, decodeSlabV6Binary, encodeCSRGraph, encodeSlabV6Binary, lookupSlabBinaryBS)
 import Canontra.Canonical.SIMDScan (fastCanonicalizeSIMD, isPureAsciiUnixSIMD, scanSourceSIMD)
@@ -270,6 +274,7 @@ main = do
 
           (wcg10Graph, _) = buildCSRCallGraph modules10
           (wdf10Graph, _) = buildCSRDataFlow modules10
+          csrPair10 = toCSRCallGraph wcg10Graph
           csrEncodedBS = LBS.toStrict (BB.toLazyByteString (encodeCSRGraph csrGraph100))
 
       defaultMain
@@ -504,6 +509,17 @@ main = do
                 [ bench "spliceCSREdges Localized Invalidation" $ whnf (\g -> spliceCSREdges g [10] [(10, 20, 1)]) csrGraph100
                 , bench "incrementalUpdateWholeRepoGraphs (10 modules)" $ whnf (\mods -> incrementalUpdateWholeRepoGraphs wcg10Graph wdf10Graph mods ["src/module_1.py"]) modules10
                 ]
+            ]
+        , bgroup "RQ16: v0.3.0 Bound Alpha-Canonicalization & CFG RPO"
+            [ bench "canonicalizeAlphaProgram (Medium)"     $ whnf canonicalizeAlphaProgram medProg
+            , bench "canonicalizeAlphaProgram (XL)"         $ whnf canonicalizeAlphaProgram xlProg
+            , bench "canonicalizeCFGRPO (XL)"               $ whnf (map canonicalizeCFGRPO . buildCFGs) xlProg
+            ]
+        , bgroup "RQ17: v0.3.0 Algebraic Normalization & CSR Batch CIA 2.0"
+            [ bench "normalizeAlgebraicProgram (Medium)"    $ whnf normalizeAlgebraicProgram medProg
+            , bench "normalizeAlgebraicProgram (XL)"        $ whnf normalizeAlgebraicProgram xlProg
+            , bench "computeImpactSliceCSR (10 modules)"    $ whnf (\b -> computeImpactSliceCSR "src/module_1.py" (feFingerprints sampleBundle) b csrPair10 (map fst modules10)) (feFingerprints (head repo1000))
+            , bench "computeBatchImpactSliceCSR (PR batch)" $ whnf (\b -> computeBatchImpactSliceCSR [("src/module_1.py", feFingerprints sampleBundle, b)] csrPair10 (map fst modules10)) (feFingerprints (head repo1000))
             ]
         ]
     _ -> putStrLn "Error initializing benchmark source fixtures."

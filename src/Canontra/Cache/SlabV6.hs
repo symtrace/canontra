@@ -8,7 +8,7 @@
 
 {- |
 Module      : Canontra.Cache.SlabV6
-Description : Zero-copy memory-mapped slab cache engine (CNTR\x06) for canontra v0.2.0.
+Description : Zero-copy memory-mapped slab cache engine (CNTR\x06) for canontra v0.3.0.
 
 Establishes a zero-copy memory-mapped slab cache layout with:
 - 0x0000 - 0x001F: Global header magic ("CNTR\x06"), version, record counts, and CRC32 checksum.

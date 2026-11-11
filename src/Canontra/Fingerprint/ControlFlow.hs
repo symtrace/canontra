@@ -10,6 +10,7 @@ module Canontra.Fingerprint.ControlFlow
   ) where
 
 import Canontra.Analysis.CFG (buildCFGs)
+import Canontra.Analysis.CFGCanonical (canonicalizeCFGRPO)
 import Canontra.Canonical.Serialize (canonicalizeCFGs)
 import Canontra.Fingerprint.Source (hashBytes)
 import Canontra.IR.Program (Program)
@@ -20,6 +21,6 @@ import Canontra.Types (Fingerprint)
 computeFCF :: Program -> Fingerprint
 computeFCF prog =
   let normProg = normalizeProgram prog
-      cfgs = buildCFGs normProg
+      cfgs = map canonicalizeCFGRPO (buildCFGs normProg)
       canonicalBytes = canonicalizeCFGs cfgs
   in hashBytes canonicalBytes

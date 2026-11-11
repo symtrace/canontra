@@ -18,8 +18,8 @@
         {
             "fingerprints": {
                 "call_graph": "44492672c93495a8fb0fece4f6e4eb3605ebf909dbee8abcf10223e976f6e2c9",
-                "composite": "0a0c265df51e3474b458e4eb3665b24c42f6d49eb28998d7c5802ddab522f2c1",
-                "control_flow": "5d78bd5835b2ce2ceb3f62e9286a7f43be23f5bdb1e7a611edee5ea3625b8dec",
+                "composite": "66821451e9c7dc246498e1e8462ff5eb9346179dc968361e4e099d5378fd8fee",
+                "control_flow": "ac7c3297f6c27fbe9ff4a55b8429f8bc59661443c7554d4446078a3c3f31267c",
                 "data_flow": "0632f4063d60329f3613a24c57470972abef33fd83957fd7ba364143480fb510",
                 "declaration": "ed0b72b7b61d32975aa2b0fe1c0f571d8c4caa8c0aeca8c2b8f493b1b8032bd2",
                 "dependency": "93346d82d0d06748ad236d4fd62b4cb3f98b4437e54cd535060e40fbb9db66ac",
@@ -32,13 +32,13 @@
         {
             "fingerprints": {
                 "call_graph": "657431bdbe7a8268a51c9fef608b39f66812acdbc01dfe26ebd3662ddca67d10",
-                "composite": "ee250a8424546d25d3030ff74f3a4da0076ba7db98705ea32425f6ea281fc763",
-                "control_flow": "7ea9c094a91a620f0d44a80277a4bc39cb1f1561dd0aa9e538c9707d0e999d76",
-                "data_flow": "93cf05f571e3887f3825d0e8908a5de684406bec1f40d3a6d5142cb7338f1240",
+                "composite": "08a089c4d6a65ad9f69a19791a61d492219981682a15d3dd6325d5eb85deb905",
+                "control_flow": "dceda7c3fbc54fd56dfd50682b934a1564dae7119e43b306b309504b1acafc03",
+                "data_flow": "35198dbb42375b41b5ed9485cc881835e6f494f16ceab3ac2257ea5a15cc6f4e",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "e5094f86f57092c00022bf2e4e365712b0420245108f58e7c205524c419c4366",
-                "structural": "d23d0de3be704dbe42da0044629ba2f54e14cb7bd24bd2a640bb3ec715e5bc54",
+                "structural": "9e69a8d0e1589ed8f4486e4dfda69673da81e840c4fbc611f4f4487001584947",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "benchmarks\\snippets.py"
@@ -60,13 +60,13 @@
         {
             "fingerprints": {
                 "call_graph": "1a7996f1f70bb45cfd9090179cd7ae426372e7f2eb2edf490f17f878e0dfd7e2",
-                "composite": "7590cb92e571830eea585af7c9a9d37211b9061dff158ee6cd8b006ed15edf44",
-                "control_flow": "b3e7c94ecaf68b9b0882aab376a36d562e7587bbcd01d3297811ccf5f2cae250",
-                "data_flow": "9e6d3ec92fa5e053ce6c294496f1cf524166fd9b1c502ad3885418e79e8e8f96",
+                "composite": "dbbcadb0ff12a0b5ef856a1f2ba650f767f0c3575bd37804d061332560374f77",
+                "control_flow": "6132bfb184462090538c91edbfb6dded75e46fe7385b85d249502ee54185f33e",
+                "data_flow": "a26728bcd50e074826ca0abdbdb826cb0de2481fccd20c11e253a4c4e338f8e8",
                 "declaration": "7c7a37d838420bf6bd0a56ce5a568577391ebd0ba3ba2120e6f34506a6d6626c",
                 "dependency": "2fbb7712e1c1f02064caaa3a9c7c002a313a099ed4b2b8eaf5034aa3d7902d1b",
                 "source": "d687ffbf15ca75f6227f1587c58d7fbd7b4a336ddce4c2321f2d197bc2a1323b",
-                "structural": "38efe9b2d928a7a0cf6ab695783c9667e6cb1c6ad722481033a46365ac2ca1a2",
+                "structural": "2118fcc4c9312880e0776df29d705d6349458b77e6053a629d9dd38b5d9005c3",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\attrs.py"
@@ -74,13 +74,13 @@
         {
             "fingerprints": {
                 "call_graph": "0f920a226711f8be53d4f06bc7d3fa8236fac37220dc719f0c323d6d1b37cd3d",
-                "composite": "0bac647c885cd2604d0876892aa8dfeb06b345aca60b02f4596d898d84652a67",
-                "control_flow": "918e3e0f77d7ab6be29e26cc95f927aaf9ee765bdd9b73c23a6e35dd01ad8690",
-                "data_flow": "e37f1e9e182200660eaa1b1d7b5c771227eb6452d161e0e8f8f6abc74485dc15",
+                "composite": "7029daa7e03bb3a8323af1dafcee7f5bb3fa546e4d48e3bad552c01c3a941906",
+                "control_flow": "c8516d80c4bc827c3bf960e0c97fe5e11301853706bbf8c07683a47c0029457d",
+                "data_flow": "bd8b6818ace956c69817b53155a4b12691e1f6db28a1c500b258533c8f373e03",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "c2b0a0058dc54a49130f28da0b42d8bd3d3a752ea8e01e01698d723b1748bf45",
                 "source": "e118301b980fdb6e1670eea4d2f02ad308e66c3a7c61918f12203d1fbae1854c",
-                "structural": "e739bf6c4aa5658c4d4eac4b5417d4d677e91b862234a0d9907067424f6383ba",
+                "structural": "ec414084d94eb81522f8658d3a085645cbf2f24cbba7a88df34e816eed9b60f4",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\bars.py"
@@ -88,13 +88,13 @@
         {
             "fingerprints": {
                 "call_graph": "1ae489e6c1aecafe99456e0804030b031819e6ae709bb37dfb730377eaa8350c",
-                "composite": "2744af483866d38c1ace14a056d3688e45040694b819d8b0eb8657bbd626bf58",
-                "control_flow": "2366a9db0326fb6dd9b410ffd192da8bf49490eb493b126c1bb46cde3ed88ab1",
-                "data_flow": "97f3b21ce1a2314d45f53b438f2472b0dfafe6d1613e45ac0af9074bd7146fb1",
+                "composite": "3417509ade2f2f676090057f7cee8ea44da6194e1a80b1b91c99e508bdc5147c",
+                "control_flow": "23215d5ed5a39fc1f643ffb8b10410495913346aa22ec17f539721dc60fd6e10",
+                "data_flow": "f2ef7b3e1f9a1d1ac751d3a8a47db9478aa785f881c934b69910252c443605e4",
                 "declaration": "e1326dac4e80725ea7f2868cda1199a0ed2c3f712ebf9aa4e41aadd566853a1d",
                 "dependency": "8008dc0dfc578ea79baeecb46a622147aa4ccefe6429910b86518634321d8ca6",
                 "source": "04eae50acab8c6d1edc2639d85e7d9822171e8ebded3735ca4d2ca65312f9ef3",
-                "structural": "9833262c48e6047d395bb0d8c2de141744f05b3933cba844b3869930b8acd0e7",
+                "structural": "df43822a987b1fd95a5164de798bcd1d1a857e61415f98d3f17ee81fad5736f6",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\columns.py"
@@ -102,13 +102,13 @@
         {
             "fingerprints": {
                 "call_graph": "bae2de3d7f3e3ee159560a2504f2cab19d7dc45f3b4b5b75bd668ff6d9eefcbd",
-                "composite": "45a2d13f83b362224bb90f63aa205fe23a69626f2b79fda6ebd1725b7c05aa51",
-                "control_flow": "7769b3df0ff5f6ab86cf31eff958453ad8de8c1f68f890504971bdd0cf19d77b",
-                "data_flow": "b86ac91b0ce08dfc90ed9cac879ced9bf9088c5077f4da59df32a1654f972c74",
+                "composite": "302655148350bb5763a9a68b6a70c2e04338b8b997ce23d021e6accf9cf201e6",
+                "control_flow": "fd193da3e1839970169af5ce54356d9c97169df2ab076413c6fc120465c69532",
+                "data_flow": "ae6a22d1fd10b6143c44dd05aed29268223cee0894b7c78015d09cf8d83a944e",
                 "declaration": "a5c7dc2102bddaf5183d3980b077811a284e1577c18a7928ab8271cfcb4d9986",
                 "dependency": "93ce313a4a0a2c0a4ab4ac8ffe4f34392286b0ff3024ffa99b6a5814a7ead4e2",
                 "source": "dcd497f9e3b5ba1a6c579af0e8e314d9455bc3565d5f210d21e4e8e8c460f7c6",
-                "structural": "a76737d85d3a6c3e861e47d77165e35d65c8d81dc7118d0b3596553eed481fe2",
+                "structural": "991c03e68b16f465c1a628f13829bec8c6e0200628da892ce62402ca64497137",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\dynamic_progress.py"
@@ -158,13 +158,13 @@
         {
             "fingerprints": {
                 "call_graph": "730e78d68d7da7f627eca6a47b20e7da7500d6253c6d267e62773a0dc25462ea",
-                "composite": "6244ca0b6ee9733fa9ca40203aa1427dc8bb20517a2dc23e3032691cd1e2a5f9",
-                "control_flow": "bd5b1621cb390ae1d73910b87adea7bd095ffefc9543269eccbda1a49e900bd8",
+                "composite": "0150b439cb483ab431657f5ae9058720b8fdb70882363f0f5ee499942bb80d85",
+                "control_flow": "9ff61674759587c78dfd448a64c1616b13b6eb9d88d539342f1d734053570991",
                 "data_flow": "6699a8352e3e30102dbd929f62a527399cc3a859bf93f0d571f35895a6886797",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "8775f13194dec8dc3280bd199032e6e842817dd5e7397d5b558fd85f9eb22ee0",
                 "source": "11313f073aee3bd054a1a6baf8f1cb299b59f957cf6600e2beb4ae2ad0a9e538",
-                "structural": "aeb2087a42ceee4951923ab9d0c6c2107648bc50b2360384e86e70f93c51b6b4",
+                "structural": "60c857785bdaa424891f41b599b1d849405130eedea2b7af7c68d843147b114b",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\jobs.py"
@@ -214,8 +214,8 @@
         {
             "fingerprints": {
                 "call_graph": "6dcfa7aa5f244298fed8d560a72db53f3c4a76bef61c6e8e5544221fe21172ca",
-                "composite": "e381e986f58940b2db99898f331556a80d8fe9f1eedcb10082188da44b0a6d24",
-                "control_flow": "bdf643a44a552a771ccb5a904503ceafd13954f0aaecd1fe58f83354c83c2d8e",
+                "composite": "ee165333fb702242bffeb4c9383b6054185ba5cad719350757ec0b8df2e42499",
+                "control_flow": "e1cb3038fd3d59fe516de100c52a39b665c6b0b745bb39a68c699d605b9c037d",
                 "data_flow": "b6166a9617c6ac8ddb96a645deec6016e678fd65e9bddf802f63098acc03cfa1",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "5fc721d136af600063ac723fdb9ec03dd66b4d56dab2d8e4a09c7f54578382a9",
@@ -241,14 +241,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "850bd751f80de93316ed0f78ba30184706a3626351d6f8217a5e419a72747481",
-                "composite": "cf96d46cdab55baf92c479b3f0f2ffde375873fc9eb915e3349a834441008eb9",
-                "control_flow": "fd9a3b009a5b19cc81c34ea011e00cb8cb3e4d6e70b137794c23d68c5fe421e0",
-                "data_flow": "183832e865c08daab24b0fbed524a8c290ce94683f661e701f5315cdd829e360",
+                "call_graph": "9dc9a7fededca21e32229d124798bd6f84831932037d6466ed3336464751f18e",
+                "composite": "67abf6cbf27e74a9d2ddb1b1145a0a85b21fe4cb5ce936f6d5cec7b643e5fb95",
+                "control_flow": "df3055b7c961faeab1bb48d7ce24421ce6f73d7fcdffbc502156c6bc2216a7bc",
+                "data_flow": "0f805e9c5d1d5943de0bc63992ad9826819845e4b9cf497bcfecdbebabfaf12b",
                 "declaration": "7979efcbd1f3f8fd54c6ddb08a3db8f026f848e6001a706715207a7bdfa775d2",
                 "dependency": "bf51aff7f3d82627af7a594f5670aed097aa4352c37944805518d7e349ed4798",
                 "source": "e138321b12f2a79b825e1a184e43cb0cdfba33fc48d388af24e869aa1b2e28a2",
-                "structural": "fb9409cdc63a1417ffd6fa2dad3218efdd34ee8dc36ab152449fe5952ea616fb",
+                "structural": "2f8559f25fdc6dddcb1c887c689f0f184a6ca40b2b6a6761bb7645484aa6d238",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\print_calendar.py"
@@ -256,13 +256,13 @@
         {
             "fingerprints": {
                 "call_graph": "3632bb67e30b50d85cf490fb3ca9ed7cfdc5bebd63e0376d438d95186a02a43f",
-                "composite": "2ebaf51e683df871b121c5184d968c74d9e3b048ca7ea770cd4370ead1eeeaea",
-                "control_flow": "b61ce4a3760cea6b37b94a5b5a69edb7b45f757ec4afc038c0006e541026d456",
-                "data_flow": "852d1c904ac2cbda18530d4075380c1208ecb843c6fbb4b7088af076b7a3b6b1",
+                "composite": "3fbb897e5c7b778949efaa6304e2bab50caf8b62cae538ef9398ecb1ca1271d2",
+                "control_flow": "88a4f8fc8d133285bbb2b0181254cd793c80bff98a67d3d299d134aebde0addc",
+                "data_flow": "9768d0d9b590b669f13ea2ad5981961103d20683984bed0b23b8b42bbf9ec3cc",
                 "declaration": "36e59f6d83276528efded1b1af9c840e3a45935876686caa673c341d54a3ae26",
                 "dependency": "d63451cb5d342db993733b4a3b865dc49175a69ba0e738a6a360ef67742f40a0",
                 "source": "85a0a5768471f796d9143f49f8c2bbb2641c5bebd219e50f4fac71823cc86ba0",
-                "structural": "ceb7d7b77bcb5e38bd5441c77e2a0a72a0a5fed59113d12c358eafff498f8840",
+                "structural": "337d5c6acdd9a6374e177498dbcf674e0c921ab38540defb144c67b4f8ce64b2",
                 "type_contract": "23134daf3d73a616dff48a8d0c59469eda30249e24141a49586e859026d5a16a"
             },
             "path": "examples\\rainbow.py"
@@ -270,8 +270,8 @@
         {
             "fingerprints": {
                 "call_graph": "948ca3587e4d02a600af544913409acfa465a324673a7ec7fd3a11191a228542",
-                "composite": "555259708412f25681e08287039042d165d553be3cdba20f9e55820d58ae8a78",
-                "control_flow": "d4026b220f41f2a0ddc6c5f9b05667fb22b8a8eb506c4c171809ed15c5f825c0",
+                "composite": "ace0f72003e0c618df4b84b769811c6152eee5a16d7950aa23d76a33dbf11903",
+                "control_flow": "de6490deb103834690fdd293eaa7e3d505428d19cf27ddf336b0a554b6bde96a",
                 "data_flow": "28259bd20865a37e7e03f2eeb79a0915711742e61476d002a061645f77e5603e",
                 "declaration": "a2068221d06e3134bc7c46fe2dd2f8ecf1427321956d2b0b2d008635ce0e1284",
                 "dependency": "ea7a396f8b1a356e261c54858e358314a78db79c4a44d615ab587ba49a037865",
@@ -312,8 +312,8 @@
         {
             "fingerprints": {
                 "call_graph": "5bcfceddb330add767814544c90d8952a2e08847a5eb11f6d2efd00bb80d5b66",
-                "composite": "ce63b18b8ac5244493f04488d1131754b7fe6cbc75fabb14721e086ffb1322c7",
-                "control_flow": "33b7e475cbf12c419d3b2dfcf748c2f1696de24f118b1cb1c1183b7887a29daf",
+                "composite": "2df959edffb0a00aeddba3cb466a8b3e5ff4bb5fcb0675ebd00b2061c5c4bfc7",
+                "control_flow": "62dc508c0f2234c721d022d0ac1f26ead2a1e7d347621d67ac50176200f6048f",
                 "data_flow": "65205141d65b507abea18c6c12622760d5dab566c921aaadf21ac9f5080c3e2e",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "b6c1abdc3aeda8e94a6fb0dd127d801770ae10b20e7e852332a8f07f6b0bfc34",
@@ -326,8 +326,8 @@
         {
             "fingerprints": {
                 "call_graph": "db314aefef5e30643750acc20fee7d1639599807f97347ee8d941de372f31265",
-                "composite": "59c420a9dcf77caf5245f4b8c14e34f94bc8089c3a53b36afbeca72d24768481",
-                "control_flow": "b727897de314266010a2c0d4d2678bf839127d91565f67994eaee0ffbd0b6260",
+                "composite": "26826191be1a418ec39be4ed00f5ce78e32cb390c01c2f8e7154fedd96b9ff12",
+                "control_flow": "f55809d778a2f339197d393ab62459921b5399f3fa1b8f07e92d56575509394f",
                 "data_flow": "43e9b17617f78f8469840a27c372cd5e5e5e6078deba0b40ee916170533ad304",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "90ed3a17286247b39fd86db830994487971d560fda1c2939093ca4c985a47235",
@@ -340,13 +340,13 @@
         {
             "fingerprints": {
                 "call_graph": "b93764c59e9c48c98fffadbd62430aa7a3d3246c72648e25ec6b8c6afe163c8e",
-                "composite": "d69c03e2b21b92b945300cda1298bb63802d2cf7f267e362ec34cc32e1ee9b5c",
-                "control_flow": "100108c5780246dc08a4aa1fb91186021f8f3ff850323c7e68f893d9b63086f5",
-                "data_flow": "f4cb6a7d9949ad3b3f7d1354c0acab7e1167b958e5269b2bc1a6a29cadad5dfd",
+                "composite": "f253cda53a807b41df9fae9ab3edcd0c1461ff2ca2f5023e41d08032ea3f218b",
+                "control_flow": "d966e5823f0f216fdab7434d77a980b95b2aa2a34d7098204ce96600406987d0",
+                "data_flow": "4ea12fa2d42c82d51a07923bf33405f2104a1b1eff455ff639ca821f53acf3c6",
                 "declaration": "7d93a0126730d51cbb1f31a415894eae40b03c7c63c83a69a291e9df11a6d9ac",
                 "dependency": "f875c459cfb3e7c4af88380b049c601d9c35f91ff033e38231b8e7a565745cd2",
                 "source": "c8d8ac5f7da2140723c05824dcfd94c48688e28825e91841f30eb8c88b55e2ca",
-                "structural": "73f8cd0422d6c8c7ea645f23b37904f28308098ed3ad858f5ad2a24df52310dc",
+                "structural": "070086358eb020d79740ce6719f65a72512a0c1619f6d8f0998c6f43e14b2e44",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\suppress.py"
@@ -367,28 +367,28 @@
         },
         {
             "fingerprints": {
-                "call_graph": "b14c3e671973c73ca3e26603f5d92304c68d962df4f5b1aa1023a78db6611fac",
-                "composite": "3a11524a30e7946f106790137025f104ce3443c2b06ed258ede0f2e819655f6d",
-                "control_flow": "7dddfa3f1917a85a2fa84c3fc5da658d334b6c62a56379001609923ffc9351d0",
-                "data_flow": "7e829ac50c1b92cfa47c81250bb81d037185799720d46716388fb7ef46c1fc09",
+                "call_graph": "4a674dc886d4e88aebee25710b58a72052f58bbfd6a421d7e566c1f68e2dfc06",
+                "composite": "2498b233e97c46637d330c48846a1a4c16a63f5f67dc5856b4fe67223af9473e",
+                "control_flow": "3da3a66622dfa128ab3c434fbb7223b6d56a39d8758e3fa785caa2f6c5592a97",
+                "data_flow": "620fffe8838e73cccf825553371cd371a20f066826b6439e16a2864b437d536a",
                 "declaration": "6e41b8d8f5b3d2fe7f47fd2db4835e37046ec5c0e64fdb64e88d91a0d1da0cc0",
                 "dependency": "7b0e9a8c568f2dc4966dbd9f4f5fd44431e892a5b0d228c9b4a81c4a6e17891e",
                 "source": "97dd9bde0db585f74f856d75950f23a80c94d3f82bc896c87cff54bee827c8d3",
-                "structural": "588c25e9a919ebeca18efb5b82faf466371c198fe3b288ecf0a115e24491480c",
+                "structural": "646f4ddf9d9110096dcbe8f1d7ce9fedfbb429d17ef6e5f7594df1dacf112123",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\tree.py"
         },
         {
             "fingerprints": {
-                "call_graph": "05aa637e68524a24063c0fd98743b736ff064868de82e00e4a581331e27cfd85",
-                "composite": "e65ff5ea5a2d8e6d5d8f4d0bcf983bf3d16322120e4bc8295e0bbf5ae9b2d5bd",
-                "control_flow": "4d3d4007eb973ad78905e46e1f7aa2a6fdbe8ab02f85bd826df8370ab15c09e2",
-                "data_flow": "5ff4352f7a9b003b39fc9e12a113f40fee4350904dd7938e4afc46c5aeb75350",
+                "call_graph": "03a20e2fbc23a4c3c64803d37d1dfd36055e209a4e602bbd6162a94a3a0fd075",
+                "composite": "fe566a53fa6c1bb555055b8c439d515c02e7243f57c82e5c5a489b3e55d97430",
+                "control_flow": "7c4d4cfd867aa57cea49f09bbac7b4055ca1bbe10729a469a44a8a6596b22903",
+                "data_flow": "ac2c06ee48a70a209e88fe5c304a3c4cbcc486635d9eae60cae77a514e398dab",
                 "declaration": "f727afa13041da9bdb56aac4593a91710f8ff2cee76c58cbdc639153b5ec6650",
                 "dependency": "6b6171ae8b9f1f0ea13711d3434a2ba2ed83bd647c5c906f4991a921cd203e12",
                 "source": "52689685c2949985f695e6eef93581767dc80de07e8c143c751baa6d3f216515",
-                "structural": "86efb90403141519642dbd42876f489cfc56e97b397fd6762f9b3f7a192233d5",
+                "structural": "5bd73277c036f403bf0c8d38746f304a3b0e9323519a5eea6dd93b10ee135010",
                 "type_contract": "b3bb8364858b170306321b4455041efaa9f2ba3f50624c53cc39c6d10cda32f0"
             },
             "path": "rich\\__main__.py"
@@ -396,13 +396,13 @@
         {
             "fingerprints": {
                 "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
-                "composite": "a172a88d6c7ebbb99879a8a6f1ffc9b52fea905b9567e75c981431220c8aacf5",
-                "control_flow": "a6a994dd10415c7df520f817b86fd5244a5cc693bd126503b60c41bb81a85752",
-                "data_flow": "80c69cf1d974c2749f01b1178833363e09ab5267ea399330f83e5518f52a4178",
+                "composite": "fd351bb95cf19d871750ce3356cc07802ad50f623a0993e44757affa3cdad99d",
+                "control_flow": "6626bd2bb430e0cf493a535c4f600ea71f8dd82961f1e2bcc3660b934f13cfe1",
+                "data_flow": "e1ba138a579767de8a96a10e1d69cce9fcdf38c5a7a6ad8358b4ec803b81371e",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "c55ce5ea5fce66fcc4b49512cfb09979ed8e83ee2b50a07a5f7f4c664154ee62",
-                "structural": "dd16dc67de2853ab2f19918690a4e72e685112cada4d52cafa6fa44d76f4809a",
+                "structural": "ce72df88421e14ae9cff756ce8a173d098a7423d1384e988cc5879af09772b05",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_emoji_codes.py"
@@ -437,14 +437,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "52f79e5870bf791b54c3c416e94fa5c3380cf4f036507301497713a5582ff652",
-                "composite": "f126efb838801ea7a69d0277281ba2850846514958a76d14a28bcae0f534ea59",
-                "control_flow": "f8cd85d43c9e6f1d7aa6b438080d5a3f5bfb8577b7470b0478552062d5880e78",
-                "data_flow": "1264337bc021f27974ad71224e51af15e4111697dc70d094509f3b0999164406",
+                "call_graph": "db40e0175e39c63baa8b1c2f8e93733b84ffb92fad718c1d74364e47e227689a",
+                "composite": "2af57c7328729fcfb425665a7f4ce4f6f60029788d63a14bf8309a38da1b0254",
+                "control_flow": "a544e6b5167bc8de7de9293b1bc7d623195384ba17c69e208d04d1e9cd237ecd",
+                "data_flow": "a1122f043bb5a0b5943b900a438c9e038bc52d83a9e0b94b2eb47143f8781087",
                 "declaration": "fa0b58389d0c8bf946eb48eb05cbd683512e6abc63a63e04e1f663878ccacef8",
                 "dependency": "a079556691d874bf696c2d2591c503dad7ec9b2b327f59a878b542295f48e44b",
                 "source": "dce32e8aff16f133195531ced2c0ca1da182ddd02b45dec375b5010a5cd1a9d3",
-                "structural": "3fa77fb4cda9958a77ef21f9a32d639dfd143c2d42c4c756eeba815cf56446eb",
+                "structural": "27e2df34804bdb42f13ee17f344d74b59a16b12559d861934ec419e9be8e7f5b",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_fileno.py"
@@ -452,13 +452,13 @@
         {
             "fingerprints": {
                 "call_graph": "20a1382fc35cfc288323204ab871dd10ee07d651717fb04bcdc4144655d4ce58",
-                "composite": "110956a05a25433d64d2fac7bc0454c249ba6bc80ac5b10b1549b3b0c0e24e8c",
-                "control_flow": "9734c0f859a6a8ca7e6ed365370f4a802e67aee0b3da7b0bce7b9901f75434cb",
-                "data_flow": "551e10cbe897b7e5ba09b217981ed255630087539c29dd38756ae15a8cc2dc60",
+                "composite": "03e59b36963c975fe7839701f2ddb594702f4936da8a9eabb18d74d922c80a07",
+                "control_flow": "5a5c1ee2cb8984c5dc180af46e01dd6f60a1c6d4ad429f199bf6fdfde428a1de",
+                "data_flow": "a6135d96c2d71b15109a2baa73e2d21606561b70d4bfa7de1d0469b19f4f85ee",
                 "declaration": "1b329be612d3738bd8728316aad87a4603eaa599306c1344b74e3a53745bbf05",
                 "dependency": "48779f6a08f3f93f7ade6e1ae486358cf5b4abade40ee4ea062f1e739c831b42",
                 "source": "61752561f4f949b9aafe91acc156fe702fcb3437792bb725fb824b2f57f26f57",
-                "structural": "326bb5eaad3fb26bd6cfa12df9f7a2f7cbd53458e4f1c94e25e0e3c3ab17cbbb",
+                "structural": "1c72739781848bdbdaf62dc4fd39ce992909609a4e9a0874f3f73d8f84de8522",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_loop.py"
@@ -480,13 +480,13 @@
         {
             "fingerprints": {
                 "call_graph": "c88dbdb6dc34d1dd16e91b5fde6dc2a8ab703b3adfcb98e577ea316f1a7820ef",
-                "composite": "75540011b8838baf0d5e9ecafd9deb487e4aa82d37047c184c82daa0100a4fbe",
-                "control_flow": "a757fa9e7726e9e22654c641e70f80cb6526119279de3eee65e7deba63436194",
-                "data_flow": "37016e7ba9d6fae45c827aae88dff949088a47e8794e12ccc94a525512f67b9b",
+                "composite": "b4cd8725c384bd368383a68f52bc55b4e560a52201247a632fda4e1ed378c0d1",
+                "control_flow": "ca560bcb7c01b538cec9baa66c5c526cb077762c8585ac05b7becb279b687d1e",
+                "data_flow": "86dbae60ad7cb6f21d0ba9cd589d6584ae9c7b7d180a11472e70c0b4e21d26a7",
                 "declaration": "b6ebbda61724858a7b929566ac70cc001503e9f798c295d2531d9f22a98332ca",
                 "dependency": "de33d47d00f45059fd7efb9433ebe2048aa18f0a720e37954f5ac6f28806b9ce",
                 "source": "a697b1b9d9faa09480c55c7cb4b0e9167096c094b7215d464ecd4812a4cc0a8c",
-                "structural": "b225e5083eb12b314c5a402aa05d0089e5f30ec40da81955af1e16cb6e15534f",
+                "structural": "5ada6032d3f966ee5d180e33474ff66f7c06dbd5d746a2fa758e5e2b27ae4bd9",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_pick.py"
@@ -494,13 +494,13 @@
         {
             "fingerprints": {
                 "call_graph": "623dc0fc46a0424837bed4f1c3264a97b593e962434adf0d8a04f7e6b7317d36",
-                "composite": "eb92db03b996f757c7a83ab80f7120af49b5364f337c328ed279917b629b94ba",
-                "control_flow": "e0042aee34cc911320c826339d2f637b3a668412dccc979616e144bd19841e8f",
-                "data_flow": "220ce8d1400ddd72d3d48cab1bda6910111c379c3ee8359ce96b11925ab52b7a",
+                "composite": "c0a0c73cce0fb6efcf9c31b7166392deaa8f825e65cd88dac7cb4ec874fd4228",
+                "control_flow": "d553d36272933cfd0c07498f7c846d65c4ea90f343b5f7ad0c85ba09478389d9",
+                "data_flow": "4ab22033a11e11fc0b173660796625b8350dfc480d71a6ad20ff5b2f7683ad0d",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "cbdf44e61def381da1e91c52a879405cf681c51c82815231060e1141f9a4f55e",
-                "structural": "7b557acec55e097aa8c73bd9340e162fd6cfa2dec37c913212a968547a91d27f",
+                "structural": "fe8406c07a0763b50ec7517d2a201898c9ad670fcda8d9239297eb633a6fbc6f",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_spinners.py"
@@ -508,27 +508,27 @@
         {
             "fingerprints": {
                 "call_graph": "7c8dc2ad9a862a34974632e850000d6047a4c386e4e4c1b82f1be68dd719a3f7",
-                "composite": "ddf8a0a9656658b99f5b73fa69d8730bff2046c4e15c2ac221a31605faa4b1c0",
-                "control_flow": "1e46763c22981743b96b275fbf7ba75d2a8ad3fee702870b1969c2ad69a54765",
-                "data_flow": "9cc171f13ee5fe8244ace6bca0f5648b8a20e6cc4d061a8bcf7f58bebb597154",
+                "composite": "40caf9ad6a9b402845cb16b944498cd92ca28415a2a97a75557e017f6f36ef6f",
+                "control_flow": "c472be2dc1342c3cdb02461cbdae2068952eae0a12320c26123bedb903302da1",
+                "data_flow": "5637a8f7918a90a609ba5e33f4d5e52c62c7f4eabdfd04d6bf72e0c997a1935a",
                 "declaration": "57b4e1cff8d9dde606add525a68d040b4c9f963529c587111ff18fc068b312a4",
                 "dependency": "692d8f1c4a1e0aa2e9e22fd2787cad0a1d6db6889cc1c727df613f29716db307",
                 "source": "91062c95b521060bc07f81ab62ef91fc0bb0edc20b17c01735cfa75d07b71e81",
-                "structural": "87fffc80070746294c6a956ce889338344fb62a4249e73a6850b0a0a90e6fea7",
+                "structural": "528d005c9f9e92a82174b73274649845c3a0376ca04010336be11a9e147379aa",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_timer.py"
         },
         {
             "fingerprints": {
-                "call_graph": "d38218e46846f0c7c42c333e4d932704495560194ae7bb74ef2f774b66080e73",
-                "composite": "818654c75a728fd7c249c0c58dc4f360dfafb5ae44996abb3585eab15e39a146",
-                "control_flow": "7469419ec0c75caef44597ff08500b70419b38989037a2111be3b2a7bd974b86",
-                "data_flow": "b79f1c70796fe35ce23c5db73090ee71e7daea66f20d40aea79d02c51c53baac",
+                "call_graph": "5f221a615600689910cf4f27f4202808ae1cb8c5a9d04866b44f24591dde7c87",
+                "composite": "4f5bd117c1d7b075ca51f7fd69bce9b5bb7044c0de0c2cd9418a1ee55c8f77f4",
+                "control_flow": "46b722570a9568b9c9ec4d33a6e8a69f350d67c52312b83b84d9a6ba55c58f48",
+                "data_flow": "48b39105fd3fba8a9f904fcae1b0a4d3781b621a35b6312ce7fd879a43031295",
                 "declaration": "65d85a4997b385d0d0969efd815f463c0c387bbad1d8aca80dbcb088be5f7fb6",
                 "dependency": "2953610ba9914215b7e365a0936d4e78bb2eb83c114a4e1fdd6bed3d424260ab",
                 "source": "34e0a8c1368ddeb5f078362f0b261d27d1e4dbd1f496de45c18a2e247334b7fe",
-                "structural": "76bfe64a8864f9e69b0b079f606c0a5a01cc75ac9d1a32d01c0b3f9d937ed663",
+                "structural": "bb664753d4461762596ba168932dc2094af72f52b6a819ac55d4d3dacd9907c8",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_unicode_data\\__init__.py"
@@ -843,14 +843,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "02fc7574c0011201193447ed0c180cd57241d5319eaf917a61798f31635359ea",
-                "composite": "3c30195838ae7e001f9aa350c8ff2b80163c8e1300b98674fc26f50ed5c37fb1",
-                "control_flow": "e85279ea33f0afa516eaa7ca5003289363fa391008f5b69fc1bca0cafcea60c5",
-                "data_flow": "7c1873d1fcdc2421e59ade82d2dff3c4edb54335a1bc3511520a3cb538a427a2",
+                "call_graph": "123e88e0d82f5f78800d78b3377013c6e986aa40312f282cca9f30c2d8895f52",
+                "composite": "f318cba7f3908874277baae188e60aa12949adbd130feaa2f53437b7343aee54",
+                "control_flow": "1ea730ed3f834951e6306681a6a45822e7c5f0f44f0ab871ae9ed60e32b8e37d",
+                "data_flow": "7a95a34a32415d6cc8d81c22f73903f3726ae08e74df6b1e32000e608e6e2b9b",
                 "declaration": "a4057a35819061e6375bc1b96f0bc1b4919abbd4bbe2bac2dadfbe67578a98c3",
                 "dependency": "f0cfb31db8145715aad2a0b5def01f9b4d59dd74114c16dc9f3f16e576c19f9f",
                 "source": "c711113ff709542356adec28d5e0f7f4b606acaeac172e6ae0cedef458de64d6",
-                "structural": "01a5895a763e9d74e531009730c5bf298133e443a8eec17b61d1711373ca38d1",
+                "structural": "dc900177d08de8930c09f7c7ec1df4c231e23d26620181f9eb71fa9379392e22",
                 "type_contract": "8da3fd04202d4981f2a53c0bc886261270ac721ebdc2675c3586d997c03a3e27"
             },
             "path": "rich\\_win32_console.py"
@@ -858,13 +858,13 @@
         {
             "fingerprints": {
                 "call_graph": "e5b39ad847fb1e5db183118f7754b677023fb594ac4602237e49ca4c8d71591e",
-                "composite": "fd106950fa73675e3e46d7bb99f7332e8cfb56d5dcb27c7ae334fcd5a0abfed8",
-                "control_flow": "c6ff6e51ffcd1d41fc0797621850ed09bedb8c09755420d92e4a66ec24637211",
-                "data_flow": "62aa5f06267e7aa4e1fc6dee8843249c0fb5056dadb6d807557d7e3f41c51015",
+                "composite": "8106acc5a4162d232fe43052a81d94980cdb55a450dfb8c61b6a2a48f3702dc0",
+                "control_flow": "ebf3e377a6ba4878438660e175f46d1589f1406c8a5edc05f7dc64b2922cb285",
+                "data_flow": "ae49424ed472e2b0ac0a4e95c5c86b0b186c51ea3ea3f33fb74027fa4b98192d",
                 "declaration": "998944969246f5e035620a0c1a039d7e623552e67cb66d50be898d2f8bb9dcfd",
                 "dependency": "06772a8e0a7382a6cf7a0dd0a49a1b1513a0016761144eeccbe97b51d01f926e",
                 "source": "9970889246d7ac05e7e6bc8481c051f5748fe4e48611702f51766d7fdd1ca88b",
-                "structural": "ee699d9c78a24852a1397fa64cf410817988ef460cfde90a6d3ba069d94bf818",
+                "structural": "15672f2034887f4b169af9a53f3fc15988b3375f636b1a5b273db9db4935b831",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_windows.py"
@@ -872,27 +872,27 @@
         {
             "fingerprints": {
                 "call_graph": "216a03762211a1df71585dc6a362f71369b991215146cc5e8f0980d15f5d622b",
-                "composite": "803c6b03b36da59249b0a08f83a0ab7aca1cf0a2a82a17a6d2e99487cf714258",
-                "control_flow": "449c805cfb8f6b7ac0d33ae16586c0f98bed41081b11132d87617b1fcbb55d1a",
-                "data_flow": "69c6593e3e048206f241f98e69f9165f13cd140aa93ca0b8002bdef7061b2f96",
+                "composite": "7e878dfa898f2eae11276403bc01d90c148391b712e6732e5400639f70598d9e",
+                "control_flow": "e596aa1b74959e98b4afc283cf3c2f683a43fe4cca82f4a2e2ffc0b04471e308",
+                "data_flow": "81775b0e41b4580b28511a285934c6adbd036e0817c42f4960c749ce97906da5",
                 "declaration": "cafbaf42290d71686d1002580674b0746ae529331598b524792f9e4acfcd07c4",
                 "dependency": "f1ade2d0d106908e3658a4a9c6b225a14526048db305a60e3344ba6fa12e8e97",
                 "source": "91717781ce15ac7f5665cbe6f883cd605199fff7de9c848919121363f9de017f",
-                "structural": "471766854d6ee2c54e2b0380198184c22b36e685510b815c6f17794eae3dddb9",
+                "structural": "8e10e53c6895567b2863fbb0348983a7511e0ac61b6192db6f1e3df6a2ece66c",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_windows_renderer.py"
         },
         {
             "fingerprints": {
-                "call_graph": "31b46fc6fa6ce8f235e4dfaf20fb77370799a3718d10345639afe2ea7834d464",
-                "composite": "4b848bdb0828d6fb74d60dc109a8059c8eb6671cbcc61cac137e1305f3b8b855",
-                "control_flow": "ed4b4e260ab641bb9a2d4743ee44da3388ec444bcfe2d5a69b70090606b0fff9",
-                "data_flow": "a669729c8457040fbfd54dcae6217863ce0df434115355390dfb47d152255726",
+                "call_graph": "470c03922585c6ccd94f75569b90583ad7b5cb24ba14a97f86dff54f4f4b712d",
+                "composite": "4bd9fb827dbab68d13da2cc3bf6872990372aa9d3712fccee033a8fd995e96e0",
+                "control_flow": "37601fd787ca0f6c75713c2c602b139ba34ba26072fdd2103b4e9e5f4a501ebe",
+                "data_flow": "55cdd06b8f7a9390e618d5d030d73e14f2b10bdf158849457a738ba12bad2f88",
                 "declaration": "81a813a6b820b2b0e63972878ee1ebd51dd4f4a8f644948c65b21692285dcb29",
                 "dependency": "2dd512e2b01898aad4e5b578aa555b5178fb4b5166749fce0e82456b9c0c4e2f",
                 "source": "1b46ac69210b799f7b679463d5788f09819b9efb677a3812d2f508e58654e804",
-                "structural": "a5dce21eb1b934b15d2c8b7832e7780bfbc7adfde2610071224ce1299081eeb3",
+                "structural": "5fd74d4c58561c4968e5878edf0e592f151a8708f28f6d20448d8ae988345d23",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\_wrap.py"
@@ -900,13 +900,13 @@
         {
             "fingerprints": {
                 "call_graph": "67d3e3fb44be5f0e20a63afbc9b462b4bb6e6999f79b55a125a242ecf4352082",
-                "composite": "9657a9dc4afb834de4239f6c60788cddd96da77e279aa832aa2ad3b716b1f7cc",
-                "control_flow": "350b4eb81807dc24bacf8520aedde232b137e69ea0dbc00701158932f62ffce6",
-                "data_flow": "10150abdd8997a8542f627831c967b35d476f6077443c669cc137bcd32c3360d",
+                "composite": "8e6871d96903deec895d814cc8cbc8e66b7c47857e898764046627c720112d3a",
+                "control_flow": "41d1691f50d075567b0d9e919a6cc346217ae785b4f8444a945432415a73fce8",
+                "data_flow": "5a065dde38219ce7038d1501ded9d15dbff028aa5328c2ba776755e541464d0a",
                 "declaration": "e1e3ea011a839d7f78d6d076bc6ff0a112fe4b90e30453f446875b0bd5ba5841",
                 "dependency": "766cb0da4d49407e40c0c34cd5e58477995117e894cba9eaebccb0cad55fe99e",
                 "source": "a69a6437d58cfb9c81d518dcaf3d2e83351039f71f4d581d773ad328a32d2697",
-                "structural": "456cb0a3fefe3c74a01a8c10e4c63cadbb1e8bf25f65533e845f7eae6c2c6017",
+                "structural": "3e64ff51bee19aa471ed82c9117f33120656666fdcd7ba9f1b1d32ee2c47109c",
                 "type_contract": "c59981bac859afed6d229d556417a9727f40813e4f720ec9ae09058b303dceeb"
             },
             "path": "rich\\abc.py"
@@ -914,55 +914,55 @@
         {
             "fingerprints": {
                 "call_graph": "98f24dc7006f2a5d154648e0670c8c43b4a2a89b068b339502819fe6329fecf2",
-                "composite": "f26fb5a364e6c3c13ad095297034e6d30edea5aa63655430206c2f0ccb8e01bf",
-                "control_flow": "47b07eea8b961b22b201368f8113034e6e0c28b251728222a84c436f27edeb79",
-                "data_flow": "a6264733fe471c2c6e5487516cfad46655ea5a0a2a15cbf61aa1a251fc9823f2",
+                "composite": "e0b448703484ebcf13ff2d5d98448d1b2df9539aeb5451fd55b89aa684a528a0",
+                "control_flow": "63fa32558a154b993a6446353c2afafa2890b1829f029c98ee916bdcc6a28555",
+                "data_flow": "68f6bacfe1fb7c1e1e8f53770b97fb8a28d9964de09856e3f4189632f0f3add6",
                 "declaration": "e45474ec28507a21baa92940350d81f7e411e32c34a4ee64a2e3bdf00df2e36c",
                 "dependency": "020a065e0009c682ad456213a71cb74fed0b310a3d20acd1ebaad6b54deb2be0",
                 "source": "d473c29f6607eda1d8b3cc595c9f457555a39bac92a0061b6367d9e144458810",
-                "structural": "9ec268ca2ae2c8c1eed9bb1c5100cb649a26d9fef7fdd242852bc3ab84103336",
-                "type_contract": "21a9bf7b61d0f2f840e88ac8ed204cb22e62977277a6acd6a6519fd887379edc"
+                "structural": "9069a2abd519396d6906b7f34c33bc92f7aa9bfb577a21f13b070d4dc102521b",
+                "type_contract": "4a48539332600167496d1fadad52317b79d21c540261552972659358f7fd27ae"
             },
             "path": "rich\\align.py"
         },
         {
             "fingerprints": {
                 "call_graph": "9c104a98b4225df3a0c07bb6846088ae46fd7d2f85d62b0d90731eb50b4ceb80",
-                "composite": "5e8d4cae99f957f9f0e545a708d739d86814dee39b91c0fe4056bf4f003d2180",
-                "control_flow": "f4d8f2e49ca6fcff20fb1cd31423dd278fc5fb4f458c9ad79d66d55db91b7a46",
-                "data_flow": "4e54ca6db87b4dbca036dc1ece4450e36375ce4e2141280ad5c6da366c88567c",
+                "composite": "082e44057f7e6390c3bc69b6187959bc9e19e34fd8c327c653c74ffcaaca937f",
+                "control_flow": "2e7305519c9f718feaa20a2094184d6cdb5a5e682a21c669872cf67aa99436bb",
+                "data_flow": "15319d664652efcadd7b34e3e58ae973f28ef91217125fa61e6c4d67f03e001e",
                 "declaration": "976598ce0b79be85bbf2c9d64dbc1a76bb0f10e6f37700844871998ac97176bd",
                 "dependency": "8063176f5a0b1a8e688e09b3c6b1b0a5e2cda398b4428197a2991b3babded697",
                 "source": "46b8167f2d0ba621215138be5e3ba411501d78b74fdb87222910beb14f0ee79e",
-                "structural": "f1ab77b38a70890fcf71de799bd1e5078da7a8bb5f2ded080d0fb6cdbda926f4",
-                "type_contract": "bad0db6728f261ee7b515f71c95a871d4392199f275b253fc5d5353784006e43"
+                "structural": "b2bab268dea5a4afeb79d0aef7bf192e26fbbec32712262f2d7cc7b120b21cab",
+                "type_contract": "0d26381ffa9811437ac0f6c44c28c9dd9cf0343fa1aa71edebf77c201e774bd1"
             },
             "path": "rich\\color_triplet.py"
         },
         {
             "fingerprints": {
                 "call_graph": "91fa8f379bddbe7965c4db4e774ef4ac3e78946bfb35632a2dade2220732527f",
-                "composite": "5c840e32ef4a49d784ccc4d3b579f48074ac57806f5b470573ec265700a8bc49",
-                "control_flow": "c64574ee0932dbbe11c2de8b310d91e8f81c28c5dc7bf5530daba38cdad51b54",
-                "data_flow": "ec7f4269662d6f18b2e848bfbb090fccdae899ad8e5e5abd52ee7caa001e7561",
+                "composite": "2f226cc31c06f40a24405b65b4c87dbf07af17bf1d290f2eaccf0b003d8f81c8",
+                "control_flow": "3f0a94e61352a58547867a52256e725ea2b582f474739546123f9551e4c7addc",
+                "data_flow": "c8b9c24063fe2b5bfb620cefd2af1f80c1c3fb736c28140ddc24fcd5e4c81b38",
                 "declaration": "bc7eac140bb2efd5f740f12fd9f550f7822cf1cfb9b8778476751448bd558556",
                 "dependency": "eba395774a36cecd5261bae4bbad4bec57c48b76c366d1b7b87991dcec26274f",
                 "source": "0db955edc008e4a23aff2757a1322967b6203ff3059adef0c6c0cb0f1df798a5",
-                "structural": "174769a31fa4be695c924df2bc7c560d5dfd1ea2a63a934d1a296348979e64b8",
-                "type_contract": "82b3529d86bf4eb3fac014d1c4cb5ef6d2f0301f72cff63529071817ada142ef"
+                "structural": "a533bfa91f2421569f8a52120876feb94f3da41611b380229051d6ebc88c8209",
+                "type_contract": "d3a1e47226d52436e9eabb770b79f8501a172c9ec42441b28e10b3083869ceb6"
             },
             "path": "rich\\constrain.py"
         },
         {
             "fingerprints": {
                 "call_graph": "8592e77c7e30630374c248182e9813b5e3c447f49927f1337a553c5cbc8e020e",
-                "composite": "d40f66462f226658917f5721d02b65332e8f92eb0278cbfd6be9aed15a173d9d",
-                "control_flow": "39b6357ab44a2586bf6d80bf19adeea9ef3e4df363f7f8407dc1ca53bd76a8ca",
-                "data_flow": "2141dc18501faa0dc2122182d1ef7b88d2eba91b5a1574220c3ae69f94515ba9",
+                "composite": "0440aebaaaa8c91d6437b72ba5ba9b6f6089a9bcf68d4cc4470a2d38f3fd41d8",
+                "control_flow": "f6a2d453196d8d8f4dc8047e1c2bcd532858858442f7a020bc1ef0cb292fecf4",
+                "data_flow": "abd7eda0cb0c0e3ff3343d5c7907a9815a219b49a8d0c23bf10c2d70a8ffa97a",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "579bd991bc39fe080ac1939604f93c5443552bd9fa0b49f8a721136b41b89ce2",
                 "source": "b04d5fefae1ac0b043309626ba25922acb350dec37745ff645060dcc89d7cfd0",
-                "structural": "d05aa8efed8581e4a7c187cdbe5a9f8fda465c04c2e3746aa40c8639dcca3375",
+                "structural": "591aaef1c88c32976329bb41941e00904ed2f0c65ce7f28dac59e73427ba0be5",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\default_styles.py"
@@ -970,13 +970,13 @@
         {
             "fingerprints": {
                 "call_graph": "373e70df2842dfbb3236601ad1d4b852e0b5437b08baf1867d5e235742767638",
-                "composite": "fc5b396a908dd9fa6cc5cca089d60d5fbec2457fed929d97a94c15bc3bdcfe83",
-                "control_flow": "c84083a5fb551e0dc7fb5c91e0b26e7d574e5bb2c5f66be00f9d90d6aef5404d",
-                "data_flow": "4c98e76688c5136bb7efe13d8c9fca967bd75987fdf81b3503d4e63fdfc1891c",
+                "composite": "95208eeb155f48049476994a821e0d1b56723c5df1ac12721ffa1e6e03c4de48",
+                "control_flow": "e25fc811b3e247431399e55350b7a6125dd361db6500a05cb81da023f2e3ca34",
+                "data_flow": "ef9ff4b2a5a99e7bef457116de30bda7a00579cfa604e3fe2527772ccb02cfa1",
                 "declaration": "61b1d1baee0cc6e8f57ffd97cbdefae8e81ed360a078aa537666033cbcd9c66e",
                 "dependency": "ad88f172c226d65dd6195055c31527acfd4c7749b4ef76ad915ca98123790a65",
                 "source": "2bf77f35b1293893a7bb5845f4ffdae583c9044b2c53450547e57f17fa3fd87f",
-                "structural": "c729d35bb89b99fe8908a0ba2a57d9122791b674dd444120971fde118d55559f",
+                "structural": "e1a8011702ebabfbf55dacbad3726bf5797f38439db5b4df332eaee3994b4678",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\diagnose.py"
@@ -997,42 +997,42 @@
         },
         {
             "fingerprints": {
-                "call_graph": "33bd83ad038f6ac8419f10992e2c652da115425b2e255bae4c97e7ae234c0bd6",
-                "composite": "088e435d4020c4b4bf8c47a855824e5d5cb5c7682ca3bf3b39cbedb6471e0e41",
-                "control_flow": "9167b9732b3faf385936c59cc9befb1f0506e21c2befcaca28878cfc6fbbe47d",
-                "data_flow": "24c943ca8309719ed8f4e41b498d59c996775f32ecf47689c4c6f7e7ce836966",
+                "call_graph": "cbafb8558c4b718012d69ce279b52861d9b5ce19442741ddbf01df43dcca62c3",
+                "composite": "174928acc7258ca839370cdfb3f292b7b628912b2a6d14ee17a42f513edd0a20",
+                "control_flow": "3bc525e9624da9adda633b3b6b0028af3d712b12420ce25c6ad818669d1c7314",
+                "data_flow": "b719e9cf1ac4e5df9b3931cfcc81d9e003184c457d782851a8e23ee8f0ae2f83",
                 "declaration": "cfba105d96b1a2d0957290caad32d655c34c9c9abaa5e9b31adc169b58a2768b",
                 "dependency": "5538ed6437de736d2323911f9abbb9ab76b881e8d975cb9be5631be4d8fe47b9",
                 "source": "576fa16e6e860e1cba41f12314d5d074b28b5085c27a31c78c3a6f2e416dfbf5",
-                "structural": "74fc15780846e33141ce31d6849602f9c01590084e14081eda70989898054f95",
-                "type_contract": "a6e0fbea2a5dff178ebdd9c7d43a667924346daec8be3a2ebdb47a11205c4370"
+                "structural": "6b3592bd239f833de5716e69f9f0cde85bfcea738f702a3337df65746f6dfad2",
+                "type_contract": "93ed3129225992c1066dd1106087518608099f82145429dd47e79cfcb977035a"
             },
             "path": "rich\\file_proxy.py"
         },
         {
             "fingerprints": {
                 "call_graph": "68eee90c4580a117286e3f6a3a7aa34d84a9efd7165729bfeda172902b702f8a",
-                "composite": "b6bf4cfcb4442edc17476d3f893c2b08a105f63d274e2599d59721040ceb2485",
-                "control_flow": "afcc8493cf3c0a62b3f175fa1810e8f299e1a283bc15c9e0d655b3d948900ed8",
-                "data_flow": "ee89f7889198298af83b752cbe3cc4c0288c0bea4801de34ff6275cadd4aab0f",
+                "composite": "42da6a2a7e9d9b087772f6a35972e78e8a7a1c4fd601d2d66783e89395bc9e96",
+                "control_flow": "025b6e07f11163a7a23cbfaaf6505939f01a89f426491634ce9b6b9e676ea8bb",
+                "data_flow": "ebf5729047471aeacc1a6741af8e879e191178c3a44b6ef73d0155c732827179",
                 "declaration": "d8e9da4cef7a0dfc5d7734c1b8af37444b774511489fead130563e0ac4bc204a",
                 "dependency": "2f5899aeb5b5489c3777fbb741f103a80088b34d9b9a08e49230fa3a2c427a83",
                 "source": "7d5ae6f357eb78385c3a613b5bb389a6c1c0ca239cba07716f68e3f789c42baa",
-                "structural": "aecf3d556283eb137beccf56e19714fb726057eb0c5d6388394b078696408d77",
+                "structural": "79fe3d4a7400e892cf1bd456d2ac79610a7720ad1804494b3a0ecc4a02b42cd6",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\filesize.py"
         },
         {
             "fingerprints": {
-                "call_graph": "64e28f53175fab4c1239349209c5831514700b9642cefdcce9fc60b30abcfe2a",
-                "composite": "739ab015bda8bfd75998c22961feb454c702d3d83092652720a1cb06cfeb8e0e",
-                "control_flow": "f0bca618998fff32a8d2e45dc598a4fe2e48087a91d255a866a53e9529e54cb8",
-                "data_flow": "2cf51dd411e809e40b4d3b722f566fe1f1ccee4d16c758bc2f76ae2b0cd48567",
+                "call_graph": "eb4495781b79d120f53033079d3344c13ffca9fb931832f8011066de4a7f9b6e",
+                "composite": "9c467bd5ca1a05bd848fb4e6948c2234452a692ff4648b800e23b89c6a78785c",
+                "control_flow": "7c1d9b842372089d3d38ec62c74959a69ccb20f0a745a5129631c7891c77f2c0",
+                "data_flow": "f01e2d207df118a8c7906c43001f217aa17f442a8ab995879419f5edec3b90e9",
                 "declaration": "df1ffc90e516a64a15a986ef7c10cbe122f1c38cfc39e1b179886a12abb7c94e",
                 "dependency": "9fe90ae1d023f356277c71aae3b540fe8e2c520f6f9e41c2a81d91286dd1ee2d",
                 "source": "5104bb88b1461556260e880f4e1fb924a5b544ab415b44ee0bad5eca0a79e3d8",
-                "structural": "cfb71a1d5adabcd0b9504393796ed47c8e6552cf0505d9c360ea34b09d02efb7",
+                "structural": "1a33576bb035b4eccf089ce75f274373b8bc86b33115cfd9f9672abf92537bcc",
                 "type_contract": "e62d9cd5db44d159e45955fb8e16de8b19253249d78d7075ac0a8c293943f2fa"
             },
             "path": "rich\\live_render.py"
@@ -1040,41 +1040,41 @@
         {
             "fingerprints": {
                 "call_graph": "2dbfb5c16d47f95de85d883a607f38b6aecfdb3c436ce3e0a7554a3d47dbc259",
-                "composite": "60d0b5331436c4d956ace52c1bfc08c50d16171035b92d895e49091c8f5d8306",
-                "control_flow": "a8831a4d24fd9ec5ec35ad0616034c1fa62e2839fffdfd2c943f95aec0aba2aa",
-                "data_flow": "b0d517ab7c91966a73acb3f4921d7b2ce17e18be0d9a405da8feb8abd66ca516",
+                "composite": "08e632e4ae16997a13d101b6887d32f03045103ebb120f9c77805aca58a844c6",
+                "control_flow": "ae47ddf8772d3a10aed893caff778533f5d1b54b682cd511aea20096b5015dfe",
+                "data_flow": "6418c5f187740032a2e5bb6ba5d061e02cfedfe321f3cd155f524a2195f6036d",
                 "declaration": "8f310b14c3d2afa4b5a7fe3082a766eac2cf841897158287b49ff124dce21dcc",
                 "dependency": "f74862175004b4ae6c29c5b22c84b54d5e3d6f9230ec544766e1b6943232259c",
                 "source": "f7caff938d3e5cf4426dbd0a5fd5222af8529eaf312983c7faa18be95b2c62a8",
-                "structural": "d8a6151abb5f3658e383434cafefb52668237d56158d0352b610b5e5f4fe40ee",
+                "structural": "62cfa78a2d9277dd1d668e9ebe77d8e0a665ef0082c5856f16dceeeeb6a61a99",
                 "type_contract": "9aea23e26079bec9947fda662a7ac1bf8e00fd95868aabfd942f18cdbe287d53"
             },
             "path": "rich\\pager.py"
         },
         {
             "fingerprints": {
-                "call_graph": "80908979d9837830c8b75ed10781adc983f993ea7d86b36b75032ae1c6ffab52",
-                "composite": "b1fed2fc0f698256c8b09a9d79aea20d72a808b6b7ae1b1dc58cb3a61e0445f9",
-                "control_flow": "53e588b8353e7139e4b890b58cff0ca1bb5f58233c581ee0c1a627b19c7154ab",
-                "data_flow": "f4b985f2d1ea6cdb8e28dbb56c2d4307acedea1a74a4efa8fc48217f2c8f2429",
+                "call_graph": "ef840c1f6439dbc07f06ca64de4352f857a30125fb2d84ed4578389151355f95",
+                "composite": "de080623b92c4dd5854618dbafb77c93e1e6b88d3140dd408cf95f777e08688f",
+                "control_flow": "7d87c43a536082b681444b40b3cd43faca11e6f842dcf8d5f08fdc477a699f0a",
+                "data_flow": "0a32b3b7fae489ca29c410a25ab5cfbb56dd1e1c076bd4819518caa1e5620610",
                 "declaration": "614526cc539594c6f91cd4d3d3eae23091f0905713855e4a70f9ee518912b16b",
-                "dependency": "be55b2ed79a599823b9840d218b82107ebd8f22d672e3dd4cb71d650e748b86c",
+                "dependency": "b2e49ca76c4b004e1cd3122c6dadec0f0991956e719f812939b64f8dc2989300",
                 "source": "c99eb321fe9147ce66fa13b6c3a64f261ba557ee2d92d64463b9de7a2563bfb5",
-                "structural": "fbcfdb59fdfc23e67f6d2445f2ff5b0c9a4adfda126c23e2f046878f9e18edc5",
-                "type_contract": "8b0e77ab030606d2559e4396c1d31a002a61a3c85cf213899f119f271b1b720e"
+                "structural": "69136399664d6ce1cd14b2a5da5874b6a61dad0105bf67246154ddcf9bfe2f11",
+                "type_contract": "3b003e399972e21c5c2923be2a42bfbfdbc06166fba324d0d98d99afd315da7d"
             },
             "path": "rich\\progress_bar.py"
         },
         {
             "fingerprints": {
-                "call_graph": "f1caa8e92f37b4b0430e80a977cf8a1e05270f5f8d5a8a7cc69b7bb6afbbba4e",
-                "composite": "aebf7b8fc868a10810ce7303abcc872689f80cfc5cd38772bf8b69679418db71",
-                "control_flow": "1fbec122e3dd5423cf1e42c7994b4811f6534a8a5f6deeb53e20cf6c025e5774",
-                "data_flow": "b0c12052d4b9211596e2915d7d8e1643a8d2f00756c1e2e41865da1227a31863",
+                "call_graph": "203856c5e3c5b5e2f63c060e7e492309f5737d6f464ee35ba7e60e8dfe9f67c0",
+                "composite": "9af29aec16b139c638e30c69ab4d3034f0f3d900e65a29dc5b35d510768f0de4",
+                "control_flow": "1e86c9c72855919ce0be265cce6deab40d43bee51adea38404037caa014427fb",
+                "data_flow": "7ff1439fe197b8d1dcdb4ac5c8faa38aa09f48614d57fa019d3f7b15d24af6da",
                 "declaration": "0729dcc3e345e3b8a84af72f91ca6f9380674c7efafc14fa5b094643c5811557",
                 "dependency": "e863801bb2e9023d5541acd427411b96e3b979842aa8c1c23b54827ad57b47c8",
                 "source": "b1c6f522421ce7381bfa9e22c8d9b578a332f3dce1c0bc73f2a08bf3f900e9dc",
-                "structural": "aac354dbe4ffedb00afbc054d3e26ee6002ffad5f30b51cbbaf425dd613e998e",
+                "structural": "7d4c71272dbf1203e4c331903db3a2812ea08c978b6d74463b0ad7bfd01445af",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "rich\\protocol.py"
@@ -1096,41 +1096,41 @@
         {
             "fingerprints": {
                 "call_graph": "6a5330011186f48a8bf217bb7302a7286428d33ea2b8963544abca85068e89fb",
-                "composite": "2ac6f16ad8a3e9ac3be25a487fbc08a7b2b9855badd216c164d0d85870d4e784",
-                "control_flow": "be14faedcd04af4447c6fea8d9e00cff642f1f41c9824c9d7edd130e916ca0e7",
-                "data_flow": "c0ae48d7c332b5d3b13bd01bd9bcfb27aecf3f04a37281890118701e97b6d31a",
+                "composite": "9ff1af796b40ad13ab699bc1c1e78ddbdee371ac2f19ae3c46e515c98c0f1e63",
+                "control_flow": "525cfb0492722867eede27e7503160b9cff896b7a67178fc58982fac1b30209f",
+                "data_flow": "fb7b326cec42f07da2cb81a54d303e0fa855366550b53dbef61e9465300449ab",
                 "declaration": "7ebb834b762a55cdc4349bcd42cba2eed8b3f1a7eec4aa7497555a66f6fcb858",
                 "dependency": "e5d43a7316aa956db7797e1d5c71f733a6d0d1edeff3f213e1ff33136219c8b2",
                 "source": "a40e3592a4b482d6a4117d18b1b998598bf37ef7d8faa2f257639fd280772537",
-                "structural": "bce836029a954c4e9007d51a5f12a0dce56f04c8093877118a120dca9468a3ea",
-                "type_contract": "57fe50804a4f312a1aad795f01ec8132ea4191d8c63d1a328cad2a1f123b5b46"
+                "structural": "83d38e3ff176e2ce9a52f31bf815b4dab0219ce819b99baa347b5b6ec2e35e5d",
+                "type_contract": "77cc8bf6429ca5fb66a481b9002630084c39825052e1984404d005235970a9a9"
             },
             "path": "rich\\screen.py"
         },
         {
             "fingerprints": {
                 "call_graph": "8e1f230caeb6be391b48690f7a5e932408463bebad1cffa193ad208c0d0c7d1d",
-                "composite": "9333e605547607c4ddc410d829cbc9426d48f7e245dbb4c3aa19afb094d00ce4",
-                "control_flow": "1d0af0ff9e51026cba2491153b3a0dfc5562aaaf7fd2c40841c873385831b6bf",
-                "data_flow": "7e41f9df40cb8ac8600d6f2292875874b6758727ac7a8c4ed642cf2c435a13a3",
+                "composite": "293a1363229656cd522abce193455fe228921124b1323606f065d6dc95d18309",
+                "control_flow": "970d9f0263efcb71200d9d9b00288ee95f901e0542a52000e77f57de9f7c2a86",
+                "data_flow": "157b4360953a2726ea8e619b7ae82916d006c069b8edd1a4062c34607b5811cf",
                 "declaration": "89e21a3b8a9d56867eb490cba19039338218b11cde106e9249a505d9e102693f",
                 "dependency": "84208199df8cc35228397ecbce9679cec7e7abe215e34807429035862fe33d8e",
                 "source": "b1b5f750d4a0248a25b1ffeafd443fad27ce976a61bca558129b32e5cf60e12f",
-                "structural": "0b483d983d98f18dc42a1cd35e54cffe9e613940108b38618152667e010f4b9b",
-                "type_contract": "2f1f58967bddf5a04246e81f8b1fbf8d54a4dd76923bf35376acf820ffc557f4"
+                "structural": "4fe268d82153a8237a97a06220b9140525750d9b6d2987c5154d15e226c14145",
+                "type_contract": "2f008079c3acf2017822f1fda35ac9bff7e110ef1e9fb3baf1e3326ead0f96f6"
             },
             "path": "rich\\status.py"
         },
         {
             "fingerprints": {
                 "call_graph": "8cf896517e7a6068224645e3b954bde041e91c6ae12ffdcc489126ef5f7b47de",
-                "composite": "3932f54eb68c9aa74ba7c875b78ea21a4535d40ebefacab438535b0aca09872a",
-                "control_flow": "c1285897b6a68d61ce3aea6923d80e9b9c3b827bd5e51a54f6ac0b009955869a",
-                "data_flow": "7903776e3a73db20ba972b7c1a5841583e0ff255898fbaff8d2cc1de22cc29f7",
+                "composite": "4f082b8e92ed174f1bc91944889d927d037b1746395ece43c381081871b50f2b",
+                "control_flow": "490e40872dfdfa6ac9c6f02d45b92ce5502003115186f6ee6d83c20f5050fa9b",
+                "data_flow": "cf555e451a0ed42ec332cf0627c68ad8687c15790af4ce93b9ffbaaf63e6898a",
                 "declaration": "4d09892e4a813d9348730fe81d2c0b996555772ffb205e7944f92f3dc522488d",
                 "dependency": "c216155146365b894569bce0fab952430470b2d9ee55e92160353b21478328f1",
                 "source": "b22c874387d530189fdb147e521af711cda1f4fd8f6d30c15cf18da6cd9147c5",
-                "structural": "40e765ea76298185a6673f27130baad11c68a0c3edcb49e00c32ce6d578657ec",
+                "structural": "08132b47b35a3296cebf1efde7975f89c03f35bafdaf4319a3347b72f2229f23",
                 "type_contract": "816fa630150ac096e4bdf78298bb69972bdb9c9e5a7db198f9cdf75284ec4461"
             },
             "path": "rich\\styled.py"
@@ -1138,14 +1138,14 @@
         {
             "fingerprints": {
                 "call_graph": "71c37df59d20386f12025e5821ef7b127b61831007312f69d68459204ba528f0",
-                "composite": "28f38db487e29027ae0365c28c9b8ca7acd4c3b76912225028a2482d4826a951",
-                "control_flow": "7d4d4d79f0740e4731fd46d0d6426e5f44bc77bcd851a653e50bc2edf0b53de8",
-                "data_flow": "91e81f28d48f2bfbcea4063cbfe56fd2a65135939b08d5b9dd39e4afe4a0a54d",
+                "composite": "73c84f0e1b927c149224406c5abc45c476c2b100403793d06690fece1dd3f432",
+                "control_flow": "027285df20a359514bc9bbad1ef5bcad10d647d40a9e4f019a306d210952596a",
+                "data_flow": "49795da89d96e343263eba4a27158459a665dcbf0fd8b7d043092c3747098278",
                 "declaration": "0be9e472f552873ac9d522bfe196726a6261a5304e099e82f69add41dea63df0",
                 "dependency": "f7c67f66a9f34f477d5de3acf9573120c7509d75eea4cc841209ae70d4abed75",
                 "source": "40eb4f989d63f6903a4e11ea716f936806a132c22495b58eb819975638c85811",
-                "structural": "364acf06c60fcda9d77c7848aa770ea025acf0674b725b2df70f458f8f42fecc",
-                "type_contract": "7554738fb91fb391d232bb303084eaff80c65c1c6e7a2a6561449c34f0ad39a1"
+                "structural": "317b55db3132ec871d14b80681d5615d94e2e0e94ca2b8661b43abda390e3c16",
+                "type_contract": "81bbfac891230a7a72bf782b3eea22c9e1968f1089b9ae759185c5cd4b9d6a8b"
             },
             "path": "rich\\terminal_theme.py"
         },
@@ -1165,28 +1165,28 @@
         },
         {
             "fingerprints": {
-                "call_graph": "eaef48646569c3f2fd5cb10517e491343aa0fd028dc64f6576765356f1952f2f",
-                "composite": "dc46a6176664625395ad7e87e489a64925497a103e62af60f8cd3a6697b1df45",
-                "control_flow": "793fc49bcea513f64896853bd309f98dcbaee41773da93334778995a18eb82ce",
-                "data_flow": "3025a89b4dc0ff389a9fa6cf22270ddb3c9b3ae1fd3974d96ef09039988c000d",
+                "call_graph": "8004e9d2d283d2c97f0fe59cc10d0942504114157792bfa9c8e63eb7cd997fa2",
+                "composite": "c13e1c875f0e414f9d48a3c6ffd12a6e84d08c5a9d909f7ed6fad1a1846ab198",
+                "control_flow": "2a1795a3f7809266a08903044a4ea458116d7960c049bec41c8670c47f88dbca",
+                "data_flow": "8eefaed3e857dcdddb00a0d8f7b35259c4b5ccd269d9abfbbbdaba84ea214c84",
                 "declaration": "304b5c2a8f95cfac52a19c4c20a0bd083537cb71393e84e55f2949734ed35d14",
                 "dependency": "d285eb5e17510077b268a34f1048ad114e6078103d0ca3c2c09fd0a6d8ecae01",
                 "source": "481255dbc4e63f55f6a77f0b66531847a52a386be0492b4805bbf3cd69ea6f6e",
-                "structural": "8c6c6ed710ec3cca7015d229aa08c6445f1df566340a1a748540a170fcbe081c",
-                "type_contract": "c712c4cd9c9c06c33eddb59d99469ea57ea4a0de648e1294cadcf4329964b96e"
+                "structural": "a1c9d5e68a683b87e44c95dffb14e6d923a6db05484c043ed266604be3118abd",
+                "type_contract": "0e87a44f3341f685b0481bac3dea083b10e1f1c092b2d541e0b39d80e06bf486"
             },
             "path": "rich\\tree.py"
         },
         {
             "fingerprints": {
                 "call_graph": "2055eb5e5d18ae4d11ce94ba3adb136526a2ebcd5dfc6b2f74dd36f2816f54ee",
-                "composite": "0e2652ffb5d150d414a1035ac2afc9a6b0610b98a628007c0fcb61c159da9124",
-                "control_flow": "67c4d7b74c3a5f5ef199793f26d21d0703d8598df3349d11adceef5197407c22",
-                "data_flow": "a96f805132df0443979f6001377e5f58e2c60312e02dfde8fe3ad1af2ed6e14f",
+                "composite": "5cc5b390494f22c11729e04185605d2888b670627c13129c1654acb47b354e74",
+                "control_flow": "22e8551c90f9b179385c53110dcb9a64013ae2544a9f2e43892b739e7622b087",
+                "data_flow": "c7bac53013786293d907f0393f9dfb2386a0c352b55fb53d7941dfa655c3ce42",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "157182906325ec445e9549549efd32b0d3fc5cd7c652972ecd32a3da906ed5e8",
                 "source": "3c681820e4eaf8a5741ad21d6aa017c263ccb3579cbe808ea614f4bb4656d3a8",
-                "structural": "c1dbdcaa679c49b772f0901fb74af31ea29b8b7d5288a9f8d9f830d3250ffa5d",
+                "structural": "5be469158a64bc62aa34e969ce81b8d034305fd710b31b4634bf7a3518f77ae5",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "setup.py"
@@ -1236,13 +1236,13 @@
         {
             "fingerprints": {
                 "call_graph": "2f6e7ae6170190a61a2b092c570007dbb570b3cb03f1d10d243defed288a94fb",
-                "composite": "83809c1932b309e4acd04475c147cd5d828d5a40d4b300622c34cb5752fc2953",
-                "control_flow": "a4d55d0b3822a665c26df1755cd098c88f6e9887ce8fcbce714b6b98547582c5",
-                "data_flow": "cbd3d2f3cf9ee9d76226417f52ba9b29ade5d5311f072e20525a459e9c18942c",
+                "composite": "eae226a8c33ae9cf7707a9cea83cf29acbefdcb5a8729b702b01367e95a1ebb0",
+                "control_flow": "b51b17ad5e2d4bcd35ea871c16e181efada0f5fabf03ac18ac6f0a230bdd5c08",
+                "data_flow": "a967820ce40719e594718564687062cb2aafe9b9dcadd09cfc30fae9feeae424",
                 "declaration": "8547243d33f1500759af529fa26f10378b89adca39bf02382656197755fe488e",
                 "dependency": "3d79fc4991dd5808fee7b501ece55e8fadb3c9282a40d7afa8856e5690cb1420",
                 "source": "569ef3756865fe4cca6a72390cdfcbee52b5a1032d379baf56afa4f5ed26cf38",
-                "structural": "873abe5602470203d3a1098e83247e53bcacfeb50787aaca5268b1e58de9e2e4",
+                "structural": "f058311a057650dfa4b7d4ec5b2f80a5e81cba4d97b5c79918dd84517096732c",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\render.py"
@@ -1250,41 +1250,41 @@
         {
             "fingerprints": {
                 "call_graph": "08ed4df4f91df8e09a4609c2efd1d20bcfc13e4ab526845719dd4d41ca32a377",
-                "composite": "088e640fc9c999a5994cc5e7efa94897a6f195f5205edfc14247521b7cc3b478",
-                "control_flow": "0abd53861dd5f75cdc6d4ef85e709720b04133f1dfdea25c512b5b412ea358ca",
-                "data_flow": "0c67b77e425982851ed9541b5db1a5cd1723e4309c6b3967504763db763bbc75",
+                "composite": "44044d28bdb10da09c20e2189f1c4c5dbfc3473ea13ca65e76941d4ef55e6b94",
+                "control_flow": "d7e898ed0bf5cc6145a21a1c664f8975e1aed763ed5f39126eb1bf481b9912e5",
+                "data_flow": "11c740826c8d90d0f862b22e8a64eaab7d84fd8d66e3d9d3b599c8caa4bae072",
                 "declaration": "90aa629b3ab1c144a7f232b0ee21f4a3bc984c20d48f77f1080261ce9f827943",
                 "dependency": "478dd6a2b2ce2c6af60e1084eac81906b655f8048b5d509fb5eb49cd3d66be17",
                 "source": "195a1a7ddae8fc292238e189975f4532a34d7c26abce7eb27ba991357419da74",
-                "structural": "1e56ab7c68fc261770244f99ea1fd5941b6b70598827d9f0e33899660b55e9a2",
+                "structural": "e3b0134ead35e2d7fbb7701b84ea921180c1d52b39e56fda8ba5028c7f59725e",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_align.py"
         },
         {
             "fingerprints": {
-                "call_graph": "d1a8c45ea907a841033e7300ee55210169b0acfb25214387cfadf95102d39d2e",
-                "composite": "1dbdab5c92b4918675acbc991ccfb3a93df82c9b6eca8fe37555d80cd8f6f899",
-                "control_flow": "ecd657a97252029b0a1777d1315d4843753be59dcf54137a7c13e2eb2ac259cf",
-                "data_flow": "2dcb077e7bdd5b5b8a4d70b5d2949fad6bbbb871802eedd9c67924f0ed6c3560",
+                "call_graph": "b229bff35ca14c2be4cdd96ac3fc20b37d4af0339c2bea6a24bd852a5e5948bb",
+                "composite": "639f5cfc3121031d746865b58299f0148d0ea5a9ef2b47a7da97c29ee9fa85dd",
+                "control_flow": "ea97c0851ed6bc4f77b40d01ce09fdcbffa5be9026525311d785bdba7d1d545a",
+                "data_flow": "dbf60230758ceba341d3c4c3fb57b52130651709600766d780614f35e5eb4a74",
                 "declaration": "5a7e6326164b8ee131326dee6dc7417b52a35deea96b4bb19975f9e249291520",
                 "dependency": "089d93803f298b67b2d46f7aab1c30abbb2fba4379432656552423a55512b0c4",
                 "source": "ca05a638848042e36879573d04ec8764427678df70d8b74c4e3eed5fe7eb23e6",
-                "structural": "a84d2b4af39f7a895bf3113ba88d97b17691a8aec24a6c3ff678c9bbcd4ea184",
+                "structural": "b2e105fa50e9bcabe73ed8baa02437ef5bd77715ebe5d9fa88b9e0960528e6ee",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_ansi.py"
         },
         {
             "fingerprints": {
-                "call_graph": "d23aaffbbdcea5a178a28e2025e41879b129f8cb895f9ca889bfba797b387eca",
-                "composite": "4613d81c4228cfbb02723ba62d540d3d8c77c63be5c577f41035b64da2c9668e",
-                "control_flow": "946a7f768beb1235d01cdb7448b20dcaf5249237e77532b2b6e65ec3d4de5764",
-                "data_flow": "372423c0acb71c5ecb5161b5d46fc15898ef371fb52f950caf1b75d45659f821",
+                "call_graph": "c16531428331f158d7521bbdec7bf584d8bd052a36efd4bdd4aaff8d815e5cf9",
+                "composite": "1a04c8a0e5ee60ca512c24410a29105304148a4a5574407fa58a3c71858d808f",
+                "control_flow": "420078a450e68e8fd804b2cec193d1d491091963a11f8ed7fcacd60ad23eadaf",
+                "data_flow": "c8d0f1e54d74cf4fb3164d47e47d977fc5ad300723c3fd88f44549c0bfd3b837",
                 "declaration": "d5b6a0f8985224880ea9fb10f16355ea3098128d5a43a2fd6816963130075f6d",
                 "dependency": "8e263667f9bd7765d4ff9ed721c72df2ae6403ea6eb7ffae09d7750a43759d78",
                 "source": "182afdf5648ba96130326c475eeeaaba96fd1ebd85255b90dae1252ce36073e7",
-                "structural": "a2ec9f01c813e4c48c3f4960d621bb30f8d3e29f46dcf35d3d67235cfb943055",
+                "structural": "cd8a88b744e3b308bf5cb705846b537df1e0cc5d5996dfd9ddb9aabdf62fb9ad",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_bar.py"
@@ -1292,13 +1292,13 @@
         {
             "fingerprints": {
                 "call_graph": "d02cf2d955ce75455e617b6f2d16e69e143d8e527efe090c17e12f7a2a81674e",
-                "composite": "1b6102d62896cf1ce4abdba2afe0b773bab68013b30828bc22f91984944162ba",
-                "control_flow": "792d737c11d37642370aa4f0e97065e2a09cc414a4458c9d4cad94d31f75c842",
-                "data_flow": "a9ca8546ce244a5d66eae46eca7c7b4ad54d81e00dbb7796f38abd524e23cd12",
+                "composite": "0fb609f606547c73a8bef4777e7e5813af0dd6332404366229ef9f84f9a537c3",
+                "control_flow": "a5ed7b478e7094d120ac514cc47e4e703f98388d90501d341dd5d3826f334a6e",
+                "data_flow": "3dcb33039f5adf8c4d810a3bf383bfdad97432a6e1442d0d28ffb878be4f5288",
                 "declaration": "506c753787654848acaef5ed4e7008d751a1fe9a65c4c51d9e3aa23e49c83e36",
                 "dependency": "d683dd2edbb78920e530a109247947b4d2ea31b6f034f589ca9ca30aa1b7c376",
                 "source": "3adb4a56956043dc8a94ea93c16345e3353fc01dd20c3ec19c710d6e5e0a95e8",
-                "structural": "037f5ffedbbe173b2c9be2bf8ee9193d0cbdd2da279491c5b57ded9a72861cdd",
+                "structural": "0d70b8d69d537d13e7f991d8184f88c3faa9cd084324c3bee14feb7e68c423c2",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_block_bar.py"
@@ -1306,13 +1306,13 @@
         {
             "fingerprints": {
                 "call_graph": "e121f8558ab7137fca5977946f38df863fd6eaa468cafa67c97c822461a5d6c3",
-                "composite": "3c27864e2bb2dbfe4963d0f59557c8f781cc45fbbde68391c2310395bd21b5d3",
-                "control_flow": "956d72d639cffab2ab87fe0016b726b9001a5725bc7e4ee78d482520c6faa496",
-                "data_flow": "2801adb6fb8774603e0b576cce9ed536a0980b08b047a533c18dad23b426ea18",
+                "composite": "fe7219826ddc2fea0768bf172ba6f9c0d8df7afbb8bf618c6ec0202fb9593138",
+                "control_flow": "894165e44cc555a96675bb23f62bdb8f3b75334361cd37758e301e11bc8338cb",
+                "data_flow": "b6ee9ccff01e8502e39ba5095e69bf340a3d0ca890fabc1fd54a08c3c4d29634",
                 "declaration": "d170de5b7564a907cc074a3ecdfc4f7aa93c567bd397e3596de7af786c94bbf6",
                 "dependency": "6607c3068721bda249eae66c07103223f8cda1c4cbdef3f0c49736ea116ea3d5",
                 "source": "3716aa3cd8cd652e7bc3a97a35f8a544bb7d994e5c8486d551156a1c05489a32",
-                "structural": "53076119d452f714bd581396d095245fdf331d3fedd1b11a444ee8f01daad530",
+                "structural": "ae5b0b1859ceb6e1f4d5a7ca5da118837bd9d4d94b8838208be659f9c2392562",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_box.py"
@@ -1320,13 +1320,13 @@
         {
             "fingerprints": {
                 "call_graph": "cd2c485c9ddf28e7d08a144a07162470d6f60b3e419a565bfab902a92621d514",
-                "composite": "8334476e356518645ada93d4cc1618b9799a65915c1164d3ea94c5737e27b9ed",
-                "control_flow": "1d3f005dca087050a506cfbcae0e75987908f1f0d66968ddd48fc98dcc22a787",
-                "data_flow": "8acc0eaaa378e61f13144d2c650f65b951853dc787c3a574d9a620368d114a5e",
+                "composite": "ee2e48549bee72cd8751b5dae23fab3fe4232db8dc8e4ccbeddfbca439eec00c",
+                "control_flow": "89525c84b1253ae3f6a5c77604c0f0976278e3ce4eb50a05c66ae8aca0a85944",
+                "data_flow": "f63dd5401a05b4c1eaa1fc6d6c705c945b9e7c34fef7d8dcc73101c3e40a0768",
                 "declaration": "1a8dc7549035d1eef68a5f8c69f0ec6844f321f1e9c073c03cd3ac3341d3b1f7",
                 "dependency": "ecc2a303492b80faf078be3bdc0b328196601f53ff94617a1833f2e58b413238",
                 "source": "5f036ead924acd4b08c084815d86ad727965b114d41743f0022664c1def636db",
-                "structural": "7426a13211eccd7ff98844daaa15609a8774ae41ba38dd3214c27a900cb76178",
+                "structural": "67ca4e7d2099bfb5a48c4e0ff91b9eef9e6c8d562b22b6ff266cc4f45d8d9d4e",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_cells.py"
@@ -1334,13 +1334,13 @@
         {
             "fingerprints": {
                 "call_graph": "189cd3d9e8fb06b1e9eb4b2421f8b500d59f8db9fac5e4ed32de8c1a5b089626",
-                "composite": "3aaed3369047efbc3a98f6f7d86dfbbdfd7c403ea9db17c4a4c23a8738e73ff7",
-                "control_flow": "9b75ca03588060126f12c4077a80477130c57f5fa3b1c420350c0d7b6622cbad",
-                "data_flow": "4c727eb078c69419e0b64517a2fc0b491e5fe05bee7e3b697c583beaf5370d26",
+                "composite": "d40a843c0a9551ac273162789e85f8bae880486a60c33ca1d743962a28a1adbb",
+                "control_flow": "b09a934027b8dc18b2a660bca99a711bb48bdf1e96cef708c0af2f9c55f73029",
+                "data_flow": "e2b97acde5da268e959a7c7f1f4d07976087947d36bcacad4f6ebccfa0df0ef2",
                 "declaration": "e3877c612e3cf77f3c1949d68795e84dbd0cf5f1367b8faa9547e8f5c8934fa4",
                 "dependency": "189533ea46049946be26e9b233af80672242cc1c83d1c5e2ff5805a3c95aa606",
                 "source": "a4d9d6ae6a21b1b365e489578ffede040312a52e75b70a1452c99220379dbced",
-                "structural": "ae8a263c790eb7ac3b24978e1822b7601cba6d0f2b9c2286fd024b68706e9562",
+                "structural": "e3ed4d2b6c8b01bd785cd52cd079eefa9e423f8c94bfa5f2147192e8100eb37a",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_color.py"
@@ -1362,13 +1362,13 @@
         {
             "fingerprints": {
                 "call_graph": "5701a8567e95e813e89eb74a4cb62a04db01b291bbf247cc7cb4487ee55cae31",
-                "composite": "f8f93ea1903d61ef94539a1519c3b9b4a055041fe601afafb4fc872dce94ce67",
-                "control_flow": "77502519a702a0a7093302b2b65b822752a8b3fe76abe58a65ccd51e623e40d3",
-                "data_flow": "89b8f0c7ea6b62ed9a40ee470a7263dfe1a2f4e7e6c310542b7d4c3d7002feef",
+                "composite": "9eea96d18895b5299a268715b699e15c1ec80bddeeacfd6ba7816d13ec3a2c80",
+                "control_flow": "d3d790d8b5120ba24483f058874dc8eb1c0d91ddbd21da69bf9ae7ec5657e5f4",
+                "data_flow": "1e899db1d46f3d0f0ae63e2a83dac7f3b3be9979e9ec411adde752ae1f253cf5",
                 "declaration": "b0761cf7b85bcc1fe1d4f494420aea1ced18de64fa8eb030da5d37a93e2b6969",
                 "dependency": "b17a6f7f7223f289a6744dd2ff96fc71453d09665cf4cc6fb99de6ec4e3a36c1",
                 "source": "f9d3cdd9e5eb4e151896c6ac961397b698b2442680055edde7e17f9a0948b2e7",
-                "structural": "06f28744154ff4f485e649cc155bdeaaad32a1aa6cb7805a2ab993e466cf88b2",
+                "structural": "8a95ca41751b2a662ed4e8713690e0c2e1502c8e6c2b083f562907b9ea4399fb",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_columns.py"
@@ -1376,13 +1376,13 @@
         {
             "fingerprints": {
                 "call_graph": "5706f7c299b0a09807b0cb48f4c82a90667b260e435d371cfb445c2ea9e9bc51",
-                "composite": "2ec5da5993b67f23cc33a922af549ae18dcd0e34f582e4c629a1dc67c7ab8683",
-                "control_flow": "80c3a51b6132d06ddf28aed52919567c6b2a4834094ebaf0c2b87560e79e5781",
-                "data_flow": "5df946a097b88645d5812e41973678d46ec4e6e052a411251da013f4a36d7427",
+                "composite": "6852faaa022f6dc24fc222778f4373fc5621ef6e24c2c35b4494d3bdc30a42a2",
+                "control_flow": "79ea09585ca15d13fb6e96c72edd7b664eb12060cef3d8461c3bdb8676008569",
+                "data_flow": "3e868d221c04c6ee6a308301e8f593e0d5c2bf824c7dd5879c1987f5b69a6cc3",
                 "declaration": "ccabd6570148ce62e693f357f05672b97e8ba9ea2b4645b6318d93c208e9c8b5",
                 "dependency": "08abf5b6cffacc09a6d9a5b5c8a6ed7ac43d090697dd54bff2133093a428baea",
                 "source": "9e71173e28970d05835561aa0a84d0399a3792b211d75aa418e0b99ef39b176a",
-                "structural": "faa3ae17896b2eebea190f06cb1f7ffc4c6ff77cdd2692caa66b1446c9872d7a",
+                "structural": "bcec5dedf37e9ea9a36cb35594fa7e139c8447403c3a96a63335e9c4d7965e88",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_columns_align.py"
@@ -1390,27 +1390,27 @@
         {
             "fingerprints": {
                 "call_graph": "a0822fd96963ac8203ab49525f40f35fa8dfc05e45d1335cceccc62cd61345d3",
-                "composite": "c57b6ebd4a0ec3fcd20bbf376630d7198019ace8fdfd0506963d11d347e4f8f7",
-                "control_flow": "152b6b556815ff21ae8fb011738354486786f356f8e147196eaa44fbe85d0550",
-                "data_flow": "9ae368cbb962976209f43065a09a66dae1b9891dbc948ca2b8583ca7d1056cd2",
+                "composite": "1d47e1fc0845ef49943d9948dac6587b54c64c53b213b7f771e636ec6307981a",
+                "control_flow": "b02680dd1baa321fcd87761e599963f435a6225502f14f5f42928154f03acce7",
+                "data_flow": "09b55bd4fb4a0d73cade6bf4c84cb3cf00437af4926df4e2a6263fbd503705f8",
                 "declaration": "365262590a7655e95afc81e5217fa413e89974f547ce21fea39f7562cce7fdcd",
                 "dependency": "59e499b6df5eac291014768817746858abb4acc352283d24aa3a3315a9290e32",
                 "source": "f1b2787e3bf6586a57c6eed030674c33ff82af1af301ffb40fe7b525c94b287b",
-                "structural": "277965c7af71758a8bdc312a8fabf4077997ec95eca9e960a27ad694a9854306",
+                "structural": "db36ecb34c745f368974c5d245eefaee6e4baba2ba2efbe9cbb9d6bd54937cee",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_constrain.py"
         },
         {
             "fingerprints": {
-                "call_graph": "9b870fdf78a0ad9127bb966af82af18e7dba9d2ad90e33dc11d1f9bc70650950",
-                "composite": "e76eb98f484e8581a4c17d7783b22246d12d867362eca7d9fa9372030ec25c14",
-                "control_flow": "750cb29e3aa54e041ce188081d320b75d6057690b43e2314d2b8bed887fe3a5a",
-                "data_flow": "f997205f17a4a0ca4bdd01a0584d635b3fe7f681457b12db4509d63c86c5b8d4",
+                "call_graph": "9377f791260eb58209dee22d2764abf754084b43aa3a360b27539a9982cf341a",
+                "composite": "1e5bc4e036537b1703c76b7fc82acef82ca0fd5cced8d199fee0110ddde2006b",
+                "control_flow": "55ecc4500c45b892738c996cc54338db090cfec95457f8ab753cff4bbdf947b4",
+                "data_flow": "bf5b1b82c62308f8b678302f4befb77488633358e1cb16f2a0aa7805ee11afd7",
                 "declaration": "82c9f4ea54dbe9f2bc9e492b1527459384bff9166611312a9f5d7c7eafc61ac8",
                 "dependency": "e1356a006a24ed946e4a891eaa09a9f1625c811d9de4cdca66dabca06b4ae58c",
                 "source": "cea154965345e29619953bf36c5bdc9db3c150bab6c9dc217006e76cb2f65ee0",
-                "structural": "45e2afd2dddb5202806f09e5d31317d5a5456f1b5cb672220b1048fae9de6bcd",
+                "structural": "0daf4754d5a00d5eb4865562a22014b727f39fdd13bb95485f25b776e362671c",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_containers.py"
@@ -1418,13 +1418,13 @@
         {
             "fingerprints": {
                 "call_graph": "af6da026d62ba1bbe0fde0e47895d28bf65a2596605fb6985980132ff85f9d99",
-                "composite": "a92091aa837d06259317301e4316cd13dec477ab00f3b925a7445a39765e13b8",
-                "control_flow": "4e478472879c3135d5635dcbafcfd54c7a6b3140d7ff3e52363f7d95eb8f707e",
-                "data_flow": "f0f566fcf0e6b4bf33ffda9df91328296cf81e1c1180cc79e9874790354a1bce",
+                "composite": "b3d80dba0446cbbef386c11be74331953c63144e02dde594004dd7e25fc18309",
+                "control_flow": "b4199f1d24264a4a39d9cd64263c536de65b54140367d8b42a8e1af7d3c83de1",
+                "data_flow": "537084dc74f754ed8b307e5cf905f7e275f7d13cfebbad44a51ed577268a6627",
                 "declaration": "d09ef2c2c6a4b7d0a93f54d80e5fb2051aba0c59d71cd029e4c5cca40987e805",
                 "dependency": "f0cab6b5559f059753f9f250719ae0aec045c6090ca3c89b673d25762c4f6fd9",
                 "source": "95731bf5f4cc151a0cbdcca5485402a5f5cf60ed481470fb3de1929f1f75fb22",
-                "structural": "9dad20aa97ee8b476c6ca4cab3f45e23b653ab065048932294118218e2e49bb9",
+                "structural": "523b276f19642928b21b5b57c1f16a47096e5ff1a27effc7dfac158a72e4c9fb",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_control.py"
@@ -1432,27 +1432,27 @@
         {
             "fingerprints": {
                 "call_graph": "86de07554d4edd120eb1ce7ffb654bd8e960a740c20a4faf16657f6892038267",
-                "composite": "113ecbcf1be6a9d62d5e86a4d04d6c5a02447bc6f757866de2c2abdff3048793",
-                "control_flow": "6fd3689f387354b3fde2009ea0837035132222ec31dc0d7aa20a5db2c1ae6023",
-                "data_flow": "133aeba20628ed85535b8221c796905bee2b6b70327dae01a5baec06dc1aff99",
+                "composite": "55866891e8874344152abb706f90de3eb863304458fbf6633493f987b1f2fde0",
+                "control_flow": "730b37488c27ce08b6f25bc1e6db16723d6200236fa776d01f3c68c8f1e4bb0b",
+                "data_flow": "7529923c2b43535c06b03221e5a32d1050e3e30bda95e337cc6fb77e229e9c1e",
                 "declaration": "fb25157bb33015cfa42eff344ca2fa124e59e0db43fa65466cd68ba446a8c6ef",
                 "dependency": "3294507a76c8441633b3b7a4476f450d3148584d24f80a9457137006db7a4903",
                 "source": "d441d1c98c3b5744992b8da18c1d2c5fae2af46906f620c68b3012847c09365d",
-                "structural": "464070baab14f1986088222a014a8b9eea65d819cdc5d6a92f1e8b040c53a693",
+                "structural": "5ed25371307586814a6e7b546df2ced596306d501fac946d136358dc3332831e",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_emoji.py"
         },
         {
             "fingerprints": {
-                "call_graph": "5cc0c6d6397c455d93d25508b4f7cbd682018bcb71517c965a8f27fcdf32afac",
-                "composite": "eb0050b30a48fc6b7de5fbf2b1f07e14126cbac005039b257ca2508f462dd29f",
-                "control_flow": "52d65e4a7f534ec95f12972a2d19825bed0a67c078cbbb62e60eb6d2072195a0",
-                "data_flow": "49dfe6e5ea71361ec767ad6594f362c43816e91fd4f7e9a605b210cc128b98a2",
+                "call_graph": "0b774c6813bddb620831af3e049958f02f1f4581017a4b559d1f4b392d8d00cb",
+                "composite": "bce457cb66a8c8830b569b7803f197597914b6734d214ff3463126d8e022aff3",
+                "control_flow": "0f6e228b4f45fb2777e92e3b69d39f9f84f34bad8c7d7a4dd307aede1aa3a759",
+                "data_flow": "8fd2b74e2af7248672a3cfb33a8dc40c1dd4df8cd95cb5fd631c702b3aa47578",
                 "declaration": "8b9ec681b024210713d5794be2e84ff2085afb1b95d8a7f011be7b45c5b22d05",
                 "dependency": "1939f3472d4c5ca61f28908d5500df2d67c8e013ce557ef11576e86978ba643b",
                 "source": "f88a32b64cbba0e8d59d94a8264c10225eedf96495919cb744dab786b0801047",
-                "structural": "bcac8846416febb2f349996507f3f0cea46b6218bb594fed748a3bf3eb444497",
+                "structural": "c7b96235469ff66fe5310c3df9bb2f4a88391670afea90950df1819963801560",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_file_proxy.py"
@@ -1460,13 +1460,13 @@
         {
             "fingerprints": {
                 "call_graph": "a35f8f2856e47647aa1afe5cf51d7a7681b76127309bc7e75e487d35388911e7",
-                "composite": "4d547fb99fcdd9c58f8b9b358215e659e96f2d40d2fd1c224a40c3291808f6c5",
-                "control_flow": "26c6354bcc1a6936409966eb309a6ec9fa0a2886c36d20a25794431a83186cc5",
-                "data_flow": "ff912ddba1910543b5352c72c4ce0c4d0368b68a91a6cf8c28059b65312c1820",
+                "composite": "f2590233386a51471a3b07abc69cdb88582e64737ed5e733803655209a4c2cbd",
+                "control_flow": "a30bf4edf71e589e45693fc8c06fd2678ea03e50097521fbbbf268423e77a34b",
+                "data_flow": "2ec012ef1b04ecb7c8a0ff87fd17329f47576b64cd25292b5492ed62f5fb4af5",
                 "declaration": "7ee5db9ed8bf0d964e09fa1ce1a599aadc717391800b4d6ac40dbda8741bfebc",
                 "dependency": "3e0857d35230e1fcb5d725d32af9663ecd1742a30cc4111f19c56f2a47ed4b15",
                 "source": "fca4bf5144488cde40d888c0ff4029d5aaf4e8694b832db6eb9fdcaa7d6b55f1",
-                "structural": "3f62f123b2d9a7824e3fe44208d3bd5f4cf22809a67a1d6de913f6d048e26ffb",
+                "structural": "9189c886aeaeb8004a69de6ab3795534d2b94f798ed223c2cae812968ca811b3",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_filesize.py"
@@ -1488,27 +1488,27 @@
         {
             "fingerprints": {
                 "call_graph": "3e25ac171eadf613c6e03d8f238806436a08d1ce79df4a8cde6e9d8b41040be3",
-                "composite": "72380b5ef074da093b4f14fa7481be7091896e44ade5e07420bda25481345e21",
-                "control_flow": "03dc80caaa5f97f1084a880b316264d5b24a64b9df8b9ba2772ad1ae0ebec63e",
-                "data_flow": "5eee87b623ddfd758316004af8539b52f862f827e2efc611aef0c2a9f17c697d",
+                "composite": "a64bf2ef1c1ee7cfb3dbd22eb369277441c830512d6a06bb68544144996b0b24",
+                "control_flow": "e89ef79d425bdf17d68f9556fa6fcbbbb1647ead68cfbec39aa54670b9bdb32f",
+                "data_flow": "2b2f2ce543fe8ff5b4b92fa3d8a123789dd1cbe6672b58550095cc7f941cceef",
                 "declaration": "c24610b424a1d6b4061ea928e6c6da8ade93eeeba1a6ef9a3c7a65c77f9fa8cb",
                 "dependency": "50a08d53130d009d5e5fd69b739444e2d652640aa6e4ce6f868fa1157dbaa155",
                 "source": "8b8e5ced778b5e2b587314b204c727434d1f17fbf0ec86a2648c327dba5c75a6",
-                "structural": "ec422806535b7700db43c112aadefa203068b582374548794ef67dabe11c02b8",
+                "structural": "c43309696c581a92611cdc1a4053ebcb7a7a138dbdfa712fce97fe88f2123216",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_highlighter.py"
         },
         {
             "fingerprints": {
-                "call_graph": "6adda457fc09b24b63121ccabddbf307e9e9de3e82cf22592ca4aa3e297dcd6a",
-                "composite": "85860bcefad4cee19294542d3deeded03ba5315263edbb33d895b2e00fcf4800",
-                "control_flow": "0177a8e789a19d477e652e329c9f49d6e5dbdd6c7e07d6d25bdf139e28972b97",
-                "data_flow": "c38b7ee6ef4bda1b9a60ac45e9e5ee1f749e315a73dbedc3ce537a66fe7abb4d",
+                "call_graph": "31e1c8d1de9a256eac04144940b2d603c8486efb5535a8a59cd71eed2fe4b260",
+                "composite": "fecdbed880e77d9a0e332b8e9558fd02fe0be9a6baf8f3db3b4aada3287afb5c",
+                "control_flow": "3b4421207a8887e7bfafffe012280697d2c573dfca6248ae66692ee169beb71b",
+                "data_flow": "7b880dc8146600712add39d9e2e24778a7325e78d2eea14a9df0b70410e7b962",
                 "declaration": "f63580099c1eaa39c4659c0871f26bdd09fdd28e7b1a13826cfa8f6cc264ca07",
                 "dependency": "29c97f71d3a5d772ac758b1061653a51edeec021d5f777c2b67a8c4d0c6fa74d",
                 "source": "5457b6555ebdec4930475968145d491e6efe69e86efb75634facbad159000877",
-                "structural": "02043f9be79321d9e8ac801b9d65e1fff51105d4d630dbd895b00779349ea497",
+                "structural": "77de7016e75cd55b3d8f2ee703240343fc72ef841dc114299a40f3c5d4af9a8a",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_json.py"
@@ -1516,27 +1516,27 @@
         {
             "fingerprints": {
                 "call_graph": "27dc6afe2b6bdedcf4639553393cc798daf7630ba3d90333f16c46f1b7a61df2",
-                "composite": "35c83143e7d83621993acfd45930ba5285981448822082236ce24200935496ac",
-                "control_flow": "cb6fe3b6b590f14b54a24c9522038a557deee4d7bbf624c976659fe65c4e996f",
+                "composite": "cf50cf05da95504826f79644205b8b513c01051a7b5d54ab93bfa39f1fae32eb",
+                "control_flow": "d872c07df643ce8efccde996bcdbde7b963793e0961fd6498ab8396dbb2cb4bc",
                 "data_flow": "42ace60ef5c52a82beffaf4591c4e439fd2db800ace1bae6467c57eeeecc22f9",
                 "declaration": "1631b74deca7274b4e1f8f3f1a83ea75e04e575a7b1bf02cee6da997a3181998",
                 "dependency": "8e2d5657f8b31742c92f910e111b932226fbf51e5178289e795ead69d6f4005e",
                 "source": "7f089e5cc50f1e0b5f86af36778dd4a782a716598f537d3b00a60a2b426e60ed",
-                "structural": "34205f0fba4a3ef15e3c4845c89d8db5c00a6f94619f4e24f7f30804c7b763bd",
+                "structural": "fc37f2eab89f65c6521668d2c418df9680af759edbdb1867985fd49089164dad",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_jupyter.py"
         },
         {
             "fingerprints": {
-                "call_graph": "f78885a7fbd81ba8825b84a61354630988f6a70334ed56978d281ea41a8e0a23",
-                "composite": "962ca93e4807aec5a2a8e5deac4060362d07b860e9b1229f61d6ed66bb35e4f4",
-                "control_flow": "b08822c84c6bff02df48c459972640c9c66dd44ef3e67ea932adfd75f8d1ee2f",
-                "data_flow": "1a590afe1b7d8f081e01583fe038a796f33f7e3a1fe1cc823f8299dc2dacc296",
+                "call_graph": "49f9872a9087ea62b5956a4a7b5f2c17de260e9ad1e5c0d9a7fde32184ff2bb0",
+                "composite": "98334bb07a6570d4a80ae32813c973549fcb834b77bb0f221a48677172e39a13",
+                "control_flow": "0a29ad1748b3357eeb96ff18a650d79fc9dc56b30647afd51d2eefc8cae6d0df",
+                "data_flow": "d166b4c054fed376d4bce131bb72c4238a6be71c3f12a4991ecfe3fa121bd4a3",
                 "declaration": "ba0093abac0a7ed394e189bb745f779f28d8b8d680b4aebe56aa4974d3fc6f69",
                 "dependency": "be7e91fa81cdeadea39ab74b31f89f92e87ae04491aa02eee054e37065317beb",
                 "source": "f1431601d5fd544d69417de5cc611d0635c9c53c1ffa1a8670bc2ddd27f5444d",
-                "structural": "e9832fa1a67ea3d30ec5b3ac4ce6db40e3c10c5f0145a4cb1200f32bc5736141",
+                "structural": "32a732a8fc6026836a0957cb4871e74a6cd3a083eb58faa174a274477a4b6a93",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_layout.py"
@@ -1544,13 +1544,13 @@
         {
             "fingerprints": {
                 "call_graph": "b3f763b5293142f95f706a2ce842d773206c2b8f61f6d9603f20e32766dc92d1",
-                "composite": "bec0bcbd3422f56b6f3223b4ec8e1bb5d8001d8d779bae53569ebea094ddf540",
-                "control_flow": "692c936bb49888bcb9ea66f1fdec6ece9433aa22b68b3f45ffb9eed458c6c362",
-                "data_flow": "62f2263ff850d3ad51744b1a39001a327dca6ee5fe3b5eb4bd6a5e254a948a4c",
+                "composite": "7ec7fc31a0f9efa7863fec505c8c5cb5c42a8006f55094c037f83efdd4d1367d",
+                "control_flow": "217d785c6556558eb64b3e369904e33dff293c29cae592d944540c06e1223b7a",
+                "data_flow": "7462dcaf223e4a9e7b7efaf01615da1a15cb65ddf8b65fc1e8ed935f05182eb6",
                 "declaration": "8f97ba0e177927db21b16e814eb5a9ac6334b209dc70531cac32ad72d031d3ef",
                 "dependency": "423ed501183537f4a61532132726f1a4db41e22d0edb827ef0a3b7d6e0ce4734",
                 "source": "b661c762e4490f0a916095bfe2aa15f1277c34544be57ed2114e0287f5ea8354",
-                "structural": "7bde2a12aace4156982d2a1f064da6caea08f6862d5c6b12cf68b320426c5990",
+                "structural": "85dd4e2ce881793b85a78fb1f21837ace7f73fc5ade0fa8f42067eb7d456c858",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_live_render.py"
@@ -1558,27 +1558,27 @@
         {
             "fingerprints": {
                 "call_graph": "cbee14d2d7710bfc2770871cd50d9cbdeff2b70d9f333cbec047be3b22ce8aa6",
-                "composite": "fd4310f7a5f64fc39f877770cf135793b6b563a0972159197b60f0fbe5f23045",
-                "control_flow": "5a9f8343f8726e5610ce7376fd7afc70adc9205f365d5bde73b59db975d958bd",
-                "data_flow": "867a198171f4b0a8abe8a2afd7b1cc8194cc526d751f873d756d26d1f0f861be",
+                "composite": "c5a0b4818bf0b0beddbb531889c160aa3768b8b28e16bf8cf33203f26b6ca061",
+                "control_flow": "d0159e36284a77b4fb52592f28ce7e5620659eaa18a15dd8ce3337636c1cbcf9",
+                "data_flow": "c8128c0337d3315ec25ba9ec0b3042a9e16cd448d6157ea3482ea43da62f00c4",
                 "declaration": "bd5221c7679c95f60225a6c2db271a2e2b6b3723733a12d7bc9b22778e9e4068",
                 "dependency": "151fa925ece7335b2e191b7c0342721aa43c0f2dffda709d038d4d4b97bee4d9",
                 "source": "8e39236e34d3d1a6a1ee053f4ffb115b539e4d6e1a1ebda8913ef1f6e632eb96",
-                "structural": "fefdea9e88fff389380d835a3dbb5fecea9e695898aa15dad281ecbd736d2ac2",
+                "structural": "3c4b620827ac6a431c1ce5c46520e77fec2fee33719abe89d8911d8b0f83732c",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_log.py"
         },
         {
             "fingerprints": {
-                "call_graph": "2e77f33b6024f3f592d41fce80415f15c03f38f4125409fdd173e28ae531b227",
-                "composite": "571cd7e936f628f033e497cc867930493e6b5e9f597575951ee270268b81c0af",
-                "control_flow": "b07822d37e8c6cb16bc83ffb086d0350ddb225e3d91a2e57d83ca70738ea4e17",
-                "data_flow": "cf0434c08acff49c974121d8f256f4387c069e9b8f1aab1b25940dc987e85f6b",
+                "call_graph": "a5c388f1e64686155e5cf6562c43c1c82a59e0ea0725c512f496c57c30a24cb8",
+                "composite": "8789c64908878751af2b1bd5c92b40b224a86dbfa0885a0aa011f50c5d0b1472",
+                "control_flow": "016fd1ea6a66190ab18158ec303afbefad543ed3a3a768d0ef72191407215450",
+                "data_flow": "4b76f42312329869949e6a40922e66922dc7d461f42eaa7cc009c78ee0788cd5",
                 "declaration": "4087907ebd3edc0893ac592939aae5ef0d9898b34365a28c848db7b0b234db36",
                 "dependency": "e676b765ad8a14a968c8bbaddd6589dd932febf20db8fcb5337eb99bd68011a4",
                 "source": "5778c754c2dc724e023f11dc892c4ee6a3d5e3c0440bf4719d084448c15f67a8",
-                "structural": "4d3a6cb31aa51163cf33e6bd9050b619799afc86b5ff3429a596a5971796c88f",
+                "structural": "e74941cc5d126bd02e5447d19a52a202e3e493cae056b05d4811e52313bc2b6a",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_markdown.py"
@@ -1586,13 +1586,13 @@
         {
             "fingerprints": {
                 "call_graph": "0eeaabd7d8ba35a2ae35ecbe652f3575663b79bdfca73990089f937dd9c05a94",
-                "composite": "19fc452ce87d36af9588aacbd37ad959a29ae377f4d2df67fcf408d5cf262938",
-                "control_flow": "4bb244ed07126d97061c429f9f113e7deb4b60266b25a9c8123935a6566ea09e",
-                "data_flow": "efe63a4f6f0fdb669d768261bdb10865a58833f52eff3110bc0c91f86b4fba87",
+                "composite": "67a9a2a4b4288d095c4fe2cbfdb07f9b137b759e6607751b5cd8ce3ba5be8c69",
+                "control_flow": "5508465bcee555a2cdaabb8879ab23f983d4ae2a49ea41ee58a0ea925cb0061f",
+                "data_flow": "f94487db492417b54d2c0b4852daaceceddd9373b6f2c14456c4c7de68dda75a",
                 "declaration": "b94d0dc2ffaaa14c6586148f22731d4d48ee32459cf68eba8ddd418eae689edd",
                 "dependency": "83d210429b35b06fde3bc6f8e28b79908965370268fc5cabbff8f41b5e278e4f",
                 "source": "e6829912cc63953b6086b3e2c926f42ac80325052289de86bf14a0f74a6bdbb5",
-                "structural": "a4cab9dcf3a15cbda25f57c977b8a5bb368f527b63b36b62dbc95e068701c5b7",
+                "structural": "fedbe02862b6568632773ae7e86d53f184f3da3d3db59e6852684cfcd380360f",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_markdown_no_hyperlinks.py"
@@ -1600,55 +1600,55 @@
         {
             "fingerprints": {
                 "call_graph": "73f7b8f5d3032f5b21f4eb4dca572f09f7c97830c97d1591c2dcf4327fecb7e2",
-                "composite": "d2cd31913f1b33de0f3a5d8946c970b63974ac4024dd2605cea308289b053198",
-                "control_flow": "ad4519f326513cccc188df12ed223c79eec6402b5b5480f9de84653a7a6094f3",
-                "data_flow": "7e3c0c7e8fd79308461380351958c541b015afccf06116ef355a61ae55ee83e6",
+                "composite": "40d653e75c6478649a3d816f2f20b54cdd7b2fd7d6a02911343511426c7e09b1",
+                "control_flow": "0ee6d95cb3ff66544cd3d380b4bc6b43d01a65bdbb1310352774988042761e53",
+                "data_flow": "a67f10fb6151c92da94355b36bcb9697fc4ead9536b7a50ea0f5a895776bbc0a",
                 "declaration": "3515fb06920be7a7739884e7c275a9069c7626a83b7a1ec5de960ca46fdb21f0",
                 "dependency": "425d1ee4758f5ff9ab5864d54ef5a4126b9ca31d1057277b50eb426b2b22529c",
                 "source": "4e2804454b85609c42bea3fb0a7622858bcded2b17932eb5b39d974e021fe728",
-                "structural": "f8b2b4457c965fe493b527ecacb23e2c96ec17111cc69d0f26d88dfa79883833",
+                "structural": "8d4a5ee4f56df4af031639f9be695866fcb6feebd6cbd7e125a01d6d17a7a523",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_markup.py"
         },
         {
             "fingerprints": {
-                "call_graph": "29bb1a2b5dece11c5e5da8f1e1b60a84a8512f4988c953ad4e38a0d5463b4f93",
-                "composite": "dcc05dbe5da3f80d4e5dd84ea172d3c2bc2961ffb0ff006f4fa935fa3a2dc19f",
-                "control_flow": "e95780c3ad8a4e48fdcc33541476671a3ee894e2f6ba7a7507a9651ae7ac7ce8",
-                "data_flow": "a5847f985feeb42173707135020b1c4f3566a2fa468b56f8a96308908489c7fb",
+                "call_graph": "d3efbc5c5c29229b77083e73647ddefcd2809122762a1323180b638e69dd7525",
+                "composite": "7c9f15aedbe7fcc22f55dd9b5480b99c9a1be7c66f2556da68a73588afa5dd42",
+                "control_flow": "6333b5dbaff03e438bd0a95aecc11619adac79ed295070b4075def8b26232697",
+                "data_flow": "b40e475d1c25cada47a7c1fee792e908881c410ce44f0bf9c86900ca0beaf5b0",
                 "declaration": "7b264382657795a9bdd8135ab675acd10d8ec7d454640f4176f673754213afd5",
                 "dependency": "55a2b9a84948d41ec7687e7e7f1d72744f0c824fa47a53654a039a36f341f730",
                 "source": "e2d9abab2986e7ff18c81b1932e3bcfff8e4b968094fd4fd1b8179475ae399f3",
-                "structural": "79bac823f5e0a252be4ca86118e0059a508246caff02836cccf09ead6ef6c2bf",
+                "structural": "dbb7b36b0f6afce9c0a990a54c4842dd4b3ad0e364904906a14c84f55893fb28",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_measure.py"
         },
         {
             "fingerprints": {
-                "call_graph": "2f59e355e74d39f6e8d82214a078f73d26e9e649c044f8eb5da4f7079a0f5692",
-                "composite": "c4689fdc1361074aad22bc1ec51a21734eb8d732c4633b5d7e2808446351098b",
-                "control_flow": "75677ce845fe82ccacaecbb52b86b58c419d63a6916182f3a65e407371f90e27",
-                "data_flow": "e1baa48742b1067c6129c614780ce1ba156e68b6d0199b62107b4fff5d163b57",
+                "call_graph": "922a58c3acdd52f13d855bbf647cc00eee1c001038ab5dc753e5a78cedb4ba90",
+                "composite": "8b54909e8da59753ec8fb2b59d60d8c1fabfb25917ccf89dff6e7372e2d36928",
+                "control_flow": "38a35da2bca55eed9e6b94fd5c53f75c903b6deb03100e9a9046ba3722c0bf9d",
+                "data_flow": "fa5f8bdb9b1a7dfcf70f32f15551c5a133b7e87a2c95ffeb973839b4de25505a",
                 "declaration": "b4e1902cecc187f012a54c8cbbdff3ce493ec135be116c23df412c22c83fb05f",
                 "dependency": "45e243169742ac2cf5d8770e6577ffd8b20104aef845e2c7af8a47861f6e8e10",
                 "source": "d9e40b7f2c6de180fbb7f43ba14ceee05f9090717490d24f19d53ed85506c225",
-                "structural": "9e565b55503c7cad36544d72d89e6f822f8d99b1cca47b104d0580bb4347027a",
+                "structural": "3a6e950458a66b88ce1bf571b7af027cbfaaa8fa73b02c4c28ec597df3e3d158",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_null_file.py"
         },
         {
             "fingerprints": {
-                "call_graph": "d2646621adede44c391b32eaa01d8f0272d1b343bc364047fb0582f0f550b566",
-                "composite": "959060c54111b5851f2ac40d12bcb84ea87f19efca043e0cf9b74b7d6c70b135",
-                "control_flow": "8dc6c2a0596cda74ba1a2bd75d19b270297c4af612d8847d9c483642700654b4",
-                "data_flow": "d1dc53f432dda61a6262833fe3e18d43f607362b67bfba9363afa5b2a7a9f65d",
+                "call_graph": "d4cb5bd82ca352dd7709fc95fd5cdf814d680327c8bc0439c16b1d17c2fc4892",
+                "composite": "c250bffcaeb10251d46893400fd6af688695338180a7f67d8ada9e477f799d94",
+                "control_flow": "410c40f6f11add6431527530f47e0b8b90f1ba3e335944bacdd26aa10fdf127e",
+                "data_flow": "950aa0cf32a5a1dca499ec53ecaacacc68492383f92bd7dc76c3df0d7e148261",
                 "declaration": "48a6730253f80b9dc5ad6a66bab0d23d7bfd62c76c8a05f1596b0a7f3a79c5a2",
                 "dependency": "c74b49cc39043eaa5adc65954000c3a1179992f49b6054c7d90c668add806452",
                 "source": "3ee3b8d377c42b3e50767615f8754a4122a52d10e7e4142a7d48f9c95d761a31",
-                "structural": "859f3535844f5721d6197f40e889ad5ed50545918902f5ceb87c7d594376bfec",
+                "structural": "c2e8eac584dd10a8f9efea3ba12f3731392c5eab0f391edecc000be6ce183625",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_padding.py"
@@ -1656,13 +1656,13 @@
         {
             "fingerprints": {
                 "call_graph": "627207ed5ad5f3b3722deabea0d29ac923e400f5cd23a50bc8a016753d31504d",
-                "composite": "57e5bbeccdfac79d06b53b2e3fc68e03eaf3f731e5cc21987cc758085da5f58e",
-                "control_flow": "68d48be94de6e842b33f89281f7876e8ca51194f1fa513bc456bb0c32d9154aa",
+                "composite": "d4e55a3f8a58ac6cb35dfc664899b052eda8f3194ac6b3a681d7d28882f62a63",
+                "control_flow": "a542dcf8579df42c74ac2e7c896b48c5d5db84de4689b03d310fc771b74087a4",
                 "data_flow": "d0de71c544975609e3bcecead41a3e9654a8022786aea3f667283c742a92b14c",
                 "declaration": "604d327a0b44b6cc021adb433d84fd0a6c5d1b7eaf5fae3e3c9e1eec199775de",
                 "dependency": "5d7a66aca6bce4a3d3f7150c0cf90cccbd054b05a2c9a1cda0786feb96aacc83",
                 "source": "1ee152961defbd8933625122706b5a0309648d8a30f964f5ae5cf0be8d12b67a",
-                "structural": "b003f0247fa915833c76139825153f1b51b7c055a42b106e9a377bd4b8139f17",
+                "structural": "f22b10170e0901efbd55958381834c2e20ef672ac0066d2c6b9ec78360cab001",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_palette.py"
@@ -1670,13 +1670,13 @@
         {
             "fingerprints": {
                 "call_graph": "b5ab4685616b6e8ac49ed2a38812acfe6b9f197eddea9e201d092165b589f0fd",
-                "composite": "07bd6261b529182f7e2d0cc7d8508e7819b5b349ce1ad63926ee294a42d46904",
-                "control_flow": "d178ad5c8a4042ca26f9c6bf805eb93e89d06d8509ac9e88ee4f7c35e264f616",
-                "data_flow": "800d34c410707976572771fe265124a9a7f5b00d8ca89792462726ae992dc487",
+                "composite": "b5753d0e0646cf301665e4e0820497aafd2bd051be454a0e09d33bed17541eb9",
+                "control_flow": "08b5744383677652b8e3620391c552efb2370443b3467939bf259764476028f6",
+                "data_flow": "5793f29dc57f7c3024a561a326576ee3e92e468a7ef02e698e97fbfbf91e9813",
                 "declaration": "471fc6e8f85279ebcc6ac7073e94d7d04c1a1a3827d1682bb8a88a08c1942036",
                 "dependency": "d851d95b477ce228bfa485d57194baef99b4b52c6744f6192c03adb1afc03e41",
                 "source": "f5c468c3ef3cf870e818ca98905726329171abc5c65c823275316a0e69e610c0",
-                "structural": "efe7d9ba2fb74c2979ebf48dcf416d6eb889e829d270fb8fd88121fce5ad8878",
+                "structural": "958301a47934fdec6087cb75564f187ce1a23cf0346c044696a8ce5fe7ff606e",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_panel.py"
@@ -1698,13 +1698,13 @@
         {
             "fingerprints": {
                 "call_graph": "36a3c16f47b8b1fa82896502d0a6d18369b3bc22ec6200790254083c72bea8a0",
-                "composite": "c7f4f787adaac844d153dd166530561ea07093d1f45c0f79f56b556b9407ae3e",
-                "control_flow": "b435bcdd9b22eb7f46a4ab78829c0f99e13c3b94e7eec8e3070edb9d42943840",
-                "data_flow": "6aabeba34a8cf96a37e149305b856d72a0b3e31ddf40229b3d06a2a451ecac9f",
+                "composite": "19bff27034b9582d5f842f0ceb066425aa3a3baf1aab87c1af5aaf52781ae36b",
+                "control_flow": "6b5f8b16f736e3014ffca77db7823d4c374be18547b37fb5134fd9c3617d650f",
+                "data_flow": "04853cadd9aee5cab0242399d315642896b91bc54681d3dd48046ac63f731b25",
                 "declaration": "e4efd1dfff0ba6994aa18925681b15ea253bbb3e94c1774ef39891f8995ba785",
                 "dependency": "0e68fd72ca662d61f29b115a7fb49b379b6268f96bd904cd09f2330ffbfc8716",
                 "source": "9b49db3b1e1178eebe3014f6dfad3c344f3d3d1f2b09f9e928e9a5c2257f93cb",
-                "structural": "78cf1ae0b1e99abeae16afe01ad5b264c1c7759a761c830239d49415245675ac",
+                "structural": "b6b0dda3cad1f5b894eb2ee9e183c1ca1d1d1e2766c039f2742d3367c54ae175",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_prompt.py"
@@ -1712,13 +1712,13 @@
         {
             "fingerprints": {
                 "call_graph": "950706d6a2a3327c668a20af02dd8095f38faae809733ffdbb856a7d7ca3c8fa",
-                "composite": "61029fc647f030f3ea53dcbb169a8029e3ed3ff9532fef9475bc29b7f2dda233",
-                "control_flow": "7d8f3013db21b1f6d4ae87982838481114bb432a02f536b153ca80c8f8c78d01",
-                "data_flow": "34041b3334da3fe80e74014f2e63182a2acc452199b8d3b74647cd28b434a52a",
+                "composite": "8afa7730f066733debbd1a8c0c5882754c30d515824ceaa57f424dc61aff4ddd",
+                "control_flow": "d757f67174cbafe465ed7d3ac7a3ccee7ae44bdf9c05fbab14d6b432d3cbf99b",
+                "data_flow": "8da66b1b47c3f4ffd92afe1ac56ff2ab3d37b74e9b475f8f90b19b25ded39d88",
                 "declaration": "7e0fc13fbd371f10692e089c91ece8418023d4104aa23b5f427b53b5fa3f9804",
                 "dependency": "455314d0034c79b0fb22b7b89188f4e5465f4dbc3d732d47fe49d263cba1b25e",
                 "source": "cf2d499486bccf8bc26d774e2c17cbba10adc769c3a567b37ffbc629d6c8427c",
-                "structural": "bca84956be5c0de8d4484fb72de6ad2484f6e26bd3c766d20c47b202d6779fdc",
+                "structural": "e4239952528df383fa86126a90da0b5287c3ca9a584667f381c718d55c0b03a2",
                 "type_contract": "6d0dbe507045ef978c801df87309b84066ac09658bc39a9539362bd4ec190a22"
             },
             "path": "tests\\test_protocol.py"
@@ -1739,14 +1739,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "0421bb5b8aeb1cd1d24f20b367bf8bbe94bb7fa128326254faf54f6afcd85a09",
-                "composite": "d9db4a128fd460c82ecf60f9482ef452530129585c19ea387c07ce974ab72c9f",
-                "control_flow": "c63fbe946e9ab69dbce4a45633cc73597e6d200846f7bae4c3727af4242536bf",
-                "data_flow": "4a78f79b8b40a38ee95242b860ad12c491ca1d6699d12f2fc8fa8a94e154ec77",
+                "call_graph": "582b7b601d178f9b9e4fd8ec7e075e8e75d2b62c3ed22eb0a7d39e59181171d4",
+                "composite": "8a01fc477dc74100795fe7336a2d3a8618787fcbd5289ecba8ec2d848606c766",
+                "control_flow": "d4d16065012ec2cfbda837ccc20ff10018ec087d8af1f5b0ac39050c8728b4cb",
+                "data_flow": "dd10fd63f8cdd2ac42d53b911811e95c935523ebd3e321a1ba32e30b926ba280",
                 "declaration": "a463ef30eeacd7da6bfff36d1a14e9e3e8fc0acb5298877c7089815a7caedcde",
                 "dependency": "49080b6b65a721003e33fe11ec9ed82ef4c86a6636dfb377ec2efd4c0bf2d37f",
                 "source": "68793413c2cfc2587d598a73abcfd00322d01fe2ebcc88a5acc11c4f618f2e4f",
-                "structural": "43b6236f017986f463f1c05e190ccf6ed65a0277aae9300e8c26aff6c7e5913e",
+                "structural": "dce3b0ce7ea1466e8f2745dc4135e26fc114de0af276b35eb687b82e9fb4e0df",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_rich_print.py"
@@ -1754,13 +1754,13 @@
         {
             "fingerprints": {
                 "call_graph": "bd98bda331a603738ab97adff059afe197c658876b597d428a5181963d04d49a",
-                "composite": "2edbaf52df00908459ba24a5064dc45df3c4174ae6a350c2045403448d11d0b2",
-                "control_flow": "03d0d71d7a5c1e8171d46afa398df1c58498f03b01d61ec729e460038943621f",
-                "data_flow": "d88a60efdbf4aeea210166d2e279e895e0aa0384c14d574e3a7178838eccdd20",
+                "composite": "0f5592f72601bb91699719c94ca46a087c43a4dfee853a79059e99ca81be3e17",
+                "control_flow": "048e37eb03bd4a0e63948d44d558efdbaf8b30439f41b57fbd0dca0a4b59cbcb",
+                "data_flow": "bf3c69a511bdc6100adad35d3aadf19e52695c2384a8bb13ccaf195c977abc5d",
                 "declaration": "9a85705c2d36ee4c5514cdedd309ff84c6a44c6f1ecbbb073f1fa09e46ad1361",
                 "dependency": "3693c151914acf286c2d6be9b523a75a51062eddfede4c7d75832a55f64d1406",
                 "source": "2934577e63c296ca12800bd2e9f2760067fdb8d2f558565f13e604547f572039",
-                "structural": "4269840086530da72ddfe3e6927a38b9412937fbd7c156e2e8ef76cc35814e86",
+                "structural": "4cbbbd9e431f66d1ed49122e1d9455f1387d0de94ce0e008ed7262dd5a329085",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_rule.py"
@@ -1768,41 +1768,41 @@
         {
             "fingerprints": {
                 "call_graph": "c1027b2b1ce87c0c347d36a03c17e9d2ac4de869132178ababfa2030a033c047",
-                "composite": "1a7a5ab09adf2bfe2350b1680058c5580c76fefc7472486287418ec319b886ab",
-                "control_flow": "04569234488b1cf17c3f889d37ba547f692e11f834e761b71226803a4cfb843b",
-                "data_flow": "e011e9dcd6e40160764689aa94b0724c857d6234c9c445801a67b4c1cf07f274",
+                "composite": "79595fb2b09e064b025b56fc68356db2973a318b02ebebe2a8d96f6110f3cc23",
+                "control_flow": "3f0d0f08863cf89a6bf5c06ad1709f89bff70a1a554a387430db558787a3d016",
+                "data_flow": "42bbaabcae405aa432d5467cc320e57a8ba5a3daa4e91e9b7b76706cf0317356",
                 "declaration": "74e92e1f834865eeab7f88343323eaf2f6256fcd65bb16a9bc105d60cf3e1c11",
                 "dependency": "e84febfd4c373ebe34119b9937fbe49bc219e76a38a3304d99cbdd06873003d9",
                 "source": "5db142e21c9c1428b06d4531cfb02e271189a2c01d965a1b84ab1fbf11937ec1",
-                "structural": "538fc91d111064736c95203f3eae8333ba3aae8b2c46e757ba9e613229f0ac29",
+                "structural": "e62e25cb9b5cc5efa1b3d2bcbdc16b4118ba81f3d6b1450847cfa84bd76dfefd",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_rule_in_table.py"
         },
         {
             "fingerprints": {
-                "call_graph": "aa0ce1d5b3f41eda88fcf63410d62ac66149e08a8698918b8d5af4d04fb7c759",
-                "composite": "696ffd9cbfa11491427af908831e6fab60c6be578fbd652b67977eb7a85c22df",
-                "control_flow": "710b7bfc20b29098c20a29abe87b88211eb45a3a8615f5c09a12c00f08f50606",
-                "data_flow": "f8effcc1b23688fb59ea73011ed230b5299054a2c992f89fb1c7f1f3ee6a67ae",
+                "call_graph": "f2267e25b4c447e47c450e2745fb9150d906e6f64b76482f5e56fafcecf6f718",
+                "composite": "9a5d43aa0271619de77376dd6fae6c588655c0601724cc2d7b2795358d4377c1",
+                "control_flow": "705054a6e960496ccdc1f6ed3a002bd2ae291e624c1cf95fa1457a34b74d1136",
+                "data_flow": "6505393ea6fe97941ffab2ec23a811228e4e42b447b311d1213f543e91b78cb6",
                 "declaration": "7b4f0d0165279c2861ec44e7c17846024e7267e51da0fd0e2748d1d4c8d4ed44",
                 "dependency": "71c3310f219620042fd5ce97ca9cf6349ac5d7b74d4a5072ae419a0a563e7930",
                 "source": "6e98e3d59adf91c22d67a0795a83291dd441125895958b1c67a1e2f390a97709",
-                "structural": "af9e82096df901528dff9ff896f7bb4d5380fec59e364e918032b29d4f252d0e",
+                "structural": "4442bc4ef9bf94d1dc7b933e094454c61ff91c14d7ace3c264385c3442a243ef",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_screen.py"
         },
         {
             "fingerprints": {
-                "call_graph": "a8754dffaa3604bc4ee4bf957dce8af15b16984500fa2fb0867fa13ef8b590e4",
-                "composite": "adf4bbae99cd45aec294c5a1c0c336133085a9d22295e36a8a2af4bbddb3e5b8",
-                "control_flow": "25eb5b852b6c1b94f70b8fd84eed05039e1b43fe0b7f377bbbe83f95c18bc8e4",
-                "data_flow": "4241bee2b0fca469edc889eab364c4732fee23b85493f4b15d5b2025e225291b",
+                "call_graph": "ac04f198b0c871f2809b0220f3cd69251393b5e74896956b0e17e508fbd86cc9",
+                "composite": "8efc5657d19928354ef9d7487ae30cfc062540119280228309cb30ee15888ced",
+                "control_flow": "f69c3499e26b4a575d102decdf893bd39117f5cfb8f62d874fdcafda651bb9e0",
+                "data_flow": "45a32684e78401586ddaae2a0c13fa0f4d0199df8a995ac9755ceb637e5b8d07",
                 "declaration": "0c89ce198017dbb07bc477dadcca8baa0e366b7cd618c4218875a93af2e5bfb8",
                 "dependency": "6aebff1232d6287dcc33da8d2c3d1add3108a2df6cd79ae6cef5a28a6c07b1d6",
                 "source": "a99f26f7971b4860a97ed653550b40c50c6101040439c3dc59bdffd6a5677e4a",
-                "structural": "7b79bf3a3c6aa7981743856f779c9e5f2bf9f97a3b0ae9e34946fa969f7ad6f3",
+                "structural": "9af918e66b1dc9ebe35d27c80c652391872e2dfcc73d4191e7eb14e0f53db55c",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_segment.py"
@@ -1810,27 +1810,27 @@
         {
             "fingerprints": {
                 "call_graph": "773b181c02cf4ed235679ad9c5994c8218da3034872717cd5072869a1f40fce5",
-                "composite": "6a3baabb8518bc327debd569be7fb47e44d836485ee0bd46ca9ccad162194099",
-                "control_flow": "f8098896f2d23923c054518e2e12056a6c5f45f661f5d44b5be1d05214aab909",
-                "data_flow": "251f701a0608074ab6861cd43186f813a8f1c1fb040d0610d505ec7ae8114d81",
+                "composite": "3f4012348da3c463ce844393a424b23818ddbef7ad7eeba9304daa3dfaf8fe44",
+                "control_flow": "36c5eb2fce2b28089852b7eaf109f5680501a71da318a31e0a1eddbe68a441f8",
+                "data_flow": "28548ca347359199988ccc27e4487b21866c164e57bb1ae3eedcff0a5efd7897",
                 "declaration": "6ab3fff3dd0b010a4272bbd0976786d4d287b72ce8b9223d0a9321c49f7a5b9a",
                 "dependency": "fbf8ca872b0f999750a82bf6bfac9656a852fe003260497280725515570cfbd9",
                 "source": "459ba6289b9a55ca332fc49ce2436eafb09c82dc0a0c0630ef57b53e715d9957",
-                "structural": "e643dc7bfece3b59240849c443b46b551757929deb28f5172d2aa970d4f478b0",
+                "structural": "752d0a05a86ea6a6b88fe7ac6b736edf3130ae579006c39a6bd3120384d1f5f0",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_spinner.py"
         },
         {
             "fingerprints": {
-                "call_graph": "72cf71b8699d533bc9a0971993de69041872f90f0a8c7d368094b888becc8a56",
-                "composite": "b3f8adfb1cdf20eb41a2148b2f63cf961891fd3c07b6439b91583f8efec5ec4c",
-                "control_flow": "a7943b7d4438c327dca22a383aeb6ce884ad97d403059112a02082b0adb677b0",
-                "data_flow": "0a95b62a7e8c0c39671b025a7d62d121c85c89f307c2b575262e3e457f6d1b88",
+                "call_graph": "544bf3b48364ec631e6afae404b0c50550ff98aada5eb01fe8cdc811409ad671",
+                "composite": "e057b540bb6334722e0e8102a957d12147f41316d1d494ec3193e257aeb027be",
+                "control_flow": "5a5420af21676e13940e5ab27da07d095edd6a25c07f6c51404442ee8f3c6ba4",
+                "data_flow": "822bfc1d07934426fbc6e9f4aa99a0b4b7d9be61a0b7d456a754e63ec52de3c0",
                 "declaration": "764f95929d8ef653122ce0dcbec9e95db80f4c542f711d8d01bcd21c5eeed872",
                 "dependency": "9d2128b3ad11965449bb3be548e42921663a08cdae7079bdc080722a12421d44",
                 "source": "993540e8cade9d7d9e3a94ff1467e43f8e1ca01cbe6d620ac27d162a8f442a26",
-                "structural": "cbc6d757dd0074184086bc541b74f7affcae20004245a0eb997c18ff163eef52",
+                "structural": "4a7f93d7c934d0dbc05a2170bb7873c8d60c9bb66c72648cfaf32d147d054bf8",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_stack.py"
@@ -1838,27 +1838,27 @@
         {
             "fingerprints": {
                 "call_graph": "47f5ff55eeabda0e3d54f6e3b7f63c6139975395727d62f0f521819093139f19",
-                "composite": "eca85fed16a7b3620340df4f5c7a791d4c807ccf3d953ec3cf15a40913878ba1",
-                "control_flow": "7633cbe76780846ee2053a4929f5b665ac5d9c716c0675857763cf9b53a80ea8",
-                "data_flow": "0e9c8bd650318950dc576b5e50d2a44dbd652b3dd27097ded29c2a023119e305",
+                "composite": "0f471935feeb1b964f9e4e4098d3e0c0cce7fda75be7d36a12fddf208901e12a",
+                "control_flow": "98f4931fa41690a901f73ad1bfafc6604e8de37e500f68509e34420822762264",
+                "data_flow": "ef735373467cc10342a00a7872054a7080f34a91b3bc94f079fe876f642e6898",
                 "declaration": "ba411f2fbc148b4f72105e5db94d8d84e691208d3eb79ad50d64d4245172c7d0",
                 "dependency": "23080ebbef652b9e10b94263bb38824199c533fba0aeccabb2f49702571579dc",
                 "source": "c064ff9b993dc8ac415a486c9f4778cf0e28fcf48619938ff2fb5869214d4c37",
-                "structural": "831a681cd7bdec2a23436c4b50baec61ec9a3eb0d317a63f466096c47dbb96d1",
+                "structural": "9c4e9bf49602a03c58957e8bd7df5b2ec49678d899c269293ec3a41567bb692a",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_status.py"
         },
         {
             "fingerprints": {
-                "call_graph": "23ee00dea032d46a831334f163bf1fd0fccee689c3b2847edda2c5d77e58ad56",
-                "composite": "c90b55d4bf671f0ef410fe350f03ee8c8adf17a3ac7ea77cd17fd99f28ed4e75",
-                "control_flow": "9b7dc79f1daf11cb710250fa8654c298355b2e1cf19409427885f627b7dcc9f3",
-                "data_flow": "6ca5a5516366a950112ada5aac1b38901c5c1318dda1039b52a52adc4ae8f51b",
+                "call_graph": "4318b9602aeb66b511df2cd2cd4544a8f6523b2d0075374911b25f3326f0dfd4",
+                "composite": "33905ac4437256ea865bf07af6a03e75862b3cff39b25a7523b6044cbad5095e",
+                "control_flow": "ce8a319f98308904db0d42537db3136da18da99a41ea6166de2764c20a59d4ab",
+                "data_flow": "93976f2e35e6e48ef3de0c1fd623e91b9d99778b2b6dbe48268421d1ac0b4cf4",
                 "declaration": "dc356ac5f54fc66379103883a3d33284c0b23e80e052aae7b1c7895c25ffa919",
                 "dependency": "82b28b7ff60138a06b55141f172321bbe948c7f869590ee84dff1d790fcc7b2a",
                 "source": "cfa06aed69ece3bbb73c4f8cc0dc1582dfbd1e6a68a486a180dd1640f9a1a770",
-                "structural": "ac3087be83d909c97b817a2ca65a0dddd1bf33b804438b62ec969985d8ac09ad",
+                "structural": "0b8c6b664f00c983eb6db68bb44aebf5023d9c2b936e49cfdb7173f0baadde3a",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_style.py"
@@ -1866,27 +1866,27 @@
         {
             "fingerprints": {
                 "call_graph": "2d4d86acbf149eb63c187ebe8a5f33a26378406c8e87d7922948299accdbf2a5",
-                "composite": "58c5e5de54fb0aff81966e35abed9f5b2b52b6b3357815b59fcb0a6ee1bcdfdd",
-                "control_flow": "c08c3737cd83b25401cd0097aeb0601575a053e1af72c1ce55bf6698c8ae022d",
-                "data_flow": "46c8f7f7b06f502bbc18ea9f282a1a6284e47a17b2a2ece31cee285f4b37862c",
+                "composite": "1a6b53cc07b0bec3663dbb86d30148c6c143a1b9635514e9f826c5429d05bb24",
+                "control_flow": "8a84c318503d5510928371dc9551c7f8ad41a7b741d1bda6094918611e0fa79b",
+                "data_flow": "c0764086b5fefe257919bba9eef6cd524c968cceacb3354ba01497fe44eb1f42",
                 "declaration": "bd85c8a111f0001c554c254a77984d46d8abe0853b5214c9aaaeca2d093dc9ae",
                 "dependency": "58d1c36766c9a8d2a59f39412b49837566c68a49a7a89503dbafc258ff947478",
                 "source": "892fa60f967ec9d1edacadbc36290846500a9e75984da1a9651e7d9d54de44a0",
-                "structural": "ffcbb4bf4ad872dca1c36a99d041af43ad11c1cbe08cac48a3abdec43c780a1e",
+                "structural": "f1ce08964be2bc6dc5d6411d440cabbec97e396b19768217cbde084776c8f1f7",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_styled.py"
         },
         {
             "fingerprints": {
-                "call_graph": "edb792884ff2e5b88d9c2ebacd01b05e0c75b3677bbd6f7edcc5df248361bb27",
-                "composite": "15e1ad87f466f6b2597bcefe9b1915f5e1b327083006eff842bb8b462f701b64",
-                "control_flow": "1f21a159942a8ea57c932599a1ad2e6626d23a3230444614c753c30abce4c6ae",
-                "data_flow": "12cb2c3da75c1e43395bee9259fe13702784256b1f4fff55491e8f6f07debc93",
+                "call_graph": "6c87e2cd057cfdb56c1e503fe72d0c04b413a32ce74d9200637d217a729e6a0b",
+                "composite": "e2b0a3fd7db5581e5892305b4961c051cd98c52cd9cd5af4efabb6d22a591848",
+                "control_flow": "2d20edf5ee33f63ea1ec2ee3910868d9e881718b1e09bc0541f6edd2ff0aff43",
+                "data_flow": "4797d9fcfe819ddfe4d12560beee4dc1872c93653a08e4e623513469bf3d3d40",
                 "declaration": "f388cdfe56433945b9a697e3bb3038dbdcddf536566898c74bbfa9bd33ab67f0",
                 "dependency": "2b75243abb3d7177ef84bdd363d8ea91fdae4b84811331d4096239d1ea22e33f",
                 "source": "04d4c7f33817a3e1e49a14e63f057eda597f12d4b7b6734e0eb12dd4c782eeb2",
-                "structural": "88e346968fe6a91dd7c44d845786ab59487ed4b8362a3052620fd7eb0f2b67e6",
+                "structural": "8b137c9aae9c2e1ed95f496b6409cbc71f2bf3b2f1ce36612f2f9af39933e5ee",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_syntax.py"
@@ -1894,50 +1894,64 @@
         {
             "fingerprints": {
                 "call_graph": "fbc429a6b74973bd738d500ff7880773b39c4ded13d71b621472ef4fdb8d5e49",
-                "composite": "e687b74ff965d32e1dd89d54aa05a0cd2c497709786a363fd0595c1f782fd2c9",
-                "control_flow": "49c6e9833a1c1c47e72f6199969aeb256cdcfa30f0bc227e8b57b1c5bdc1d7ac",
-                "data_flow": "96cad20f0476b5f40cee805cad1eb245aec83678a9ff222077e088befad5acfc",
+                "composite": "69d63532d1187304d642055f7243a7269abc79726ca69fc54f85ba27aba4805b",
+                "control_flow": "1f7a11b71f71ac73a48f1c85c770e9969d58bd2fe7be85708d14d58d9b62cd29",
+                "data_flow": "1ec3cd5877076dd7d8c4f8967453850f01b2ef258ed23bbc56494a987f405a7d",
                 "declaration": "dc589c1699c3f927579e6d1e5f2f994f4ea7502d85145823972cff5ea715776c",
                 "dependency": "a869fa1e0e4c2bbd3826be1bccee9f8b2e5c9e6e789fbdff77bb240f6f28a1f0",
                 "source": "81bb34b9df8070157e99502609a18f66a14f41cd3d417f6e0e7b2e4215be0f18",
-                "structural": "c16a5e97290c061b929328905a15a35a2a59f8839f9dcf5b735375ef2843621b",
+                "structural": "1f25a14acfa00cca466bfaa24c69697d8b65a92490e583225c9f3dca4ad30a28",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_tools.py"
         },
         {
             "fingerprints": {
-                "call_graph": "f26735ab13795983ebd4026833c2878fcaa03b98fa0b10919cbef2d47d954aa7",
-                "composite": "212f4dcae01f23df06df591c1016638fdc320a526bf8ea2fb323cebcd231612f",
-                "control_flow": "c438c5e157b1b4af0be35c50f321231d42f08694d9476829cc6668640d975240",
-                "data_flow": "62fd7dc2d0cd1accdaef2bb75cfc5c391455d97e4f84b04ca6a13a9378e9b9a1",
+                "call_graph": "f1ede11b2c35fba31ff675611f9484d09c60248a3937df302e01e48e86785725",
+                "composite": "ba96e11c3d1f6c6aa7d89fa48b7a0224b1ba0d59822e3923d7c1276b3a208572",
+                "control_flow": "1c6f3469579cd177c1694714d059862ee90e1e758499dec0df95ab83e87329bc",
+                "data_flow": "fba7876105536613ccf9fd6ab6caaed95eda79b13481ecc0dc68880bd07b3b02",
                 "declaration": "7c37795a173d484617c93c1cceeb5c83dbf974cdbd61ec6b6d3e97565a5bc3b2",
                 "dependency": "1ee1cc92f7e8342421a415ac21933f20ab6945b66b098be7ef175a45e8c94258",
                 "source": "8dd88d268b396412debc617c5533d2c4ae96b3dc62339e79d438ab50722c09e0",
-                "structural": "f977235f344c49a756025a98dea01741581c10e898de64596fd6660775274574",
+                "structural": "e16cdd40c3fdafe8f0b9f56e80bd7526c0d7743c5d39d99811d38550a45ec31e",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_traceback.py"
         },
         {
             "fingerprints": {
-                "call_graph": "7e7ab297a91f7a1c69e4d8d4f04679ab9ff3867d3891c3ed09ec3db961efa6a0",
-                "composite": "6a68f96ac0665cc1ad337168aef09e97ecbbf8bece282ccaa74da5bc97a54405",
-                "control_flow": "6b4b2677170b286a7bfdacbff4f8645d7001f5740481e8637d5586bff52f0aa4",
-                "data_flow": "1c0dc92fe29f70dea50f4c52617aca69f6a75c67f06113d38710509b4f56fd8d",
+                "call_graph": "712682ff87c4436ea2d698a0242f64f58fdbf3bae8c4d4e544b6cc5d9ab1527c",
+                "composite": "597c19e64d53892880d3141349b2a515f1ef2850aedd5e12ee01846647c7ad6c",
+                "control_flow": "ce7eeac7bd951f30e4fe05a8df78d1873045231c33fd232829998b06d0bc530f",
+                "data_flow": "fdb21470eee55ce095080cad718532813d8c0c05db77cf8bbf63ebf15b964ee8",
                 "declaration": "3fbfaab2946671bd2b40898bf5b0b71a7991ce1ed2bcc7177bb2cbfbf27195b6",
                 "dependency": "1a2d40ab56376cc68bc611c13d991adb22156a6f8fc89317d8e46a23bf30a54e",
                 "source": "25679432adf7fdf62d637f8a8bf4e3eb6161daafae9f0fb59ba96ba70c3d25db",
-                "structural": "aa2e9fc9112626ca2529ebbff13ca9f626b3c62188a3abba7fea2654904bee29",
+                "structural": "77b24b52ba082536b23ea1dfb3d818677cfb9ff2914c5d8c37efa6278c790267",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tests\\test_tree.py"
         },
         {
             "fingerprints": {
+                "call_graph": "238eb7ff3d312c2058c7f1f5496d86a459d19d776108ddb1d0ecd7fbcb7a6133",
+                "composite": "4827f0ab5e7d9080a72314023dd12af4f0810c5476c8cd2b8e2705ebcbc95300",
+                "control_flow": "3a626ecb1e2a2df36dac9b5e0958157651a5302329bf94f3efcbe3d53a11873f",
+                "data_flow": "de48df2f67cfe5b245cfb789a5a047288362823f826a51b150bded25c0fc1cd3",
+                "declaration": "a5648bfe5d87fdae79434f6b475c1f55d9875309d549503c0838963a98dc987b",
+                "dependency": "1872263534480cdef198e5c3b86f60cf1e7c178be6336bfa711e124653da6cf3",
+                "source": "76d414134004c40de8030a9e41947e77419844b7bd6066f207c18cd91ebfd6cd",
+                "structural": "90c895edc3af5b2a18c276ef3917db9be53960621d3d58e0edf4883418dd6456",
+                "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
+            },
+            "path": "tests\\test_windows_renderer.py"
+        },
+        {
+            "fingerprints": {
                 "call_graph": "e67c617d91a8d93b5e13feff95b1641d145df7d67c658797e2da7fc7f5f6f98d",
-                "composite": "732efa5b898be29d9ea2afcda26a7e49fa508d5f9ad4269e9aa664f9c5ff028e",
-                "control_flow": "aec6d42276deb565725c1e235ff59e955160505a8674c5f063e0ce87ae063f23",
+                "composite": "146a62636397b82012d2a0671bc46d9b56053ce4392ee656d0625c6b2531f25b",
+                "control_flow": "44a2a470389c34d0c5cb5061a6133923a3ec0f2722050c3cf500674f1e81b93f",
                 "data_flow": "dd5bb96a434c2ebea96aa034c8d072871c9c5e549757579ec97fce017b118717",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "cc7af9b513dae770f9d9375f612813087209061400a9991661f703dd4605f721",
@@ -1950,8 +1964,8 @@
         {
             "fingerprints": {
                 "call_graph": "de71a0b91ece980211e1560f2a09df0609ab742e403d79d631a760154122e68c",
-                "composite": "637f75685f3d75a4d84a7d3c793b735e17b0b2cd103bf64550834834094c25b3",
-                "control_flow": "3aa088ef6edb571080383785aa09f3d421486d0d8654df26082ddd3306af172f",
+                "composite": "38b327e3db5e62583c8919d8bb416bd31e2b6ed19614cbe886372cfb3b1ecd1c",
+                "control_flow": "dba62b612930f7a5dfb5b3b28dfa03af08217699e15a4bd44cb5a47bf5e425e0",
                 "data_flow": "c7e4661c342ce842e1c6a32ea603181b818bd86f09299a0914390fbb349b2ee4",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "28ddde8081d754981b5726de9b003864d98c32b7f4b2decca3839de98224a189",
@@ -1964,20 +1978,20 @@
         {
             "fingerprints": {
                 "call_graph": "96e75d69083be967e5e1b4814f66391971596b4cd686a04c3ac5d5f4b0c3a0fa",
-                "composite": "c6184c43e1531c182c71e62b09f3f10ea894fcaa1852008d47929245e7dba496",
-                "control_flow": "e3ddb92ae0db87173251d789771f68ad05693cc2018763b8161682f9518d96ca",
-                "data_flow": "f7c93dfc1bf2fe6c9403c111a6c4b8d7ea65adc19a9108d924e29113ff52fb9b",
+                "composite": "4ce0b5528921dfff61c1c1b55474c8d8afff448c13c6958a8c3a97cd59f8d491",
+                "control_flow": "1fa0749f3c46923db14d46be1fe175ed98926a366f58e443916dbfa59afad977",
+                "data_flow": "64395715ce43a26570f589dd2cd5b6925688416cb2da6f51f06ad5b514cc0e79",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "411ac6b6945cd2cae4387f3a62783a89e350d4e89e23601681488dc6a1a384f0",
                 "source": "88e4b34bec9570dc54397e1c71c258d30d19bad7ac332c71fd876d9b59ebb4eb",
-                "structural": "dc2442e7780b8907ac9620c58e84f142b79b8107bc5d1d2926fc0ac02e44d98c",
+                "structural": "5f8ea2e6993a6e6778da0cbdf2cad170876e3c6b51c58202a6ebae69033c82aa",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "tools\\stress_test_pretty.py"
         }
     ],
-    "repository_fingerprint": "fb348d1398a3bc8db4c8b79202823b62eea9228e6cdaddf830772ddfe4aa464b",
-    "version": "0.2.0",
-    "whole_repo_call_graph": "42a29702129d5ac55de0f07fdc25e6abd17079bdaa37e384feb52ba3e9c7505d",
-    "whole_repo_data_flow": "6bb55d8be30c2b0025df5596cb4677d6a7b890bdd63df4a3c3fecfe31915a4b6"
+    "repository_fingerprint": "b538c3d49fcf2aeb5fa2317a2ea5f7822d65f7f2d0d1879c0cc05dce59aa123c",
+    "version": "0.3.0",
+    "whole_repo_call_graph": "605c50f13677fc5fc3dd23de782ae304b9ea16f9b4d53ed3a46e8bebe48b5cfd",
+    "whole_repo_data_flow": "ff0f5187930879a506575e48a6aa9f4926a0d03a33e1aeb8968213c6bbf4cee5"
 }

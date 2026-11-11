@@ -1,7 +1,7 @@
 # Canontra Technical Specifications
 
 System Architecture, Compiler Pipeline, and Identity Engine
-Version: v0.2.0.0 (Release v0.2.0)
+Version: v0.3.0.0 (Release v0.3.0)
 Author: Jash Thakkar & SymtraceLabs Engineering Team
 Status: Production Specification
 
@@ -14,17 +14,17 @@ The engine is engineered around four core systems principles:
 1. Platform Invariance: The engine produces bit-identical digests for identical logical programs regardless of the host operating system (Linux, macOS, Windows), CPU architecture (x86_64, AArch64, RISC-V), or filesystem semantics (NTFS, APFS, ext4).
 2. Zero Runtime Dependencies: The core library contains zero C-FFI bindings, zero dynamic library dependencies (such as libtree-sitter), and zero external binaries.
 3. Air-Gapped Zero-Trust Operation: The runtime opens zero network sockets, initiates zero HTTP/RPC connections, and transmits zero telemetry.
-4. Bounded Latency and Memory Safety: Single-pass parsing, Flat Linear Arena vector representations, unboxed arrays, and 4KB paged caching guarantee bounded sub-millisecond execution for single-file operations.
+4. Bounded Latency and Memory Safety: Single-pass parsing, Flat Linear Arena vector representations, unboxed CSR graph arrays, and 4KB paged caching guarantee bounded sub-millisecond execution for single-file operations.
 
 ## 2. The 9-Tier Identity Hierarchy
 
-Canontra rejects the notion of a single monolithic program hash. It decomposes source code into an orthogonal hierarchy of cryptographic digests:
+Canontra decomposes source code into an orthogonal hierarchy of cryptographic digests:
 
 Tier F0 (Source Text Digest)
 Calculates SHA-256 over raw source bytes. Captures any edit, including whitespace changes, comment modifications, and line endings.
 
 Tier F1 (Structural AST Digest)
-Calculates SHA-256 over the normalized Abstract Syntax Tree. Normalization eliminates comments, unflagged docstrings, formatting differences, and alpha-renames internal local variables. Independent pure functions are sorted canonically. F1 is invariant under semantics-preserving code cleanup and refactoring.
+Calculates SHA-256 over the normalized Abstract Syntax Tree. Normalization eliminates comments, unflagged docstrings, formatting differences, and alpha-renames internal local variables to de Bruijn index form. Commutative pure expressions, dual relational operators, and independent pure functions are sorted canonically. F1 is invariant under semantics-preserving code cleanup, refactoring, and local renaming.
 
 Tier F2 (Declaration Signature Digest)
 Calculates SHA-256 over the public API surface of the module. Includes exported functions, classes, interfaces, parameter names, type annotations, and default value hashes. Internal function bodies and private helpers are excluded.
@@ -36,13 +36,13 @@ Tier F_CG (Call Graph Digest)
 Calculates SHA-256 over the intra-module function dispatch graph. Encodes caller-to-callee edges, recursive call structures, and invocation frequencies.
 
 Tier F_CF (Control Flow Graph Digest)
-Calculates SHA-256 over basic block transition topologies. Encodes branching conditions, loop headers, break/continue targets, and exception pathways.
+Calculates SHA-256 over canonical basic block transition topologies. Employs dominator-tree canonicalization, branch inversion normal form, guard-clause lifting, and Reverse Post-Order (RPO) relabeling.
 
 Tier F_DF (Data Flow Graph Digest)
 Calculates SHA-256 over Static Single Assignment (SSA) Def-Use chains. Identifies reaching definitions, variable assignments, and expression consumer relationships.
 
 Tier F_T (Structural Type Contract Digest)
-Calculates SHA-256 over public structural types, trait definitions, and interface shapes. Method declarations and struct fields are canonically sorted, guaranteeing that permuting method orders produces an identical F_T digest.
+Calculates SHA-256 over public structural types, trait definitions, and interface shapes. Evaluates structural subtyping, recursive ANF type flattening, generic type parameter normalization, and canonical record field ordering.
 
 Tier F4 (Composite Program Digest)
 Calculates SHA-256 over the composite tuple:
@@ -57,7 +57,55 @@ For multi-module workspaces, Canontra computes whole-repository projections:
 * F_R: Repository topology and module dependency DAG digest.
 * F_W4: Root Merkle digest over the entire repository.
 
-## 3. End-to-End Compiler Pipeline Flow
+## 3. The Five Pillars of Semantic Canonicalization (v0.3.0 Engine)
+
+Version 0.3.0 introduces five foundational canonicalization and analysis pillars that close semantic divergence gaps across all supported languages:
+
+### Pillar 1: Complete Alpha-Equivalence Normalization (Canontra.Normalize.Alpha)
+
+Local variable naming in private function scopes is an implementation detail. Canontra canonicalizes all bound local variable references into a deterministic, scope-aware de Bruijn coordinate: `@v<depth>.<ordinal>`.
+
+* Scope Hierarchy: Each nested lexical block (loops, conditionals, closures, comprehensions) increments scope depth.
+* Ordinal Allocation: Local variable declarations within a scope are assigned ascending ordinal indices based on their textual declaration order.
+* Parameter and Shadow Isolation: Parameter bindings and shadowed variables are resolved deterministically against their nearest enclosing lexical scope.
+* Invariance Guarantee: Renaming any local variable across its definition and use sites produces a bit-identical AST and identical F1 digest.
+
+### Pillar 2: Algebraic Normal Form and Operator Simplification (Canontra.Normalize.Algebraic)
+
+Syntactic variations in expression phrasing frequently mask identical underlying computation. Canontra applies purity-guarded algebraic rewrites:
+
+* Commutative and Associative Sorting: Pure operands of commutative operators (`+`, `*`, `&&`, `||`, `==`, `!=`, `&`, `|`, `^`) are sorted lexicographically by normalized operand representation.
+* Relational Dual Inversion: Greater-than relational expressions are canonicalized to less-than relational forms by transposing operands: `b > a` normalizes to `a < b`, and `b >= a` normalizes to `a <= b`.
+* Double-Negation Elimination: Redundant boolean inversions are stripped: `not (not x)` simplifies to `x`.
+* Set and Dict Literal Ordering: Unordered collections containing pure elements or keys are sorted into canonical ascending sequence.
+
+### Pillar 3: Control-Flow Graph Canonicalization (Canontra.Analysis.CFGCanonical)
+
+Syntactically inverted conditional branches and guard clauses often generate disparate basic block layouts. Canontra canonicalizes the CFG topology:
+
+* Dominator-Tree Canonicalization: Basic blocks are relabeled according to their depth and traversal index within the dominator tree.
+* Reverse Post-Order (RPO) Indexing: Block IDs are reassigned based on a canonical RPO traversal from the function entry node.
+* Branch Inversion Normal Form: Branches testing inverted conditions with empty alternate suites (`if (!cond) A` versus `if (cond) ; else A`) are mapped to a uniform conditional structure.
+* Guard-Clause Lifting: Guard clauses featuring early returns (`if (!valid) return; doWork()`) are aligned with equivalent nested conditional topologies.
+
+### Pillar 4: Deepened Structural Type Contract Lattice (Canontra.Analysis.TypeContract)
+
+Structural contracts determine whether interface changes break downstream consumers. Canontra formalizes type analysis into a structural subtyping lattice:
+
+* Recursive ANF Type Flattening: Nested composite types, intersection types, and union types are flattened into canonical A-Normal Form.
+* Structural Subtyping Evaluation: Determines width subtyping (excess fields permitted), depth subtyping (covariant returns, contravariant parameters), and union inclusion ($A \subseteq A \cup B$).
+* Generic Type Parameter Normalization: Generic parameters are normalized to ordinal alpha variables (`[T, U]` maps to `[α0, α1]`) across Python PEP 695, TypeScript generics, Go interfaces, and Rust traits.
+* Tuple Bound and Tilde Constraint Normalization: Structural constraints like Go `~int | ~float64` or Python `(int, float)` bounds are sorted and deduplicated.
+
+### Pillar 5: CSR-Native PR Batch Impact Analysis (Canontra.Analysis.BatchImpact, Canontra.Analysis.Impact)
+
+For continuous integration workflows, Canontra provides fast, multi-file change impact analysis directly over unboxed Compressed Sparse Row (CSR) call graphs:
+
+* Batch Reachability Cones: Given a set of modified files in a Pull Request, Canontra maps changed symbols to CSR node indices and executes a multi-source bitset BFS reachability traversal.
+* PR Base Diffing: The `canontra impact --pr-base <branch>` command inspects `git diff --name-only` against the PR base branch, runs incremental analysis, and outputs the affected downstream symbol blast radius.
+* Machine-Readable Manifests: Emits structured JSON impact manifests detailing direct changes, transitively impacted symbols, and impacted test suites.
+
+## 4. End-to-End Compiler Pipeline Flow
 
 The compilation and fingerprinting pipeline executes in eight sequential phases:
 
@@ -77,18 +125,19 @@ Phase 2: Polyglot Parsing (Direct-to-IR)
   - SwissTable symbol interning
         |
         v
-Phase 3: Semantic AST Normalization
+Phase 3: Semantic AST & Algebraic Normalization
   - Comment and docstring stripping
   - Dead statement elimination (StmtPass)
+  - Bound local variable de Bruijn renaming (@v<d>.<o>)
+  - Algebraic Normal Form & relational dual inversion
   - Pure function canonical permutation sorting
-  - Local variable alpha-renaming
         |
         v
-Phase 4: Semantic Graph Extraction
+Phase 4: Semantic Graph Extraction & Canonicalization
   - Intra-module Call Graph compilation
-  - Basic Block Control-Flow Graph (CFG) construction
-  - SSA Reaching-Definition Data-Flow Graph (DFG) compilation
-  - Structural Type Contract (F_T) derivation
+  - Dominator-tree canonicalized CFG construction (RPO)
+  - SSA Reaching-Definition Data-Flow Graph (DFG)
+  - Structural Type Contract (F_T) lattice derivation
         |
         v
 Phase 5: Canonical Binary Serialization
@@ -102,13 +151,15 @@ Phase 6: Multi-Tier Cryptographic Hashing
   - Construct 9-tier FingerprintBundle
         |
         v
-Phase 7: Radix-Directed Binary Caching (CNTR v5)
-  - 4KB paged slab storage
-  - Page-level IEEE 802.3 CRC32 integrity verification
-  - Atomic swap via temporary file rename
+Phase 7: Radix-Directed Binary Caching (CNTR v6)
+  - 4KB paged slab storage with IEEE 802.3 CRC-32C checksums
+  - 256-way L1 radix jump table for < 500 ns warm lookups
+  - Unboxed CSR graph persistence
+  - Resilient atomic file swapping with retry
         |
         v
-Phase 8: Machine Interchange & Diagnostics
+Phase 8: Machine Interchange, Impact Analysis & Diagnostics
+  - PR Batch Change Impact Analysis (CSR reachability)
   - OASIS SARIF v2.1.0 diagnostics generation
   - Graphviz DOT call graph export
   - Shell autocompletions and POSIX exit code reporting
@@ -129,33 +180,37 @@ Canontra avoids the overhead of deep pointer-chasing tree structures by compilin
 
 Identified variable and function names are interned into open-addressing SwissTables with 8-bit control bytes (h2 metadata). This provides O(1) symbol resolution with cache-line locality and zero pointer fragmentation.
 
-### Phase 3: Semantic Normalization
+### Phase 3: Semantic Normalization and Algebraic Simplification
 
 The raw AST undergoes semantics-preserving algebraic rewrite passes:
 
 1. Trivia Stripping: Comments, trailing whitespace, blank lines, and unflagged docstrings are purged.
 2. Canonical Pure Function Sorting: Independent top-level functions whose bodies have no cyclic caller-callee dependencies are sorted lexicographically by normalized structural signature. Permuting the source order of two independent helper functions results in a bit-identical AST.
 3. Dead Statement Elimination: Meaningless pass-through statements (such as Python `pass`) are stripped from statement blocks containing other executable operations.
-4. Alpha-Renaming: Internal local variable identifiers within private function bodies are normalized into de Bruijn-style synthetic symbols, ensuring that local variable renames do not mutate structural hashes.
+4. Alpha-Renaming: Internal local variable identifiers within private function bodies are normalized into de Bruijn-style synthetic symbols (`@v<depth>.<ordinal>`).
+5. Commutative and Relational Normalization: Commutative operators are ordered canonically, relational operators are converted to less-than duals, and double-negations are eliminated.
 
 ### Phase 4: Graph, Unboxed CSR Representation, and Type Contract Extraction
 
 From the normalized AST, the compiler extracts three orthogonal graphs:
 
 * Call Graph: Identifies function invocations, recursive loops, and dispatch hierarchies.
-* CFG (Control Flow Graph): Partitions the function into maximal basic blocks connected by conditional, unconditional, and exceptional edges. Loops are identified via Tarjan strongly connected component analysis.
+* CFG (Control Flow Graph): Partitions the function into maximal basic blocks connected by conditional, unconditional, and exceptional edges, canonicalized via dominator-tree and RPO relabeling.
 * DFG (Data Flow Graph): Computes definition-use pairs for every variable across basic blocks using forward dataflow analysis.
 
-In v0.2.0, repository-wide call graphs and data-flow graphs are compiled directly into an **Unboxed Compressed Sparse Row (CSR) Engine** (`Canontra.Analysis.CSRGraph`):
+In v0.3.0, repository-wide call graphs and data-flow graphs are compiled directly into an Unboxed Compressed Sparse Row (CSR) Engine (`Canontra.Analysis.CSRGraph`):
+
 * Contiguous unboxed `Vector Word32` row offsets and column indices (`csrRowOffsets`, `csrColIndices`) with bit-packed `Vector Word16` edge attributes (`csrEdgeFlags`).
-* $O(\log(\text{deg}(u)))$ binary search edge verification (`csrHasEdge`) executing in **$26\,\text{ns}$**.
-* Linear-time Tarjan Strongly Connected Component (SCC) cycle collapse executing in **$14.5\,\mu\text{s}$** and topological condensation DAG synthesis in **$39.7\,\mu\text{s}$**.
+* $O(\log(\text{deg}(u)))$ binary search edge verification (`csrHasEdge`) executing in 26 ns.
+* Linear-time Tarjan Strongly Connected Component (SCC) cycle collapse executing in 14.5 microseconds and topological condensation DAG synthesis in 39.7 microseconds.
 * Localized reachability cone edge splicing (`spliceCSREdges`) allowing sub-10ms incremental updates without rebuilding whole-repository graph matrices.
+* Multi-source batch reachability queries (`computeBatchImpactSliceCSR`) executing in < 15 ms across 100,000+ LOC repositories.
 
 Simultaneously, the compiler derives structural type contracts (F_T):
 
 * Interface methods and struct fields are canonicalized into sorted order.
 * Primitive types, arrays, optionals, and composite records are mapped to normalized type algebra.
+* Universal generic parameter normalization converts type variable names to positional indices.
 * Structural subtyping evaluation determines whether a changed module satisfies backwards compatibility requirements.
 
 ### Phase 5: Canonical Binary Serialization
@@ -177,38 +232,19 @@ Fingerprint manifests and Merkle DAG states are saved to a binary cache file (`.
 * Magic Header (16 bytes): `CNTR\x06` magic identifier and cache version.
 * 256-Way L1 Radix Jump Table (`0x0020 - 0x081F`, 2,048 bytes): Provides 1-cycle CPU fast-path indexing for warm file lookups.
 * 64-Byte Cache Records: Fixed-width `CacheRecordV6` aligned to CPU cache lines, containing 64-bit device/file IDs, nanosecond modification timestamps, and all orthogonal cryptographic digests.
-* Zero-Copy Memory-Mapped Retrieval: `lookupSlabBinaryBS` and `lookupSlabCacheWarm` execute in sub-microsecond latency ($< 500\,\text{ns}$ per file).
+* Zero-Copy Memory-Mapped Retrieval: `lookupSlabBinaryBS` and `lookupSlabCacheWarm` execute in sub-microsecond latency (< 500 ns per file).
 * Whole-Repository Binary CSR Graph Persistence: Saves compacted CSR call graphs and data-flow matrices (`saveRepoGraphsSlab`) with zero textual formatting overhead.
 * Isolated 4KB Page Recovery: Every 4KB page maintains an independent IEEE 802.3 CRC-32C checksum (`salvageSlabCacheFile`). Damaged pages are isolated while valid entries remain instantly accessible.
 * Atomic Write Swapping with Windows Resiliency: Staged cache writes are finalized via atomic rename with exponential backoff and jitter (`atomicSwapWithRetry`), eliminating Windows Defender and SearchIndexer file-locking conflicts.
 
-### Phase 8: Machine Interchange and Reporting
+### Phase 8: Machine Interchange, Impact Analysis and Reporting
 
 The final phase exposes findings through standard formats:
 
+* Pull Request Change Impact Analysis: Calculates blast radius, affected symbols, and downstream tests via `canontra impact --pr-base <branch>`.
 * OASIS SARIF v2.1.0 JSON format for GitHub Code Scanning, SonarQube, and CI dashboards.
 * Graphviz DOT format for visualizing call graphs, CFGs, and DFGs.
 * Strict POSIX exit codes (0 for identical, 1 for changed, 2 for CLI error, 3 for parse error, 4 for I/O or security violation).
-
-## 4. Air-Gapped Zero-Trust Security Model
-
-Canontra is designed to execute safely inside untrusted source repositories and high-security air-gapped enclaves.
-
-### Path Sandboxing and Root Containment
-
-All file discovery and path queries pass through `canonicalizeSafePath`:
-
-* Null Byte Defense: Paths containing embedded null bytes (`\0`) are immediately rejected.
-* Canonical Containment: The candidate file path is canonicalized to resolve symlinks and `..` traversal components. The resulting path is verified to reside strictly within the project root directory prefix.
-* Symlink Cycle Breaking: Traversal tracks `(DeviceID, FileID)` 64-bit tuples in a visited set. Recursive symlink loops and junctions are detected and severed before stack exhaustion can occur.
-
-### Hard Resource Ceilings
-
-To defend against zip-bombs, cyclic filesystem attacks, and memory exhaustion:
-
-* File Size Ceiling: Files larger than 50 MB (52,428,800 bytes) are safely skipped and reported.
-* Directory Recursion Ceiling: Directory nesting depths greater than 64 levels are rejected.
-* Unchecked Recursion Limits: All graph traversal algorithms (dominator tree computation, cycle detection) enforce finite recursion bounds.
 
 ## 5. Formal Verification and Determinism Theorems
 
@@ -227,6 +263,30 @@ F4(P) == F4(T(P))
 For any program P and any semantic mutation M in M_divergent (such as operator inversion, literal modification, branch inversion, or parameter addition):
 F1(P) != F1(M(P))
 F4(P) != F4(M(P))
+
+### Alpha-Equivalence Invariance Theorem
+
+For any expressions e1 and e2:
+e1 =_alpha e2 implies F1(canonicalizeLocals(e1)) == F1(canonicalizeLocals(e2))
+
+### Algebraic Normal Form Invariance Theorem
+
+For any expressions e1 and e2 differing solely in pure commutative operand ordering or relational dual representations (`a + b` vs `b + a`, `x > y` vs `y < x`, `not (not z)` vs `z`):
+F1(algebraicNormalize(e1)) == F1(algebraicNormalize(e2))
+
+### CFG Isomorphism Invariance Theorem
+
+For any function implementations f1 and f2 whose control flow graphs differ solely in empty alternate branches or guard-clause early returns while preserving identical execution pathways:
+F_CF(canonicalizeCFG(f1)) == F_CF(canonicalizeCFG(f2))
+
+### Type Contract Lattice Monotonicity Theorem
+
+For any module M and its modified version M', if M' extends M with purely backwards-compatible additions (width subtyping, covariant return specialization) without altering existing signatures:
+F2(M) != F2(M') but M' is recognized as a valid structural subtype of M under the F_T subtyping lattice.
+
+### CSR Batch Reachability Soundness Theorem
+
+For any set of modified symbols S in a whole-repository call graph G = (V, E), the unboxed CSR batch impact slice computed by `computeBatchImpactSliceCSR(G, S)` contains all vertices v in V reachable from S via directed dispatch paths, guaranteeing zero false negatives in downstream test selection.
 
 ### Rice's Theorem Defensibility
 

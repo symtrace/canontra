@@ -250,12 +250,24 @@ extractDeclsAndStmts tokens = case tokens of
         (d, i, s) = extractDeclsAndStmts afterIface
     in (DeclInterface iface : d, i, s)
 
-  -- type alias
+  -- type alias (with optional generic parameters)
+  TokKw "type" : TokIdent name : TokSymbol "<" : rest ->
+    let (gToks, afterAngle) = span (\tok -> tok /= TokSymbol ">") rest
+        gParamText = "<" <> T.unwords (map jsTokenText gToks) <> ">"
+        afterEq = dropWhile (\tok -> tok /= TokSymbol "=") afterAngle
+        rhsToks0 = if null afterEq then [] else tail afterEq
+        (rhsToks, afterSemi) = span (\tok -> tok /= TokSymbol ";") rhsToks0
+        rhsText = T.unwords (map jsTokenText rhsToks)
+        nextToks = if null afterSemi then [] else tail afterSemi
+        (d, i, s) = extractDeclsAndStmts nextToks
+    in (DeclTypeAlias name (Just (gParamText <> " = " <> rhsText)) : d, i, s)
+
   TokKw "type" : TokIdent name : TokSymbol "=" : rest ->
-    let afterType = dropWhile (\tok -> tok /= TokSymbol ";") rest
+    let (rhsToks, afterType) = span (\tok -> tok /= TokSymbol ";") rest
+        rhsText = T.unwords (map jsTokenText rhsToks)
         nextToks = if null afterType then [] else tail afterType
         (d, i, s) = extractDeclsAndStmts nextToks
-    in (DeclTypeAlias name Nothing : d, i, s)
+    in (DeclTypeAlias name (if T.null rhsText then Nothing else Just rhsText) : d, i, s)
 
   -- const / let / var
   TokKw kw : TokIdent name : TokSymbol "=" : rest | kw `elem` ["const", "let", "var"] ->
@@ -344,10 +356,17 @@ parseClassMethods (_:rest) = parseClassMethods rest
 
 parseInterfaceBody :: Text -> [JSToken] -> (Interface, [JSToken])
 parseInterfaceBody name tokens =
-  let afterBrace = dropWhile (\t -> t /= TokSymbol "{") tokens
+  let (gBases, afterGen) = case tokens of
+        TokSymbol "<" : rest ->
+          let (gToks, afterAngle) = span (\t -> t /= TokSymbol ">") rest
+              gText = "<" <> T.unwords (map jsTokenText gToks) <> ">"
+              remToks = if null afterAngle then [] else tail afterAngle
+          in ([gText], remToks)
+        _ -> ([], tokens)
+      afterBrace = dropWhile (\t -> t /= TokSymbol "{") afterGen
       (bodyToks, afterBody) = extractBalancedBraces afterBrace
       methods = parseInterfaceMethods bodyToks
-  in (Interface name methods [], afterBody)
+  in (Interface name methods gBases, afterBody)
 
 parseInterfaceMethods :: [JSToken] -> [Function]
 parseInterfaceMethods [] = []

@@ -13,6 +13,7 @@ module Canontra.Analysis.DFG
   , DataFlowGraph (..)
   , ScopeStack
   , buildDFGs
+  , buildCanonicalDFGs
   , buildFunctionDFG
   , formatDFG
   , processStmts
@@ -40,6 +41,7 @@ import GHC.Generics (Generic)
 import Canontra.IR.Declaration
 import Canontra.IR.Expression
 import Canontra.IR.Program
+import Canontra.Normalize.Alpha (canonicalizeAlphaProgram)
 
 type NodeId = Int
 
@@ -78,6 +80,11 @@ data DataFlowGraph = DataFlowGraph
 buildDFGs :: Program -> [DataFlowGraph]
 buildDFGs (Program modules _) =
   concatMap extractModuleDFGs modules
+
+-- | Build alpha-canonicalized DFGs where bound local variables are mapped to
+-- canonical de Bruijn indices (@v<depth>.<ordinal>).
+buildCanonicalDFGs :: Program -> [DataFlowGraph]
+buildCanonicalDFGs = buildDFGs . canonicalizeAlphaProgram
 
 extractModuleDFGs :: Module -> [DataFlowGraph]
 extractModuleDFGs (Module modName _ decls stmts) =
@@ -170,6 +177,21 @@ processStmtsWithStack initialStack stmts startId =
             allDefs = assignedVars ++ walrusVars
             (defNodes, nextId2) = foldl (\(ns, cId) v ->
               (ns ++ [DFGNode cId (DefAssignment v) mVal], cId + 1)) ([], nextId1) allDefs
+            defEdges = [ DFGEdge (dfgNodeId srcNode) (dfgNodeId targetNode) v
+                       | (targetNode, v) <- zip defNodes allDefs
+                       , srcNode <- useNodes
+                       ]
+            newStack = foldl (\s (dNode, v) -> updateStack v (dfgNodeId dNode) s) curStack (zip defNodes allDefs)
+        in (nodesAcc ++ useNodes ++ defNodes, edgesAcc ++ useEdges ++ defEdges, newStack, nextId2)
+
+      StmtAugAssign target op val ->
+        let combinedExpr = ExprBinary op target val
+            (useNodes, useEdges, nextId1) = extractExprUsesStack curStack combinedExpr curId
+            assignedVars = extractTargetVars target
+            walrusVars = collectWalrusDefs val
+            allDefs = assignedVars ++ walrusVars
+            (defNodes, nextId2) = foldl (\(ns, cId) v ->
+              (ns ++ [DFGNode cId (DefAssignment v) (Just combinedExpr)], cId + 1)) ([], nextId1) allDefs
             defEdges = [ DFGEdge (dfgNodeId srcNode) (dfgNodeId targetNode) v
                        | (targetNode, v) <- zip defNodes allDefs
                        , srcNode <- useNodes

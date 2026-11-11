@@ -2,7 +2,7 @@
 
 Deterministic Polyglot Program Identity and Semantic Graph Engine
 
-Version: v0.2.0.0 (Release v0.2.0)
+Version: v0.3.0.0 (Release v0.3.0)
 
 Open-source research project by [Jash Thakkar](https://github.com/JashT14) & SymtraceLabs
 
@@ -30,19 +30,29 @@ Canontra solves this problem. It looks past surface-level formatting, comments, 
 
 Canontra works across five major programming languages: Python, JavaScript, TypeScript, Go, and Rust.
 
+## What's New in v0.3.0
+
+The v0.3.0 release deepens Canontra's semantic invariance across local variable renaming, algebraic laws, control-flow branch inversions, generic type contracts, and multi-file PR impact slicing:
+
+* **Scope-Aware Bound Lexical $\alpha$-Canonicalization (`Canontra.Normalize.Alpha`)**: Renaming local variables, loop counters, comprehension variables, lambda arguments, or exception bindings produces **100% bit-identical** $F_1$, $F_{DF}$, and $F_4$ fingerprints while keeping public function names and parameter contracts strictly sensitive in $F_2$.
+* **Commutative & Associative Algebraic Normal Form (`Canontra.Normalize.Algebraic`)**: Pure commutative expressions (`a + b` vs `b + a`, `x * y` vs `y * x`, `a == b` vs `b == a`), relational duals (`b > a` vs `a < b`, `b >= a` vs `a <= b`), and unordered set/dict literals (`{1, 2, 3}` vs `{3, 1, 2}`) normalize to identical canonical forms without reordering impure function calls.
+* **CFG Dominator-Tree & Reverse Post-Order Canonicalization (`Canontra.Analysis.CFGCanonical`)**: Branch inversions (`if not cond: B else: A` vs `if cond: A else: B`), early-exit guard clauses, and unreachable statements after `return`/`raise` normalize to identical $F_{CF}$ and $F_1$ digests.
+* **Deepened Structural Type Contract ($F_T$) Lattice**: Nested union/intersection flattening (`(A | B) | C` == `C | (B | A)`), positional de Bruijn generic type parameter normalization (`interface Store<K, V>` == `interface Store<Key, Val>`), and structural record field sorting across Python, TypeScript, Go, and Rust.
+* **CSR-Native Multi-File PR Batch Change Impact Analysis (`canontra impact --pr-base <ref>`)**: Computes joint backward reachability cones over unboxed CSR graphs in under 50 microseconds and emits ready-to-run test commands for `pytest`, `jest`, `go test`, and `cargo test`.
+<!-- 
 ## What's New in v0.2.0
 
 The v0.2.0 release makes Canontra dramatically faster, slashes memory consumption, and expands language support to modern standards:
 
 * **Blazing-Fast Multi-Core Processing**: Canontra now distributes work across all available CPU cores automatically, scanning and analyzing over **110,000 lines of code per second**. Entire repositories analyze in a fraction of a second.
 * **70% Less Memory Footprint**: Whole-repository call graphs and data-flow graphs now use ultra-compact arrays instead of heavy memory trees, keeping RAM usage low and execution smooth even on massive projects.
-* **Instant Incremental Caching (2.8×–3.7× Faster)**: Re-checking files you haven't touched is practically instantaneous (under 1 microsecond per file). The cache also includes self-healing recovery that protects against unexpected shutdowns or corrupted files.
+* **Instant Incremental Caching (2.8×-3.7× Faster)**: Re-checking files you haven't touched is practically instantaneous (under 1 microsecond per file). The cache also includes self-healing recovery that protects against unexpected shutdowns or corrupted files.
 * **Modern Polyglot Language Support**:
   * **Python 3.12**: Supports nested f-strings with quote reuse, new generic type parameter syntax (`type Alias[T] = ...`), and walrus operator `:=` expressions in comprehensions.
   * **TypeScript 5.2 & JavaScript**: Supports explicit resource management (`using` and `await using`) with automated cleanup tracking.
   * **Go 1.21+**: Supports built-in functions (`min`, `max`, `clear`) and generic interface tilde constraint sets (`~T`).
   * **Rust 2021 Edition**: Supports Generic Associated Types (GATs) and raw identifiers (`r#type`, `r#match`).
-* **Rock-Solid Reliability**: Added automatic retry handling on Windows to eliminate file-locking conflicts from antivirus or search indexers, circular directory link detection, and bit-identical results across Windows, macOS, and Linux.
+* **Rock-Solid Reliability**: Added automatic retry handling on Windows to eliminate file-locking conflicts from antivirus or search indexers, circular directory link detection, and bit-identical results across Windows, macOS, and Linux. -->
 
 ## A Concrete Example
 

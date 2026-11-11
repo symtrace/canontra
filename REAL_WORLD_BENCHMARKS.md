@@ -1,6 +1,6 @@
 # Canontra Real-World Benchmark Protocol and Execution Instructions
 
-Version: v0.2.0.0 (Release v0.2.0) Hardened Architecture
+Version: v0.3.0.0 (Release v0.3.0) Deep Algebraic Equivalence & CSR-Native CIA 2.0 Architecture
 Author: Jash Thakkar & SymtraceLabs Engineering Team
 Status: Benchmark Execution Protocol
 
@@ -122,7 +122,7 @@ Ensure the Canontra standalone binary is compiled with optimization flag -O2:
 # Build optimized production binary
 stack build --copy-bins --local-bin-path ./dist-bin --ghc-options="-O2"
 
-# Verify executable is functional and reports version 0.2.0
+# Verify executable is functional and reports version 0.3.0
 ./dist-bin/canontra version
 ```
 
@@ -317,3 +317,4 @@ When evaluating the benchmark output CSV, ensure the results satisfy the followi
 * Average Latency: <= 1.5 ms per module on typical files (~100 LOC).
 * Zero Exit Code Failures: All clean repositories must return exit code 0.
 * Published Report: See [benchmarkReport.md](benchmarkReport.md) for full empirical multi-tool benchmark data and whole-repository graph synthesis results.
+

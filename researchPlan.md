@@ -11,10 +11,9 @@
 * **Dual-Platform Testbed**: Windows 11 Enterprise (NTFS) + Ubuntu 22.04 LTS on WSL2 (ext4)
 * **Comparative Industry Baselines**: Git Tree OID / Raw SHA-256, Turborepo / Nx, Bazel CAS, Mozilla sccache, GitHub CodeQL
 
-
 ## 1. Executive Summary & Theoretical Context
 
-Continuous integration (CI/CD) fabrics, hermetic build systems (e.g., Bazel, Nix, Buck2, Turborepo), and software supply chain integrity mechanisms rely almost exclusively on raw cryptographic hashes—most commonly SHA-256 over raw source bytes or Git commit tree Object Identifiers (OIDs)—to track file identity, detect changes, and invalidate artifact caches.
+Continuous integration (CI/CD) fabrics, hermetic build systems (e.g., Bazel, Nix, Buck2, Turborepo), and software supply chain integrity mechanisms rely almost exclusively on raw cryptographic hashes - most commonly SHA-256 over raw source bytes or Git commit tree Object Identifiers (OIDs) - to track file identity, detect changes, and invalidate artifact caches.
 
 This creates an acute operational paradox:
 
@@ -54,7 +53,6 @@ Each tier represents a formal equivalence class under an explicitly defined norm
 * **$F_4$ (Composite Cryptographic Tie)**: Cryptographic binding of all single-file orthogonal tiers.
 * **$F_R$ (Isomorphic Incremental Merkle DAG Root)**: Repository-level root digest, invariant under OS path separators and case sensitivity.
 * **$F_{W4}$ (Whole-Repository System Identity)**: Merkle aggregation bound to inter-module Call Graphs ($F_{WCG}$) and inter-procedural Data-Flow ($F_{WDF}$).
-
 
 ## 2. Industry Comparative Baselines & Architectural Positioning
 
@@ -96,7 +94,6 @@ To provide a rigorous and defensible scientific evaluation, Canontra is benchmar
 | **Incremental Hot-Update (1 delta)** | Full re-hash | Full glob re-eval | Action re-eval | Cache hit check | $> 5\,\text{s}$ | **$< 10\,\text{ms}$** |
 | **Runtime Dependencies** | C/Rust binary | Node/Go binary | Java/C++ runtime | C/Rust binary | JVM / Proprietary | **Zero (Pure Haskell Static)** |
 
-
 ## 3. Formal Research Questions (RQs)
 
 To provide an exhaustive empirical and theoretical evaluation, this research plan defines **six discrete Research Questions (RQ1 through RQ6)** spanning parsing robustness, mathematical determinism, micro-architectural throughput, semantic mutation discrimination, whole-repository dependency soundness, and storage acceleration.
@@ -118,7 +115,7 @@ To provide an exhaustive empirical and theoretical evaluation, this research pla
 
 ### RQ1: Polyglot Ingestion Robustness & Real-World AST Soundness
 >
-> **Research Question**: *To what extent can Canontra's pure-functional direct-to-IR parsers ingest real-world, polyglot software repositories without parse failures, AST node loss, or syntax crashes across modern language specifications (Python 3.8–3.12, TypeScript/JavaScript ES2022+, Go 1.18–1.22 generics, Rust 2021+ edition), compared to official compiler frontends (`python -m py_compile`, `tsc --noEmit`, `go vet`, `cargo check`) and Tree-Sitter grammars?*
+> **Research Question**: *To what extent can Canontra's pure-functional direct-to-IR parsers ingest real-world, polyglot software repositories without parse failures, AST node loss, or syntax crashes across modern language specifications (Python 3.8-3.12, TypeScript/JavaScript ES2022+, Go 1.18-1.22 generics, Rust 2021+ edition), compared to official compiler frontends (`python -m py_compile`, `tsc --noEmit`, `go vet`, `cargo check`) and Tree-Sitter grammars?*
 
 * **Rationale**: Static analysis and code fingerprinting engines frequently fail on edge-case language features (e.g., Python PEP 572 walrus assignments, PEP 634 pattern matching, PEP 701 nested f-strings; TypeScript automatic semicolon insertion and regex/division ambiguities; Go type-parameter generics; Rust macro token trees). Proving that a zero-dependency, pure-functional Haskell parser can process heterogeneous third-party open-source codebases without crashing or dropping AST nodes is fundamental to establishing Canontra's real-world viability.
 * **Comparative Baselines**: Native language toolchains (`python -m py_compile`, `tsc --noEmit`, `go vet`, `cargo check`) and official Tree-Sitter grammars (`tree-sitter-python`, `tree-sitter-typescript`, `tree-sitter-go`, `tree-sitter-rust`).
@@ -132,7 +129,6 @@ To provide an exhaustive empirical and theoretical evaluation, this research pla
 * **Success Criteria**:
   * Minimum parse success rate of $\ge 98.0\%$ across all eligible source files in the 15-repository benchmark corpus.
   * Zero fatal runtime crashes (uncaught Haskell exceptions or memory exhaustion errors).
-
 
 ### RQ2: Mathematical Determinism & Dual-Platform Invariance (Windows NTFS vs. WSL2 Linux ext4)
 >
@@ -153,7 +149,6 @@ To provide an exhaustive empirical and theoretical evaluation, this research pla
   * Exact bit-for-bit identity across 10 repeated runs on all 15 repositories ($\Delta F \equiv 0$).
   * $F_R(\text{Windows}) \equiv F_R(\text{WSL2})$ for all repositories checked out with identical commit SHAs.
 
-
 ### RQ3: Micro-Architectural Throughput & Algorithmic Scalability
 >
 > **Research Question**: *What is the empirical throughput (Lines of Code per second, LOC/s) and algorithmic scaling complexity of Canontra's 9-tier compilation pipeline across codebase scales ranging from micro-libraries ($10^4$ LOC) to monolithic distributed systems ($2 \times 10^5$ LOC), compared to compiler caching frontends (sccache) and semantic graph extraction engines (CodeQL, Joern)?*
@@ -171,7 +166,6 @@ To provide an exhaustive empirical and theoretical evaluation, this research pla
   * Sustained average throughput $\ge 10,000$ LOC/s on large repositories ($\ge 50,000$ LOC).
   * $\ge 10\times$ throughput speedup compared to CodeQL database generation.
   * Peak memory footprint $\le 256\,\text{MB}$ RSS across all corpus repositories.
-
 
 ### RQ4: Orthogonal Mutation Discrimination & False-Divergence Rate
 >
@@ -197,7 +191,6 @@ To provide an exhaustive empirical and theoretical evaluation, this research pla
   * $\text{TDR} \equiv 100.0\%$ for $F_1, F_{CF}, F_{DF}$ under functional body mutations ($\mathcal{M}_{\text{body}}$).
   * $\text{TDR} \equiv 100.0\%$ for $F_2, F_T$ under interface mutations ($\mathcal{M}_{\text{interface}}$).
 
-
 ### RQ5: Inter-Module Graph Soundness & Change Impact Slicing (CIA)
 >
 > **Research Question**: *How effective is Canontra's whole-repository dependency graph ($F_{WCG}, F_{WDF}$) and Change Impact Analysis (CIA) in isolating blast radius across the 4 severity tiers (`Trivia`, `InternalLogic`, `Interface`, `Dependency`) compared to coarse file-level (Make, Cargo), directory-level (Turborepo, Nx), and package-level invalidation?*
@@ -215,12 +208,11 @@ To provide an exhaustive empirical and theoretical evaluation, this research pla
   * $\ge 45\%$ reduction in downstream invalidated compilation units under `SeverityInternalLogic` mutations compared to Turborepo/Bazel.
   * $100\%$ precision in isolating transitive dependencies without false negatives.
 
-
 ### RQ6: Memory-Mapped Paged Caching, Merkle Hot-Updates & Storage Resilience
 >
 > **Research Question**: *What speedup factor does the `CNTR\x05` memory-mapped paged radix cache and isomorphic incremental Merkle DAG deliver for warm-cache incremental updates compared to cold full-corpus ingestion and industry caching systems (sccache, ccache, Turborepo filesystem cache), and does IEEE 802.3 CRC32 verification prevent cache corruption?*
 
-* **Rationale**: In real-world developer workflows and CI/CD pipelines, 99% of file system checks involve warm caches where only 1–2 files have been modified since the previous build. Canontra v0.2.0 incorporates a memory-mapped 4KB-paged binary cache (`CNTR\x05`) with a 1,024-byte L1 Radix Directory, zero-copy string tables, and IEEE 802.3 CRC32 integrity verification. It is vital to measure the speedup factor of warm cache hits and quantify the hot-update latency of an incremental Merkle root recalculation when a single leaf node changes.
+* **Rationale**: In real-world developer workflows and CI/CD pipelines, 99% of file system checks involve warm caches where only 1-2 files have been modified since the previous build. Canontra v0.2.0 incorporates a memory-mapped 4KB-paged binary cache (`CNTR\x05`) with a 1,024-byte L1 Radix Directory, zero-copy string tables, and IEEE 802.3 CRC32 integrity verification. It is vital to measure the speedup factor of warm cache hits and quantify the hot-update latency of an incremental Merkle root recalculation when a single leaf node changes.
 * **Comparative Baselines**: Mozilla `sccache`, GNU `ccache`, Turborepo local disk cache, and Bazel Action Cache.
 * **Independent Variables**:
   * Cache operational state: Cold (unprimed disk read) vs. Warm primed `CNTR\x05` cache.
@@ -235,7 +227,6 @@ To provide an exhaustive empirical and theoretical evaluation, this research pla
   * Warm cache lookup latency $\le 5.0\,\mu\text{s}$ per module.
   * Incremental Merkle DAG root recalculation $\le 50.0\,\text{ms}$ on repositories $\ge 1,000$ files.
   * $100.0\%$ detection of injected bit-rot corruption via IEEE 802.3 CRC32 verification, triggering graceful atomic rebuilds with zero silent data corruption.
-
 
 ## 4. Formal Scientific Hypotheses
 
@@ -264,7 +255,6 @@ We formulate **three primary, testable scientific hypotheses (H1, H2, and H3)**.
 +========================================================================================================+
 ```
 
-
 ### Hypothesis 1: The Non-Functional Invariance & Zero False-Divergence Hypothesis
 
 #### Theoretical Foundation
@@ -287,7 +277,6 @@ $$\mathcal{S}(\mathcal{N}_4(\text{parse}(P))) \equiv \mathcal{S}(\mathcal{N}_4(\
   $$\chi^2 = \frac{(b - c)^2}{b + c} > 10.83 \quad (p < 0.001)$$
 * **Falsification Condition**: Any single instance where a non-functional mutation produces $F_1(P) \neq F_1(\mathcal{M}(P))$ or a functional mutation produces $F_1(P) = F_1(\mathcal{M}(P))$ rejects $H_1^{(1)}$.
 
-
 ### Hypothesis 2: The Pure-Functional High-Throughput & Linear Scalability Hypothesis
 
 #### Theoretical Foundation
@@ -306,7 +295,6 @@ GHC Haskell runtimes suffer performance penalties when handling deep algebraic d
 * **Testing Protocol**: Measure execution wall-clock time across all 15 external repositories using high-precision hardware timestamps (Windows `Stopwatch` / POSIX `clock_gettime(CLOCK_MONOTONIC)`), repeating 5 iterations per repository to calculate mean and $95\%$ confidence intervals.
 * **Statistical Test**: Ordinary Least Squares (OLS) linear regression of elapsed time against lines of code ($T(N) = \alpha N + \beta$) evaluating coefficient of determination $R^2$ and ANOVA test of linearity ($F$-statistic with $p < 0.001$).
 * **Falsification Condition**: If average throughput on large repositories falls below $10,000$ LOC/s, regression linearity yields $R^2 < 0.98$, or speedup over CodeQL is $< 10\times$, $H_1^{(2)}$ is rejected.
-
 
 ### Hypothesis 3: The Hierarchical Merkle DAG Acceleration & Spurious Invalidation Reduction Hypothesis
 
@@ -327,7 +315,6 @@ Monorepos and distributed build systems suffer massive compute waste when coarse
 * **Statistical Test**: Wilcoxon Signed-Rank Test for paired non-parametric invalidation counts:
   $$W = \sum_{i=1}^N \text{sgn}(x_{1,i} - x_{2,i}) \cdot R_i \quad (p < 0.001)$$
 * **Falsification Condition**: If hot-update speedup is $< 50\times$ or task invalidation reduction compared to Turborepo is $< 45.0\%$, $H_1^{(3)}$ is rejected.
-
 
 ## 5. Empirical Target Corpus (15 External Cloned Repositories)
 
@@ -372,7 +359,6 @@ Before executing benchmark suites, verify repository integrity in the local stag
 * [x] WSL2 Linux environment verified (Ubuntu 22.04 LTS, Kernel 6.6.87).
 * [x] Windows executable reports `canontra version 0.1.0`.
 
-
 ## 6. Step-by-Step Comparative Benchmark Execution Protocols
 
 ```
@@ -409,7 +395,6 @@ Before executing benchmark suites, verify repository integrity in the local stag
    * For Rust files: verify syntax via `cargo check --tests`.
 4. **Acceptance Criteria**: Minimum parse success rate of $\ge 98.0\%$; zero unhandled crashes.
 
-
 ### Protocol 2: Dual-Platform Parity Verification (Windows NTFS vs. WSL2 ext4) (RQ2)
 
 1. **Target**: Repositories `bottle`, `flask`, `gin`, `ripgrep`, `rich`.
@@ -433,7 +418,6 @@ Before executing benchmark suites, verify repository integrity in the local stag
      $$\text{SHA-256}(\text{manifest}_{\text{windows}}) \equiv \text{SHA-256}(\text{manifest}_{\text{wsl}})$$
    * Verify that $\Delta F \equiv 0$ across all files regardless of NTFS case-folding or CRLF/LF line ending differences.
 
-
 ### Protocol 3: Comparative Throughput & Scalability Profiling (RQ3)
 
 1. **Target**: Full 15-repository corpus.
@@ -452,7 +436,6 @@ Before executing benchmark suites, verify repository integrity in the local stag
    * Compute mean throughput (LOC/s) and peak resident set size (RSS in MB).
 4. **Expected Outcome**: Canontra sustains $\ge 10,000$ LOC/s on large repositories ($\ge 50,000$ LOC), outperforming CodeQL by $\ge 10\times$.
 
-
 ### Protocol 4: Comparative Mutation Resistance & False-Divergence Rate (FDR) (RQ4)
 
 1. **Target**: Subsets of `requests` (Python), `express` (JS), `gin` (Go), `toml` (Rust).
@@ -467,7 +450,6 @@ Before executing benchmark suites, verify repository integrity in the local stag
      $$\text{FDR} = \frac{\text{Divergences on Non-Functional Mutations}}{\text{Total Non-Functional Mutations}}$$
      $$\text{TDR} = \frac{\text{Divergences on Semantic Mutations}}{\text{Total Semantic Mutations}}$$
 4. **Expected Outcome**: Canontra achieves $\text{FDR} \equiv 0.0\%$ and $\text{TDR} \equiv 100.0\%$, whereas Git, Turborepo, and Bazel exhibit $\text{FDR} = 100.0\%$.
-
 
 ### Protocol 5: Change Impact Analysis & Downstream Task Invalidation Comparison (RQ5)
 
@@ -488,7 +470,6 @@ Before executing benchmark suites, verify repository integrity in the local stag
      $$\eta = 1 - \frac{|S_{\text{Canontra}}|}{|S_{\text{Turborepo}}|}$$
 4. **Expected Outcome**: Canontra reduces spurious CI task executions by $\ge 45\%$ under `SeverityInternalLogic` and `SeverityTrivia` commits.
 
-
 ### Protocol 6: Warm-Cache Speedup & Merkle Hot-Update Profiling (RQ6)
 
 1. **Target**: `ripgrep` (~95 files) and `prometheus` (~450 files).
@@ -499,7 +480,6 @@ Before executing benchmark suites, verify repository integrity in the local stag
    * **Single-File Leaf Hot-Update**: Modify 1 line in a single leaf source file; record hot-update latency $T_{\text{hot}}$ to compute the new Merkle root $F_R$.
    * **Storage Bit-Rot Resilience**: Inject random 4-byte corruptions into `.canontra.cache`; verify that IEEE 802.3 CRC32 checksums detect corruption and trigger clean rebuilds with zero silent data corruption.
 3. **Expected Outcome**: Canontra warm lookups achieve $2.70\,\mu\text{s}$ per module; incremental Merkle hot-update executes in $< 25\,\text{ms}$ on 1,000-file projects.
-
 
 ## 7. Threats to Validity & Mitigation Strategies
 
@@ -543,7 +523,6 @@ Before executing benchmark suites, verify repository integrity in the local stag
 * *Threat*: Drawing conclusions from small sample sizes or cherry-picked test cases.
 * *Mitigation*: The corpus encompasses over $1,900$ distinct source files and over $660,000$ lines of code. All hypothesis tests enforce strict significance thresholds ($\alpha = 0.01$ or $p < 0.001$) using appropriate parametric (ANOVA, OLS) and non-parametric (Wilcoxon, McNemar) statistical methods.
 
-
 ## 8. Data Collection Workflow & Research Artifact Deliverables
 
 ```
@@ -567,3 +546,4 @@ The execution of this research plan produces the following primary scientific de
 2. **15 Repository Fingerprint Manifests (`<repo>_manifest.json`)**: Full 9-tier cryptographic manifests capturing complete structural, interface, dependency, graph, and Merkle root identities for every repository.
 3. **Mutation Sensitivity Matrix (`mutation_eval_results.csv`)**: Pairwise divergence records demonstrating $100\%$ invariance under non-functional mutations and $100\%$ detection under semantic mutations vs. Git, Turborepo, Bazel, and sccache.
 4. **Dual-Platform Parity Report**: Direct comparison verifying identical $F_R$ root Merkle digests and JSON manifests across Windows 11 NTFS and Ubuntu 22.04 LTS on WSL2.
+

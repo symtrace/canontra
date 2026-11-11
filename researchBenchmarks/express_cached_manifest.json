@@ -3,14 +3,14 @@
     "files": [
         {
             "fingerprints": {
-                "call_graph": "fd4104a1a6ea12817c243d1b943c457605eda0871bf92bb6dba66fcc30b60f0d",
-                "composite": "011c2fe2911333c10b60fcfd81afa6dba354089fa28e7140113f7b195387a13f",
-                "control_flow": "b949b6da96eff7e15611d11e6896aee2445e84e94532556f61cf24917f19615f",
-                "data_flow": "99ca0c33aecabb45f0090e2948cb00cdd981b6d0db9bdd26aa14860113233ccc",
+                "call_graph": "462481c669a581be782d3d513630c98614cb070db4e761bb4e593af7ac0df73f",
+                "composite": "73cd3ab88eff20ab861bc2d27c9499201de0c574d8a48bc5d31a76f372a19b47",
+                "control_flow": "d6b6f253deae7ab7a853545016c7495410a7b1a8500c6e3447fdd6923de69e1e",
+                "data_flow": "b9d3846f486fef268fca56971da68f5a739cfaabefbb85811a17e754be95c205",
                 "declaration": "1ca81e83b09f582c1a77de4b6128ae159dc1bc86f95811b75a4660e96163e940",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "578f606208dc83b35d953f78bb3d88bd2d5e000df0646a4b646dffb6d2ed8a5d",
-                "structural": "68b9ac5f30d946d34a03a16e9bfdfac35b8866fbbccc20a2687ffaa1aadfb3a5",
+                "structural": "43b007a9dc0de6119963d0eb014bee63ab461fc76822c844142e1f3f90c89e80",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\auth\\index.js"
@@ -31,28 +31,28 @@
         },
         {
             "fingerprints": {
-                "call_graph": "22e176a8fb4b1036b352bf595ea9820aa55e9ed1064d1b71d93544fdabcd10e8",
-                "composite": "e930fb0050df73783719d16cb8f02ba73c4870fc577fb4f5052e69cd22115ff9",
-                "control_flow": "5f70ee37cdad966bd9f912035464b53a88326c4411854d670fba816a1b30d7fb",
-                "data_flow": "9c152994f2218742d77e8a0e11e464ae25eee0fe4ff60bf03f57fcb5c3a188e1",
+                "call_graph": "af84866577c2818b89a05890b4eb0a915d23407f3fad48fb19bad569e5309daf",
+                "composite": "5aace5f855ad4eb8dfb065f9c335c3e323f559afad4e7f9ebea7bc472e4cfdb1",
+                "control_flow": "b78df4c914afd7d558570249e6b7f789ec36cfeff45582d403a0b1821c79a1ca",
+                "data_flow": "37b538dc80c600f0ba30beca82371c128952131cd73a54c1f039de3030f3bff5",
                 "declaration": "ab6ea1b2bebb804009b34718146e0a608e16e14c5a2ee82a1c7b2aa8f4358a60",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "12a66ab24b18817ccb544eca0fe400523e77016509c8774d809d6928836ac574",
-                "structural": "ceb118c3572d012b25059b4ce40fd47c9b6f76c7ec560949884c819eee8020f3",
+                "structural": "c8908c25c82bd927cad5c6d690156803ff3a68270f32a331bb36b1f33e067692",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\content-negotiation\\index.js"
         },
         {
             "fingerprints": {
-                "call_graph": "79453cf4edc0a0654813050f463d741032e86c21c1e17e9b7829b18c29c23ce1",
-                "composite": "bfaa9bed3d4cbe5e2054e228e6123c548b07fda3f0cdc603485ee2a2c3eec4ed",
-                "control_flow": "f9d55fa46c53763e5743ec1b998fd4f51e5b1c1d14b2b1ef89f9fd0f7f6dede7",
-                "data_flow": "2cb75036e93d727816eb9a5c766926674c45e4afd772128e5db86810b7b7f779",
+                "call_graph": "7aa0a756a7b6499d573d4890eb697a3d70e569c12c23899af54b8cafb7e11ee2",
+                "composite": "d96ed2c09f4dd29fcfa0862972d8bbb561ad5bee72a165349eb7c8bd24342f39",
+                "control_flow": "af609d865bcef9b6380edc49ce955c1bbb55a3602c78207bc4e6ac7ddc0d80db",
+                "data_flow": "0ea6eab107cff1685bac640c9dc17600fa3d65f1816ff1ee16b5b280b89c8558",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "04b20cf7fd81426323e8c262742a26956c936629d0b59b3968ae0bc48a67c57c",
-                "structural": "6f13b1695d0aa0c439d196bc3809536ef48aee4a11628a6e1181adf1cec65357",
+                "structural": "23190c94458bff25f1a76580c9890bae1f9e4891c3143ccac0595a764be1a594",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\content-negotiation\\users.js"
@@ -87,14 +87,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "7e733e4e8145157f51c59b168ab65ac4e4e57119ebdfba6ab8b0c097489ecef4",
-                "composite": "73c21ecb6e5f67eb8223af94bb98ecb4d3210cf53cd522fd5fc9e245d7964232",
-                "control_flow": "a3929021c01e80783c80bb9b703d3f5a27beb792f0f531509dfdb43133a696c3",
-                "data_flow": "4307939d706349951ae91456c1715589286983de8503ff8ab577625ecc2e97b8",
+                "call_graph": "6eb70b1127227334217c265eae1ed3097e6bc7ab3439e6fd3cbc42eb6d62b41b",
+                "composite": "c64fc53cb1f6273366a3921176183fc65b027420c328dbdeb8a2d1523d1f2f75",
+                "control_flow": "254194c5ebeb0a67d62a8952b84f97be6ffaf37d8b16e8d94835b30a4f3dde09",
+                "data_flow": "d052ce7a5e6cdac288d7ca71359691514890b6568fc9205205b684785c0481b0",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "490ebc660ba731618bdd18fa1886d5260e1fef34e4ebf4d80a2aa952fa08bb27",
-                "structural": "6953f8a3429a0ff286249d8686f0706f7f3485b1a0424b7c56ae969340bcb13d",
+                "structural": "6961081d15a565330be669159a6839861e068542afa5f0341467de584b50c4f6",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\downloads\\index.js"
@@ -129,14 +129,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "65f6876c9fafb604872dda13c314af934477eea5dbebc0edaa76bcacf9e0b73f",
-                "composite": "b929fe16c074f3721e3bb746c3901d4742f599c8f4faf78b48ccf2cfbe8ca467",
-                "control_flow": "c59f650f7280d3d5dcb4250daa7c5b3ebc30f85997153f0b6667a5dd12805aef",
-                "data_flow": "1f4625084eff2a014f11fbb9fe2aa89d464b9a5aab83cf73b66cf7acdf2f4618",
+                "call_graph": "53938ccb5acb4f32b143877946655b7f6a4b92f3a12f1b74eb0dba5a80cf4851",
+                "composite": "c3be58e4d6e25299cd2f123e02b1e6574257298c4a400da0487ced284962829b",
+                "control_flow": "ea14c1fd53f00d5a34571be4cdb474b02f6fd52f85dd778444d3ed28f6427885",
+                "data_flow": "0ee2008b7f695564b79975baa51927fd1973df43893a696e8628ecc99a30577d",
                 "declaration": "d536f449ab6d44de2f95a3186a2b06e60fe45380063f5b8f6da2952b3e4f4473",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "f0142d830f896ff1a3d4522a4dc9aa2dec13d20bed97a1116226ae3de928a003",
-                "structural": "d0bfbf7ee39c30e29ef6b1f4ba7ffbd9f2a91717363e4086e68e89877d553539",
+                "structural": "9a985fe0fedb4fcec36e2a37d5c757c1af7b7c76e8c056ba632d7822bf0f059b",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\error\\index.js"
@@ -157,14 +157,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "b750aaa137776fc002a074a18c2789a427ad36c957f25c26c622e766818d2bea",
-                "composite": "817e6df66d8fcadcf41c7d4a092308f53e4e36f0ae5fa51c1dd3b224415f6642",
-                "control_flow": "5ad273bd641b06e779ffadb8b6ac2410e4004d56cdde0e29ba8dd5594256cd0a",
-                "data_flow": "615797b2a865216bf4f412d0504721cdce092f7dfdd16345d19f52bdcc4e41e8",
+                "call_graph": "c0b3b135f6831715a8cf50f9bd49768f0aa21684a9bf570c249611baaa02987f",
+                "composite": "e13a2517e66f7070877a4ef4bb62c9df72eb3b0626949fad8395e448d424a604",
+                "control_flow": "967dcc5a1b7ab7b115784d56325fa8c2de2c9030bf6340bc81d5778f645129f6",
+                "data_flow": "1e460e2500a40ac5582f49d8372cf09531bbfa13f68951ce0665c561492addc9",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "9802f56e252493e30ba51f02a896248f6679a5bcffcb80a1bb766fddccccf853",
-                "structural": "d33409a2a7090ab9aa1c26f6a1da5819cb92c1a06a50a8ccbad00360991a55af",
+                "structural": "a1dae1c154509387c2c9e410cd5e557571e8a84c25b8909013fe92a7bd357810",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\markdown\\index.js"
@@ -227,42 +227,42 @@
         },
         {
             "fingerprints": {
-                "call_graph": "71abe232d928cc79062f2d9d6a9382ee9b79abe4e2f6dae6dd4ad895ca7d88b4",
-                "composite": "aaa282a2143dd4c7e3a151aa801da5d2bd66a003e6da2a5e805c7d2360ea87bf",
-                "control_flow": "0ebfeb13179f47e3671c2ba05aaf68314bb167738406aede3e2b067adfd89ec8",
-                "data_flow": "391778805c85aaa094cae916a9ed9c1e4c5224bd3c5e3ba466a83a584de9a4a2",
+                "call_graph": "f2147907e49b38d19cceb987bfab0aeff5d3d2cbd223ead4278238bf3973c9b1",
+                "composite": "387bb7b2eb371e078eb2c2b373631cfc928ac8fbb57e9215861ebb1a6630e2c4",
+                "control_flow": "9c1071fb1f2efe777f6b7cc27046187e5a86a1583b9d19d2c8cebd703a883f91",
+                "data_flow": "ad0c9460cd7cebe0757721bbf14fc6278e0f4e30a8b311faa62905f65caf3ce5",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "a9c91bc63821c75262d5c0234fc85114edd28f0b138dbcbab28615aff1a9b0f0",
-                "structural": "9b28fc194db06c6786d9e70eb2c697bc1d2a890c4793b006691658961b621ffe",
+                "structural": "e2c6470ea8ecb959e8c6d0563b23da76ea38ddeb297bf7e1637656f44e1cc4d2",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\mvc\\controllers\\pet\\index.js"
         },
         {
             "fingerprints": {
-                "call_graph": "6217aa4c56e48b79f89e39a0128d8beab5d1f638468e1749a06c274114847086",
-                "composite": "849c0c66f9eeb3474bd22e72214675c55cd78d5fe34e57c002efde1799dae85f",
-                "control_flow": "8601188b42ac3539501d8c7b4ffc3113d6bad3dfe88b085d8231397ca21ebdad",
-                "data_flow": "e6d47f693f1ee68688bf53b3d2ec21349b7539da5b6cbd193449f1866ea3a3c2",
+                "call_graph": "f2147907e49b38d19cceb987bfab0aeff5d3d2cbd223ead4278238bf3973c9b1",
+                "composite": "ea0405ff3a78359102ed4d66c142b1691105ae9140f77aae33a84ddcef5b8bc8",
+                "control_flow": "d639a6786f52df5bcb3bdc73443d9918a77fcbef4f7fa208bb864634ce695267",
+                "data_flow": "77d28a68a6128bdc186d78ecfac925ad5571ef77b24f27167aa8aab2fe4dc776",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "76d00c24b419068347370d096561a5e8430febb2349bd8b24600ae1b56d701fe",
-                "structural": "2e65f0a72e1611fc30c59b05e87573fb3717fb96241bf16dfeb84ed00eb35913",
+                "structural": "850bfeadf4f056de61856f063bc0ef167fa471eb8f925a33bd14c43424fc457b",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\mvc\\controllers\\user-pet\\index.js"
         },
         {
             "fingerprints": {
-                "call_graph": "d8ea647ed09876037fb85bf4c6a7bf20686eacb899a568361e1663e881386dfe",
-                "composite": "b14d72ece777c0c645bcbee9b988231d5c5bfa9e7e09f3250cf653bf29fb40a3",
-                "control_flow": "33664845d7a3076e77882d224d8710e0fc5925d671c955d768638dced9fd95f5",
-                "data_flow": "29971cd755cbf962ca9faf9bf5a68bdc970ae72018db9413e4577b4cc567ea75",
+                "call_graph": "f2147907e49b38d19cceb987bfab0aeff5d3d2cbd223ead4278238bf3973c9b1",
+                "composite": "77fa7116e1850b78845bdaf2b0696ba5fba08c92ddadd2723180881121ff579a",
+                "control_flow": "85b4d6464874c6ca36af6d2bb389583162191d4fd1c3d30f9c04d01b3cd45886",
+                "data_flow": "4242bca1685e7c8cb616d1e86c067450fc6e60fda040cdb2ddfbdff930ed3eea",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "3c1821c5ff0a88949c65386b74112e4b2519ef94402fc41b258cf31e75e6797b",
-                "structural": "e25627d663690dd9af89f0b0a177e006d7cb9e49bd584df155214b7de0eebdac",
+                "structural": "af6e2975cd1fb936abf9a6a73419e3854377e6ed1bcf13b1f3c18cb34605dc06",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\mvc\\controllers\\user\\index.js"
@@ -283,84 +283,84 @@
         },
         {
             "fingerprints": {
-                "call_graph": "f16e9ce322a8c1d9f401fd7eeec7d67609b04a2c4f32c5da79d103bd18e198e9",
-                "composite": "ba147968898f9a0cfa169c4c95d27347a363c8c054e71e8dc08169156384809c",
-                "control_flow": "d634d1f07dc08f212731e16e37b42791be540baff0f85094aea8c43c80e6f67e",
-                "data_flow": "2b3fde15a83022b926a6ec0cc60c726631c1a4b0c789aaa556e6a677a5163d3d",
+                "call_graph": "a28a3bbb9ad64440b7fb49c993c9f89c2399d94a1bc37c615bb767a4e4529272",
+                "composite": "87317619c7bdfde81caedf47c7eaa0b2f9c633d68b9a8557601a7d0e1cbf1200",
+                "control_flow": "5ee6ef860d059f80e7a8eaf4d1832ecf1245e76c611fb8e50e553266160ac964",
+                "data_flow": "31dc264677c36ce7c03c0a5d36a7cb1a46bd5105a47e184a4ba91c40132568bc",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "92faf9f03c301b900ae10847a17b3008342d5211917af4b66eb21e72df9bd7e5",
-                "structural": "f9b63e7b77e9869e7f02c31ce77be1e6d125de5674a8b48e8b3601932483946e",
+                "structural": "4ecde600e5a8737378dd11f0051d5d5d4eff3d2ce07200e958f4419292154ce9",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\mvc\\index.js"
         },
         {
             "fingerprints": {
-                "call_graph": "74b0471bad1150955918aa056b9804bc1e4a9f4c2653c71279d675334ff903e2",
-                "composite": "1991cfb694e00f13fbc4c2d9a3ff015c31fa35c854c137533ac83425a131eda0",
-                "control_flow": "ace7afd46d5e136e95db1b4c9452c04162b558eabdf8d0ce41217ac799c6b7b6",
-                "data_flow": "b90139c70459f6dc939130a8097c8ce6b840bd0a0881615edc20f87631883f01",
+                "call_graph": "e689798117130b7be06ae9b73e30e1a611d715ea092cc326f5db0bcfa7849656",
+                "composite": "974f473c23a40e595cfa876451cfb286f006ada4d2df3606f7daa933cf88be9a",
+                "control_flow": "0432e976abc13e7d93467eb7728b3d1c05756041469aac6c14ef4130de8c084b",
+                "data_flow": "dcfe60767bf989d524777823823bfde149b4642ed49c2ec4e6baa88473ba4906",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "f2272b5db8b9a4eff06dfa427558e29fe8df2783e3d27d1d4cab428af2791ce5",
-                "structural": "6d8f1d7da4ef75afa497cbff3a36d5ef2092f6edb3d79d0138756c637d9bddf0",
+                "structural": "93cef27d57f5bc81e4e48196d41335b1c218835e91eafd75b4937f9b31cb4135",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\mvc\\lib\\boot.js"
         },
         {
             "fingerprints": {
-                "call_graph": "37576d907418352a0428fdd89ebc8097aa5710bd86effffb24e72fac149c7e17",
-                "composite": "ae121a669fb7c7be4ce762470501566c7db45d5106bf4427ce298874a553bc5d",
-                "control_flow": "c4ef9d533a2c397c3d34314e81d1713b6c58175f509fa8dd315630812d3f058e",
-                "data_flow": "af3fe3be09b2e556fa37714c0381d4d5603ea99221507b549ef2d3d1e68260ff",
+                "call_graph": "511c39469e6c5e1330f95e2f85f8fb3561f186037cd452b297da1c17588648c8",
+                "composite": "7f734f1c9f5888f7baf8e58a8351d7098e2e734ec765536de7f869a9472e3fd0",
+                "control_flow": "eba6191c8bb0f82b8fa3163d0179da2cea692ab961460effce642c7b9172907b",
+                "data_flow": "d82c4180af2cd362bf48c7061768529094328ebe842a69f7d2bc37eb48725b53",
                 "declaration": "6669d079fd8d2416022e09807d69e912aee1828dcfe1092a3b64643ffe926591",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "9df08d9c82ebcdadafe21270c248231fa7d35ec9275fda33124dbfc36dad2f53",
-                "structural": "3d4f62a49f0cb41215cbe30afd178c6c7ff54d71d728a9cd747ef782fe1c369d",
+                "structural": "cceb5504834cc27485eb60d9f59b672c386f7c8b1760a905db73c74e72f83bc8",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\online\\index.js"
         },
         {
             "fingerprints": {
-                "call_graph": "4cf1fc0deca2695eb7dc28b3acaa1cd0b7990f01772eed5cbeba4ddd68ae1a8d",
-                "composite": "277bcbb3f913b4bbf727b8f87b9c18679b1da79838d8b117f3b76f2c21605317",
-                "control_flow": "27ac360bd8ae3a2e57494d32e1c09c142e757dfa7e2773e53b7c787e772af6d1",
-                "data_flow": "912cd5657d1a9d6f5a1082ea053e18aa2f4fce1be001e12782cefd28410b03b5",
+                "call_graph": "c914f4f55ce80acd6a30061b4c4c107e4cc1d15f8aaa915139986f945e7245fa",
+                "composite": "d53bcf379ea7c6dede997d99c74fc3de988e5c24f29afdeb0bf39f701bef7e2b",
+                "control_flow": "13b5c56e2ae2e5747d85e90b716497c29a66b9de6f044dbfdba776039b3d017c",
+                "data_flow": "8db5533e56d79e33fa47a7e41dee93f3fffd31b713a338303945532ff96258b1",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "478c18d033d8bf6c2b7db3f5e221b71adc34384cc0c7f301f7577874837b0742",
-                "structural": "0b43618cfc28cbf14ba952b95cc374119318f862f2b00ab04c5ab70f09cce7c9",
+                "structural": "9c27a849f58e85f91a0473ea20057339963d4143fbee91008f2e6c3cf6bde123",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\params\\index.js"
         },
         {
             "fingerprints": {
-                "call_graph": "9e4fe53835699ea203d8d61592ffd92bc0cce5d72032edc2909ec817e664f503",
-                "composite": "cdc49d7df05d6fa9a3beb7d65f647b38b2bf1da706ba7ea5584c97d3a019697b",
-                "control_flow": "4a201386c2d3695d0f7486c4c7e23ed3c84a53b9092efd5fdd91269aef27ce95",
-                "data_flow": "086a8220ce575b4e572da73a1c95cf4bd6ac0ab8c44a45cce3670d04c4910ee2",
+                "call_graph": "4fa5f1743fb787542a30adb35088aec991cd13c1e759dfb8eef43d1e0b9ad058",
+                "composite": "ced90976bde0535f40cc576f12fc82d747d03b3af5617394d2046249d53b4bd5",
+                "control_flow": "b1c43249a0084c3507ae48d9e6fe5748a8db3f3271cd6f19fdd8e1146e618c35",
+                "data_flow": "97d9529e8484b8a8353e6d2e5cd6ec624e5cb43d3e66c64511d202c5a77aa77c",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "d69bbe049c0e491dec2084d146b30a7c3bc58de3534e57d3f506678c174bc337",
-                "structural": "b65287c95c9a4d996d4f0caeb67e85b30d0229d295c3239b860458bf08a3071b",
+                "structural": "f20b373fcb1412857d1a752ee24760482cc28763625288e7996a0fcce9c50370",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\resource\\index.js"
         },
         {
             "fingerprints": {
-                "call_graph": "a4fbc1c2ce07e14f2de7d0545e9641af850a7929a221f75c51f1de2de256e7c5",
-                "composite": "00c2645713bcd97b2961127aaaf3f63e6f8ce8403ebbccec81f1ee8f4146891a",
-                "control_flow": "6e90f4f27a36a6843ee5d6d4c8ffec313e6478dbafd436a48e0c75925a30963c",
-                "data_flow": "2030ea1c76a3809e11c57e002d0b2139b0a3aef7a555024315a6eafdf74cf669",
+                "call_graph": "4fcbc75e84b9b13c7a7d1b3a8a42b121223ba27f8f367b1411dfbcc706a10140",
+                "composite": "33bbe2ea01dceae68bb6365e7d2d70e2da2cae6ba168dcd481059b0f2e32b04e",
+                "control_flow": "7a0b1773501a32c0d037e5555365d094253a8e111b100939f964cba5d0cc9c78",
+                "data_flow": "8c6678946057e6bb1441b2b2c7a8e42dda839970de302c79d1a3ca36d81573f1",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "72f175ed15a96d887a025b18280c060e0010cc2ce4e6668589a72ec6e2e55db1",
-                "structural": "141a791172400e18b6b148abb955f9758d85fdde9aee6f9188771cacac05af66",
+                "structural": "3c4fdfc5f819428137a8dd9dc834363d1c77ad99bfd1697b6e7154c70c0e9574",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\route-map\\index.js"
@@ -549,28 +549,28 @@
         },
         {
             "fingerprints": {
-                "call_graph": "88202af5e08fbb2bceb3edd4f91b43f6ba070ae1e09fa1b8dbe2bc7b407520cb",
-                "composite": "938eeecd7bd912f1776d4e99892393790632e5c058ea93816b6cfc2c6a961048",
-                "control_flow": "39e357284ac329b7e3495a679f59faad6f5c189df7a8b081d9390ad6f53f81d6",
-                "data_flow": "1e0aef658a204c8ddecebf2ba75a11556aba3e0cf614d6c708de6bdb784c744d",
+                "call_graph": "1c757011ecdb63429ee4307f850458e56c761dbec992f96ce455a04bf4e0e047",
+                "composite": "3af83d64ae38695d934e47d64d1347a0afd94d6915829fcd47f1731b45e81c63",
+                "control_flow": "3d59d7757bc44bbe4eaf1633b847494cfc3756e5f6fd0796b3368e4d60804ce8",
+                "data_flow": "8cddc37c9c4cf4ae8573faaf4e0874d1eb04ed68c428aede9686170e2bd0b2da",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "3f136e29f4b8fde79a9205c324d26f10434663b171369e42b8f7cba2e7d898f6",
-                "structural": "ce8d4218a94cc56453e508123d62e02608cb785051e8002a1fd2e6f07e285c92",
+                "structural": "b1f3ee55e9c9f1b9d43d3c3e19f9296969636882999c9e51473adad99cd50afe",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\view-constructor\\index.js"
         },
         {
             "fingerprints": {
-                "call_graph": "f58f0ca1c65b18ec782aa590fe932f78a8c9f8f459d8aba834e97f622cadad4c",
-                "composite": "b6f4d0ad8e005012c3344af483b02ec31152fb915587ff4121ec3c51f5c1f0be",
-                "control_flow": "5554cf444f85488cc4736cf572b2c8909e1600dcfcb075aab09d9280f04f4db6",
-                "data_flow": "e8482e5aecad76c4baef31b1055db35d4a78ec98f5b349a18a0eb61b5e5d42b6",
+                "call_graph": "53660a3b4a977b77fea515c0c51e324f5da1bcb230a9527339232f46f354f486",
+                "composite": "60617a4fabe9d27845ad9eee650191103977ff2fe4ce2158316ba8c3e96e3263",
+                "control_flow": "a697389b799021040c7ccde4d8cb651e202c69446fc64b034eca090675c2d64d",
+                "data_flow": "23e9c3dfde35783a31b6c7bdf06e04f6a17156a30b70fe4873d137810cacfe9c",
                 "declaration": "a5778a42691eb0bda378b382658b669241739f14920195718f7ec86789b9bd11",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "00b1868951bb30c2d5af0edf0ace09a1725ec0919a0d040993ca2d3e6be27be1",
-                "structural": "a409c2bc5c52ab0fe9c0d6154a4038d8fce4f6d5f12f5c28c60a0a18ab1c5a55",
+                "structural": "eefc2fb7f4e1eaeb6f5b0e5831a97443113ef12e0d75e8540de5898136064a9c",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\view-locals\\index.js"
@@ -591,14 +591,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "1ee50faebfe1c2fe17d1402f08ec9bd3aee2e79da726639dae223b7ecce94bc1",
-                "composite": "3cab745d6f8038c91266bdfe0205ec43cbc5c2ff502c3f09368d284baa57fbfe",
-                "control_flow": "2917e9f6b72e41076e036614efc16dbd02be905618540b57be07bf85ff494e5d",
-                "data_flow": "ff53a3e71bfbcad69b6c93e86306ed7e125246e238c14ce0f06d9786ed64568d",
+                "call_graph": "6e92a657aaa35b7dfb212aa0d32268da42ff2827ee1a2d2ef962420ab00377d0",
+                "composite": "46b22221ac48c8ac16513aa9ab2d96602f7e646fea59885d2509fce25698a301",
+                "control_flow": "ee9fd5d7a14876fe966388e32187a610c6890b7e4e669dedfe6a20d7891cc942",
+                "data_flow": "cda8e27eda0970a677338a815ba9d62c5c633e5adc9ee8133713121675cf99bc",
                 "declaration": "e251ddf8914b14bb21f769edbc35d7136c0a746eecb3f5ed5eddbd1409d55ceb",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "93bd1efba65f3ad57eb78d66461ff015c54396a70efc9880ce9162524ac83e00",
-                "structural": "a226e640ca799b465050caa20bf0d34b46c47e2d21c017640a2251cfd9892879",
+                "structural": "7a622138f976439ce46efdfab0b0ff87bb37aa05480b332c75bc3eb994f03920",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "examples\\web-service\\index.js"
@@ -619,14 +619,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "37dee06c3087dce1cc4cc47cfe1dea48d2431679ca0d9056b958127e94bebe50",
-                "composite": "b311f1e0d3d1191912c0fa54428fded2af452978506bad37b62268dabc6dc6a2",
-                "control_flow": "eb54229433ff796b4ffe78852f4c3d664e762673ed1c233a3498b3f50b653285",
-                "data_flow": "acef48ec033356ad5cdfed0db4b05bb753d70777bba50c03b69e4021ad25e3a7",
+                "call_graph": "339a0d5de2bd442f3c0506f5044c5ae589973b16b597e565f184ec20db2a9f26",
+                "composite": "3daf15cab7705061ad36a1a896856489a2f592707e54b1e3e2bbb7e14b46ba2c",
+                "control_flow": "cb537ec2599b769ded205bcc4e7f1386621924434a431a1829d53b74551be4af",
+                "data_flow": "734102a5e13d08ddfae6aa798f888a32519aa9ed7cd369f08dedb60e15c2f09b",
                 "declaration": "8ee554a402257099e2532a9e530adc05e12e5870bed3bd77dc15b56b087255c7",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "46d397422cbfa7bf747d4377bdec44690ee4fba94b0b6985572b4da03d1dd73b",
-                "structural": "499d148045e1c1012c91970cf8471d198a5685b13069cba4b7a11bf8a744ef3f",
+                "structural": "1af495d03bc5c38351dd1d0c221684cd50b31430c64680233873baa07939b418",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "lib\\application.js"
@@ -647,42 +647,42 @@
         },
         {
             "fingerprints": {
-                "call_graph": "b707fa79e39cb5e8c44b3b0406b364e1f30aff7379ffe658d81e8eef49c5d923",
-                "composite": "1b51d21384fa3318bf79937eec7beff05faa0674cbe127ee50d7555e39c6988d",
-                "control_flow": "255ca5172515ae1ef53ab2dae2f65b1936497382fde10cfef78c6001c7705db8",
-                "data_flow": "c421ef03eb0f29c3eee0a986a80befd08c806a1b18092a378aca31d436b31d0c",
+                "call_graph": "e6f5d08a81448c62d8ae5e416344949e003da07c41eb929a0a5ee134f7033261",
+                "composite": "076e7d665acc43243ef06cd5c323604670abdd7d9487e637ff5ba34a2690b3e6",
+                "control_flow": "62e6f9da1621733731e80457a736309efebd8d05b96219146932bce215e55bf9",
+                "data_flow": "ff3d27b093d4d720241e578d257a1318b4394241ae51f4e035e31db278454119",
                 "declaration": "5a6375c49363f2d039ee1f630854cc13199f996ab2110c58703df6f92e2161ca",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "febae9c4e0a7d4ba6ce8c158a16b5712023c0e5b8f577705591f6b6f83d72d97",
-                "structural": "be96a1677f7f89592acf45d4816f0e16d86103e63d3e63b42a9ff941963cdd43",
+                "structural": "3bcc7326c86ef0dd7f8079a9d16797ba58bd01e1e6698aa1374edb3adaf993e1",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "lib\\request.js"
         },
         {
             "fingerprints": {
-                "call_graph": "b461eed5979c3f3712ca7d37f7b14b82909df368f49ed7f6e554c82367307b3c",
-                "composite": "29fa60269d1242a3e71299a49797819dbce82e3ffda0d52a227f9f296ffd384a",
-                "control_flow": "703219ffea08ed70c620f60d36df71f16cf29d947d256c381cc4c7f45523a5ef",
-                "data_flow": "735e885b3bd4a31febec906168665e56da2e47987e0ba13d4b259008318e35e2",
+                "call_graph": "3e36456190eca9c44f5b274cd0951ace7cb1dc7a96ae56d024848308c9369515",
+                "composite": "4362426bf4aef3a318cb017e07c1af182d52b8001166488fe8ca99c1648125c4",
+                "control_flow": "862d396095685b3e4e108b9d2e883fb54b88d037d5fc9f38b87fe9720f221a07",
+                "data_flow": "562d3b56a7afd8e773cdc0cfa2f49e33b7c4096af7a6e365d1f3aadb5b02d9fe",
                 "declaration": "6fc6daf45b984263d19aa250f2e6bf2a3ad43992ae4be22d411bd2fcb5ff7424",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "f9dad5f34d7b7a603c25b4a3b1c281abeb59e094dba8dfb736db63d9345a6e81",
-                "structural": "d12f59624a70f76a255411edb41c5b94673d4a4857d132eb0ee91181a22cd790",
+                "structural": "8ce9f085bfdc1b7c8fa7d80f4bb2604728fa550d1caeab30bf836e79f3902efd",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "lib\\response.js"
         },
         {
             "fingerprints": {
-                "call_graph": "8cd6770992e7220fb7968af225a3fdfc3d4620057f62edf4d83d15ce3a209ed2",
-                "composite": "191c39e73cabd537c0aeaf9b0a7575f18e96c7194170fa6099d0b385bed57b9b",
-                "control_flow": "9dd8c4cd1f6f503447231aa46f44596b39d4f162a6e12d29e79ff76afeb1a48d",
-                "data_flow": "1569808b39e434ec7dc172ff1c72128f8a318983ff9a6d5aaf360916c5b387be",
+                "call_graph": "0e92e443d50e58bd79ff3c3d2c6cf51a02138b17e1425247711f42ea4616ff7b",
+                "composite": "d393adcbc684055cf98f7fb9125e01adeb94489ce18f8b43b1aa9dc417603681",
+                "control_flow": "3203116b2c807044dfa1e7a783c7a9ff1fbf24ea4dc64fbebb150133fe32f8e4",
+                "data_flow": "c11c0da1c26b5cf245aea49c7d19da22905f26180fc37706293be66d5bff4e69",
                 "declaration": "5f418a7149a264caed83748b3dda81e784b6b591d087ca011fde82efd6bea1ce",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "7f76954b84a7197295b3511c0b755db851428934e454383cc854342de2e8615e",
-                "structural": "457e207da551cbf2572b94d206442cc2dcae755097cdf6c592e690eed0f64fc4",
+                "structural": "ddeb3a217b49e8a8ec99bb067ce1f83324b73cdef50767d1c1c8ad04a9a9f734",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "lib\\utils.js"
@@ -690,55 +690,55 @@
         {
             "fingerprints": {
                 "call_graph": "59c8f91dce38342eec84d34fabddfcde71b2bb7e9de14d72e72babc927721128",
-                "composite": "d3cfab85db290d983d744e56f7beb4979e08c53110655c38607ebe7c558443fc",
+                "composite": "277534338e9880d6670c13e9b19301295adb1e4ec4cfa3b094917c6cba9621fc",
                 "control_flow": "6f38215c4b8b337d3622c4c3ce2e8f6474af22618f99a5332a6d925d7ff4c03d",
-                "data_flow": "83a0ed5f43eea7cc1b4826f62a6a683eb07edad6bc59b60aeaed5f8e8401525c",
+                "data_flow": "199f9531fbe601bce76b084009c37309bacf5b54fc22641fef66c2a1271d94a9",
                 "declaration": "4a318344dbe11e40f70d2c9bb413360a3d2a208e99bf5ae7ee5c34855a720e51",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "cff13999df40e0d8623ff23f41f933bb53868ddddcc8c0ef5d82dab5e65fbe79",
-                "structural": "69c5acc2ff602030ff836eb5ea5c40e3efb1f0e7c8d230c5bc675527fb1ad04c",
+                "structural": "095fbc8a68b548c4d0ca0a6e462e410d23e67651ff688571cbedd2b50467dc80",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "lib\\view.js"
         },
         {
             "fingerprints": {
-                "call_graph": "2f6142bd06f5a3a9b0a33efed1a5dd13f5f0ec30c2d17bd47cd9d45eb64f8a6f",
-                "composite": "428198ef7cedbd7c20e9448abf75f37ee2b024990b7c68129bba4cbe9dec5dc4",
-                "control_flow": "0a7d6faa996d68f809f372a416c50699fbd34828a9bab53a291a68019b13de68",
-                "data_flow": "5b8c9ded19afe4537690b1c3d24936e9b3d0d1743d70332d9e33fc80292db399",
+                "call_graph": "ef25cec5825875ce64bcc4ff85cce2e8fee78495760da1fa63c2e72d4b2e50ad",
+                "composite": "a71d8e2b3c645928e9d535205383957570a6c7b48717d1144c6209976670d651",
+                "control_flow": "efd33500cabae4ec25497b7bceb7305cc02f0a27820afbdfa23786abfe5df11b",
+                "data_flow": "7ea00fa6bd59a5e776bae1240692a04a728a26d938afd68725f50fdb61e058f1",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "dfe27fad4fc608e837f7d021c58ce1b94a470e2e3effdbe1692ddf7bdbb0e56e",
-                "structural": "6c7f35c307a6276d97b0df34d0d56d00502fd3b6931d28bb2ded3c5539de220d",
+                "structural": "edad00f3278566e9e7d4886d27137fc40bee308db6fabd4a5f2d7ce5a31b9a09",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\Route.js"
         },
         {
             "fingerprints": {
-                "call_graph": "44c793823b2c846b81ff7361d446b084fa5fb01f234e973992e1a67fbb1d5ca7",
-                "composite": "64e9a254bd740fcdc7bf34353fc6aef2f54747d56645bd2e54ceed7e3c8c4adc",
-                "control_flow": "c2d964b7acaa20536e3df5fe00f5449ef91587e05aa771eebe75ab714e9235de",
-                "data_flow": "f4c69e951ce4ba31e65d4d14a184d4947154fbc0a68667a0e982a2143672c14e",
+                "call_graph": "4ef05e92074f69e3068215c7d911352283d1f1b2788257fed5d10cd2dc0b879e",
+                "composite": "b3050db21b61ba5e1315b89e8d934f98cff30ba3229231e843198a5f50986c2b",
+                "control_flow": "4fa7dbf4ad753516803b879ee3487efafe28c2350f4d8245371ea859456eeb32",
+                "data_flow": "3119eed440940aac846c7f80eb5799fb29338c62c67ec5c3ccb48fbeb4a18aaa",
                 "declaration": "6201d0fbee7f393dcdb71b903604cd9d17f29b18cce95d0c250357ae749288d3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "5f3e5314a76761a751255f8cde8c172392a3bbd7847190a7d67d3e918f65b260",
-                "structural": "ade18083cea1a6b07d1bdf78f53e4bef0fef396abb15c08ecab0e9bf179aa7ed",
+                "structural": "58f9bd60ac81359c766c69754c22ecce3221f22326ed278d7ec9f8512002b838",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\Router.js"
         },
         {
             "fingerprints": {
-                "call_graph": "893d9d875fa9b8f994e8eea00555464563c2cc1ab42c42d80495d0a3fb0f182d",
-                "composite": "40b51b57b926d121ee28cddadc4ffb33bba6c0cf95b04fb812b7f9b3fd638e58",
-                "control_flow": "5972392393c889f90715dad1407ac5a2a97d29742fcf91e2c2786c98090a15a7",
-                "data_flow": "1533af59d9bcf0cd078e64947fb2712c1a2487944f5f1cc27327139bc92ba40a",
+                "call_graph": "c19b46dae3699aaeed38c5ea531cdd3892a314c585fdc6da10bbed4e5d15e5a4",
+                "composite": "2bd23590265da4907421c14ec63693f9e2ce948998393f68be9eb167061ec0f0",
+                "control_flow": "d45a240c13537c76483482e854a1ffd0bf71564678774f15071acac10e14b013",
+                "data_flow": "128f00d2461b9093bc7c29f56e36d8a53650bd2ca8cffb717f5317207c975ea9",
                 "declaration": "cedd3e335872c7e873fd639853b450da6f268fbda98df5bdbcda767ba1c8b388",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "af45bbd8a047e0d945dced2e6281da0e20a78f3abb928336118721ee792e423a",
-                "structural": "8a92314428a77eecce01d2122e4073c57cb7ffa6861967e913c115fde35f4c9e",
+                "structural": "985b4f33922aa99928f8279ee8ef7ecd8dff8274dc50bf56d730648e3507274a",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\acceptance\\auth.js"
@@ -759,28 +759,28 @@
         },
         {
             "fingerprints": {
-                "call_graph": "15e00d4506e849e1e57fbc021168f2bec6de8f80bd4c25ca4103311f9ca31f4f",
-                "composite": "acfd35c08a622f82d285a59729ecab47ad95f6d0200d6cbfafb5750083cf881f",
-                "control_flow": "1d7280e6558777bd079ec43c28bde80af1dd7e8c0424893a94c4a7c10c2def88",
-                "data_flow": "47b3ba5ec3a8e8be238323a790dc0bc627f971636d4efb9e93a915e4686155d1",
+                "call_graph": "a4acf22b3f1c193df18582ece21d2ecdf0f99381a3f1094a6a7d1dfbe8c82bd1",
+                "composite": "5ea0f8c2812cc9ff87bdc6617076173d1609d81cc2abe353dc60f01d4d95f4bf",
+                "control_flow": "7b58cfeca3929c35b74b7c19eabe1687dddf0cea597adc504913e51245c18a60",
+                "data_flow": "9543b71bb942685a31288e79263b7fcd0bd479d4fb21858c656e56ccd0c21c64",
                 "declaration": "2d6d66cac9ad5ed7f2c55d24cc7fbf2f6cc1f4cf0b854e12a994b223bcd67246",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "64bb5338809643092cbf965dec41289ec529f7d2c82dbc4dcda05fb818f64b84",
-                "structural": "94cc2b3bd5a58a1787c7cba48a591363b676b8c6910136b0170c2cd42400d8e5",
+                "structural": "c077cf7d25169ac1700b2a7d3f23c2fa9383cfe6770415f47478487cfefc9a76",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\acceptance\\cookie-sessions.js"
         },
         {
             "fingerprints": {
-                "call_graph": "74b75e7c02f5329f652adf34645c65d79516688a394ecc0ce09d88f9a274bf90",
-                "composite": "b69890803435b7da6e82480b91897da4d83e02eafac3f46afa96634f8816450e",
-                "control_flow": "cc960f39f407e68a375bafe71edbb0b28ec4c2573d4f02be0398fb2ec7300677",
-                "data_flow": "04a15bb3f063dcceed680b55524ccb4ab87846512037238645405bad6dfc1f7b",
+                "call_graph": "2ea45d2568ad498cb73e4b54f6eb659b138c862bf3af891a739416c081cf0281",
+                "composite": "01775c210ecdda44eebead24e1521114066fb64c713f5c59f2a41a6381ad10f2",
+                "control_flow": "205116af843ad7c24178fbcea3d89fa76e3202008097cf7d890fc9decc490be3",
+                "data_flow": "8d6a6b40a1a09de6ed96d1fc9cc77eec4ddbada3a1fdabfadc205f3f672c46c1",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "72d9be5f958a751968c6f145110b2d13613020e4095f2a7c06e43fd69f34e3f9",
-                "structural": "b6e56e524bff292a096edf13eb4a4fa855170fce52b7f39aac80dbe138e6125a",
+                "structural": "ad7c39c2da971be9f20cbfd8b61f236f511b86df4e1b40e8a5433ea454923b01",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\acceptance\\cookies.js"
@@ -885,14 +885,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "84667c094245677f0b6f01e779b85f0b72514b7df6dbff3524a2959fa8f48979",
-                "composite": "a6a472419582cb77817e1eac8432ec7aefa2fe145dc549869c3c9982ad2492f3",
-                "control_flow": "defb3532cee08708039221dff65a09afd141f2db75b87a1a37915942342648ad",
-                "data_flow": "0f9f55b2cd34a809c90c3fedc7a2d79bd04dd1584b01a9687f32c9e3c5477635",
+                "call_graph": "e555c2071bd7b52d3c0597ba0b36f4b3618f7aed532dc4963df80067721ab7ac",
+                "composite": "16f2e9550ec889cd8490bbc3d76c384f06d61fb213df06d20e885e53cfa67be9",
+                "control_flow": "1f676f9b871c64d2719a4879388f0a648565d92e13da7eb596673d9c853f8e25",
+                "data_flow": "2ecc5eabe2966981b371c711bfa88ecc575a548c2aca9a45262b6c1db058466f",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "04f53da421997131d6b8802cdb3a2121000639c1a4ae0f06a2589d303033628c",
-                "structural": "4bd6050f1cbc1b09c550a10d98cafe3ecc94e07e7c9ce0f811a82cef4ac1f7d3",
+                "structural": "12e23a088a26969da52f4d7ba28733e8ad16e2d2e3adca9cf993505f2021ea29",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\acceptance\\mvc.js"
@@ -941,14 +941,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "600e23efcb1b397e59ac55dfdb922ee314d34034e9dacfa35230c70587287ff6",
-                "composite": "5f19711e62e27a184de5156d0051d39cf5486540d607c7e2e349c924a49b71fd",
-                "control_flow": "2bce0601a6de874c9bdb0db957261449fd9c0163dc8fbeffc062404f0ec56804",
-                "data_flow": "e821c25f14217eb80172da57b5ad5143eab1692a51fb1781e9bf23350bfe5d72",
+                "call_graph": "13632f42c1815ae73f2b760b34e8cf5b0a3caec8dcfa508b1ab1cc879391637b",
+                "composite": "10a42bb19d1fc207aa20d2f135cd8d2f880c455ad634a02bd24b4a903fac673b",
+                "control_flow": "dbf4430b62ecab7ba54319dd34a843ebb1301fada4739cef512c6ad495cd124d",
+                "data_flow": "f0b44d9c3911acc788ff31af5f9a4dd89a70becd845186fd86d80f9b717b10b7",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "e8d65828f3c81559e68ffb46679907a008f44a4e04c2dabbf619b41007451684",
-                "structural": "73e7a364131564f01ec5157bb9ebe0eb2f9296920136a6079af7dc3bc67d481f",
+                "structural": "ad50f3744856b8159f6cfea1d2bd45c5cd8aa0fe4de73a70229f7c0946a292d0",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\acceptance\\route-separation.js"
@@ -983,42 +983,42 @@
         },
         {
             "fingerprints": {
-                "call_graph": "6d6bc60ea4ba00e451364927a45eda752a7e571b76366162553c437a3dc7533a",
-                "composite": "e527d6dacb3975b311d02d77c6cf2d70eb655592068214505722b841f6b540c9",
-                "control_flow": "eb4d13042ca0e3c3cbfd11abf3faa79a143173eeeff6a0b6e685deb226a48591",
-                "data_flow": "4456c4984684b1f356db7c92d6375ac00722697e65a0f04bad3f9d882503a195",
+                "call_graph": "00aa47b49674782a2d1e9056e61470eff76148a036e0f3cedea1fda8517bbcb7",
+                "composite": "334cbdbaa8855fa096b53e9d42d02f9e8bcb038cd8a212cfc6d5807ea555573a",
+                "control_flow": "233bb2de188cef394f74ecbdedcea4cb5fca03b81ef391f58b0d7ecdabf30e62",
+                "data_flow": "7f8a96080d683b687a562b86527d81cc9a1b5141d9507f2264d596d30711f97a",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "7ee92cdc576a60cf4839fa6054463ad78cb000f94e9233fb556a05b601975b5c",
-                "structural": "1e29270a7644d67b5b9549b1ecd86592f1ff59fd8583e9422c0c1d504969f471",
+                "structural": "d3ece8528de1e18b94af391433b669ea018d25fc06bb1255cc3971e77d5ab844",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\app.all.js"
         },
         {
             "fingerprints": {
-                "call_graph": "071ca116b1db5d67dc94ed0b4a4d547cecf3db4d9355e631abff2bf064ba0c11",
-                "composite": "6dfd50ba201cde5fecd49334f89534a4f813c88a6bbfe3e4a75ae03c3ef9d65a",
-                "control_flow": "378b03fabf64d40e372039acec7264b541014a640c980d80f8046e7db9ff8301",
-                "data_flow": "ba09a07ef749843c11b42ab6390b3cacc6f37665104b8f257d6b43324afec413",
+                "call_graph": "8946204fd2cc655d89a7b6488b0df57633a32c938ad0d260109a27caef27eb00",
+                "composite": "08778b0d4aab6bcd7dcafde31d8c39394be76267c6f4e4349bec92253dff7702",
+                "control_flow": "88fb6d79a6471792d6d27aaca5232c4b395754cc9fb71aac0716f5b01f6fe1b6",
+                "data_flow": "ecbf0e90c23e98776c25b2361ee56bf76ef3388b79fdc833a07a55b3d1583d4a",
                 "declaration": "ee876698fce31e5fdf023ca30f2bfd7f3b65de9e4974551f5cdd719962c34045",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "d69adc09233692703f61670b29b78aceb3c4a845b99e741a14e4003ba3794ccb",
-                "structural": "97a8a48a940611e65d5a39c6168955bbfdb668d9036d7672cfcf86d8d5fa94fe",
+                "structural": "66824d9ea30e42571f96a60e536c66aa8d8a9fd090a642888b526e7107e7ed04",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\app.engine.js"
         },
         {
             "fingerprints": {
-                "call_graph": "38ad5f1eee8391a4c3120162890a8de646faa48378651855d69ca8789c8cf527",
-                "composite": "dd968bc6a3e8daad973855c5fe879add513f9ae645a6019d522cd348edadc200",
-                "control_flow": "b4219aee536e088ec7d0e4368ed7d3716d4ae0fe340d4336ac8dfc2962eaf8da",
-                "data_flow": "d3ae90fa598950ac74077df51d8ccca0d5eba3bca6d0619ad355e697c49c9904",
+                "call_graph": "26fae29b019af44cacaed4391cbc05a557f6b2d81aa0d91e6dd84146f904335c",
+                "composite": "43bfdbf19b3274aae08eb78267225114fddcc5908206a7ff239292d473536b54",
+                "control_flow": "94ba156f33a361d855d540cb3d2ba79d1925827370f72f6fbd63a43027a6058e",
+                "data_flow": "e81287274894c8d6f1625edc1497d063fd95687721c5173fa0581a7e73498b97",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "3b5a8ef35b40e2b855cdb8c3fb9d66cd48d4c78846f531db4695b348592fface",
-                "structural": "a143e35ea7eae6d06658209161ae142efdf4bd1e4ad26da24825c977d5942531",
+                "structural": "abcd8b281db8332f39ac252c43390b584e53dd93ddd8d9c132c993887ba056a1",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\app.head.js"
@@ -1081,42 +1081,42 @@
         },
         {
             "fingerprints": {
-                "call_graph": "35e14d54deff3ed9d1803510c1a1ddd52c4282aa576a3eab248d63cd392b241a",
-                "composite": "0be5b99ddfe7d65c123cb892be837ea5198f54eb0176683c7fbcabe9fc2929b5",
-                "control_flow": "6be84b32ecff1eec66766029f8934f049d5e95ee648cdb3e25473464a2fce424",
-                "data_flow": "565f93839d0b186247f2fefd44b332bf31912066a930d50a5d77e9d175cfb4e7",
+                "call_graph": "9c2c14747791acc7f5dd56944abd5703500d4298b594bbe16082fe943e6da69b",
+                "composite": "03da3c53ca2cb425ce55eef05c4a255fa03f068d5dfc37ed351b661ba9296baa",
+                "control_flow": "87765e5e2fa4fdf26a3706b1466d298fcc175b2cd65f0b6baf651009d28c2579",
+                "data_flow": "939f86ab692fe49ebf7cdd4096dbd0deabf7a6ce3626f197caeca533b1c3fa80",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "dbc938b7a5455f3fab6651ace910cc555422cf3868d8a9614610ee2c87af20c7",
-                "structural": "bd9dd9faeebda08078bbc9f0a3d922394fd207a30bbfd672f7fac18f1d9b3faf",
+                "structural": "0baec6898c9877d6d5c2f3fbff6ec9bd8c80c09dbd82d238adc20f4984dd5c35",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\app.param.js"
         },
         {
             "fingerprints": {
-                "call_graph": "bda96995b7d011a308c9447145bdbcbcd957520bed7682acbb0b85a403eca54b",
-                "composite": "5649e991478cecd08f9a3f141eead571f35c8aedf560c389db00ef5bfd6ac66b",
-                "control_flow": "7c21d139a07b4bfcdf117413df852de293d6d143924cda59b914e9bcc6e01a34",
-                "data_flow": "dde97485e0b67ec3bf8e19ab5c62c73cdcdf747fbb52e502c14d42c1bf3b8f94",
+                "call_graph": "bbb210cd53f21b11288925d26cdc7c56b7768fb40d89969de3dd5852414148ad",
+                "composite": "3315023eaf21f97c1c85249dbb9380215fe155858655975db67e3c79cea7aba1",
+                "control_flow": "e1c9d1df0817d36c138644dce384aa6e8aa6ff973f80a4c157bd7ebcc1422e84",
+                "data_flow": "a5d49f5c1fd9ce486a10158e84ef2e62b127eb94744dc85352a33a68aaaa0ada",
                 "declaration": "0b2813ff11a575c35bb71bad8db563368ce5f71e2a7a12034b29bd7cba82fe0b",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "d5c1f736e141ff4e5b9ef3636dbe12ea608f55aca655a8707497ec9481522372",
-                "structural": "6e46835a8016c938bfd0905e821caf0968c3f1dd2c2db491a99ece66e7cd9562",
+                "structural": "c6356b21e460f3fb0f126bce6d9b6f55b719116fe68da1d6041f1a05292a73e2",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\app.render.js"
         },
         {
             "fingerprints": {
-                "call_graph": "809b1ec3e7a8d173e821634d55658d558aab1263e9db8ee34070d00bbf4e7d16",
-                "composite": "2a63358e4712a44760c3da0ef8cd2549a94c7a3710af107edd46b57f45638361",
-                "control_flow": "43d657b4703013a6135a9fe3f6f4aece7b79eca55adf58933adc99d715261a6d",
-                "data_flow": "480fae7e0330c6a8c4c2ac6fbfdc4fe9c337adb90d8e6cbed0d1d208af2ab2bc",
+                "call_graph": "ffc8215c069a9dd01930195a0183f43e7d5b77c7d56e375525eed98ed786760f",
+                "composite": "6247c234b38ea90b5dd1a9e45756deb0ed34dfdb4dd8b5a448a67384da44525c",
+                "control_flow": "c50052e0c2c4518aa92494e4958f900f51f09ca604e28a13c2e492642f2ce78d",
+                "data_flow": "727fb24d819f797dbb2890a44e05f945ac02bca2b96e142070966be5c5ed7be6",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "d592e4a39bd3c4bd78aa8421daa63591b112ea6ae4e9ff0452074b5b8cbfcd56",
-                "structural": "ef92e40b6f43cf26680fd56e37031a455604f2f8927deace16af1b0e652b15a7",
+                "structural": "e55eba55715b1600e806c32966d6d415bf9edf2abaa6f4610013e2d534081281",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\app.request.js"
@@ -1137,28 +1137,28 @@
         },
         {
             "fingerprints": {
-                "call_graph": "e4d5895f8240f5b9f3d80b23e93f4f04084a8f6837c2fdea97490e79ccd83591",
-                "composite": "5af1951478206280156113070a1e53024e7d86910430035c8b6383bf6a4af97a",
-                "control_flow": "58080c35f5739b37a10a372696b0b7a76b016b55250d2d167cafadf888233b4d",
-                "data_flow": "15973f99085e3f7cef813464abac8ca6b5ca76585e189c098ab5e7a7032339eb",
+                "call_graph": "69edcbfcf9338c19f0e67a3e759695b9fa99fe23039b77671b54b0bc8b0cc5f0",
+                "composite": "753caa6cc036fe9821000b578ea4f0951182f0a01967b9c7aaf9a099f106761d",
+                "control_flow": "b95df2a54b8966b06f56f8ab8245f0cbd8cce8bcd328badb8554d800d8678737",
+                "data_flow": "e60b75293a55c9c3d71d6458f71a75ea531ddf4d1f598c83016ea22655f4b2c9",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "77117fbcb8c955f0f1954959e472f84c7e1404aed5e385621ab4382256bfe3f2",
-                "structural": "c81e63fd62dd5d65739f3d7456533092000e15cd25c1640d29013a3fb3e51334",
+                "structural": "3a8286913919e10e3d9d1b7a194d3174925bf671b9eb177d14e7c31ecc184631",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\app.route.js"
         },
         {
             "fingerprints": {
-                "call_graph": "d8f8c70a66d04c5c5d915622fbb713c6109238dc31b0eb01bf9303869c2b97ca",
-                "composite": "c9fbece1ec66cdfb6c3aa5597f93d6bfe2e113ddde9e1afa5fa5def35838e57e",
-                "control_flow": "5c1261686f23a401d8f8003d8d47b72108053e4e5bf407ed0005f120547e3867",
-                "data_flow": "fffedd63a867c62afb7b5e4b7cd454050f141ad4bf696385b477580c0447a18a",
+                "call_graph": "f188dfe496555ede95b1b9acfdb28d4d97251303df6e7a98f8b7f0f1c7e2e90e",
+                "composite": "f50cfbc4e48ffa771fb13365e96fc8fbe6e9c0db5e18147e8b5e08356739be43",
+                "control_flow": "1c24c17046470da99731a01ddefb736c3aff6f16ed9dfbc18900a4cb9530bb95",
+                "data_flow": "21679e0e47af4eb0db111433042154c2b42afd4527c3d20b439edacae11d1caf",
                 "declaration": "b5a6fdb594a0ad9670ea860cd90cce5e02de2a77e708b226787ce84193301675",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "a168a4ccca0c77bf014486dc00aa58dc0ad58c6d20e398f5221ce1e4f68dc996",
-                "structural": "8c4931b991dc3c97529601fb409dbe4523c16516b37d7fdabe63520a2d6c08a3",
+                "structural": "98fc42d7be6f89609ee261a42aae4d77c6a837223a71df77988c14d4abc3a912",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\app.router.js"
@@ -1207,84 +1207,84 @@
         },
         {
             "fingerprints": {
-                "call_graph": "0624a37428298ad3f2c0f365565de445635ffb0ac4761bc0512c6207c6cee811",
-                "composite": "4bea0f87f91525033718ab40600c785b71c8e19d7d5189541cf0991c9da1c394",
-                "control_flow": "5477f2906055fa28aca01e699062d239a15123129435d66af371deedb8d23dde",
-                "data_flow": "e6b3e8a0c3643be8c8006f5af74c937b1856a5a877db915f40bba7e868379cb8",
+                "call_graph": "205a1cc6ab3b0739640b4a78f3bf302e8c81021ed4eebe95dc9984e946001b7e",
+                "composite": "f4921e2d0b232a21528073908f91aeb498fac65266d31eb3f2f6f8c7ae9f8470",
+                "control_flow": "89888f65174611f3c7a0b988051e30d25a269d010024fd5a94cb500bb82407d9",
+                "data_flow": "e2a1c26a350fa0baae469261c9716398ee8c09445a2201552e491e36509784f9",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "529d76a0e540ee63c81ea415e96eb3d82f6e45b09df6f8a938e577b5f4169c73",
-                "structural": "e529676e446874a403e86dfc4f7990fdc51227641d70a82f5b5a0ca5082f6263",
+                "structural": "98167d56cf95829b620675dffcf920a4f900568c4d5f2ab2795f8847b8111c7b",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\exports.js"
         },
         {
             "fingerprints": {
-                "call_graph": "ddd80f589a58fa3a820de537291aaef3915f86ad7e2e58d8221779aa26c702e4",
-                "composite": "c6ab76a51573c68ca6fae117998271ae144474ed80a7f3909b77eda1affbaefd",
-                "control_flow": "09691bef53c2d378a5c283de46d7efdbfb2a620fee561731e9a1feaa6193333e",
-                "data_flow": "783df16632ebc39a0094278b89141f9c2d809d973af0b470dde72f6112e035de",
+                "call_graph": "0bffb46a9bb2aba7a4480ca12df7ddc9392c37cd9de4ee688a28e4b1b1e1d7a4",
+                "composite": "591dd68a11856f6d1d71a414da256c2798c4a6c8000e4ac5cfffd9ce73702e9a",
+                "control_flow": "d9afed68df6c04a8b353134c4732079fe1d93395b4f099431c00fe513a1cb04d",
+                "data_flow": "57dab8da55373d247fe936012266c0974096e4791c5e5fc3642dc36f3f20c64c",
                 "declaration": "da95d7902c5d36b796226430b2d37ad2de081ee252f638532770c3399e4005c1",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "a3638bba4533d628414d5f283b09be8d56962cc23e1d8baf6ac652ef48615cec",
-                "structural": "67d4cbfb422b2366c63de4f35cee7b93edac6838cec2426eb46df1379313dcda",
+                "structural": "b5907682e9905a334dca5147a9b55b0b94d7b4d4ec25d49f746767317ff880ed",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\express.json.js"
         },
         {
             "fingerprints": {
-                "call_graph": "b3e82effcdeba3d65a3c28ea78c1d6f7230c32162dd3d233bd85b0fbe9474a89",
-                "composite": "24e3b7c4f85728c9face3545f8531d7d17d57bcca422d44f77677d85e4815fac",
-                "control_flow": "ea6396645234aae972626b7ed58b93672a0733a81eeb1056fa1a69d7eb967045",
-                "data_flow": "25e620042e722d7c68c477de70a684f5f318f1f8de1a3b232509e82645f2383f",
+                "call_graph": "b699f8ea9e67dd0efc48290ee21893f0cd354e55c6ca5150514f25e2461ab148",
+                "composite": "cc99c631384a7b1b750678cfbf7d19c4c88e24d57109cff266a8ef2541cec483",
+                "control_flow": "09ee8d564fe87cb61a9c2dc3374f112c8357639ad31057e89fbbacfb2cf4a5a3",
+                "data_flow": "f5d075b4372a5494d3a549725e55d59797c0af047301088afef8e24d56a0388c",
                 "declaration": "b84dea965658b45f5e9cc6e592971717c5b1ea6053c5bb9a8aab3f6300d56dbb",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "d14ae59de3fab5239bc58899f70b5cba90a1dcb27322eff359fad957685e691b",
-                "structural": "f755d7995492f669ce4ac18f1e07e025f4a81566279f1d6aa0ab3840c3cdc5dc",
+                "structural": "bab4beb43cdd7d7f94d96fe0b65c6e3252a0c6d15fc397b6a800122e2a8a52d1",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\express.raw.js"
         },
         {
             "fingerprints": {
-                "call_graph": "0e9a67e648652e5139722979c47c0fd257df4276c78289d6106fed22fd7eee5d",
-                "composite": "fa03bdf749f4c15f41f234e5de3334f90a5862744a26c18889364270f9f754b5",
-                "control_flow": "e49686a8b8d067b41a50dd5e9fe5fb68dbf6bfdc100587acc92336c2e28a0837",
-                "data_flow": "e92bd47daf24b243b2a530acb78b32d7b624559ddf062a113495c170fdef2066",
+                "call_graph": "3ee7826b2239228281e5e1a85ef90ad5841c2568327211b903ae6e4ea48157fb",
+                "composite": "4fe7cbefcf36cb7c52120de9f8f9d799cfee6b4532e0f12776d4b479fb8b5c22",
+                "control_flow": "76450d47c4db735a1b4be9790975ede04987e0f85c13b58fe386340f4d2bf009",
+                "data_flow": "5b75db1fbe13da7aec4b4e1d697d6e8ab07fa7d5cb9bb5e69282da87e99123e4",
                 "declaration": "ed41196a6ed9a3c3b95a604334babb98fdce9acbf495f8cdef638d2da7e9a179",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "2cba24a4d00db43b71da73ee5a673278f3fb30eeab0d2adb4e2b6a8d9fb6b252",
-                "structural": "ffd206890c29213ad5417860cd19096148b3947b7a393c4a89b01350162b0ed0",
+                "structural": "f650911fec799215abb8b15f05c445ad9977a9a3007579ddc2399bf11bf474e7",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\express.static.js"
         },
         {
             "fingerprints": {
-                "call_graph": "f1eebe1c5034f57454173888f5749edd7c3b6b28d2dc1f3a70bab8a06659be01",
-                "composite": "7d1e0ae69019207f82751e0d931b0275faa309db9b3ddb19fe84d16325183e69",
-                "control_flow": "d9fb03c957375033b3e9faa9e72e9ffaa2a34953ef66dbd569182d3ad169a9b1",
-                "data_flow": "c0c13471639d561e209b2273ee7af9376a8ecbd94645e6a53df5b65b533cc0d5",
+                "call_graph": "ce37a43cc6dcc9a1fd91fbf0d03f280dbc67362eb070366b3063c883a30370e4",
+                "composite": "1a40538a99fd1f839f0de1a259539a946edfd10c11240b480ca3d0729b253a96",
+                "control_flow": "bf988872bc302d67a333fda0214e1cddae56933444a30ade2f6d035f1371eae9",
+                "data_flow": "291642b5cb27add92395992d221dcd6be9f14004530b44f50191caf7aaf6a1d3",
                 "declaration": "b84dea965658b45f5e9cc6e592971717c5b1ea6053c5bb9a8aab3f6300d56dbb",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "591e9b44002083c0452fc47bac92f3c993c3f6aa71e8c99dde2e93452a5e00cf",
-                "structural": "15164af95c86b2fce6315a59ce092dc39b08495d7eecc0f3d8424e9311891555",
+                "structural": "3c7f5886be832a1c416626061ad097c929ba2adc2d9859fa9301108aca55b918",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\express.text.js"
         },
         {
             "fingerprints": {
-                "call_graph": "705f6c58ebb416f2a20c54a446f6a8c9c119fca5dfc63a4ac92d5f5f8b0889ac",
-                "composite": "8b9c902896c94c81e9b6900b171bee42426850c87c3318ec74e4f9fc40e9af49",
-                "control_flow": "35a04ce7dce282a0ff55edaf5a1f4916157d31f30ce9b7370bdfb8cf083020ed",
-                "data_flow": "fc93be85cacf4aece5e1537c8174e72a69ecbbfec45901f43ae7574ac448d2dc",
+                "call_graph": "b6f53a9050b12adbfa151ef9db2689d6d3b6b9a542dc1a54e81cb7faac9ecb18",
+                "composite": "df109a4211eee721ad328fc9064eb058f7b8e64673bda6e5b6a3136e10a5a0b6",
+                "control_flow": "e61644840ed3d91dcd82e3ea9ff320f369b1bc239d022b47656a8f2a8e16f033",
+                "data_flow": "5babc8e5d08f698e53251d805bc0c1f475edfb829622e35cd6d84238d47e0db8",
                 "declaration": "4562cd70a336cf8f1f89e9abd5a11268121d9f41031b62c25c7b97131d68a76a",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "9aa124b5335581f19a8d30e8681afe4a09fe7ffd2b7f15061f4527f56e9e14e0",
-                "structural": "4b4d53f1155eff72432db12971b03da5fd28c21b2fd40f5784e44c0c7f37f1d5",
+                "structural": "beaf70b0c26214a2fd6d3931963b96c082c3791ad68a31fff3b13f5595b5a383",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\express.urlencoded.js"
@@ -1305,14 +1305,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "fa3d062b4654cd61fc4ba9b09c110c08d4daeb53437014417ffc041fcf122cd4",
-                "composite": "10b4bd42835bac982d099e33c595b465bb2b658bc331f5a305339ca6c72245c3",
-                "control_flow": "923dd698642c66bbb6ef8a15bb1782ca8ee754efea4f371229bd4ba0bef4e714",
-                "data_flow": "4cab963f55bd64e768aad6ab392713c3142f4f6770a9520c3085147e0b4650b1",
+                "call_graph": "53d4f7988fd23b3994f0c5be2bcd4462a79b24cd38c2702038cfc947823a6e47",
+                "composite": "e7ea56202002957c2760ffcea5a90855ebb9f5b1e6a13bbda8b199f4fa7e87f2",
+                "control_flow": "e123b9c5462c32cea4a95e815bcc5a7166ed98fa50d13bc7c3feb0b452aac950",
+                "data_flow": "6c9b1755fa97f8e62d5fc349b754ec6c1594b5d1461d8cb6cbdf644d80598e29",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "da52ed1649c0ad0b2ba987ebd1714befdcc39a5b91f3c9cd231e49686ad705b7",
-                "structural": "f22f497652306117db5b928ea793a7b59d74d732e6a3565c0acd14d55ba71e0a",
+                "structural": "6bff7d40311b93cf4d233f612e32a4d63c0867093ea59a5a4070e850fb39df83",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\regression.js"
@@ -1515,14 +1515,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "cbdef6178f18648cd6148481ec2acfe7f3ca59b3226e4906ddb941f45cd19c01",
-                "composite": "6e0a91ecaa10c2697cec26a0d58fbb613ef8aefaa94f92d721c1e9564a35493d",
-                "control_flow": "a5427a894c836aa6b91f74386716c9a04701bd755230fcd8ad8afcc80fd22821",
-                "data_flow": "bd159b3452e7f414d41b77be194eed02a4aeefd20fb16c85fefcff8d903e9755",
+                "call_graph": "61d8df2beced5838788dfa256a40401eca4b390dcc7d2f7f6161688ba54b7493",
+                "composite": "d1ee6bd97363dadd6140e4c788afa12f5bd488aeafb03e4376e5920d7ac1272c",
+                "control_flow": "4517d7622cbce969057e8dfd0aca7f6a009d06448f5423065d3420a559e7bc76",
+                "data_flow": "ae668fea88a1c2651066fa81af3ba86a4eaec10e8b53c9749a4a0605e81b2a44",
                 "declaration": "c4a92e51139dd1571935b56acc6d9d586c94310c1d7cc135918e37d702c344f0",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "d5bd2ebcfde57c22e44fd96930dae5d6de5d138a712789edbb5c317accc41fd9",
-                "structural": "3c4a24f1b29360f4fb0b04dd213ee2fb835000beab90bdd06907bfc6bf610604",
+                "structural": "13fac21c510b6e18f279ffeaffcdbdb07db98829b90cc1aee29d217a8b60c185",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\req.query.js"
@@ -1571,14 +1571,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "c99858c50e43c3f8b2c93596440761f80920a1ee7ce85973fdb5852315d07423",
-                "composite": "109280bcd1da5495ab74bfc07d7edeb04c31a92e82c5edd1bd69a65df58ed7d5",
-                "control_flow": "79bc897d91c3692cadf1949812be66114d8bd4919e4c214d4ac8a075ee47e0b1",
-                "data_flow": "01921dc696842933f2accc24e65906a7c02b03c3607bea9880f7a84cf5aa6c7d",
+                "call_graph": "c33a6fcfad09706b200fc9569005f447ba370f1a9ad6a8371436208ff7942218",
+                "composite": "849101eeaa2859ab3f47c46eb8956a341beb56a4c33135a9755a77e309a1bf29",
+                "control_flow": "8c75e52f48e398a236eccd5d6856f65db5ffe306f574823591a1b69d77e2d63d",
+                "data_flow": "2938908d6ac8531daab8707e5e206b395fdb02ad2b10aa6938648a2eb7eada32",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "a08bbbe9fb245e37fd0965fae85102817c8dd8a8cde46eec4b56fe918374f4ad",
-                "structural": "cc9f198a98232af6a420fc4bfecd2c9ea30c780a68dfa1b22c04e7901f3e71a0",
+                "structural": "a90026e12390a31df26bdf3ea9c131357b8487c14d239db5e5d1f2d567f9655c",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\req.signedCookies.js"
@@ -1683,28 +1683,28 @@
         },
         {
             "fingerprints": {
-                "call_graph": "9806c431a7745852415ff9e8ccc9bcb8412082ede8a7ec6961f67658ab281191",
-                "composite": "a01c4b2bdc8dbbdd3f8810b773d59cbde0aea898a15ca326b34ca5e9a28a7182",
-                "control_flow": "aeb9c94d7e526efe524b8c638bef2642b98bf7485f0a7fa479095a4ba4fcd3ec",
-                "data_flow": "13fe424d724eab9eb46bac6006b154721fe01ce7b57d90a15515fed68839d32c",
+                "call_graph": "4164b2b84a31d04e8492dbe8afddfccda3c829366ab35769d69a4024fda918ff",
+                "composite": "e4469e24e257c30a30a4fb57bd3f3b344c09b04c3391f45a7836b5308376da0d",
+                "control_flow": "0d165b42d33cb572b8f78d9cd81c20f4c07564215a2270b1535dde8869d771e3",
+                "data_flow": "a75db47543a14ea0f7746484875faee692c1608e3a15efa356da91dcfa527b91",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "3cc7d8f8e47715859531e89abff38942208f4f5832f9a740d5bf307657ec804a",
-                "structural": "6ccc1918f617cf1f494a1e387aee0ad8bbb1d082f1f93a380dbbd6af1bd7cc82",
+                "structural": "064895d2bf1b390405f4e1ea022e3eaf204edd1c2cfb99045557527450d69942",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\res.download.js"
         },
         {
             "fingerprints": {
-                "call_graph": "8c950aab3b5eed0b2313ad54f2f20164e12dc0d830641878010eca1534513d19",
-                "composite": "5e32b2caa34208bbd5d7757a1c61f4dbb94605eea48aa175221fdb3b813e728a",
-                "control_flow": "2081273616ccec42c62ed6418275aa68d20b059822e023203232b1a1f7d8b27b",
-                "data_flow": "d1d2a057fc7a0c54e2c18be6c7aa6557a8d70caed47eecc85b6f7af499e108eb",
+                "call_graph": "7bd8f4d8c679bb1946d50ecb90c7ad8e6b6470b90852fe5de2faf5c9e9024ba7",
+                "composite": "d9cbd5658f978eb6f35fff0a44ded86afe7bf82eadc51622fc12803d89dba677",
+                "control_flow": "da840de74cf63af9ebbf428be6ede535b3cbc56e4bcaed6667501df2dd1f8004",
+                "data_flow": "f2c218064e4a1b2ac3c579a4e2b6a932f19db58f6dbc3992a6ae457dff9cc938",
                 "declaration": "5df424c3b3d91a99a26616c3aa8403f864a86edf64bfcbd416a19cc36fb04b49",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "806797d283926e56cffb5ee5934dde16d2e90a10408e00440e1680b4d6ca5f32",
-                "structural": "4c88c780e6ec35a0e49d35f42fa203a2229ddb1fa56dee0cfbd542494f7713a4",
+                "structural": "066f411a604690041c5c00e5029a7e54fe688ebf45e4fc0e72510e08ce62924e",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\res.format.js"
@@ -1725,28 +1725,28 @@
         },
         {
             "fingerprints": {
-                "call_graph": "e2fdb943c2f89df0349dd8e395d8a1f93b02b8dd5b391b2a222a5325e53ae328",
-                "composite": "64911fdb19bc1fd294e61cd9a856073feabb11f4554f2598b30e04ac01149882",
-                "control_flow": "6c8a5d3c999e00b47adff5750ac95e52daef2e349cfa6f1b69bf50bb0c1a6b8f",
-                "data_flow": "1c7f8173ba21899b9df5d605ff7bc93bb6282f52db73a486dfee56b3dd49a85b",
+                "call_graph": "e8b954acd46139f4078a313f6112390322e3003af097e483a52fe18bdb680b79",
+                "composite": "db46b31468fa3ef607a0c076c917b424f040737013a2685f6a204b0f11b4a8c7",
+                "control_flow": "4192475054813b1553d7f1a171671107f598fa7c3a92352899c3de618dc1a1db",
+                "data_flow": "0c2b0574d9513c1c50c388502d5828b12931578dd047b0a362c599dad5b89fa6",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "67bc562c73f89ba603dc3176829cf739bc7f87bf63c155fd5be4f96c791703e1",
-                "structural": "9b199428adbbe72f5c0509a3a58fee2f7b29dd7b121d468014cfd3b5e838b882",
+                "structural": "da5be489f332a82d58ce55566895d30d4be8d262b5d38894ea27de33cdb3e322",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\res.json.js"
         },
         {
             "fingerprints": {
-                "call_graph": "00789a83d58e97184d5c4002e202d54cf3ab68e5096dcb2ff8c38303c42a093e",
-                "composite": "91a0adce11bc683d86d5dcc98296f2f3ec66202c6bad93b5e03d4f68ae50ea34",
-                "control_flow": "f0447ab90eefa64f1378dd0c66c625ba1a044ffa5e3aad2ebbb6356c4ce69f4c",
-                "data_flow": "3a274371075a6f230917e310907757f812240e873787125bd20a1a83711bcf26",
+                "call_graph": "d06940632e580dbda218f83c501a1024e44231d3e9ad46bdb8c91557adc2c209",
+                "composite": "114fd251764e4134b22471299130f2ca75e41ad4d9c027d6e5bad90699601eb1",
+                "control_flow": "c722d16f68f50985b85d830e555cb7d358b6fa3b5715e3a50425bab5d8523496",
+                "data_flow": "818398aeffd1e1319cca206d2b8aa87f375ba77916329a1ee1ecbc7a7ec80401",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "457a91fa753e0d8965809e71504e972cec66ca647b640231c47c6d3efdaf85b7",
-                "structural": "dbe0761d5e5ea429195fafb00c5e5f7882e676e80705b2626b99c572d155abfd",
+                "structural": "acc5ca05b144feb40badc691bb5d79d1c5399cd373c16ce9cf50b17b0f7f50bc",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\res.jsonp.js"
@@ -1781,14 +1781,14 @@
         },
         {
             "fingerprints": {
-                "call_graph": "eca35f31029f81ea2f691d688a4b6a94d048a7d5fcfd17ce7e1e760fbc81f8ab",
-                "composite": "84a159f8dd6ad86dfbc19d0097f0dc78960771f87e530e6ec94aa98077f4921e",
+                "call_graph": "512abdd71d0525127e1d90f4a7813f8a95845c470ed70d5d1fa15aa45e3bc139",
+                "composite": "31dc49a57f4c8c07bd8adea655df13a07b6386043dd9652353774003523e3e10",
                 "control_flow": "a45f665880797e048337972c84b746298c486ca093c8618dcc56d0340721b456",
-                "data_flow": "89e6584a1f262176f38dd923885fb6e1069b68207f35156539df3c5cb903fdec",
+                "data_flow": "ec7756e343c9108cf549c66e37a1ba7c5d3fe3b508dd898b5cdc57acfef7e763",
                 "declaration": "97769dd180d2e4fe259767eae63d7bf48d3869667b9dec524643239887f3692a",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "47c1f583cb92ce68883318d80b950a4f0a750dba8d20b5c4b1d0453269c4f3c5",
-                "structural": "7af343e4e197b9a9c2e9ec7bca3309581b28fc7e3c2b0814f4024a98191779d0",
+                "structural": "e6b51510cbac1b8e63b8e34e96ac2661959d2d84c4a324692c2f7c062c2cb99a",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\res.location.js"
@@ -1823,28 +1823,28 @@
         },
         {
             "fingerprints": {
-                "call_graph": "2b659d78f2ab7b02119176d11524d652844debb2d00d7db9a433e91f9ce7ec8c",
-                "composite": "1d1000457e396f0f80baac79743cb19675eba1e1dbb3a16ab884b4d5fbe42220",
-                "control_flow": "6a7caa20f8c974d4005c72b3793ec2dd7e9ed45a0478d1f8b5e492d28a0dea2b",
-                "data_flow": "7343eb50dc092a25723c14d703654dbe5080e6799e376a99d008009715350ab2",
+                "call_graph": "b10f36b08df4097ac75509e19c0eec763741793393a2eb25985a64f4254ab25b",
+                "composite": "8f4ec4a88952569fa91d141784e208c964b8cf957e23cc00714ef40fc2ee57b0",
+                "control_flow": "a11e740054d22f388bb93c33b6455e8e2e4312219c0bbf013998169288ee64b8",
+                "data_flow": "fc9e09c69910fd913464ef2c2d6bf2723d942aa6efa2d54d62b7a64dcb30883d",
                 "declaration": "4322fd2bc0a137d1375b37b3b2e2b4715b3d3dd7ca9682438d4fea0f8437fad3",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "cf4f65b4d0b9155e2f84ad2bbccadbadb46b17c5997872ea199e6558d013ab72",
-                "structural": "587ff3ca886c721b64541ca7fb6ca1bf096a51af81f9fa73258b991c4f4bae41",
+                "structural": "a29d974c0a37e70bbe1a17228f0fcfb32ad70287df8b7b8b7413fb92252ef077",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\res.send.js"
         },
         {
             "fingerprints": {
-                "call_graph": "5b711f1e5ee2a034e1817837b3726c53c59827e9a63151e035d89ed31f0e0ea7",
-                "composite": "faec10daa1ded0d63cc4d2205c04a2c1bb2ae916288e972ca11a173bb961242e",
-                "control_flow": "df43a69f76db840ba365af5371505a30ed3ae5593a55c31447b42475b0981b32",
-                "data_flow": "8629db47b5543a201cac6bca8179d98a54562cc84868d75704c156b439ca4231",
+                "call_graph": "aa3205efc22f968ba457cd3f86d9e7b2328875d53646ed676ed0ff94967a86ee",
+                "composite": "ad6978b8cf0ae2fdfda1b132735ba57c001356c0a93749c4db1d7bccc7469643",
+                "control_flow": "93579ab07238616cc3d33fa5a090eeab41dbcbb9d1fbfd4be3911921f9d4efa3",
+                "data_flow": "0fc8a02d5ebf2135d16a9c7e70be6225bacd4181ea0124d9b52352923ae73698",
                 "declaration": "239b5f0ac7f89ac4792e9f0c4e0ef59e2a91296ba3306d17d08618ff1eb39894",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "a71b0d1f84a358be1b99b2a38db78af4eb68fdcb5eab872b39c0b697e3a7a1ef",
-                "structural": "de091dda7cdfe6c3e57c9389591d9bea329719e294b7b04dcf8b98a0f777f957",
+                "structural": "bce748b6ee3af6d310c87766ed8aa4b04221e12495c6f95d3d72ac971438fdef",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\res.sendFile.js"
@@ -1936,13 +1936,13 @@
         {
             "fingerprints": {
                 "call_graph": "1f7894114f351292ff99a159d01b0df0714b9253b8b4f6774345b2b3736f8137",
-                "composite": "7a3bc6605fc1f4ffccba15b254c4e3ef315a89389d68ee905880714ddc66c5b1",
+                "composite": "4d0aeb29e9e9c66ba9e1977c4ee523c3adbba94651d284ba15b71f8c55c422e1",
                 "control_flow": "879bca132d0d72d5015312cd68bd2a74c2eb77c2997d2f1befcaebfbb4916e07",
-                "data_flow": "34bc9d0ee8789c40dac05f4179119a1cacd72488a1b1b3c5d9b25237483f43cc",
+                "data_flow": "3c10039df4a848246f453933d969a6985fa2a6843fe7d7c0ce2baa3724c50f87",
                 "declaration": "0d7ede8891910079b70ba2097b81f37a6c957953de4737825dd513fa725240aa",
                 "dependency": "48b9b34b851a03302c02d0519a1b741babdbf7e4dbabf93c7a7f1ea7db057e7a",
                 "source": "92d563c6ca5a401bca9ff829023719b4b288aafa3538c127794adc313376733d",
-                "structural": "a6d2d3cad9c202b2a690e061a95098ffeb183f9ce16bfffe658291cdaa09c7d2",
+                "structural": "f25369e919cec972245115317f41a9e8c11d965647539c07419998e2c2260be4",
                 "type_contract": "0e80ce166062695c598ba895934d64324477022676e6e8c30e03d2d2d17c604a"
             },
             "path": "test\\support\\tmpl.js"
@@ -1976,8 +1976,8 @@
             "path": "test\\utils.js"
         }
     ],
-    "repository_fingerprint": "b080e84d8ce2a6468d43229deddaf16e8ae3bb2d542f38d9f4ffaa4b91343ffe",
-    "version": "0.2.0",
+    "repository_fingerprint": "62b6cbd1a191e14098e0ddc2f51114f74266b2171e59448817d7016095f35a28",
+    "version": "0.3.0",
     "whole_repo_call_graph": "59ed1a022beeebd5ba75e16d39f14e8aa983027dd38e41a2eff4b3e59589afa1",
     "whole_repo_data_flow": "3586e558224128dcf7aed8b0dce89e7bdbb791b5ba30a2baf0bccd003e1c48ac"
 }

@@ -40,7 +40,7 @@ import Canontra.IR.Declaration
 import Canontra.IR.Dependency
 import Canontra.IR.Expression
 import Canontra.IR.Program
-import Canontra.Normalize.Normalize (isReflectionDocstring, normalizeModuleDeclarations, preservesDocstrings)
+import Canontra.Normalize.Normalize (isReflectionDocstring, normalizeModule, normalizeModuleDeclarations, preservesDocstrings)
 import Canontra.Types (Fingerprint)
 
 -- | Compute F1 Structural fingerprint directly from IR with fused single-pass normalization and hashing.
@@ -72,21 +72,13 @@ fusedStreamModule :: Module -> BB.Builder
 fusedStreamModule = fusedStreamModuleB
 
 fusedStreamModuleB :: Module -> BB.Builder
-fusedStreamModuleB (Module _ imps decls stmts) =
-  let normImps = sort (map normalizeImport imps)
-      normDecls = normalizeModuleDeclarations decls
-      cleanStmts = fusedCleanStmts stmts
+fusedStreamModuleB rawMod =
+  let Module _ normImps normDecls cleanStmts = normalizeModule rawMod
   in tag 0x10 <>
      encodeText "" <>
      encodeList fusedStreamImportB normImps <>
      encodeList fusedStreamDeclarationStructuralB normDecls <>
      encodeList fusedStreamStmtB cleanStmts
-
-normalizeImport :: ImportDecl -> ImportDecl
-normalizeImport = \case
-  ImportModule modName alias -> ImportModule modName alias
-  ImportFrom modName (ImportSymbols syms) -> ImportFrom modName (ImportSymbols (sort syms))
-  ImportFrom modName ImportAll -> ImportFrom modName ImportAll
 
 fusedStreamImportB :: ImportDecl -> BB.Builder
 fusedStreamImportB = \case

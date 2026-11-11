@@ -1,6 +1,6 @@
 # Security Policy and Architecture
 
-Version: v0.2.0.0 (Release v0.2.0)
+Version: v0.3.0.0 (Release v0.3.0)
 Target: Canontra Production Release
 Organization: SymtraceLabs Security Team
 
@@ -30,6 +30,7 @@ To prevent denial-of-service, zip-bombs, and memory exhaustion attacks:
 * Maximum File Size: Canontra enforces a strict 50 MB (52,428,800 bytes) file size ceiling. Any individual file exceeding this limit is skipped and reported.
 * Maximum Recursion Depth: Directory trees nested deeper than 64 levels are rejected to protect process call stacks.
 * Bounded Graph Traversal: Dominator tree computations and data-flow reachability passes enforce finite iteration bounds, guaranteeing termination on arbitrary control flow graphs.
+* Bounded CSR Batch Reachability: Multi-source reachability BFS queues allocate memory strictly bounded by the total number of repository symbols, preventing runaway allocations on cyclic or adversarial graph structures.
 
 ### 4. Memory Safety and Binary Slab Cache Security (CNTR v6)
 
@@ -40,13 +41,14 @@ To prevent denial-of-service, zip-bombs, and memory exhaustion attacks:
   * Corrupted cache pages are discarded and recomputed in isolation (`salvageSlabCacheFile`) without crashing the engine.
   * Cache writes are staged to a private temporary file and finalized using `atomicSwapWithRetry` with exponential backoff and jitter, preventing Windows Defender / SearchIndexer lock failures and torn writes during sudden termination.
 
-### 5. Safe Git Integration
+### 5. Safe Git and CI Change Impact Analysis Integration
 
-When querying revision history or branch snapshots:
+When querying revision history, branch snapshots, or evaluating PR batch change impact:
 
-* Controlled Command Invocation: Git is invoked via `System.Process.readProcessWithExitCode` with explicit parameter arrays.
+* Controlled Command Invocation: Git commands (`git diff`, `git ls-tree`, `git show`) are invoked via `System.Process.readProcessWithExitCode` with explicit argument arrays.
 * No Shell Execution: Arguments are passed directly to OS process spawning routines without invoking intermediate shells (`sh`, `bash`, `cmd.exe`, or `powershell.exe`), eliminating shell injection vectors.
-* Read-Only Access: Canontra only executes read-only inspection commands (`git ls-tree`, `git show`). It never modifies, commits, or alters repository state.
+* Path Sanitization: All file paths reported by `git diff --name-only` are validated via `canonicalizeSafePath` before being processed by the CSR reachability engine.
+* Read-Only Access: Canontra only executes read-only inspection commands. It never modifies, commits, or alters repository git state.
 
 ## Reporting a Security Vulnerability
 

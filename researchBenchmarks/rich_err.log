@@ -37,7 +37,7 @@
 [Canontra Parse Warning] rich\markdown.py:12:8: Expected identifier in module name
 [Canontra Parse Warning] rich\markup.py:1:1: Expected ']' but reached EOF
 [Canontra Parse Warning] rich\measure.py:4:8: Expected identifier in module name
-[Canontra Parse Warning] rich\padding.py:36:40: Unexpected token in parameter list
+[Canontra Parse Warning] rich\padding.py:1:1: Expected ']' but reached EOF
 [Canontra Parse Warning] rich\palette.py:14:60: Unexpected token in parameter list
 [Canontra Parse Warning] rich\panel.py:55:42: Unexpected token in parameter list
 [Canontra Parse Warning] rich\pretty.py:39:8: Expected identifier in module name
@@ -66,7 +66,6 @@
 [Canontra Parse Warning] tests\test_text.py:1:1: Expected ']' but reached EOF
 [Canontra Parse Warning] tests\test_theme.py:1:1: Unexpected end of input in expression
 [Canontra Parse Warning] tests\test_unicode_data.py:23:68: Unexpected token in parameter list
-[Canontra Parse Warning] tests\test_win32_console.py:28:50: Unexpected token in primary expression: TokSymbol "!="
-[Canontra Parse Warning] tests\test_windows_renderer.py:15:46: Unexpected token in primary expression: TokSymbol "!="
+[Canontra Parse Warning] tests\test_win32_console.py:1:1: Unexpected end of input in expression
 [Canontra Parse Warning] tools\make_emoji.py:1:1: Unexpected end of input in expression
 [Canontra Parse Warning] tools\make_width_tables.py:1:1: Unexpected end of input in expression

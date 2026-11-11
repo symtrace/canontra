@@ -3,10 +3,10 @@
 
 {- |
 Module      : Canontra.CLI.Cache
-Description : Cache maintenance tooling for canontra v0.2.0.
+Description : Cache maintenance tooling for canontra v0.3.0.
 
 Provides subcommands for inspecting, verifying, cleaning, and pruning
-the CNTR\x05 memory-mapped paged radix binary cache (.canontra/cache.bin).
+the CNTR\x06 memory-mapped slab cache (.canontra/cache.bin).
 -}
 module Canontra.CLI.Cache
   ( CacheAction (..)

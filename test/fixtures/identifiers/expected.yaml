@@ -1,6 +1,6 @@
 transformation: identifier_change
 source_fingerprint: different
-structural_fingerprint: different
+structural_fingerprint: identical
 declaration_fingerprint: identical
 dependency_fingerprint: identical
-composite_fingerprint: different
+composite_fingerprint: identical

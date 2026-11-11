@@ -1,0 +1,1 @@
+{"impactDirectCallers":[],"impactInvalidatedTests":[],"impactSavedComputePct":100,"impactSeverity":"SeverityTrivia","impactTargetFile":"cmd/prometheus/features_test.go","impactTransitiveFiles":[]}

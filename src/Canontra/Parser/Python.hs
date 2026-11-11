@@ -1202,11 +1202,19 @@ takeBalancedDelim openSym closeSym toks = go toks (0 :: Int) []
 -- ============================================================================
 
 parseExpr :: FilePath -> [LocatedToken] -> Either ParseError Expr
-parseExpr fp toks = do
-  (expr, rest) <- parseExprOrTernary fp toks
-  if null (skipNewlines rest)
-    then Right expr
-    else Right expr
+parseExpr fp toks@(LocatedToken (TokKw "lambda") _ _ : _) =
+  fst <$> parseExprOrTernary fp toks
+parseExpr fp toks =
+  case filter (not . null) (splitOnTok (TokSymbol ",") toks) of
+    [single] -> do
+      (expr, _) <- parseExprOrTernary fp single
+      Right expr
+    parts@(_:_:_) -> do
+      exprs <- mapM (\p -> fst <$> parseExprOrTernary fp p) parts
+      Right (ExprTuple exprs)
+    [] -> do
+      (expr, _) <- parseExprOrTernary fp toks
+      Right expr
 
 parseExprUntilColon :: FilePath -> [LocatedToken] -> Either ParseError (Expr, [LocatedToken])
 parseExprUntilColon fp toks = do
@@ -1258,6 +1266,7 @@ parseExprCompare fp toks = do
   go lhs rest
   where
     go left (LocatedToken (TokSymbol "==") _ _ : r) = step left OpEq r
+    go left (LocatedToken (TokSymbol "!=") _ _ : r) = step left OpNotEq r
     go left (LocatedToken (TokSymbol "<=") _ _ : r) = step left OpLtE r
     go left (LocatedToken (TokSymbol ">=") _ _ : r) = step left OpGtE r
     go left (LocatedToken (TokSymbol "<") _ _ : r)  = step left OpLt r
@@ -1386,7 +1395,11 @@ parseExprPostfix fp toks = do
 parseCallArgs :: FilePath -> [LocatedToken] -> Either ParseError ([Expr], [(Text, Expr)], [LocatedToken])
 parseCallArgs fp toks =
   let (inside, afterParen) = takeBalancedDelim "(" ")" toks
-  in if any (\(LocatedToken t _ _) -> t == TokKw "for") inside
+      startsWithParen = case inside of
+        (LocatedToken (TokSymbol "(") _ _ : _) -> True
+        _ -> False
+  in if not startsWithParen
+        && any (\(LocatedToken t _ _) -> t == TokKw "for") inside
         && not (any (\(LocatedToken t _ _) -> t == TokSymbol ",") inside)
         && not (any (\(LocatedToken t _ _) -> t == TokSymbol "=") inside)
      then do

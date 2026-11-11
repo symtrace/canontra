@@ -1,14 +1,15 @@
 cabal-version:      3.0
 name:               canontra
-version:            0.2.0.0
+version:            0.3.0.0
 synopsis:           Deterministic polyglot program identity & semantic graph engine
 description:
     @canontra@ is a deterministic polyglot program identity and semantic graph engine
     written in pure Haskell. It computes multi-tier cryptographic fingerprints and
     semantic graphs (AST, Call Graph, CFG, DFG, and Merkle DAGs) across Python,
-    JavaScript, TypeScript, Go, and Rust. Designed for build caching, change impact
-    analysis, and semantic code comparison, Canontra eliminates cache busts caused
-    by formatting, comments, and non-semantic code refactorings.
+    JavaScript, TypeScript, Go, and Rust. Featuring scope-aware bound lexical alpha-normalization,
+    commutative and associative algebraic equivalence, CFG dominator-tree canonicalization,
+    deepened structural type contracts, and CSR-native multi-file PR batch change impact analysis,
+    Canontra eliminates cache busts caused by formatting, comments, and non-semantic code refactorings.
 category:           Development, Static Analysis, Code Quality
 author:             Jash Thakkar
 maintainer:         Jash Thakkar
@@ -89,12 +90,16 @@ library
         Canontra.Analysis.Symbol
         Canontra.Analysis.CallGraph
         Canontra.Analysis.CFG
+        Canontra.Analysis.CFGCanonical
         Canontra.Analysis.DFG
         Canontra.Analysis.CompactGraph
         Canontra.Analysis.CSRGraph
         Canontra.Analysis.WholeRepoGraph
         Canontra.Analysis.Impact
+        Canontra.Analysis.BatchImpact
         Canontra.Analysis.TypeContract
+        Canontra.Normalize.Alpha
+        Canontra.Normalize.Algebraic
         Canontra.Normalize.Normalize
         Canontra.Normalize.Fused
         Canontra.Normalize.Rules

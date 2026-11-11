@@ -177,7 +177,7 @@ extractGoDeclsAndStmts tokens = case tokens of
         (d, i, s) = extractGoDeclsAndStmts afterFn
     in (DeclFunction fn : d, i, s)
 
-  -- type Name[T any] struct { ... }
+  -- type Name[T any] struct { ... } or interface { ... }
   TokKw "type" : TokIdent stName : TokSymbol "[" : rest ->
     let (tParams, afterTParams) = span (\t -> t /= TokSymbol "]") rest
         tParamText = "[" <> T.unwords [tokenText t | t <- tParams] <> "]"
@@ -190,6 +190,18 @@ extractGoDeclsAndStmts tokens = case tokens of
             st = Struct stName fields [Function tParamText [] Nothing [] [] False] "pub"
             (d, i, s) = extractGoDeclsAndStmts afterBody
         in (DeclStruct st : d, i, s)
+      TokKw "interface" : afterIface ->
+        let afterBrace = dropWhile (\tok -> tok /= TokSymbol "{") afterIface
+            (bodyToks, afterBody) = extractBalancedBraces afterBrace
+            (methods, constraints) = parseGoInterfaceElements bodyToks
+            iface = Interface stName methods (tParamText : constraints)
+            (d, i, s) = extractGoDeclsAndStmts afterBody
+        in (DeclInterface iface : d, i, s)
+      TokSymbol "=" : afterEq ->
+        let (tyToks, afterTy) = consumeGoType afterEq
+            rhsStr = T.concat [tokenText t | t <- tyToks]
+            (d, i, s) = extractGoDeclsAndStmts afterTy
+        in (DeclTypeAlias stName (Just (tParamText <> " = " <> rhsStr)) : d, i, s)
       _ -> extractGoDeclsAndStmts afterBracket
 
   -- type Name struct { ... }

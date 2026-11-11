@@ -57,3 +57,4 @@ All metrics reflect live process executions on host hardware using high-resoluti
 | **`hugo`** | Go | 202,891 | **19.037s** | 10,658 | 42.110s | 0.812s | 9.262s | 266.449s | **14.0×** |
 | **`deno_core`** | TS/Rust | 62,799 | **3.020s** | 20,794 | 14.516s | 1.151s | 3.829s | 27.050s | **9.0×** |
 | **`prometheus`** | Go | 388,080 | **46.059s** | 8,426 | 47.279s | 1.552s | 14.640s | 1,043.217s | **22.6×** |
+

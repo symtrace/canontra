@@ -17,8 +17,13 @@ module Canontra.Analysis.Impact
   , ImpactSlice (..)
   , classifySeverity
   , computeImpactSlice
+  , computeImpactSliceCSR
+  , traverseInvertedCallers
+  , traverseInvertedCallersCSR
   , computeSavedPct
   , findMatchingTests
+  , isRepoTestFile
+  , normalizeImpactPath
   , formatImpactSlice
   , formatImpactSliceJson
   ) where
@@ -27,11 +32,13 @@ import Control.DeepSeq (NFData)
 import Data.Aeson (FromJSON, ToJSON, encode)
 import qualified Data.ByteString.Lazy as BL
 import Data.List (nub, sort)
-import qualified Data.Map.Strict as Map
 import qualified Data.Set as Set
 import Data.Text (Text)
 import qualified Data.Text as T
 import qualified Data.Text.Encoding as TE
+import qualified Data.Vector as V
+import qualified Data.Vector.Unboxed as VU
+import Data.Word (Word32)
 import GHC.Generics (Generic)
 import System.FilePath
   ( normalise
@@ -40,10 +47,17 @@ import System.FilePath
   , takeFileName
   )
 
+import Canontra.Analysis.CSRGraph
+  ( CSRGraph (..)
+  , backwardReachabilityCone
+  , csrNeighborIndices
+  , reachabilityConeNodes
+  , transposeCSR
+  )
 import Canontra.Analysis.WholeRepoGraph
   ( GlobalSymbol (..)
-  , WholeRepoCallEdge (..)
   , WholeRepoCallGraph (..)
+  , toCSRCallGraph
   )
 import Canontra.Types (FingerprintBundle (..))
 
@@ -89,16 +103,44 @@ computeImpactSlice
   -> [FilePath]           -- ^ All known source files in the repository
   -> ImpactSlice
 computeImpactSlice targetFile bOld bNew wcg allRepoFiles =
-  let normTarget = normalizePath targetFile
-      severity = classifySeverity bOld bNew
+  computeImpactSliceCSR targetFile bOld bNew (toCSRCallGraph wcg) allRepoFiles
 
-      -- Extract direct external callers of target file
-      directCallers = sort (nub
-        [ wceCaller e
-        | e <- wcgEdges wcg
-        , normalizePath (symFilePath (wceCallee e)) == normTarget
-        , normalizePath (symFilePath (wceCaller e)) /= normTarget
-        ])
+-- | Compute the transitive impact slice directly over an unboxed CSR call graph
+-- with O(V + E) zero-allocation array indexing.
+computeImpactSliceCSR
+  :: FilePath                 -- ^ Modified file path
+  -> FingerprintBundle        -- ^ Old fingerprint bundle
+  -> FingerprintBundle        -- ^ New fingerprint bundle
+  -> (CSRGraph, [GlobalSymbol]) -- ^ Unboxed CSR call graph and node symbol table
+  -> [FilePath]               -- ^ All known source files in the repository
+  -> ImpactSlice
+computeImpactSliceCSR targetFile bOld bNew (csr, nodes) allRepoFiles =
+  let normTarget = normalizeImpactPath targetFile
+      severity = classifySeverity bOld bNew
+      nodeVec = V.fromList nodes
+      transCsr = transposeCSR csr
+      lookupNode idx =
+        let i = fromIntegral idx
+        in if i >= 0 && i < V.length nodeVec
+             then Just (nodeVec V.! i)
+             else Nothing
+
+      targetNodeIndices =
+        [ idx
+        | (idx, s) <- zip ([0 ..] :: [Word32]) nodes
+        , normalizeImpactPath (symFilePath s) == normTarget
+        ]
+
+      -- Extract direct external callers of target file via transposed CSR adjacency slice
+      directCallers =
+        sort $
+          nub
+            [ callerSym
+            | idx <- targetNodeIndices
+            , callerIdx <- VU.toList (csrNeighborIndices transCsr idx)
+            , Just callerSym <- [lookupNode callerIdx]
+            , normalizeImpactPath (symFilePath callerSym) /= normTarget
+            ]
 
       -- Compute transitive files and tests according to severity tier
       (transFiles, affectedTests, savedPct) = case severity of
@@ -115,15 +157,15 @@ computeImpactSlice targetFile bOld bNew wcg allRepoFiles =
           in (affected, localTests, saved)
 
         SeverityInterface ->
-          let reachableSymbols = traverseInvertedCallers normTarget wcg
-              affected = sort (nub (normTarget : map (normalizePath . symFilePath) reachableSymbols))
+          let reachableSymbols = traverseInvertedCallersCSR normTarget (csr, nodes)
+              affected = sort (nub (normTarget : map (normalizeImpactPath . symFilePath) reachableSymbols))
               tests = findMatchingTests affected allRepoFiles
               saved = computeSavedPct affected allRepoFiles
           in (affected, tests, saved)
 
         SeverityDependency ->
-          let reachableSymbols = traverseInvertedCallers normTarget wcg
-              affected = sort (nub (normTarget : map (normalizePath . symFilePath) reachableSymbols))
+          let reachableSymbols = traverseInvertedCallersCSR normTarget (csr, nodes)
+              affected = sort (nub (normTarget : map (normalizeImpactPath . symFilePath) reachableSymbols))
               tests = findMatchingTests affected allRepoFiles
               saved = computeSavedPct affected allRepoFiles
           in (affected, tests, saved)
@@ -139,42 +181,53 @@ computeImpactSlice targetFile bOld bNew wcg allRepoFiles =
 
 -- | Traverse the inverted call graph (callee -> caller) to compute all transitively reachable callers.
 traverseInvertedCallers :: FilePath -> WholeRepoCallGraph -> [GlobalSymbol]
-traverseInvertedCallers normTarget wcg =
-  let initialSymbols = [s | s <- wcgNodes wcg, normalizePath (symFilePath s) == normTarget]
-      invAdj = Map.fromListWith (++)
-        [ (wceCallee e, [wceCaller e])
-        | e <- wcgEdges wcg
+traverseInvertedCallers targetFile wcg =
+  traverseInvertedCallersCSR targetFile (toCSRCallGraph wcg)
+
+-- | Traverse the inverted CSR call graph using unboxed backwardReachabilityCone.
+traverseInvertedCallersCSR :: FilePath -> (CSRGraph, [GlobalSymbol]) -> [GlobalSymbol]
+traverseInvertedCallersCSR targetFile (csr, nodes) =
+  let normTarget = normalizeImpactPath targetFile
+      nodeVec = V.fromList nodes
+      lookupNode idx =
+        let i = fromIntegral idx
+        in if i >= 0 && i < V.length nodeVec
+             then Just (nodeVec V.! i)
+             else Nothing
+      seedIndices =
+        [ idx
+        | (idx, s) <- zip ([0 ..] :: [Word32]) nodes
+        , normalizeImpactPath (symFilePath s) == normTarget
         ]
-      bfs [] _ acc = acc
-      bfs (curr:queue) visited acc
-        | Set.member curr visited = bfs queue visited acc
-        | otherwise =
-            let callers = Map.findWithDefault [] curr invAdj
-                newVisited = Set.insert curr visited
-                newAcc = if normalizePath (symFilePath curr) /= normTarget then curr : acc else acc
-            in bfs (queue ++ callers) newVisited newAcc
-  in bfs initialSymbols Set.empty []
+      coneIndices = reachabilityConeNodes (backwardReachabilityCone csr seedIndices)
+  in [ sym
+     | idx <- coneIndices
+     , Just sym <- [lookupNode idx]
+     , normalizeImpactPath (symFilePath sym) /= normTarget
+     ]
 
 -- | Discover test files associated with a set of modified source files.
 findMatchingTests :: [FilePath] -> [FilePath] -> [FilePath]
 findMatchingTests affectedFiles allRepoFiles =
-  let testFiles = filter isTestFile allRepoFiles
+  let testFiles = filter isRepoTestFile allRepoFiles
       affectedBases = Set.fromList (map (T.toLower . T.pack . takeBaseName) affectedFiles)
       matchesTest tf =
         let tBase = T.toLower (T.pack (takeBaseName tf))
         in any (\b -> b `T.isInfixOf` tBase || tBase `T.isInfixOf` b) affectedBases
   in sort (filter matchesTest testFiles)
-  where
-    isTestFile fp =
-      let p = map (\c -> if c == '\\' then '/' else c) (normalise fp)
-          fn = takeFileName p
-          ext = takeExtension p
-          pText = T.pack p
-          fnText = T.pack fn
-      in any (`T.isInfixOf` pText) ["/test/", "/tests/", "/spec/", "/specs/"]
-         || any (`T.isPrefixOf` pText) ["test/", "tests/", "spec/", "specs/"]
-         || any (`T.isSuffixOf` fnText) ["_test" <> T.pack ext, ".test" <> T.pack ext, "spec" <> T.pack ext, ".spec" <> T.pack ext]
-         || any (`T.isPrefixOf` fnText) ["test_", "spec_"]
+
+-- | Check whether a repository file path corresponds to a test or specification file.
+isRepoTestFile :: FilePath -> Bool
+isRepoTestFile fp =
+  let p = normalizeImpactPath fp
+      fn = takeFileName p
+      ext = takeExtension p
+      pText = T.pack p
+      fnText = T.pack fn
+  in any (`T.isInfixOf` pText) ["/test/", "/tests/", "/spec/", "/specs/"]
+     || any (`T.isPrefixOf` pText) ["test/", "tests/", "spec/", "specs/"]
+     || any (`T.isSuffixOf` fnText) ["_test" <> T.pack ext, ".test" <> T.pack ext, "spec" <> T.pack ext, ".spec" <> T.pack ext]
+     || any (`T.isPrefixOf` fnText) ["test_", "spec_"]
 
 computeSavedPct :: [FilePath] -> [FilePath] -> Double
 computeSavedPct affected allFiles
@@ -185,8 +238,9 @@ computeSavedPct affected allFiles
           ratio = fromIntegral (total - aff) / fromIntegral total
       in max 0.0 (fromIntegral (round (ratio * 10000 :: Double) :: Integer) / 100.0)
 
-normalizePath :: FilePath -> FilePath
-normalizePath = map (\c -> if c == '\\' then '/' else c) . normalise
+-- | Normalize a file path to forward-slash canonical form.
+normalizeImpactPath :: FilePath -> FilePath
+normalizeImpactPath = map (\c -> if c == '\\' then '/' else c) . normalise
 
 -- | Format ImpactSlice into human-readable diagnostic report.
 formatImpactSlice :: ImpactSlice -> Text

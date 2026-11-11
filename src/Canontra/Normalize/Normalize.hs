@@ -29,10 +29,13 @@ import Data.Ord (comparing)
 import Data.Text (Text)
 import qualified Data.Text as T
 
+import Canontra.Analysis.CFGCanonical (normalizeBranchModule)
 import Canontra.IR.Declaration
 import Canontra.IR.Dependency
 import Canontra.IR.Expression
 import Canontra.IR.Program
+import Canontra.Normalize.Algebraic (normalizeAlgebraicExpr, normalizeAlgebraicModule)
+import Canontra.Normalize.Alpha (canonicalizeAlphaModule)
 
 normalizeProgram :: Program -> Program
 normalizeProgram (Program modules lang) =
@@ -45,7 +48,10 @@ normalizeModule (Module _ imps decls stmts) =
       normDecls = normalizeModuleDeclarations decls
       strippedStmts = stripLeadingDocstring stmts
       normStmts = cleanStmtSuite (map normalizeStmt strippedStmts)
-  in Module "" normImps normDecls normStmts
+  in normalizeAlgebraicModule
+       . canonicalizeAlphaModule
+       . normalizeBranchModule
+       $ Module "" normImps normDecls normStmts
 
 -- | Check if a declaration is provably pure and free of module-level side effects.
 isProvablyPureDeclaration :: Declaration -> Bool
@@ -206,7 +212,7 @@ normalizeMatchCase (MatchCase pat guard body) =
   MatchCase (normalizeExpr pat) (fmap normalizeExpr guard) (cleanStmtSuite (map normalizeStmt (stripLeadingDocstring body)))
 
 normalizeExpr :: Expr -> Expr
-normalizeExpr expr = case expr of
+normalizeExpr expr = normalizeAlgebraicExpr $ case expr of
   ExprId ident -> ExprId ident
   ExprLit lit -> ExprLit lit
   ExprBinary op e1 e2 -> ExprBinary op (normalizeExpr e1) (normalizeExpr e2)

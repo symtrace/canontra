@@ -169,23 +169,54 @@ extractRustDeclsAndStmts tokens = case tokens of
         (d, i, s) = extractRustDeclsAndStmts afterFn
     in (DeclFunction fn : d, i, s)
 
-  -- struct Name { ... }
+  -- struct Name<T> { ... }
   TokKw "struct" : TokIdent name : rest ->
-    let afterBrace = dropWhile (\tok -> tok /= TokSymbol "{") rest
+    let (gMethods, afterGen) = case rest of
+          TokSymbol "<" : r ->
+            let (gToks, afterAngle) = extractBalancedAngle r
+                gText = "<" <> T.unwords [tokenText t | t <- gToks] <> ">"
+            in ([Function gText [] Nothing [] [] False], afterAngle)
+          _ -> ([], rest)
+        afterBrace = dropWhile (\tok -> tok /= TokSymbol "{") afterGen
         (fieldsToks, afterBody) = extractBalancedBraces afterBrace
         fields = parseRustFields fieldsToks
-        st = Struct name fields [] "pub"
+        st = Struct name fields gMethods "pub"
         (d, i, s) = extractRustDeclsAndStmts afterBody
     in (DeclStruct st : d, i, s)
 
-  -- trait Name { ... }
+  -- trait Name<T> { ... }
   TokKw "trait" : TokIdent name : rest ->
-    let afterBrace = dropWhile (\tok -> tok /= TokSymbol "{") rest
+    let (gSupers, afterGen) = case rest of
+          TokSymbol "<" : r ->
+            let (gToks, afterAngle) = extractBalancedAngle r
+                gText = "<" <> T.unwords [tokenText t | t <- gToks] <> ">"
+            in ([gText], afterAngle)
+          _ -> ([], rest)
+        afterBrace = dropWhile (\tok -> tok /= TokSymbol "{") afterGen
         (methodToks, afterBody) = extractBalancedBraces afterBrace
         methods = parseRustMethods methodToks
-        tr = Trait name methods []
+        tr = Trait name methods gSupers
         (d, i, s) = extractRustDeclsAndStmts afterBody
     in (DeclTrait tr : d, i, s)
+
+  -- type Name<T> = ...;
+  TokKw "type" : TokIdent name : rest ->
+    let (mGen, afterGen) = case rest of
+          TokSymbol "<" : r ->
+            let (gToks, afterAngle) = extractBalancedAngle r
+                gText = "<" <> T.unwords [tokenText t | t <- gToks] <> ">"
+            in (Just gText, afterAngle)
+          _ -> (Nothing, rest)
+        afterEq = dropWhile (\tok -> tok /= TokSymbol "=") afterGen
+        rhsToks0 = if null afterEq then [] else tail afterEq
+        (rhsToks, afterSemi) = span (\tok -> tok /= TokSymbol ";") rhsToks0
+        rhsText = T.unwords [tokenText t | t <- rhsToks]
+        fullDef = case mGen of
+          Just g  -> g <> " = " <> rhsText
+          Nothing -> rhsText
+        nextToks = if null afterSemi then [] else tail afterSemi
+        (d, i, s) = extractRustDeclsAndStmts nextToks
+    in (DeclTypeAlias name (Just fullDef) : d, i, s)
 
   -- impl Trait for Target { ... } or impl Target { ... }
   TokKw "impl" : rest ->

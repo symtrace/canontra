@@ -3,7 +3,7 @@
 
 {- |
 Module      : Canontra.CLI.Commands
-Description : Command-line argument parsing and command dispatch for v0.2.0.
+Description : Command-line argument parsing and command dispatch for v0.3.0.
 
 This module provides the entrypoint parser for all canontra CLI operations,
 dispatching commands for polyglot multi-tier fingerprinting (including stdin streaming),
@@ -37,10 +37,15 @@ import qualified Data.Text.IO as TIO
 import Options.Applicative
 import System.Directory (doesDirectoryExist, doesFileExist)
 import System.Exit (ExitCode (..), exitSuccess, exitWith)
-import System.FilePath (makeRelative)
+import System.FilePath ((</>), makeRelative, takeExtension)
 import System.IO (hPutStrLn, stderr)
 import System.Process (readProcessWithExitCode)
 
+import Canontra.Analysis.BatchImpact
+  ( computeBatchImpactSliceCSR
+  , formatBatchImpactResult
+  , formatBatchImpactResultJson
+  )
 import Canontra.Analysis.CallGraph
 import Canontra.Analysis.CFG (buildCFGs, formatCFG)
 import Canontra.Analysis.DFG (buildDFGs, formatDFG)
@@ -51,7 +56,7 @@ import Canontra.Analysis.Impact
   , formatImpactSliceJson
   )
 import Canontra.Analysis.Scope (analyzeProgramScope)
-import Canontra.Analysis.WholeRepoGraph (buildWholeRepoCallGraph)
+import Canontra.Analysis.WholeRepoGraph (buildWholeRepoCallGraph, toCSRCallGraph)
 import Canontra.CLI.Cache (CacheAction (..), runCacheCommand)
 import Canontra.CLI.Completions
   ( ShellType (..)
@@ -89,6 +94,7 @@ data Command
   | CmdVerify FilePath Int Bool
   | CmdRepository FilePath Bool Bool -- path, asJson, useCache
   | CmdImpact FilePath (Maybe FilePath) FilePath Bool -- targetFile, mBaseFile, repoDir, asJson
+  | CmdBatchImpact String FilePath Bool -- prBaseRef, repoDir, asJson
   | CmdSlice String FilePath Bool                     -- symbolQuery, repoDir, asJson
   | CmdCommit String Bool
   | CmdEvolution String String Bool
@@ -292,6 +298,10 @@ executeCommand cmd = case cmd of
     mb <- mapM validateSafePath mBasePath
     r <- validateSafePath repoDir
     runImpact t mb r asJson
+
+  CmdBatchImpact prBaseRef repoDir asJson -> do
+    r <- validateSafePath repoDir
+    runBatchImpact prBaseRef r asJson
 
   CmdSlice symbolQuery repoDir asJson -> do
     r <- validateSafePath repoDir
@@ -546,6 +556,65 @@ runImpact targetPath mBasePath repoDir asJson = do
                 then TIO.putStrLn (formatImpactSliceJson slice)
                 else TIO.putStrLn (formatImpactSlice slice)
 
+isSupportedPolyglotExt :: FilePath -> Bool
+isSupportedPolyglotExt p =
+  map toLowerChar (takeExtension p) `elem`
+    [".py", ".pyi", ".js", ".jsx", ".mjs", ".cjs", ".ts", ".tsx", ".go", ".rs"]
+
+runBatchImpact :: String -> FilePath -> Bool -> IO ()
+runBatchImpact prBaseRef repoDir asJson = do
+  repoExists <- doesDirectoryExist repoDir
+  if not repoExists
+    then outputIOError ("Repository directory does not exist: " ++ repoDir)
+    else do
+      (exitCode, stdoutStr, stderrStr) <-
+        readProcessWithExitCode "git" ["-C", repoDir, "diff", "--name-only", prBaseRef] ""
+      if exitCode /= ExitSuccess
+        then outputIOError ("Failed to diff against PR base '" ++ prBaseRef ++ "': " ++ stderrStr)
+        else do
+          let rawChanged = filter (not . null) (lines stdoutStr)
+              changedFiles = sort (nub [normalizePathPosix f | f <- rawChanged, isSupportedPolyglotExt f])
+          deltas <- forM changedFiles $ \relPath -> do
+            let fullPath = repoDir </> relPath
+            newExists <- doesFileExist fullPath
+            mNewBundle <- if newExists
+              then do
+                rawNew <- BS.readFile fullPath
+                let txtNew = TE.decodeUtf8Lenient rawNew
+                case computeBundle relPath rawNew txtNew of
+                  Left _  -> pure Nothing
+                  Right b -> pure (Just b)
+              else pure Nothing
+
+            (oldExit, oldStdout, _) <-
+              readProcessWithExitCode "git" ["-C", repoDir, "show", prBaseRef ++ ":" ++ relPath] ""
+            mOldBundle <- if oldExit == ExitSuccess
+              then do
+                let rawOld = BSC.pack oldStdout
+                    txtOld = TE.decodeUtf8Lenient rawOld
+                case computeBundle relPath rawOld txtOld of
+                  Left _  -> pure Nothing
+                  Right b -> pure (Just b)
+              else pure Nothing
+
+            case (mOldBundle, mNewBundle) of
+              (Just oldB, Just newB) -> pure (Just (relPath, oldB, newB))
+              (Nothing, Just newB)   -> pure (Just (relPath, newB, newB))
+              (Just oldB, Nothing)   -> pure (Just (relPath, oldB, oldB))
+              (Nothing, Nothing)     -> pure Nothing
+
+          let validDeltas = [d | Just d <- deltas]
+          allRepoFullFiles <- discoverSourceFiles repoDir
+          let normAllFiles = map (normalizePathPosix . makeRelative repoDir) allRepoFullFiles
+          progs <- loadRepoPrograms repoDir allRepoFullFiles
+          let wcg = buildWholeRepoCallGraph progs
+              csr = toCSRCallGraph wcg
+              batchRes = computeBatchImpactSliceCSR validDeltas csr normAllFiles
+
+          if asJson
+            then TIO.putStrLn (formatBatchImpactResultJson batchRes)
+            else TIO.putStrLn (formatBatchImpactResult batchRes)
+
 runSlice :: String -> FilePath -> Bool -> IO ()
 runSlice symbolQuery repoDir asJson = do
   repoExists <- doesDirectoryExist repoDir
@@ -665,7 +734,7 @@ cliParserInfo :: ParserInfo Command
 cliParserInfo = info (parseCLIArgs <**> helper)
   ( fullDesc
   <> progDesc "canontra - High-Throughput Polyglot Deterministic Program Fingerprinting & Deep Semantic Graph Engine"
-  <> header "canontra v0.2.0"
+  <> header "canontra v0.3.0"
   )
 
 parseCLIArgs :: Parser Command
@@ -752,11 +821,19 @@ parseEvolution = CmdEvolution
   <*> switch (long "json" <> help "Output evolution in JSON format")
 
 parseImpact :: Parser Command
-parseImpact = CmdImpact
-  <$> argument str (metavar "FILE" <> help "Target modified source file to analyze")
-  <*> optional (strOption (long "base" <> short 'b' <> metavar "BASE_FILE" <> help "Baseline version of the file to compare against (defaults to git HEAD)"))
-  <*> strOption (long "repo" <> short 'r' <> metavar "DIR" <> value "." <> showDefault <> help "Repository root directory")
-  <*> switch (long "json" <> help "Output impact slice in JSON format for CI/CD test runners")
+parseImpact =
+  ( CmdBatchImpact
+      <$> strOption (long "pr-base" <> metavar "GIT_REF" <> help "Base Git revision for multi-file PR batch impact analysis (e.g. main, HEAD~1)")
+      <*> strOption (long "repo" <> short 'r' <> metavar "DIR" <> value "." <> showDefault <> help "Repository root directory")
+      <*> switch (long "json" <> help "Output batch impact slice in JSON format for CI/CD test runners")
+  )
+  <|>
+  ( CmdImpact
+      <$> argument str (metavar "FILE" <> help "Target modified source file to analyze")
+      <*> optional (strOption (long "base" <> short 'b' <> metavar "BASE_FILE" <> help "Baseline version of the file to compare against (defaults to git HEAD)"))
+      <*> strOption (long "repo" <> short 'r' <> metavar "DIR" <> value "." <> showDefault <> help "Repository root directory")
+      <*> switch (long "json" <> help "Output impact slice in JSON format for CI/CD test runners")
+  )
 
 parseSlice :: Parser Command
 parseSlice = CmdSlice

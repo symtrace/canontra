@@ -22,7 +22,7 @@
 [Canontra Parse Warning] tests\test_async.py:19:19: Expected function name and parameter list in def
 [Canontra Parse Warning] tests\test_async_filters.py:48:19: Expected function name and parameter list in def
 [Canontra Parse Warning] tests\test_compile.py:1:1: Expected ':' but reached EOF
-[Canontra Parse Warning] tests\test_core_tags.py:312:54: Unexpected token in primary expression: TokKw "for"
+[Canontra Parse Warning] tests\test_core_tags.py:1:1: Expected ')' but reached EOF
 [Canontra Parse Warning] tests\test_debug.py:1:1: Expected ':' but reached EOF
 [Canontra Parse Warning] tests\test_ext.py:1:1: Expected '}' but reached EOF
 [Canontra Parse Warning] tests\test_filters.py:1:1: Expected ':' but reached EOF

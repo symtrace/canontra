@@ -69,7 +69,8 @@ serializeTypeContracts rawContracts =
         let b = TE.encodeUtf8 p
         in BB.word8 0x01 <> BB.word32BE (fromIntegral (BS.length b)) <> BB.byteString b
       TypeRecord fields ->
-        BB.word8 0x02 <> BB.word32BE (fromIntegral (length fields)) <> foldMap serializeField fields
+        let sortedFields = sortBy (comparing fst) fields
+        in BB.word8 0x02 <> BB.word32BE (fromIntegral (length sortedFields)) <> foldMap serializeField sortedFields
       TypeFunction params ret ->
         BB.word8 0x03 <> BB.word32BE (fromIntegral (length params)) <> foldMap serializeType params <> serializeType ret
       TypeArray elemTy ->
